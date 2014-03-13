@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        //Hunter Do Good
 
         /// <summary>
         /// Clean up any resources being used.
