@@ -60,8 +60,8 @@ namespace FAFOS
             notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width) - 20,
                notificationPanel.Location.Y);
 
-            pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
-              pnlUser.Location.Y);
+            /*pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
+              pnlUser.Location.Y);*/
 
 
             /*this.quote.Enter += new System.EventHandler(Tile_Enter);
@@ -139,8 +139,8 @@ namespace FAFOS
             FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350, 40);
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
-            Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
+            //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
+                //System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
 
 
         }
@@ -438,9 +438,9 @@ namespace FAFOS
             pnlLogin.Visible = false;
             this.Exit_btn.Focus();
 
-
-
-
+            Logout.Visible = true;
+            UserSettings.Visible = true;
+            menuStrip1.Visible = true;
             /*quote.Visible = true;
             editQuote.Visible = true;
             salesOrder.Visible = true;
@@ -482,12 +482,12 @@ namespace FAFOS
             lblPassword.Visible = false;
             txtPassword.Visible = false;
             Login_btn.Visible = false;
-            Logout_btn.Visible = true;
-            userSettings.Visible = true;
+            /*Logout_btn.Visible = true;
+            userSettings.Visible = true;*/
             lblUserInfo.Visible = true;
             notificationPanel.Visible = true;
             profilePic.Visible = true;
-            pnlUser.Visible = true;
+            //pnlUser.Visible = true;
 
 
             try
@@ -638,7 +638,7 @@ namespace FAFOS
             return false;
         }
 
-        private void Logout_btn_Click(object sender, EventArgs e)
+        private void Logout_Click(object sender, EventArgs e)
         {
             /*quote.Visible = false;
             editQuote.Visible = false;
@@ -647,6 +647,9 @@ namespace FAFOS
             convertSalesOrder.Visible = false;
             invoice.Visible = false;*/
 
+            Logout.Visible = false;
+            UserSettings.Visible = false;
+
             EditQuote.Visible = false;
             Quote.Visible = false;
             SalesOrder.Visible = false;
@@ -654,6 +657,28 @@ namespace FAFOS
             ConvertSalesOrder.Visible = false;
             Invoice.Visible = false;
 
+            Itinerary.Visible = false;
+            Inventory.Visible = false;
+            PurchaseRecord.Visible = false;
+            Payment.Visible = false;
+            Inspection.Visible = false;
+
+            AddClient.Visible = false;
+            EditClient.Visible = false;
+            AddContract.Visible = false;
+            EditContract.Visible = false;
+
+            Statement.Visible = false;
+            JobReport.Visible = false;
+            RevenueReport.Visible = false;
+            RoyaltyFee.Visible = false;
+
+            Operation.Visible = false;
+            Document.Visible = false;
+            Client.Visible = false;
+            Report.Visible = false;
+
+            menuStrip1.Visible = false;
             /*inventory.Visible = false;
             purchaseRecord.Visible = false;
             payment.Visible = false;
@@ -675,7 +700,7 @@ namespace FAFOS
             syncHQ.Visible = false;
 
             label9.Visible = false;
-            pnlUser.Visible = false;
+            //pnlUser.Visible = false;
 
             lblUsername.Visible = true;
             txtUsername.Visible = true;
@@ -685,8 +710,8 @@ namespace FAFOS
 
 
             Login_btn.Visible = true;
-            Logout_btn.Visible = false;
-            userSettings.Visible = false;
+            /*Logout_btn.Visible = false;
+            userSettings.Visible = false;*/
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
@@ -694,7 +719,6 @@ namespace FAFOS
             txtUsername.Text = "";
             txtPassword.Text = "";
             userid = 0;
-
         }
 
         private void userSettings_Click(object sender, EventArgs e)
@@ -944,46 +968,6 @@ namespace FAFOS
                 RevenueReport.Visible = false;
                 RoyaltyFee.Visible = false;
             }
-            /*if (inventory.Visible == false)
-            {
-                inventory.Visible = true;
-                purchaseRecord.Visible = true;
-                payment.Visible = true;
-                itinerary.Visible = true;
-                inspection.Visible = true;
-                
-                quote.Visible = false;
-                editQuote.Visible = false;
-                salesOrder.Visible = false;
-                editSalesOrder.Visible = false;
-                convertSalesOrder.Visible = false;
-
-                invoice.Visible = false;
-                addClient.Visible = false;
-                addContract.Visible = false;
-                editClient.Visible = false;
-                editContract.Visible = false;
-
-                statement.Visible = false;
-                jobReport.Visible = false;
-                revenueReport.Visible = false;
-                royaltyFee.Visible = false;
-
-            }
-            else
-            {
-                inventory.Visible = false;
-                purchaseRecord.Visible = false;
-                payment.Visible = false;
-                itinerary.Visible = false;
-                inspection.Visible = false;
-
-                inventory.tileLocation = inventory.Location;
-                purchaseRecord.tileLocation = purchaseRecord.Location;
-                payment.tileLocation = payment.Location;
-                itinerary.tileLocation = itinerary.Location;
-                inspection.tileLocation = inspection.Location;
-            }*/
         }
 
         private void inspection_Load(object sender, EventArgs e)
@@ -1009,6 +993,12 @@ namespace FAFOS
             form.Show();
         }
 
+        private void itineraryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MapsForm form = new MapsForm(userid, orders, services);
+            form.Show();
+        }
+
         private void ItineraryTT_Popup(object sender, PopupEventArgs e)
         {
             //ItineraryTT.SetToolTip(Itinerary, "This gives you a list of Itinerary");
@@ -1021,7 +1011,19 @@ namespace FAFOS
             form.Show();
         }
 
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryForm form = new InventoryForm(userid);
+            form.Show();
+        }
+
         private void PurchaseRecord_Click(object sender, EventArgs e)
+        {
+            PurchaseRecord form = new PurchaseRecord(userid);
+            form.Show();
+        }
+
+        private void purchaseRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PurchaseRecord form = new PurchaseRecord(userid);
             form.Show();
@@ -1033,7 +1035,19 @@ namespace FAFOS
             payment_form.Show();
         }
 
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PaymentForm payment_form = new PaymentForm(userid);
+            payment_form.Show();
+        }
+
         private void Inspection_Click(object sender, EventArgs e)
+        {
+            InspectionForm form = new InspectionForm(userid.ToString());
+            form.Show();
+        }
+
+        private void inspectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InspectionForm form = new InspectionForm(userid.ToString());
             form.Show();
@@ -1050,7 +1064,19 @@ namespace FAFOS
             qc.quote(1);
         }
 
+        private void createQuoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(1);
+        }
+
         private void EditQuote_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(2);
+        }
+
+        private void editQuoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QuoteController qc = new QuoteController(userid.ToString());
             qc.quote(2);
@@ -1065,7 +1091,25 @@ namespace FAFOS
             //payment_form.Show();
         }
 
+        private void createSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(1);
+            //payment_form.Show();
+        }
+
         private void EditSalesOrder_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(3);
+            //payment_form.Show();
+        }
+
+        private void editSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
             SalesOrderController my_controller = new SalesOrderController(userid.ToString());
@@ -1084,18 +1128,40 @@ namespace FAFOS
 
         }
 
+        private void convertSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(2);
+            //payment_form.Show();
+        }
+
         private void Invoice_Click(object sender, EventArgs e)
         {
             InvoiceForm invoice_form = new InvoiceForm(userid);
             invoice_form.Show();
         }
 
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InvoiceForm invoice_form = new InvoiceForm(userid);
+            invoice_form.Show();
+        }
         //Documents
         //
 
         //Client
         //
         private void AddClient_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile _tile = new tile();
+            _tile.Name = "addClient";
+            c.New_client_button_Click(_tile, userid);
+        }
+
+        private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MaintainClientController c = new MaintainClientController();
             tile _tile = new tile();
@@ -1111,6 +1177,14 @@ namespace FAFOS
             c.Edit_Client_Button_Click(T, userid);
         }
 
+        private void editClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "editClient";
+            c.Edit_Client_Button_Click(T, userid);
+        }
+
         private void AddContract_Click(object sender, EventArgs e)
         {
             MaintainClientController c = new MaintainClientController();
@@ -1119,7 +1193,23 @@ namespace FAFOS
             c.Add_contract_Button_Click(T, userid);
         }
 
+        private void addContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "addContract";
+            c.Add_contract_Button_Click(T, userid);
+        }
+
         private void EditContract_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "editContract";
+            c.Edit_contract_Button_Click(T, userid);
+        }
+
+        private void editContractToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MaintainClientController c = new MaintainClientController();
             tile T = new tile();
@@ -1137,7 +1227,19 @@ namespace FAFOS
             form.Show();
         }
 
+        private void statementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Statements form = new Statements(userid);
+            form.Show();
+        }
+
         private void RoyaltyFee_Click(object sender, EventArgs e)
+        {
+            RoyaltyFeeCollection form = new RoyaltyFeeCollection(userid.ToString());
+            form.Show();
+        }
+
+        private void royaltyFeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RoyaltyFeeCollection form = new RoyaltyFeeCollection(userid.ToString());
             form.Show();
@@ -1148,12 +1250,45 @@ namespace FAFOS
 
         }
 
+        private void jobReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void RevenueReport_Click(object sender, EventArgs e)
+        {
+            ReportsController r = new ReportsController(userid.ToString());
+            r.report(1);
+        }
+
+        private void revenueReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportsController r = new ReportsController(userid.ToString());
             r.report(1);
         }
         //Reports
         //
+
+        private void quoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void documentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }
