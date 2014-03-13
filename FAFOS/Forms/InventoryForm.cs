@@ -22,14 +22,14 @@ namespace FAFOS
             InitializeComponent();
             my_controller = new InventoryController();
             userid = id;
-            
+
             this.Save_btn.Click += new System.EventHandler(my_controller.Save_btn_Click);
             this.AddProduct_btn.Click += new System.EventHandler(my_controller.addProduct_btn_Click);
             this.AddService_btn.Click += new EventHandler(my_controller.addService_btn_Click);
             this.Load += new System.EventHandler(my_controller.Load);
-            this.productsdgv.ColumnHeaderMouseClick +=new DataGridViewCellMouseEventHandler(productsdgv_ColumnHeaderMouseClick);
-            this.productsdgv.CellContentClick+=new DataGridViewCellEventHandler(my_controller.Delete_Product_btn_Click);
-            this.servicesdgv.CellContentClick+=new DataGridViewCellEventHandler(my_controller.Delete_Service_btn_Click);
+            this.productsdgv.ColumnHeaderMouseClick += new DataGridViewCellMouseEventHandler(productsdgv_ColumnHeaderMouseClick);
+            this.productsdgv.CellContentClick += new DataGridViewCellEventHandler(my_controller.Delete_Product_btn_Click);
+            this.servicesdgv.CellContentClick += new DataGridViewCellEventHandler(my_controller.Delete_Service_btn_Click);
             this.productsdgv.AutoGenerateColumns = false;
             productsdgv.DataError += new DataGridViewDataErrorEventHandler(productsdgv_DataError);
             servicesdgv.DataError += new DataGridViewDataErrorEventHandler(servicesdgv_DataError);
@@ -72,7 +72,7 @@ namespace FAFOS
             for (int i = 0; i < dgv.Rows.Count; i++)
             {
                 if (dgv.Rows[i].Visible == true)
-                dgv.Rows[i].Cells[0].Value = i + 1;
+                    dgv.Rows[i].Cells[0].Value = i + 1;
             }
             return dgv;
         }
@@ -108,12 +108,12 @@ namespace FAFOS
                     message = "Invalid Entry. The value should be a valid number.";
                     e.Cancel = false;
                     break;
-                    
+
                 case 3:
                     // bound to date time field
                     message = "Invalid Entry";
                     e.Cancel = false;
-                 
+
                     break;
                 case 4:
                     // bound to date time field
@@ -139,7 +139,7 @@ namespace FAFOS
                     message = "Invalid Entry. The value should be a valid number";
                     e.Cancel = false;
                     break;
-               
+
                 // other columns
                 default:
                     message = "Invalid data";
@@ -148,7 +148,7 @@ namespace FAFOS
             }
 
             MessageBox.Show(message);
-            
+
         }
         void servicesdgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
@@ -220,8 +220,8 @@ namespace FAFOS
                     if (cellValue < 0)
                     {
                         currentCell.Value = "0";
-                        if (e.ColumnIndex == 5) MessageBox.Show ("Please enter a valid price");
-                       
+                        if (e.ColumnIndex == 5) MessageBox.Show("Please enter a valid price");
+
                     }
                 }
                 catch (FormatException)
@@ -231,8 +231,8 @@ namespace FAFOS
                 }
                 catch (InvalidCastException)
                 {
-                  //  MessageBox.Show("Please enter a valid value");
-                   // return;
+                    //  MessageBox.Show("Please enter a valid value");
+                    // return;
                 }
             }
         }
@@ -280,44 +280,5 @@ namespace FAFOS
         {
             return servicepricetextbox.Text;
         }
-       
-     
-
-       
-     
-
-
-      
-  
-
-  
-
-
-
-       
-
-      
-
-     
-
-
-   
-      
-
-    
-    
-
-     
- 
-
-      
-
-     
-
-
-     
-       
-
- 
     }
 }

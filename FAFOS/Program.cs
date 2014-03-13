@@ -24,54 +24,54 @@ namespace FAFOS
             Application.Run(new View());
         }
     }
-        struct IpStatus
+    struct IpStatus
+    {
+        private string countryName;
+        public string CountryName
         {
-            private string countryName;
-            public string CountryName
+            get
             {
-                get
-                {
-                    return countryName;
-                }
-                set
-                {
-                    countryName = value;
-                }
+                return countryName;
             }
-
-            private int connectionsCount;
-            public int ConnectionsCount
+            set
             {
-                get
-                {
-                    return connectionsCount;
-                }
-                set
-                {
-                    connectionsCount = value;
-                }
+                countryName = value;
             }
         }
-        class DescendingComparer : IComparer<IpStatus>
+
+        private int connectionsCount;
+        public int ConnectionsCount
         {
-            public bool SortOnlyCountryName = false;
-
-            public int Compare(IpStatus x, IpStatus y)
+            get
             {
-                int r = 0;
-
-                if (!SortOnlyCountryName)
-                {
-                    r = y.ConnectionsCount.CompareTo(x.ConnectionsCount);
-                }
-
-                if (r == 0)
-                {
-                    return x.CountryName.CompareTo(y.CountryName);
-                }
-                return r;
+                return connectionsCount;
+            }
+            set
+            {
+                connectionsCount = value;
             }
         }
     }
+    class DescendingComparer : IComparer<IpStatus>
+    {
+        public bool SortOnlyCountryName = false;
+
+        public int Compare(IpStatus x, IpStatus y)
+        {
+            int r = 0;
+
+            if (!SortOnlyCountryName)
+            {
+                r = y.ConnectionsCount.CompareTo(x.ConnectionsCount);
+            }
+
+            if (r == 0)
+            {
+                return x.CountryName.CompareTo(y.CountryName);
+            }
+            return r;
+        }
+    }
+}
 
 

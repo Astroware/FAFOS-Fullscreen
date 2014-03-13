@@ -108,8 +108,8 @@ namespace FAFOS
             _view = (InventoryForm)((Button)sender).FindForm();
             //_view.getCategory().ValueMember = "category_id";
             String category_id = _view.getCategory().SelectedValue.ToString();
-           // _view.getCategory().DisplayMember = "type";
-          //  _view.getSupplier().ValueMember = "supplier_id";
+            // _view.getCategory().DisplayMember = "type";
+            //  _view.getSupplier().ValueMember = "supplier_id";
             String supplier_id = _view.getSupplier().SelectedValue.ToString();
             //_view.getSupplier().DisplayMember = "name";
             franchisee_inventory.insertProduct(user.getFranchiseeId(_view.getUser()), _view.getProductName(), _view.getProductDescription(), _view.getProductPrice(), category_id, supplier_id);
@@ -144,9 +144,9 @@ namespace FAFOS
             _purchaseRecord.getSupplier().ValueMember = "service_id";
             _purchaseRecord.getSupplier().DisplayMember = "name";
             String supplier_id = "1";
-         //   MessageBox.Show(supplier_id);
-            
-           DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
+            //   MessageBox.Show(supplier_id);
+
+            DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
             _purchaseRecord.fillItemList(itemTable);
         }
         public void fillItemList(object sender, EventArgs e)
@@ -156,8 +156,8 @@ namespace FAFOS
             _purchaseRecord.getSupplier().DisplayMember = "name";
             _purchaseRecord.getSupplier().ValueMember = "service_id";
 
-            String supplier_id =  _purchaseRecord.getSupplier().SelectedValue.ToString();
-          //  MessageBox.Show(supplier_id);
+            String supplier_id = _purchaseRecord.getSupplier().SelectedValue.ToString();
+            //  MessageBox.Show(supplier_id);
             DataTable itemTable = franchisee_inventory.getProducts(user.getFranchiseeId(_purchaseRecord.getUser()), supplier_id);
             _purchaseRecord.fillItemList(itemTable);
         }

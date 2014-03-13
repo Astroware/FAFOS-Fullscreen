@@ -42,7 +42,7 @@ namespace FAFOS
                 String[] op = MFranchise.GetOpReg();
                 _userForm.InitializeCombos(op[2], op[3], op[4]);
             }
-            
+
             LoadUserPic();
             _userForm.SetButtons(_user.IsAdmin(), _user.IsHQ());
             _userForm.SetFields(_user.Get());
@@ -50,7 +50,7 @@ namespace FAFOS
             catch (Exception) { MessageBox.Show("Failed to load User"); _userForm.Close(); }*/
 
         }
-/********************************** Maintain User Form ****************************/
+        /********************************** Maintain User Form ****************************/
         public void back_Button(object sender, EventArgs e)
         {
             MUser.DeleteBlanks();
@@ -60,7 +60,7 @@ namespace FAFOS
                     _adminForm.Close();
                 else
                 {
-                    if (MessageBox.Show("Are u sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         _adminForm.Close();
                     else
                         return;
@@ -73,7 +73,7 @@ namespace FAFOS
                     _hqForm.Close();
                 else
                 {
-                    if (MessageBox.Show("Are u sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         _hqForm.Close();
                     else
                         return;
@@ -86,10 +86,10 @@ namespace FAFOS
         {
             OpenFileDialog opendialog = new OpenFileDialog();
             opendialog.Filter = "Image files(*.jpg; *.jpeg; *.gif)| *.jpg; *.jpeg; *.gif";
-            
+
             if (opendialog.ShowDialog() == DialogResult.OK)
             {
-                Bitmap img = new Bitmap(opendialog.FileName);                
+                Bitmap img = new Bitmap(opendialog.FileName);
                 opendialog.RestoreDirectory = true;
                 LoadUserPic();
                 List<Bitmap> picList = MUser.LoadImages();
@@ -98,7 +98,7 @@ namespace FAFOS
                 LoadUserPic();
             }
         }
-        
+
         public void AdminButton_Click(object sender, EventArgs e)
         {
             if (_adminForm == null)
@@ -120,7 +120,7 @@ namespace FAFOS
                 }
                 else
                 {
-                    if (MessageBox.Show("Are u sure you want to discard admin changes?", "Confirm Discard", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Discard", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         _adminForm.Close();
                         _adminForm = null;
@@ -155,7 +155,7 @@ namespace FAFOS
             else
             {
                 if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {// if we are good, submit changes to dataBase
+                {// if we are good, submit changes to dataBaseadmi
                     if (_userForm.ValidToSet())
                     {
                         _user.Set(_userForm.GetFields());
@@ -165,7 +165,7 @@ namespace FAFOS
                         return;
                 }
             }
-            
+
         }
         public void LocationChanged(object sender, EventArgs e)
         {
@@ -174,37 +174,38 @@ namespace FAFOS
             if (_hqForm != null)
                 _hqForm.SetLoc(_userForm.GetWindowMidRight());
         }
-/********************************** Profile Pics **********************************/
+        /********************************** Profile Pics **********************************/
         public void LoadUserPic()
         {
-            try { picList = MUser.LoadImages();}
-            catch (Exception){picList = new List<Bitmap>();}
+            try { picList = MUser.LoadImages(); }
+            catch (Exception) { picList = new List<Bitmap>(); }
 
             Bitmap img;
-            try{img = picList[picID];}
-            catch(Exception)
+            try { img = picList[picID]; }
+            catch (Exception)
             {
                 if (picID == picList.Count)
                 {
                     picList.Add(new Bitmap(Properties.Resources.DefaultProPic));
                     img = picList[picID];
                 }
-                else{
+                else
+                {
                     picList[picID] = new Bitmap(Properties.Resources.DefaultProPic);
                     img = picList[picID];
                 }
             }
-            _userForm.setPic(img);           
- 
-            
+            _userForm.setPic(img);
+
+
         }
-/********************************** Admin User Form **********************************/
+        /********************************** Admin User Form **********************************/
         public void UserGridViewClick(object sender, DataGridViewCellEventArgs e)
         {
             var dgv = sender as DataGridView;
             if ((e.ColumnIndex == 2) && (e.RowIndex > -1))//-----------------------------------password reset
             {
-                if (MessageBox.Show("Are you sure you want to rest this user's Password?", "Confirm Reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Are you sure you want to reset this user's Password?", "Confirm Reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     String newPass = GeneratePassword();
                     dgv.Rows[e.RowIndex].Cells["passSetCol"].Value = newPass;
@@ -214,7 +215,7 @@ namespace FAFOS
             if ((e.ColumnIndex == 10) && (e.RowIndex > -1))//-----------------------------------remove
             {
                 if (dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value != null)
-                    if( dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value.ToString() == "1" )
+                    if (dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value.ToString() == "1")
                     {
                         MessageBox.Show("Cannot remove Primary user!");
                         return;
@@ -278,7 +279,7 @@ namespace FAFOS
         }
         public void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are u sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Are you sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (_adminForm.isOkToClose())
                 {
@@ -294,7 +295,7 @@ namespace FAFOS
             else
                 return;
         }
-/********************************** HQ User Form **********************************/
+        /********************************** HQ User Form **********************************/
         public void FranchiseGridView_ContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -310,7 +311,7 @@ namespace FAFOS
                 else
                     return;
             }
-        }        
+        }
         public void HQSaveBtn_Click(object sender, EventArgs e)
         {
             DataTable dt = _hqForm.GetFranchiseView();

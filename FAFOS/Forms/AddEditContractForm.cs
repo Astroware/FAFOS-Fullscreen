@@ -12,14 +12,19 @@ namespace FAFOS
     public partial class AddEditContractForm : FAFOS.Background
     {
         MaintainClientController my_controller;
-        bool isEdit; 
+        bool isEdit;
         public bool noChanges;
         ComboBox nameComboBox;
         int userid;
         String contractID;
         Users user;
+        public AddEditContractForm()
+        {
+
+        }
+
         /********************************* Constructor *******************************/
-        public AddEditContractForm(MaintainClientController parent,bool edit, int id,String ctID)
+        public AddEditContractForm(MaintainClientController parent, bool edit, int id, String ctID)
         {
             InitializeComponent();
             my_controller = parent;
@@ -44,24 +49,26 @@ namespace FAFOS
             this.StartDatePicker.ValueChanged += new EventHandler(my_controller.Contract_Text_Changed);
             this.EndDatePicker.ValueChanged += new EventHandler(my_controller.Contract_Text_Changed);
             this.contractNameBox.TextChanged += new EventHandler(my_controller.Contract_Text_Changed);
+            this.delete_Button.Visible = false;
             #endregion
 
             if (isEdit)
             {
+                this.delete_Button.Visible = true;
                 #region Set Edit Fields
                 DataTable contracts = MClientContract.GetList();
                 nameComboBox = new ComboBox();
                 nameComboBox.Location = new Point(320, 180);
                 nameComboBox.Font = new Font(nameComboBox.Font.FontFamily, 8);
                 nameComboBox.Size = new Size(195, 28);
-                
+
                 DataTable dt = new DataTable();
                 dt = contracts.Clone();
-                dt.Rows.Add(new String[]{null,"<Select Contract>"});
+                dt.Rows.Add(new String[] { null, "<Select Contract>" });
                 foreach (DataRow r in contracts.Rows)
                     dt.ImportRow(r);
 
-                nameComboBox.DataSource = dt;             
+                nameComboBox.DataSource = dt;
                 nameComboBox.DisplayMember = dt.Columns[1].ToString();
                 nameComboBox.ValueMember = dt.Columns[0].ToString();
 
@@ -83,12 +90,12 @@ namespace FAFOS
             userid = id;
             user = new Users();
             setup(userid.ToString(), "FAFOS Contract Form");
-           // lblUserInfo.Text = "Logged in:\n " + user.getName(id);
-         //   lblUserInfo.Location = new Point(Screen.PrimaryScreen.Bounds.Right - 100, 10);
+            // lblUserInfo.Text = "Logged in:\n " + user.getName(id);
+            //   lblUserInfo.Location = new Point(Screen.PrimaryScreen.Bounds.Right - 100, 10);
 
 
-        }        
-        
+        }
+
         /********************************* Service Address Grid View *****************************/
         private void ServiceAddrGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -99,7 +106,7 @@ namespace FAFOS
             c.ValueMember = "id";
 
             MServiceAddress _srvAddr = new MServiceAddress();
-            ServiceAddrGridView.Rows[e.RowIndex].Cells[0].Value = _srvAddr.FindID();            
+            ServiceAddrGridView.Rows[e.RowIndex].Cells[0].Value = _srvAddr.FindID();
 
             ServiceAddrGridView.Rows[e.RowIndex].Cells["editButton"].Value = "0";
             ServiceAddrGridView.Rows[e.RowIndex].Cells["roomButton"].Value = "0";
@@ -146,7 +153,7 @@ namespace FAFOS
                 noChanges = false;
             }
         }
-        
+
         public void SetTableButtonMetrics(int rowIndex, String SrvAddrId)
         {
             try
@@ -156,13 +163,13 @@ namespace FAFOS
             }
             catch (Exception) { }
         }
-        
+
         public void Add_Old_Row(String[] rowElements)
         {
             int index = ServiceAddrGridView.Rows.Add();
             SetTableButtonMetrics(index, rowElements[0]);
 
-            DataTable country , province, city;
+            DataTable country, province, city;
             country = MCountry.GetList();
             province = MProvState.GetFilteredList(rowElements[6]);
             city = MCity.GetFilteredList(rowElements[5]);
@@ -170,7 +177,7 @@ namespace FAFOS
 
             //country.TableName = "country";
             var countryCell = ServiceAddrGridView.Rows[index].Cells["countryCol"] as DataGridViewComboBoxCell;
-           //(ServiceAddrGridView.Rows[index].Cells[0].DataPropertyName = "Type";
+            //(ServiceAddrGridView.Rows[index].Cells[0].DataPropertyName = "Type";
             countryCell.DataSource = country;
             countryCell.DisplayMember = "name";
             countryCell.ValueMember = "id";
@@ -184,7 +191,7 @@ namespace FAFOS
             cityCell.DataSource = city;
             cityCell.DisplayMember = "name";
             cityCell.ValueMember = "id";
-            
+
             ServiceAddrGridView.Rows[index].Cells["idCol"].Value = rowElements[0];
             ServiceAddrGridView.Rows[index].Cells["address_col"].Value = rowElements[1];
             ServiceAddrGridView.Rows[index].Cells["postal_code_col"].Value = rowElements[2];
@@ -193,12 +200,12 @@ namespace FAFOS
             {
                 ServiceAddrGridView.Rows[index].Cells["countryCol"].Value = rowElements[4];
                 ServiceAddrGridView.Rows[index].Cells["provStateCol"].Value = rowElements[5];
-                ServiceAddrGridView.Rows[index].Cells["cityCol"].Value =rowElements[6];
+                ServiceAddrGridView.Rows[index].Cells["cityCol"].Value = rowElements[6];
             }
             catch (Exception) { }
             ServiceAddrGridView.Rows[index].Cells["num_floors"].Value = rowElements[7];
             ServiceAddrGridView.Rows[index].Cells["roomButton"].Value = rowElements[8];
-            
+
 
         }
 
@@ -210,7 +217,7 @@ namespace FAFOS
             noChanges = false;
         }
 
-        public void ClearGridView() { ServiceAddrGridView.Rows.Clear(); }        
+        public void ClearGridView() { ServiceAddrGridView.Rows.Clear(); }
 
         /********************************* Gets *****************************/
 
@@ -272,7 +279,7 @@ namespace FAFOS
 
         public string GetID() { return contractID; }
 
-        /********************************* Sets *****************************/        
+        /********************************* Sets *****************************/
 
         public void SetFields(String[] values, int userID)
         {
@@ -288,7 +295,7 @@ namespace FAFOS
         }
         public void SetClientLabel(string name)
         {
-           // this.titleLabel.Text = titleLabel.Text +" For " + name;
+            // this.titleLabel.Text = titleLabel.Text +" For " + name;
         }
         public void SetID(String id) { contractID = id; }
 
@@ -334,7 +341,7 @@ namespace FAFOS
             }
         }
 
-        /********************************* General Form Events *****************************/ 
+        /********************************* General Form Events *****************************/
         public void ClientOptions(bool isShown)
         {
             if (isShown)
@@ -362,23 +369,23 @@ namespace FAFOS
 
         }
 
-    /*    void Back_Button_MouseLeave(object sender, EventArgs e)
-        {
-            this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            this.Back_Button.Location = new Point(65, 38);
-          //  this.Back_Button.Size = new Size(84, 78);
-            this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
-        }
+        /*    void Back_Button_MouseLeave(object sender, EventArgs e)
+            {
+                this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
+                this.Back_Button.Location = new Point(65, 38);
+              //  this.Back_Button.Size = new Size(84, 78);
+                this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
+            }
 
-        void Back_Button_MouseEnter(object sender, EventArgs e)
-        {
-            this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
-            this.Back_Button.Location = new Point(65, 38);
-            //this.Back_Button.Size = new Size(84, 78);
-            this.Back_Button.BackgroundImageLayout = ImageLayout.Stretch;
-            this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
-        }
-        */
+            void Back_Button_MouseEnter(object sender, EventArgs e)
+            {
+                this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
+                this.Back_Button.Location = new Point(65, 38);
+                //this.Back_Button.Size = new Size(84, 78);
+                this.Back_Button.BackgroundImageLayout = ImageLayout.Stretch;
+                this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
+            }
+            */
         private void new_Client_Button_Click(object sender, EventArgs e)
         {
             ClientOptions(false);
@@ -391,7 +398,7 @@ namespace FAFOS
 
         }
 
-        
+
 
     }
 }

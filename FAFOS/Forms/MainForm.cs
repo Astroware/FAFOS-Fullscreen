@@ -24,10 +24,11 @@ namespace FAFOS
         private int screenCenterTop;
         private int screenCenterLeft;
         private int LoginRetryCounter = 0;
-         WorkOrder[] orders;
-         ContractService[] services;
+        WorkOrder[] orders;
+        ContractService[] services;
         private DateTime t1;
         List<Bitmap> piclist = new List<Bitmap>();
+
 
         delegate void SetSizeCallback(int w, int h, tile T);
         private bool _Authenticated = false;
@@ -56,43 +57,43 @@ namespace FAFOS
             pnlLogin.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlLogin.Size.Width) / 2,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlLogin.Size.Height) / 2);
 
-            notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width)-20,
+            notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width) - 20,
                notificationPanel.Location.Y);
 
-            pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
-              pnlUser.Location.Y);
+            /*pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
+              pnlUser.Location.Y);*/
 
 
-            this.quote.Enter += new System.EventHandler(Tile_Enter);
+            /*this.quote.Enter += new System.EventHandler(Tile_Enter);
             this.editQuote.Enter += new System.EventHandler(Tile_Enter);
             this.salesOrder.Enter += new System.EventHandler(Tile_Enter);
             this.editSalesOrder.Enter += new System.EventHandler(Tile_Enter);
             this.convertSalesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.invoice.Enter += new System.EventHandler(Tile_Enter);
-            this.inventory.Enter += new System.EventHandler(Tile_Enter);
+            this.invoice.Enter += new System.EventHandler(Tile_Enter);*/
+            /*this.inventory.Enter += new System.EventHandler(Tile_Enter);
             this.purchaseRecord.Enter += new System.EventHandler(Tile_Enter);
             this.payment.Enter += new System.EventHandler(Tile_Enter);
             this.itinerary.Enter += new System.EventHandler(Tile_Enter);
-            this.inspection.Enter += new System.EventHandler(Tile_Enter);
+            this.inspection.Enter += new System.EventHandler(Tile_Enter);*/
 
-            this.addClient.Enter += new System.EventHandler(Tile_Enter);
+            /*this.addClient.Enter += new System.EventHandler(Tile_Enter);
             this.editClient.Enter += new System.EventHandler(Tile_Enter);
             this.addContract.Enter += new System.EventHandler(Tile_Enter);
-            this.editContract.Enter += new System.EventHandler(Tile_Enter);
+            this.editContract.Enter += new System.EventHandler(Tile_Enter);*/
 
-            this.statement.Enter += new System.EventHandler(Tile_Enter);
+            /*this.statement.Enter += new System.EventHandler(Tile_Enter);
             this.jobReport.Enter += new System.EventHandler(Tile_Enter);
             this.royaltyFee.Enter += new System.EventHandler(Tile_Enter);
-            this.revenueReport.Enter += new System.EventHandler(Tile_Enter);
-          //  this.allRevenue.Enter += new System.EventHandler(Tile_Enter);
+            this.revenueReport.Enter += new System.EventHandler(Tile_Enter);*/
+            //  this.allRevenue.Enter += new System.EventHandler(Tile_Enter);
 
             user = new Users();
 
             screenWidth = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
-            screenHeight = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height; 
+            screenHeight = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height;
             this.Size = new System.Drawing.Size((int)screenWidth, (int)screenHeight);
 
-            this.quote.tileTimer_Interval = 40;
+            /*this.quote.tileTimer_Interval = 40;
             this.quote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.editQuote.tileTimer_Interval = 40;
             this.editQuote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
@@ -103,8 +104,8 @@ namespace FAFOS
             this.convertSalesOrder.tileTimer_Interval = 40;
             this.convertSalesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.invoice.tileTimer_Interval = 40;
-            this.invoice.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.inventory.tileTimer_Interval = 40;
+            this.invoice.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);*/
+            /*this.inventory.tileTimer_Interval = 40;
             this.inventory.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.purchaseRecord.tileTimer_Interval = 40;
             this.purchaseRecord.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
@@ -113,9 +114,9 @@ namespace FAFOS
             this.itinerary.tileTimer_Interval = 40;
             this.itinerary.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.inspection.tileTimer_Interval = 40;
-            this.inspection.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
+            this.inspection.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);*/
 
-            this.addClient.tileTimer_Interval = 40;
+            /*this.addClient.tileTimer_Interval = 40;
             this.addClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.editClient.tileTimer_Interval = 40;
             this.editClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
@@ -131,17 +132,17 @@ namespace FAFOS
             this.jobReport.tileTimer_Interval = 40;
             this.jobReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.revenueReport.tileTimer_Interval = 40;
-            this.revenueReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-          //  this.allRevenue.tileTimer_Interval = 40;
-          //  this.allRevenue.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
+            this.revenueReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);*/
+            //  this.allRevenue.tileTimer_Interval = 40;
+            //  this.allRevenue.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
 
-            FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350,40);
+            FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350, 40);
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
-            Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
+            //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
+                //System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
 
-            
+
         }
 
         public void Notifications()
@@ -163,28 +164,28 @@ namespace FAFOS
 
 
 
-           DataTable dt = new Payment().getNotPaid(userid);
-           paymentNotification.Text = "";
-           for (int i = 2; i < dt.Rows.Count; i++)
-           {
-               if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
-               {
-                   String name = new Client().getName(new ClientContract().getClient(new SalesOrder().getSAddress(new Invoice().getSalesOrderID(dt.Rows[i][0].ToString()).ToString())));
-                   paymentNotification.Text += "\n"+name+" has an outstanding balance of ";
+            DataTable dt = new Payment().getNotPaid(userid);
+            paymentNotification.Text = "";
+            for (int i = 2; i < dt.Rows.Count; i++)
+            {
+                if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
+                {
+                    String name = new Client().getName(new ClientContract().getClient(new SalesOrder().getSAddress(new Invoice().getSalesOrderID(dt.Rows[i][0].ToString()).ToString())));
+                    paymentNotification.Text += "\n" + name + " has an outstanding balance of ";
 
-                   DataTable payments = new Payment().getAmount(dt.Rows[i][0].ToString());
-                   double total=0;
-                   for (int j = 0; j < payments.Rows.Count; j++)
-                   {
-                       total += Convert.ToDouble(payments.Rows[j][2]);
-                       
-                   }
-                   paymentNotification.Text +=  "$" +String.Format("{0:0.00}",Math.Round(Convert.ToDouble(dt.Rows[i][3].ToString()) - total,2))
-                       + " on invoice #" + dt.Rows[i][0].ToString()+"\n";
-               }
-           }
-           if (paymentNotification.Text == "")
-               paymentNotification.Text = "None";
+                    DataTable payments = new Payment().getAmount(dt.Rows[i][0].ToString());
+                    double total = 0;
+                    for (int j = 0; j < payments.Rows.Count; j++)
+                    {
+                        total += Convert.ToDouble(payments.Rows[j][2]);
+
+                    }
+                    paymentNotification.Text += "$" + String.Format("{0:0.00}", Math.Round(Convert.ToDouble(dt.Rows[i][3].ToString()) - total, 2))
+                        + " on invoice #" + dt.Rows[i][0].ToString() + "\n";
+                }
+            }
+            if (paymentNotification.Text == "")
+                paymentNotification.Text = "None";
         }
 
 
@@ -192,6 +193,8 @@ namespace FAFOS
         {
 
             tile _tile = (tile)sender;
+            _tile.tileWidth = 200;
+            _tile.tileHieght = 30;
             _tile.Tag = "0";
 
             screenCenterLeft = (int)((screenWidth / 2) - (_tile.tileWidth / 2));
@@ -229,7 +232,7 @@ namespace FAFOS
 
             if (T.Tag.Equals("0")) // move to the center
             {
-              //  T.Resize = new System.Drawing.Size(300, 300);
+                //  T.Resize = new System.Drawing.Size(300, 300);
                 T.playMovie();
                 if (T.Left < screenCenterLeft)
                 {
@@ -283,7 +286,7 @@ namespace FAFOS
             }
             else if (T.Tag.Equals("3")) // wait 1 second
             {
-                
+
                 TimeSpan elapsed = DateTime.Now - t1;
                 if (elapsed.Seconds >= 1)
                 {
@@ -354,11 +357,9 @@ namespace FAFOS
                 else if (T.Name == "itinerary")
                 {
                     MapsForm form = new MapsForm(userid, orders, services);
-                    
-                   
-                    form.Show();
-                    
 
+
+                    form.Show();
                 }
                 else if (T.Name == "addClient")
                 {
@@ -394,9 +395,9 @@ namespace FAFOS
                 else if (T.Name == "revenueReport")
                 {
                     ReportsController r = new ReportsController(userid.ToString());
-                    r.report(1) ;
-                  //  Report form = new InspectionForm(userid.ToString());
-                   // form.Show();
+                    r.report(1);
+                    //  Report form = new InspectionForm(userid.ToString());
+                    // form.Show();
                 }
                 T.tileReset();
                 T.showFrame(0);
@@ -415,144 +416,178 @@ namespace FAFOS
             get { return screenHeight; }
         }
 
- 
+
         private void View_Load(object sender, EventArgs e)
         {
 
             this.txtUsername.Focus();
-         }
+        }
 
         private void Exit_btn_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
 
         private void Login_btn_Click(object sender, EventArgs e)
         {
 
-            if (Login())
+            //if (Login())
+            //{
+            userid = 1;
+            pnlLogin.Visible = false;
+            this.Exit_btn.Focus();
+
+            Logout.Visible = true;
+            UserSettings.Visible = true;
+            menuStrip1.Visible = true;
+            /*quote.Visible = true;
+            editQuote.Visible = true;
+            salesOrder.Visible = true;
+            editSalesOrder.Visible = true;
+            convertSalesOrder.Visible = true;
+            invoice.Visible = true;*/
+
+            /*inventory.Visible = true;
+            purchaseRecord.Visible = true;
+            payment.Visible = true;
+            itinerary.Visible = true;
+            inspection.Visible = true;*/
+
+            /*addClient.Visible = true;
+            addContract.Visible = true;
+            editClient.Visible = true;
+            editContract.Visible = true;
+
+            statement.Visible = true;
+            jobReport.Visible = true;
+            revenueReport.Visible = true;
+            royaltyFee.Visible = true;
+            if (!user.checkAdmin(userid))
+                royaltyFee.Visible = false;*/
+            //   allRevenue.Visible = true;
+
+            syncAndroid.Visible = true;
+            syncHQ.Visible = true;
+
+            Operation.Visible = true;
+            Document.Visible = true;
+            Client.Visible = true;
+            Report.Visible = true;
+            label9.Visible = true;
+
+
+            lblUsername.Visible = false;
+            txtUsername.Visible = false;
+            lblPassword.Visible = false;
+            txtPassword.Visible = false;
+            Login_btn.Visible = false;
+            /*Logout_btn.Visible = true;
+            userSettings.Visible = true;*/
+            lblUserInfo.Visible = true;
+            notificationPanel.Visible = true;
+            profilePic.Visible = true;
+            //pnlUser.Visible = true;
+
+
+            try
             {
-               // userid = 1;
-                pnlLogin.Visible = false;
-                this.Exit_btn.Focus();
-                quote.Visible = true;
-                editQuote.Visible = true;
-                salesOrder.Visible = true;
-                editSalesOrder.Visible = true;
-                convertSalesOrder.Visible = true;
-                invoice.Visible = true;
-                inventory.Visible = true;
-                purchaseRecord.Visible = true;
-                payment.Visible = true;
-                itinerary.Visible = true;
-                inspection.Visible = true;
-               
-                addClient.Visible = true;
-                addContract.Visible = true;
-                editClient.Visible = true;
-                editContract.Visible = true;
-
-                statement.Visible = true;
-                jobReport.Visible = true;
-                revenueReport.Visible = true;
-                royaltyFee.Visible = true;
-                if (!user.checkAdmin(userid))
-                    royaltyFee.Visible = false;
-             //   allRevenue.Visible = true;
-
-                syncAndroid.Visible = true;
-                syncHQ.Visible = true;
-
-                label5.Visible = true;
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                label9.Visible = true;
-
-                
-                lblUsername.Visible = false;
-                txtUsername.Visible = false;
-                lblPassword.Visible = false;
-                txtPassword.Visible = false;
-                Login_btn.Visible = false;
-                Logout_btn.Visible = true;
-                userSettings.Visible = true;
-                lblUserInfo.Visible = true;
-                notificationPanel.Visible = true;
-                profilePic.Visible = true;
-                pnlUser.Visible = true;
-
-                
-                try
-                {
-                    piclist = MUser.LoadImages();
-                }
-                catch (Exception)
-                {
-                    
-                    piclist.Add(FAFOS.Properties.Resources.DefaultProPic);
-                    MUser.SaveImages(piclist);
-                }
-
-                this.profilePic.BackgroundImage = piclist[MUser.GetPicID(userid.ToString())];// FAFOS.Properties.Resources.Shades;
-                this.profilePic.BackgroundImageLayout = ImageLayout.Stretch;
-              
-
-                    lblUserInfo.Text = "Welcome\n " + user.getName(userid);
-
-
-                quote.tileLocation = quote.Location;
-                editQuote.tileLocation = editQuote.Location;
-                salesOrder.tileLocation = salesOrder.Location;
-                convertSalesOrder.tileLocation = convertSalesOrder.Location;
-                editSalesOrder.tileLocation = editSalesOrder.Location;
-
-                invoice.tileLocation = invoice.Location;
-                inventory.tileLocation = inventory.Location;
-                purchaseRecord.tileLocation = purchaseRecord.Location;
-                payment.tileLocation = payment.Location;
-                itinerary.tileLocation = itinerary.Location;
-                inspection.tileLocation = inspection.Location;
-
-                addClient.tileLocation = addClient.Location;
-                editClient.tileLocation = editClient.Location;
-                addContract.tileLocation = addContract.Location;
-                editContract.tileLocation = editContract.Location;
-
-                statement.tileLocation = statement.Location;
-                jobReport.tileLocation = jobReport.Location;
-                revenueReport.tileLocation = revenueReport.Location;
-                royaltyFee.tileLocation = royaltyFee.Location;
-             //   allRevenue.tileLocation = allRevenue.Location;
-                
-                string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-
-                quote.setMovie(path + "\\Resources\\Quote1.swf");
-                editQuote.setMovie(path + "\\Resources\\EditQuote.swf");
-                salesOrder.setMovie(path + "\\Resources\\CreateSalesOrder1.swf");
-                editSalesOrder.setMovie(path + "\\Resources\\EditSalesOrder1.swf");
-                convertSalesOrder.setMovie(path + "\\Resources\\ConvertSalesOrder1.swf");
-                invoice.setMovie(path + "\\Resources\\Invoice1.swf");
-                inventory.setMovie(path + "\\Resources\\Inventory1.swf");
-                purchaseRecord.setMovie(path + "\\Resources\\PurchaseRecord.swf");
-                payment.setMovie(path + "\\Resources\\payment1.swf");
-                itinerary.setMovie(path + "\\Resources\\itinerary1.swf");
-                inspection.setMovie(path + "\\Resources\\Inspection.swf");
-
-                addClient.setMovie(path + "\\Resources\\addClient1.swf");
-                addContract.setMovie(path + "\\Resources\\addContract1.swf");
-                editClient.setMovie(path + "\\Resources\\editClient1.swf");
-                editContract.setMovie(path + "\\Resources\\editContract1.swf");
-
-                statement.setMovie(path + "\\Resources\\Statements.swf");
-                jobReport.setMovie(path + "\\Resources\\JobReports.swf");
-                revenueReport.setMovie(path + "\\Resources\\RevenueReports.swf");
-                royaltyFee.setMovie(path + "\\Resources\\RoyaltyFee.swf");
-              //  allRevenue.setMovie(path + "\\Resources\\TotalRevenue.swf");
-
-                Notifications();
+                piclist = MUser.LoadImages();
             }
+            catch (Exception)
+            {
+
+                piclist.Add(FAFOS.Properties.Resources.DefaultProPic);
+                MUser.SaveImages(piclist);
+            }
+
+            this.profilePic.BackgroundImage = piclist[MUser.GetPicID(userid.ToString())];// FAFOS.Properties.Resources.Shades;
+            this.profilePic.BackgroundImageLayout = ImageLayout.Stretch;
+
+
+            lblUserInfo.Text = "Welcome\n " + user.getName(userid);
+
+
+            /*quote.tileLocation = quote.Location;
+            quote.tileWidth = 200;
+            quote.tileHieght = 30;
+            editQuote.tileLocation = editQuote.Location;
+            editQuote.tileWidth = 200;
+            editQuote.tileHieght = 30;
+            salesOrder.tileLocation = salesOrder.Location;
+            convertSalesOrder.tileLocation = convertSalesOrder.Location;
+            editSalesOrder.tileLocation = editSalesOrder.Location;
+
+            invoice.tileLocation = invoice.Location;*/
+            /*inventory.tileLocation = inventory.Location;
+            purchaseRecord.tileLocation = purchaseRecord.Location;
+            payment.tileLocation = payment.Location;
+            itinerary.tileLocation = itinerary.Location;
+            inspection.tileLocation = inspection.Location;*/
+
+            /*addClient.tileLocation = addClient.Location;
+            editClient.tileLocation = editClient.Location;
+            addContract.tileLocation = addContract.Location;
+            editContract.tileLocation = editContract.Location;
+
+            statement.tileLocation = statement.Location;
+            jobReport.tileLocation = jobReport.Location;
+            revenueReport.tileLocation = revenueReport.Location;
+            royaltyFee.tileLocation = royaltyFee.Location;*/
+            //   allRevenue.tileLocation = allRevenue.Location;
+
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+
+            /*quote.setMovie(path + "\\Resources\\Quote1.swf");
+            editQuote.setMovie(path + "\\Resources\\EditQuote.swf");
+            salesOrder.setMovie(path + "\\Resources\\CreateSalesOrder1.swf");
+            editSalesOrder.setMovie(path + "\\Resources\\EditSalesOrder1.swf");
+            convertSalesOrder.setMovie(path + "\\Resources\\ConvertSalesOrder1.swf");
+            invoice.setMovie(path + "\\Resources\\Invoice1.swf");*/
+
+            /*inventory.setMovie(path + "\\Resources\\Inventory1.swf");
+            purchaseRecord.setMovie(path + "\\Resources\\PurchaseRecord.swf");
+            payment.setMovie(path + "\\Resources\\payment1.swf");
+            itinerary.setMovie(path + "\\Resources\\itinerary1.swf");
+            inspection.setMovie(path + "\\Resources\\Inspection.swf");*/
+
+            /*addClient.setMovie(path + "\\Resources\\addClient1.swf");
+            addContract.setMovie(path + "\\Resources\\addContract1.swf");
+            editClient.setMovie(path + "\\Resources\\editClient1.swf");
+            editContract.setMovie(path + "\\Resources\\editContract1.swf");
+
+            statement.setMovie(path + "\\Resources\\Statements.swf");
+            jobReport.setMovie(path + "\\Resources\\JobReports.swf");
+            revenueReport.setMovie(path + "\\Resources\\RevenueReports.swf");
+            royaltyFee.setMovie(path + "\\Resources\\RoyaltyFee.swf");*/
+            //  allRevenue.setMovie(path + "\\Resources\\TotalRevenue.swf");
+
+            /*quote.Visible = false;
+            editQuote.Visible = false;
+            salesOrder.Visible = false;
+            editSalesOrder.Visible = false;
+            convertSalesOrder.Visible = false;
+
+            invoice.Visible = false;*/
+            /*inventory.Visible = false;
+            purchaseRecord.Visible = false;
+            payment.Visible = false;
+            itinerary.Visible = false;
+            inspection.Visible = false;*/
+
+            /*addClient.Visible = false;
+            addContract.Visible = false;
+            editClient.Visible = false;
+            editContract.Visible = false;
+
+            statement.Visible = false;
+            jobReport.Visible = false;
+            revenueReport.Visible = false;
+            royaltyFee.Visible = false;*/
+            // allRevenue.Visible = false;
+
+            Notifications();
+            //}
 
         }
 
@@ -595,7 +630,6 @@ namespace FAFOS
 
         private bool UserAuthenticated(string p, string p_2)
         {
-           
             if (user.check(p, p_2))
             {
                 userid = user.getId(p);
@@ -604,40 +638,69 @@ namespace FAFOS
             return false;
         }
 
-        private void Logout_btn_Click(object sender, EventArgs e)
+        private void Logout_Click(object sender, EventArgs e)
         {
-            quote.Visible = false;
+            /*quote.Visible = false;
             editQuote.Visible = false;
             salesOrder.Visible = false;
             editSalesOrder.Visible = false;
             convertSalesOrder.Visible = false;
+            invoice.Visible = false;*/
 
-            invoice.Visible = false;
-            inventory.Visible = false;
+            Logout.Visible = false;
+            UserSettings.Visible = false;
+
+            EditQuote.Visible = false;
+            Quote.Visible = false;
+            SalesOrder.Visible = false;
+            EditSalesOrder.Visible = false;
+            ConvertSalesOrder.Visible = false;
+            Invoice.Visible = false;
+
+            Itinerary.Visible = false;
+            Inventory.Visible = false;
+            PurchaseRecord.Visible = false;
+            Payment.Visible = false;
+            Inspection.Visible = false;
+
+            AddClient.Visible = false;
+            EditClient.Visible = false;
+            AddContract.Visible = false;
+            EditContract.Visible = false;
+
+            Statement.Visible = false;
+            JobReport.Visible = false;
+            RevenueReport.Visible = false;
+            RoyaltyFee.Visible = false;
+
+            Operation.Visible = false;
+            Document.Visible = false;
+            Client.Visible = false;
+            Report.Visible = false;
+
+            menuStrip1.Visible = false;
+            /*inventory.Visible = false;
             purchaseRecord.Visible = false;
             payment.Visible = false;
             itinerary.Visible = false;
-            inspection.Visible = false;
+            inspection.Visible = false;*/
 
-            addClient.Visible = false;
+            /*addClient.Visible = false;
             addContract.Visible = false;
             editClient.Visible = false;
             editContract.Visible = false;
+
             statement.Visible = false;
             jobReport.Visible = false;
             revenueReport.Visible = false;
-            royaltyFee.Visible = false;
-           // allRevenue.Visible = false;
+            royaltyFee.Visible = false;*/
+            // allRevenue.Visible = false;
 
             syncAndroid.Visible = false;
             syncHQ.Visible = false;
 
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
             label9.Visible = false;
-            pnlUser.Visible = false;
+            //pnlUser.Visible = false;
 
             lblUsername.Visible = true;
             txtUsername.Visible = true;
@@ -647,16 +710,15 @@ namespace FAFOS
 
 
             Login_btn.Visible = true;
-            Logout_btn.Visible = false;
-            userSettings.Visible = false;
+            /*Logout_btn.Visible = false;
+            userSettings.Visible = false;*/
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
             lblUserInfo.Text = "";
             txtUsername.Text = "";
-            txtPassword.Text="";
+            txtPassword.Text = "";
             userid = 0;
-
         }
 
         private void userSettings_Click(object sender, EventArgs e)
@@ -665,8 +727,568 @@ namespace FAFOS
             form.Show();
         }
 
- 
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Operation_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Operation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Document_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Client_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Report_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Report_MouseEnter(object sender, EventArgs e)
+        {
+            if (Statement.Visible == false)
+            {
+                Statement.Visible = true;
+                JobReport.Visible = true;
+                RevenueReport.Visible = true;
+                RoyaltyFee.Visible = true;
+
+                Itinerary.Visible = false;
+                Inventory.Visible = false;
+                PurchaseRecord.Visible = false;
+                Payment.Visible = false;
+                Inspection.Visible = false;
+
+                AddClient.Visible = false;
+                EditClient.Visible = false;
+                AddContract.Visible = false;
+                EditContract.Visible = false;
+
+                EditQuote.Visible = false;
+                Quote.Visible = false;
+                SalesOrder.Visible = false;
+                EditSalesOrder.Visible = false;
+                ConvertSalesOrder.Visible = false;
+                Invoice.Visible = false;
+            }
+            /*if (statement.Visible == false)
+            {
+                statement.Visible = true;
+                jobReport.Visible = true;
+                revenueReport.Visible = true;
+                royaltyFee.Visible = true;
+
+                quote.Visible = false;
+                editQuote.Visible = false;
+                salesOrder.Visible = false;
+                editSalesOrder.Visible = false;
+                convertSalesOrder.Visible = false;
+
+                invoice.Visible = false;
+                inventory.Visible = false;
+                purchaseRecord.Visible = false;
+                payment.Visible = false;
+                itinerary.Visible = false;
+                inspection.Visible = false;
+
+                addClient.Visible = false;
+                addContract.Visible = false;
+                editClient.Visible = false;
+                editContract.Visible = false;
+            }
+            //else
+            //{
+            //    statement.Visible = false;
+            //    jobReport.Visible = false;
+            //    revenueReport.Visible = false;
+            //    royaltyFee.Visible = false;
+            //}*/
+        }
+
+        private void Document_MouseEnter(object sender, EventArgs e)
+        {
+            if (Quote.Visible == false)
+            {
+                Quote.Visible = true;
+                EditQuote.Visible = true;
+                SalesOrder.Visible = true;
+                EditSalesOrder.Visible = true;
+                ConvertSalesOrder.Visible = true;
+                Invoice.Visible = true;
+
+                Itinerary.Visible = false;
+                Inventory.Visible = false;
+                PurchaseRecord.Visible = false;
+                Payment.Visible = false;
+                Inspection.Visible = false;
+
+                AddClient.Visible = false;
+                EditClient.Visible = false;
+                AddContract.Visible = false;
+                EditContract.Visible = false;
+
+                Statement.Visible = false;
+                JobReport.Visible = false;
+                RevenueReport.Visible = false;
+                RoyaltyFee.Visible = false;
+            }
+            /*if (quote.Visible == false)
+            {
+                quote.Visible = true;
+                editQuote.Visible = true;
+                salesOrder.Visible = true;
+                editSalesOrder.Visible = true;
+                convertSalesOrder.Visible = true;
+                invoice.Visible = true;
+                inventory.Visible = false;
+                purchaseRecord.Visible = false;
+                payment.Visible = false;
+                itinerary.Visible = false;
+                inspection.Visible = false;
+
+                addClient.Visible = false;
+                addContract.Visible = false;
+                editClient.Visible = false;
+                editContract.Visible = false;
+
+                statement.Visible = false;
+                jobReport.Visible = false;
+                revenueReport.Visible = false;
+                royaltyFee.Visible = false;
+            }
+            //else
+            //{
+            //    quote.Visible = false;
+             //   editQuote.Visible = false;
+            //    salesOrder.Visible = false;
+            //    editSalesOrder.Visible = false;
+            //    convertSalesOrder.Visible = false;
+            //    invoice.Visible = false;
+            //}*/
+        }
+
+        private void Client_MouseEnter(object sender, EventArgs e)
+        {
+            if (AddClient.Visible == false)
+            {
+                AddClient.Visible = true;
+                EditClient.Visible = true;
+                AddContract.Visible = true;
+                EditContract.Visible = true;
+
+                Itinerary.Visible = false;
+                Inventory.Visible = false;
+                PurchaseRecord.Visible = false;
+                Payment.Visible = false;
+                Inspection.Visible = false;
+
+                EditQuote.Visible = false;
+                Quote.Visible = false;
+                SalesOrder.Visible = false;
+                EditSalesOrder.Visible = false;
+                ConvertSalesOrder.Visible = false;
+                Invoice.Visible = false;
+
+                Statement.Visible = false;
+                JobReport.Visible = false;
+                RevenueReport.Visible = false;
+                RoyaltyFee.Visible = false;
+            }
+            /*if (addClient.Visible == false)
+            {
+                addClient.Visible = true;
+                addContract.Visible = true;
+                editClient.Visible = true;
+                editContract.Visible = true;
+
+                quote.Visible = false;
+                editQuote.Visible = false;
+                salesOrder.Visible = false;
+                editSalesOrder.Visible = false;
+                convertSalesOrder.Visible = false;
+
+                invoice.Visible = false;
+                inventory.Visible = false;
+                purchaseRecord.Visible = false;
+                payment.Visible = false;
+                itinerary.Visible = false;
+                inspection.Visible = false;
+
+                statement.Visible = false;
+                jobReport.Visible = false;
+                revenueReport.Visible = false;
+                royaltyFee.Visible = false;
+            }
+            else
+            {
+                addClient.Visible = false;
+                addContract.Visible = false;
+                editClient.Visible = false;
+                editContract.Visible = false;
+            } */
+        }
+
+        private void Operation_MouseEnter(object sender, EventArgs e)
+        {
+            if (Itinerary.Visible == false)
+            {
+                Itinerary.Visible = true;
+                Inventory.Visible = true;
+                PurchaseRecord.Visible = true;
+                Payment.Visible = true;
+                Inspection.Visible = true;
+
+                EditQuote.Visible = false;
+                Quote.Visible = false;
+                SalesOrder.Visible = false;
+                EditSalesOrder.Visible = false;
+                ConvertSalesOrder.Visible = false;
+                Invoice.Visible = false;
+
+                AddClient.Visible = false;
+                EditClient.Visible = false;
+                AddContract.Visible = false;
+                EditContract.Visible = false;
+
+                Statement.Visible = false;
+                JobReport.Visible = false;
+                RevenueReport.Visible = false;
+                RoyaltyFee.Visible = false;
+            }
+        }
+
+        private void inspection_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itinerary_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editQuote_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //Operations
+        //
+        private void Itinerary_Click(object sender, EventArgs e)
+        {
+            MapsForm form = new MapsForm(userid, orders, services);
+            form.Show();
+        }
+
+        private void itineraryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MapsForm form = new MapsForm(userid, orders, services);
+            form.Show();
+        }
+
+        private void ItineraryTT_Popup(object sender, PopupEventArgs e)
+        {
+            //ItineraryTT.SetToolTip(Itinerary, "This gives you a list of Itinerary");
+            //ItineraryTT.Show("List of Stuff", Itinerary);
+        }
+
+        private void Inventory_Click(object sender, EventArgs e)
+        {
+            InventoryForm form = new InventoryForm(userid);
+            form.Show();
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryForm form = new InventoryForm(userid);
+            form.Show();
+        }
+
+        private void PurchaseRecord_Click(object sender, EventArgs e)
+        {
+            PurchaseRecord form = new PurchaseRecord(userid);
+            form.Show();
+        }
+
+        private void purchaseRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PurchaseRecord form = new PurchaseRecord(userid);
+            form.Show();
+        }
+
+        private void Payment_Click(object sender, EventArgs e)
+        {
+            PaymentForm payment_form = new PaymentForm(userid);
+            payment_form.Show();
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PaymentForm payment_form = new PaymentForm(userid);
+            payment_form.Show();
+        }
+
+        private void Inspection_Click(object sender, EventArgs e)
+        {
+            InspectionForm form = new InspectionForm(userid.ToString());
+            form.Show();
+        }
+
+        private void inspectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InspectionForm form = new InspectionForm(userid.ToString());
+            form.Show();
+        }
+        //Operations
+        //
 
 
+        //Documents
+        //
+        private void Quote_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(1);
+        }
+
+        private void createQuoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(1);
+        }
+
+        private void EditQuote_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(2);
+        }
+
+        private void editQuoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(2);
+        }
+
+        private void SalesOrder_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(1);
+            //payment_form.Show();
+        }
+
+        private void createSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(1);
+            //payment_form.Show();
+        }
+
+        private void EditSalesOrder_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(3);
+            //payment_form.Show();
+        }
+
+        private void editSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(3);
+            //payment_form.Show();
+        }
+
+        private void ConvertSalesOrder_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(2);
+            //payment_form.Show();
+
+        }
+
+        private void convertSalesOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Creating the Sales order controller. Was in tile call but must be moved here to allow proper initialization
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+
+            my_controller.salesOrder(2);
+            //payment_form.Show();
+        }
+
+        private void Invoice_Click(object sender, EventArgs e)
+        {
+            InvoiceForm invoice_form = new InvoiceForm(userid);
+            invoice_form.Show();
+        }
+
+        private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InvoiceForm invoice_form = new InvoiceForm(userid);
+            invoice_form.Show();
+        }
+        //Documents
+        //
+
+        //Client
+        //
+        private void AddClient_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile _tile = new tile();
+            _tile.Name = "addClient";
+            c.New_client_button_Click(_tile, userid);
+        }
+
+        private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile _tile = new tile();
+            _tile.Name = "addClient";
+            c.New_client_button_Click(_tile, userid);
+        }
+
+        private void EditClient_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "editClient";
+            c.Edit_Client_Button_Click(T, userid);
+        }
+
+        private void editClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "editClient";
+            c.Edit_Client_Button_Click(T, userid);
+        }
+
+        private void AddContract_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "addContract";
+            c.Add_contract_Button_Click(T, userid);
+        }
+
+        private void addContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "addContract";
+            c.Add_contract_Button_Click(T, userid);
+        }
+
+        private void EditContract_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "editContract";
+            c.Edit_contract_Button_Click(T, userid);
+        }
+
+        private void editContractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MaintainClientController c = new MaintainClientController();
+            tile T = new tile();
+            T.Name = "editContract";
+            c.Edit_contract_Button_Click(T, userid);
+        }
+        //Client
+        //
+
+        //Reports
+        //
+        private void Statement_Click(object sender, EventArgs e)
+        {
+            Statements form = new Statements(userid);
+            form.Show();
+        }
+
+        private void statementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Statements form = new Statements(userid);
+            form.Show();
+        }
+
+        private void RoyaltyFee_Click(object sender, EventArgs e)
+        {
+            RoyaltyFeeCollection form = new RoyaltyFeeCollection(userid.ToString());
+            form.Show();
+        }
+
+        private void royaltyFeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RoyaltyFeeCollection form = new RoyaltyFeeCollection(userid.ToString());
+            form.Show();
+        }
+
+        private void JobReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void jobReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RevenueReport_Click(object sender, EventArgs e)
+        {
+            ReportsController r = new ReportsController(userid.ToString());
+            r.report(1);
+        }
+
+        private void revenueReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportsController r = new ReportsController(userid.ToString());
+            r.report(1);
+        }
+        //Reports
+        //
+
+        private void quoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void documentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }

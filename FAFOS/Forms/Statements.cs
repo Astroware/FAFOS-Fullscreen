@@ -23,11 +23,11 @@ namespace FAFOS
             userid = id;
             setup(userid.ToString(), "FAFOS Statement");
 
-            pnlStatement.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width/2-Convert.ToInt32(pnlStatement.Size.Width)/2,
+            pnlStatement.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlStatement.Size.Width) / 2,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlStatement.Size.Height) / 2);
 
 
-            string [] clients = new Invoice().getOutstandingClients();
+            string[] clients = new Invoice().getOutstandingClients();
             string[] names = new string[clients.Length];
             DataTable db = new DataTable();
             db.Columns.Add("id");
@@ -45,22 +45,22 @@ namespace FAFOS
 
         private void btnStatement_Click(object sender, EventArgs e)
         {
-           
+
             if (cbClients.Text != "")
             {
 
                 generateStatement();
-               // MessageBox.Show(cbClients.Text + " -/ " + cbClients.SelectedValue);
+                // MessageBox.Show(cbClients.Text + " -/ " + cbClients.SelectedValue);
 
                 Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                + "\\Resources\\Statement_"+cbClients.SelectedValue+".pdf");
-                 testDialog.ShowDialog(this);
+                + "\\Resources\\Statement_" + cbClients.SelectedValue + ".pdf");
+                testDialog.ShowDialog(this);
             }
-          
-           
+
+
         }
 
-        
+
         private void generateStatement()
         {
             try
@@ -91,7 +91,7 @@ namespace FAFOS
 
                 //Create the font called Times Bold
                 TimesBold.CreateFontDict("T3", "Times-Bold");
-                
+
                 //Create the font called Courier
                 Courier.CreateFontDict("T4", "Times-Roman");
 
@@ -100,7 +100,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Statement_"+cbClients.SelectedValue+".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Statement_" + cbClients.SelectedValue + ".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
@@ -175,7 +175,7 @@ namespace FAFOS
                 textAndtable.AddText(50, 90, franchisee[0], 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 100, franchisee[2] + ", " + franchisee[3] + ", " + franchisee[4] + " " + franchisee[1], 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 110, user[2], 10, "T3", Align.LeftAlign);
-               // textAndtable.AddText(50, 60, "Total: " + txtTotal.Text, 10, "T3", Align.LeftAlign);
+                // textAndtable.AddText(50, 60, "Total: " + txtTotal.Text, 10, "T3", Align.LeftAlign);
 
 
                 textAndtable.AddText(50, 190, client[0], 10, "T3", Align.LeftAlign);
@@ -208,7 +208,7 @@ namespace FAFOS
                 textAndtable.SetParams(table, cellColor, Align.RightAlign, 3);
                 textAndtable.AddRow(false, 10, "T3", alignC, false, "Statement Date");
                 textAndtable.AddRow(false, 10, "T4", alignC, false, DateTime.Today.ToShortDateString());
-                
+
                 //After drawing table and text add them to the page 
                 content.SetStream(textAndtable.EndTable(lineColor, true));
 
@@ -238,14 +238,14 @@ namespace FAFOS
                 alignC2[4] = Align.CenterAlign;
 
                 //Fill in the parameters for the table
-                TableParams table2 = new TableParams(5, 120,100,100,100,40);
+                TableParams table2 = new TableParams(5, 120, 100, 100, 100, 40);
                 table2.yPos = 510;
                 table2.xPos = 37;
                 table2.rowHeight = 15;
 
                 //Set the parameters of this table
                 textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
-               // MessageBox.Show("\u221A");
+                // MessageBox.Show("\u221A");
                 textAndtable.AddRow(false, 10, "T3", alignC1, false, "Statement Date", "Invoice No.", "Balance", "Total Due", "");
                 String[] rows = new Invoice().getOutstandingInvoices(cbClients.SelectedValue.ToString());
                 double total = 0;
@@ -297,7 +297,7 @@ namespace FAFOS
                 textAndtable.AddRow(false, 10, "T3", alignC3, false, "Age", "Current ", "31-60 ", "Over 60 ", "Total");
                 textAndtable.AddRow(false, 10, "T3", alignC3, false, "Amount", below30.ToString(), between3160.ToString(), over60.ToString(), total.ToString());
                 content.SetStream(textAndtable.EndTable(lineColor, true));
-              
+
                 content.SetStream(textAndtable.EndText());
 
 
@@ -318,7 +318,7 @@ namespace FAFOS
                 file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
 
                 //write image dict
-               file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                file.Write(I1.GetImageDict(file.Length, out size), 0, size);
 
                 file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
                 file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);

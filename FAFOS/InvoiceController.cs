@@ -10,7 +10,7 @@ namespace FAFOS
 {
     class InvoiceController
     {
-        
+
         private static InvoiceForm _view;
         private SalesOrder sales_order;
         private OrderItems order_items;
@@ -20,7 +20,7 @@ namespace FAFOS
         private ClientContract contract;
         private Franchisee franchisee;
         private Inventory inventory;
-        
+
         public InvoiceController()
         {
             sales_order = new SalesOrder();
@@ -38,26 +38,26 @@ namespace FAFOS
             _view = (InvoiceForm)((Button)sender).FindForm();
             try
             {
-                
-            DataTable dt1 = order_items.get2(_view.GetText());
 
-            DataTable dt2 = new DataTable();
-            dt2.Columns.Add("item_id", typeof(int));
-            dt2.Columns.Add("name", typeof(String));
-            dt2.Columns.Add("description", typeof(String));
+                DataTable dt1 = order_items.get2(_view.GetText());
 
-            int rows = dt1.Rows.Count;
-            for (int i = 1; i <= rows; i++)
-            {
-                DataRow row = dt2.NewRow();
-                row["item_id"] = (int)item.getRow(dt1.Rows[i - 1].ItemArray[4].ToString()).ItemArray[0];
-                row["name"] = item.getRow(dt1.Rows[i - 1].ItemArray[4].ToString()).ItemArray[1].ToString();
-                row["description"] = item.getRow(dt1.Rows[i - 1].ItemArray[4].ToString()).ItemArray[2].ToString();
-                dt2.Rows.Add(row);
+                DataTable dt2 = new DataTable();
+                dt2.Columns.Add("item_id", typeof(int));
+                dt2.Columns.Add("name", typeof(String));
+                dt2.Columns.Add("description", typeof(String));
 
-            }
+                int rows = dt1.Rows.Count;
+                for (int i = 1; i <= rows; i++)
+                {
+                    DataRow row = dt2.NewRow();
+                    row["item_id"] = (int)item.getRow(dt1.Rows[i - 1].ItemArray[4].ToString()).ItemArray[0];
+                    row["name"] = item.getRow(dt1.Rows[i - 1].ItemArray[4].ToString()).ItemArray[1].ToString();
+                    row["description"] = item.getRow(dt1.Rows[i - 1].ItemArray[4].ToString()).ItemArray[2].ToString();
+                    dt2.Rows.Add(row);
 
-            
+                }
+
+
                 var results = from table1 in dt1.AsEnumerable()
                               join table2 in dt2.AsEnumerable() on (int)table1["item_id"] equals (int)table2["item_id"]
                               select new
@@ -65,10 +65,10 @@ namespace FAFOS
                                   OrderItemId = table1["order_items_id"].ToString(),
                                   name = table2["name"].ToString(),
                                   description = table2["description"].ToString(),
-                                  hours = table1["hours"]!=null?  table1["hours"].ToString():"",
+                                  hours = table1["hours"] != null ? table1["hours"].ToString() : "",
                                   quantity = table1["quantity"] != null ? table1["quantity"].ToString() : "",
-                                  
-                                  price = String.Format("{0:0.00}", Math.Round((double)table1["price"],2)),
+
+                                  price = String.Format("{0:0.00}", Math.Round((double)table1["price"], 2)),
                                   total = String.Format("{0:0.00}", table1["quantity"] != DBNull.Value ?
                                   Math.Round((double)table1["price"] * Convert.ToInt32(table1["quantity"].ToString())) :
                                   Math.Round((double)table1["price"] * Convert.ToInt32(table1["hours"].ToString())), 2)
@@ -80,15 +80,15 @@ namespace FAFOS
 
                 DataTable dt = LINQToDataTable(results);
                 _view.SetTable(dt);
-                
-           
 
-            double total;
-            double tax;
-            DataTable dtSales = sales_order.get(_view.GetText());
-            total = Convert.ToDouble(String.Format("{0:0.00}", Math.Round((double)dtSales.Rows[0].ItemArray[2],2)));
-            tax =  (double)dtSales.Rows[0].ItemArray[3];
-            _view.SetTotal(total,tax);
+
+
+                double total;
+                double tax;
+                DataTable dtSales = sales_order.get(_view.GetText());
+                total = Convert.ToDouble(String.Format("{0:0.00}", Math.Round((double)dtSales.Rows[0].ItemArray[2], 2)));
+                tax = (double)dtSales.Rows[0].ItemArray[3];
+                _view.SetTotal(total, tax);
             }
             catch (Exception ef)
             {
@@ -112,7 +112,7 @@ namespace FAFOS
 
 
                 //Update Inventory
-                if (!inventory.set(_view.GetText(),_view.getUserId()))
+                if (!inventory.set(_view.GetText(), _view.getUserId()))
                     _view.Close();
                 else
                 {
