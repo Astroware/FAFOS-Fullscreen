@@ -60,7 +60,7 @@ namespace FAFOS
                     _adminForm.Close();
                 else
                 {
-                    if (MessageBox.Show("Are u sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         _adminForm.Close();
                     else
                         return;
@@ -73,7 +73,7 @@ namespace FAFOS
                     _hqForm.Close();
                 else
                 {
-                    if (MessageBox.Show("Are u sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         _hqForm.Close();
                     else
                         return;
@@ -120,7 +120,7 @@ namespace FAFOS
                 }
                 else
                 {
-                    if (MessageBox.Show("Are u sure you want to discard admin changes?", "Confirm Discard", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Discard", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         _adminForm.Close();
                         _adminForm = null;
@@ -155,7 +155,7 @@ namespace FAFOS
             else
             {
                 if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {// if we are good, submit changes to dataBase
+                {// if we are good, submit changes to dataBaseadmi
                     if (_userForm.ValidToSet())
                     {
                         _user.Set(_userForm.GetFields());
@@ -205,7 +205,7 @@ namespace FAFOS
             var dgv = sender as DataGridView;
             if ((e.ColumnIndex == 2) && (e.RowIndex > -1))//-----------------------------------password reset
             {
-                if (MessageBox.Show("Are you sure you want to rest this user's Password?", "Confirm Reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Are you sure you want to reset this user's Password?", "Confirm Reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     String newPass = GeneratePassword();
                     dgv.Rows[e.RowIndex].Cells["passSetCol"].Value = newPass;
@@ -279,7 +279,7 @@ namespace FAFOS
         }
         public void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are u sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Are you sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (_adminForm.isOkToClose())
                 {
