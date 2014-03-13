@@ -21,11 +21,11 @@ namespace FAFOS
             //User label
             userid = id;
             setup(userid, "FAFOS Royalty Fee Collection");
-             r = new RoyaltyFee();
+            r = new RoyaltyFee();
 
-             franchiseeBox.DataSource = new Franchisee().getAll();
-             franchiseeBox.DisplayMember = "name";
-             franchiseeBox.ValueMember = "ID";
+            franchiseeBox.DataSource = new Franchisee().getAll();
+            franchiseeBox.DisplayMember = "name";
+            franchiseeBox.ValueMember = "ID";
 
 
 
@@ -34,7 +34,7 @@ namespace FAFOS
         private void RoyaltyFeeCollection_Load(object sender, EventArgs e)
         {
             int[] ids = new Franchisee().getTotal();
-            for (int h = 0; h <ids.Length ; h++)
+            for (int h = 0; h < ids.Length; h++)
             {
 
                 String[] data = new String[6];
@@ -64,11 +64,11 @@ namespace FAFOS
                     }
                 }
 
-               
+
                 if (!r.check(data[0], data[3] + "-" + data[2] + "-" + data[1]))
                     r.set(data);
             }
-            
+
         }
 
         private void show_btn_Click(object sender, EventArgs e)

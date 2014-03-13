@@ -11,7 +11,7 @@ namespace FAFOS
 {
     public class QuoteController
     {
-       // private static FAFOS _view;
+        // private static FAFOS _view;
         private static String franchiseeUserId;
         private static String franchiseeId;
         private int type;
@@ -51,15 +51,15 @@ namespace FAFOS
             QuoteItems items = new QuoteItems();
             string id = new Quote().set(franchiseeUserId, newQuote.getServiceAddressId(), tax.ToString(), newQuote.getTotal());
             DataGridView dt = newQuote.getQuoteItems();
-            for (int i = 0; i < dt.Rows.Count-1; i++)
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
             {
-               items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[3].Value != null ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
-                    dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
+                items.set(dt.Rows[i].Cells[0].Value.ToString(), dt.Rows[i].Cells[4].Value != null ? dt.Rows[i].Cells[4].Value.ToString() : "NULL",
+                     dt.Rows[i].Cells[3].Value != null ? dt.Rows[i].Cells[3].Value.ToString() : "NULL",
+                     dt.Rows[i].Cells[5].Value.ToString(), dt.Rows[i].Cells[1].Value.ToString(), id);
             }
             newQuote.Dispose();
             MessageBox.Show("The Quote ID is " + id + "!");
-           // _view.Show();
+            // _view.Show();
         }
 
         public void saveQuote(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace FAFOS
             QuoteForm newSalesOrder = (QuoteForm)((Button)sender).FindForm();
             //save
             newSalesOrder.Dispose();
-         //   _view.Show();
+            //   _view.Show();
         }
 
         public void dgvSalesOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -168,7 +168,7 @@ namespace FAFOS
 
                 //Create the font called Courier
                 Courier.CreateFontDict("T4", "Courier");
-                
+
                 //Set the info Dictionary. xxx will be the invoice number
                 infoDict.SetInfo("Quote xxx" /*+ quoteForm.getID()*/, "System Generated", "Fire-Alert");
 

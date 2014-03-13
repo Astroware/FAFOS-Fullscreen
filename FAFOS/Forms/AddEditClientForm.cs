@@ -18,6 +18,11 @@ namespace FAFOS
         int userid;
         Users user;
 
+        public AddEditClientForm()
+        {
+
+        }
+
         public AddEditClientForm(MaintainClientController parent, bool edit, int id)
         {
             InitializeComponent();
@@ -27,8 +32,8 @@ namespace FAFOS
             noChanges = true;
 
             #region Form Event Handlers
-            
-           /* this.Back_Button.Click += new System.EventHandler(my_controller.Client_Cancel_Button_Click);
+
+            /* this.Back_Button.Click += new System.EventHandler(my_controller.Client_Cancel_Button_Click);
             this.Back_Button.MouseEnter += new EventHandler(button1_MouseEnter);
             this.Back_Button.MouseLeave += new EventHandler(button1_MouseLeave);
             this.Back_Button.Location = new Point(65, 38);
@@ -38,7 +43,7 @@ namespace FAFOS
             */
             this.contract_Button.Click += new EventHandler(my_controller.Client_Contract_Button_Click);
             this.Ok_Button.Click += new System.EventHandler(my_controller.Client_Ok_Button_Click);
-           // this.Cancel_Button.Click += new System.EventHandler(my_controller.Client_Cancel_Button_Click);
+            // this.Cancel_Button.Click += new System.EventHandler(my_controller.Client_Cancel_Button_Click);
             this.delete_Button.Click += new EventHandler(my_controller.Client_Delete_Button_Click);
             this.CountryBox.SelectedValueChanged += new System.EventHandler(my_controller.Country_Changed);
             this.ProvStateBox.SelectedValueChanged += new EventHandler(my_controller.Province_Changed);
@@ -54,10 +59,12 @@ namespace FAFOS
             this.SecondPhoneTextBox.TextChanged += new EventHandler(my_controller.Client_Text_Changed);
             this.FaxTextBox.TextChanged += new EventHandler(my_controller.Client_Text_Changed);
             this.PrimContactTextBox.TextChanged += new EventHandler(my_controller.Client_Text_Changed);
+            this.delete_Button.Visible = false;
             #endregion
 
             if (isEdit)
             {
+                this.delete_Button.Visible = true;
                 #region Create and set a combo selection box
                 DataTable clients = MClient.GetList();
                 nameComboBox = new ComboBox();
@@ -72,7 +79,7 @@ namespace FAFOS
                     dt.ImportRow(r);
 
                 nameComboBox.DataSource = dt;
-                nameComboBox.DisplayMember = dt.Columns[1].ToString();                
+                nameComboBox.DisplayMember = dt.Columns[1].ToString();
                 nameComboBox.ValueMember = dt.Columns[0].ToString();
 
                 nameComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -124,13 +131,14 @@ namespace FAFOS
             this.EmailTextBox.Text = values[8];
             this.PoBoxTextBox.Text = values[9];
             this.PrimContactTextBox.Text = values[10];
-            
+
             if (values[14] == "")
                 contract_Button.Text = "<Click to Add>";
-            else{
+            else
+            {
                 try { contract_Button.Text = MClientContract.GetName(values[14]); }
                 catch (Exception) { contract_Button.Text = "Error"; }
-                }
+            }
             noChanges = true;
 
         }
@@ -147,18 +155,18 @@ namespace FAFOS
         {
             this.ProvStateBox.DataSource = provState;
             this.ProvStateBox.DisplayMember = provState.Columns[1].ToString();
-            this.ProvStateBox.ValueMember = provState.Columns[0].ToString();            
+            this.ProvStateBox.ValueMember = provState.Columns[0].ToString();
         }
         public void SetProvStateBox(String provID)
         {
-            this.ProvStateBox.SelectedValue = "-1";            
+            this.ProvStateBox.SelectedValue = "-1";
             this.ProvStateBox.SelectedValue = provID;
         }
-        public void SetCityBox( DataTable city)
+        public void SetCityBox(DataTable city)
         {
             this.CityBox.DataSource = city;
             this.CityBox.DisplayMember = city.Columns[1].ToString();
-            this.CityBox.ValueMember = city.Columns[0].ToString();           
+            this.CityBox.ValueMember = city.Columns[0].ToString();
         }
         public void SetCityBox(String cityID)
         {
@@ -174,13 +182,13 @@ namespace FAFOS
         }
         public String GetProvStateBox()
         {
-            if(this.ProvStateBox.SelectedValue != null)
+            if (this.ProvStateBox.SelectedValue != null)
                 return this.ProvStateBox.SelectedValue.ToString();
             else return null;
         }
         public String GetCityBox()
         {
-            if(this.CityBox.SelectedValue != null) 
+            if (this.CityBox.SelectedValue != null)
                 return this.CityBox.SelectedValue.ToString();
             else return null;
         }
@@ -208,17 +216,17 @@ namespace FAFOS
             if (this.ProvStateBox.SelectedValue != null)
                 allFeilds[12] = this.ProvStateBox.SelectedValue.ToString();
             if (this.CityBox.SelectedValue != null)
-                allFeilds[13] = this.CityBox.SelectedValue.ToString();          
-            
+                allFeilds[13] = this.CityBox.SelectedValue.ToString();
+
             return allFeilds;
         }
         public void SetError(String name, String message)
         {
             switch (name)
             {
-               /* case "accountName"://Account name
-                    ErrProvider.SetError(nameComboBox, message);
-                    return;*/
+                /* case "accountName"://Account name
+                     ErrProvider.SetError(nameComboBox, message);
+                     return;*/
                 case "type"://Type
                     ErrProvider.SetError(typeTextBox, message);
                     return;
@@ -250,11 +258,11 @@ namespace FAFOS
                     ErrProvider.SetError(EmailTextBox, message);
                     return;
                 case "poBox"://Post Office Box
-                     ErrProvider.SetError(EmailTextBox, message);
+                    ErrProvider.SetError(EmailTextBox, message);
                     return;
                 case "primaryContact"://Primary Contact Name
                     ErrProvider.SetError(PrimContactTextBox, message);
-                    return;                    
+                    return;
 
                 default:
                     return;
@@ -290,20 +298,33 @@ namespace FAFOS
             contract_Button.Text = ContractName;
         }
 
-       /* void button1_MouseLeave(object sender, EventArgs e)
+        private void Ok_Button_Click(object sender, EventArgs e)
         {
-            this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            this.Back_Button.Location = new Point(65, 38);
-            this.Back_Button.Size = new Size(84, 78);
-            this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
+
         }
-        void button1_MouseEnter(object sender, EventArgs e)
+
+        public bool getClientTextBox()
         {
-            this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
-            this.Back_Button.Location = new Point(65, 38);
-            this.Back_Button.Size = new Size(84, 78);
-            this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
-        }*/
+            if (nameTxtBox != null)
+                return true;
+            else
+                return false;
+        }
+
+        /* void button1_MouseLeave(object sender, EventArgs e)
+         {
+             this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
+             this.Back_Button.Location = new Point(65, 38);
+             this.Back_Button.Size = new Size(84, 78);
+             this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
+         }
+         void button1_MouseEnter(object sender, EventArgs e)
+         {
+             this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
+             this.Back_Button.Location = new Point(65, 38);
+             this.Back_Button.Size = new Size(84, 78);
+             this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
+         }*/
 
     }
 }

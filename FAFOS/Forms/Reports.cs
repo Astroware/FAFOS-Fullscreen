@@ -18,11 +18,11 @@ namespace FAFOS.Forms
         public Reports(ReportsController my_controller, String id, int type)
         {
             InitializeComponent();
-            userid=id;
+            userid = id;
             setup(id, "FAFOS Report");
             this.ddlPickReport.SelectedIndexChanged += new EventHandler(my_controller.prepareReport);
 
-            
+
             chartReport.ChartAreas[0].AxisY.Minimum = 0;
 
         }
@@ -109,42 +109,42 @@ namespace FAFOS.Forms
         private void generate_btn_Click(object sender, EventArgs e)
         {
             XmlDocument xmldoc;// = new XmlDocument();
-            xmldoc=new XmlDocument();
+            xmldoc = new XmlDocument();
             //let's add the XML declaration section
-         //   XmlNode xmlnode=xmldoc.CreateNode(XmlNodeType.XmlDeclaration,"","");
-          //  xmldoc.AppendChild(xmlnode);
+            //   XmlNode xmlnode=xmldoc.CreateNode(XmlNodeType.XmlDeclaration,"","");
+            //  xmldoc.AppendChild(xmlnode);
             //let's add the root element
-            XmlElement xmlelem=xmldoc.CreateElement("","RoyaltyFee","");
+            XmlElement xmlelem = xmldoc.CreateElement("", "RoyaltyFee", "");
             xmldoc.AppendChild(xmlelem);
             //let's add another element (child of the root)
-            XmlElement xmlelem2=xmldoc.CreateElement("","Franchisee","");
-            XmlText xmltext=xmldoc.CreateTextNode(new Users().getFranchiseeId(userid));
+            XmlElement xmlelem2 = xmldoc.CreateElement("", "Franchisee", "");
+            XmlText xmltext = xmldoc.CreateTextNode(new Users().getFranchiseeId(userid));
             xmlelem2.AppendChild(xmltext);
 
-            XmlElement xmlelem3=xmldoc.CreateElement("","dateIssued","");
-            XmlElement day=xmldoc.CreateElement("","day","");
-            XmlText daytext=xmldoc.CreateTextNode(DateTime.Today.Day.ToString());
+            XmlElement xmlelem3 = xmldoc.CreateElement("", "dateIssued", "");
+            XmlElement day = xmldoc.CreateElement("", "day", "");
+            XmlText daytext = xmldoc.CreateTextNode(DateTime.Today.Day.ToString());
             day.AppendChild(daytext);
 
-            XmlElement month=xmldoc.CreateElement("","month","");
-            XmlText monthtext=xmldoc.CreateTextNode(DateTime.Today.Month.ToString());
+            XmlElement month = xmldoc.CreateElement("", "month", "");
+            XmlText monthtext = xmldoc.CreateTextNode(DateTime.Today.Month.ToString());
             month.AppendChild(monthtext);
 
-            XmlElement year=xmldoc.CreateElement("","year","");
-            XmlText yeartext=xmldoc.CreateTextNode(DateTime.Today.Year.ToString());
+            XmlElement year = xmldoc.CreateElement("", "year", "");
+            XmlText yeartext = xmldoc.CreateTextNode(DateTime.Today.Year.ToString());
             year.AppendChild(yeartext);
-            
+
 
             xmlelem3.AppendChild(day);
-             xmlelem3.AppendChild(month);
-             xmlelem3.AppendChild(year);
+            xmlelem3.AppendChild(month);
+            xmlelem3.AppendChild(year);
 
-         
-            XmlElement monthFor=xmldoc.CreateElement("","monthFor","");
-            XmlText monthFortext=xmldoc.CreateTextNode("March");
+
+            XmlElement monthFor = xmldoc.CreateElement("", "monthFor", "");
+            XmlText monthFortext = xmldoc.CreateTextNode("March");
             monthFor.AppendChild(monthFortext);
 
-            XmlElement balance=xmldoc.CreateElement("","balance","");
+            XmlElement balance = xmldoc.CreateElement("", "balance", "");
             double royaltyFee = Convert.ToDouble(balanceS) > 10000 ? 500 + Convert.ToDouble(balanceS) * 0.12 : 500;
             XmlText balancetext = xmldoc.CreateTextNode(royaltyFee.ToString());
             balance.AppendChild(balancetext);
@@ -158,12 +158,12 @@ namespace FAFOS.Forms
             //let's try to save the XML document in a file: C:\pavel.xml
             try
             {
-            xmldoc.Save(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                   + "\\Resources\\royaltyFee_" + new Users().getFranchiseeId(userid) + ".xml"); //I've chosen the c:\ for the resulting file pavel.xml
+                xmldoc.Save(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
+                       + "\\Resources\\royaltyFee_" + new Users().getFranchiseeId(userid) + ".xml"); //I've chosen the c:\ for the resulting file pavel.xml
             }
             catch (Exception)
             {
-           // Console.WriteLine(e.Message);
+                // Console.WriteLine(e.Message);
             }
             MessageBox.Show("It has successfully generated and sent this month's royalty fee.", "FAFOS Message Box");
 

@@ -41,7 +41,7 @@ namespace FAFOS
             this.listenThread = new Thread(ListenForClients);
             listenThread.IsBackground = true; // to stop all threads when application is terminated
             this.listenThread.Start();
-           // ListenForClients();
+            // ListenForClients();
         }
 
         public void ListenForClients()
@@ -49,16 +49,16 @@ namespace FAFOS
             // Create a model to listen from clients
             _TCPModel = new TCPModel(Int32.Parse("3000"));
 
-//            while (true)
-         //   {
-                //blocks until a client has connected to the server
-                Socket TCPsocket = _TCPModel.AcceptOneClient();
+            //            while (true)
+            //   {
+            //blocks until a client has connected to the server
+            Socket TCPsocket = _TCPModel.AcceptOneClient();
 
-                //create a thread to handle communication with connected client                
-                clientThread = new Thread(new ParameterizedThreadStart(Communications));
-                clientThread.IsBackground = true; // to stop all threads when application is terminated
-                clientThread.Start(TCPsocket);
-           // }
+            //create a thread to handle communication with connected client                
+            clientThread = new Thread(new ParameterizedThreadStart(Communications));
+            clientThread.IsBackground = true; // to stop all threads when application is terminated
+            clientThread.Start(TCPsocket);
+            // }
         }
         public void Communications(object socket)
         {
@@ -93,26 +93,26 @@ namespace FAFOS
         {
             if (inspectionType.Text == "Extinguisher Report")
             {
-                
+
 
                 generateExtinguisher();
 
 
             }
             Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-              + "\\Resources\\"+inspectionType.Text+"_" + DateTime.Today.ToShortDateString() + ".pdf");
+              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf");
             testDialog.ShowDialog(this);
 
-          //  clientThread.Abort();
-           // listenThread.Abort();
-            
+            //  clientThread.Abort();
+            // listenThread.Abort();
+
 
         }
         private void generateExtinguisher()
         {
             try
             {
-               
+
 
 
                 //start creating the PDF
@@ -146,11 +146,11 @@ namespace FAFOS
                 Courier.CreateFontDict("T4", "Times-Roman");
 
                 //Set the info Dictionary. xxx will be the invoice number
-                infoDict.SetInfo( inspectionType.Text, "System Generated", "Fire-Alert");
+                infoDict.SetInfo(inspectionType.Text, "System Generated", "Fire-Alert");
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_"+DateTime.Today.ToShortDateString()+".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
@@ -211,7 +211,7 @@ namespace FAFOS
                 String[] ad = new String[6];
                 ad = address.Split(',');
 
-             //   client.get(contract.getClient(sales_order.getSAddress(_view.GetText())))
+                //   client.get(contract.getClient(sales_order.getSAddress(_view.GetText())))
                 String clientInfo = new Client().get(new ClientContract().getClient(addressBox.SelectedValue.ToString()));
                 String[] client = new String[9];
                 client = clientInfo.Split(',');
@@ -223,15 +223,15 @@ namespace FAFOS
                 textAndtable.AddText(60, 100, DateTime.Today.ToString(format), 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(60, 115, "Property", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(65, 130, ad[0], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 140, ad[3]+", "+ad[4], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 150, ad[5]+ " "+ad[1], 10, "T4", Align.LeftAlign);
+                textAndtable.AddText(65, 140, ad[3] + ", " + ad[4], 10, "T4", Align.LeftAlign);
+                textAndtable.AddText(65, 150, ad[5] + " " + ad[1], 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(65, 180, ad[2], 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(65, 190, "N/A", 10, "T4", Align.LeftAlign);
 
                 textAndtable.AddText(200, 115, "Owner/Agent", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(205, 130, client[0], 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(205, 140, client[1], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 150, client[6]+", "+client[7], 10, "T4", Align.LeftAlign);
+                textAndtable.AddText(205, 150, client[6] + ", " + client[7], 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(205, 180, client[5], 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(205, 190, client[3], 10, "T4", Align.LeftAlign);
 
@@ -271,7 +271,7 @@ namespace FAFOS
                 content.SetStream(line.DrawLine(390, 570, 390, 480, 1, vline));
 
                 content.SetStream(line.DrawLine(55, 525, 565, 525, 1, vline));
-               
+
                 //close the graphics cursor in PDF
                 content.SetStream("Q\r\n");
 
@@ -312,7 +312,7 @@ namespace FAFOS
                 ColorSpec lineColor = new ColorSpec(0, 0, 0);
 
 
-           //     textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
+                //     textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
                 Align[] alignC1 = new Align[16];
                 alignC1[0] = Align.LeftAlign;
                 alignC1[1] = Align.LeftAlign;
@@ -331,7 +331,7 @@ namespace FAFOS
                 alignC1[14] = Align.CenterAlign;
                 alignC1[15] = Align.CenterAlign;
 
-               
+
 
                 string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
                    + "\\Resources\\inspection.xml";
@@ -340,8 +340,8 @@ namespace FAFOS
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes
-                String floor="";
-                uint height = 0 ;
+                String floor = "";
+                uint height = 0;
                 XmlNode start = docElement.FirstChild;
                 foreach (XmlNode c1 in start)//contract
                 {
@@ -378,7 +378,7 @@ namespace FAFOS
                                             height += table2.rowHeight;
                                         }
                                         //After drawing table and text add them to the page 
-                                       
+
 
                                     }
                                 }
@@ -391,8 +391,8 @@ namespace FAFOS
                 textAndtable.AddText(65, 720, "Print ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(125, 720, DateTime.Now.ToString("dd/MM/yyyy"), 10, "T4", Align.LeftAlign);
                 textAndtable.AddText(500, 720, "Page 1 of 1", 10, "T3", Align.LeftAlign);
-               
-          
+
+
                 content.SetStream(textAndtable.EndText());
 
 
@@ -413,8 +413,8 @@ namespace FAFOS
                 file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
 
                 //write image dict
-                 file.Write(I1.GetImageDict(file.Length, out size), 0, size);
-                 file.Write(I2.GetImageDict(file.Length, out size), 0, size);
+                file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                file.Write(I2.GetImageDict(file.Length, out size), 0, size);
 
                 file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
                 file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
@@ -482,32 +482,32 @@ namespace FAFOS
             if (listening_RTSPsocket == null)
                 listening_RTSPsocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                // Creating Endpoint to the localhost address with the given port number
-                IPHostEntry host;
-                host = Dns.GetHostEntry(Dns.GetHostName());
-                foreach (IPAddress ip in host.AddressList)
+            // Creating Endpoint to the localhost address with the given port number
+            IPHostEntry host;
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
-                    if (ip.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        ServerIP = ip;
-                    }
+                    ServerIP = ip;
                 }
+            }
 
-                RTSPport = GivenPort;
-                IPEndPoint listenEndPoint = new IPEndPoint(ServerIPAddr, RTSPport);
+            RTSPport = GivenPort;
+            IPEndPoint listenEndPoint = new IPEndPoint(ServerIPAddr, RTSPport);
 
-                // Bind server socket to Endpoint object
-                listening_RTSPsocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-                listening_RTSPsocket.Bind(listenEndPoint);
-                
-                listening_RTSPsocket.Listen(int.MaxValue);
-            
-            
+            // Bind server socket to Endpoint object
+            listening_RTSPsocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+            listening_RTSPsocket.Bind(listenEndPoint);
+
+            listening_RTSPsocket.Listen(int.MaxValue);
+
+
         }
-       ~TCPModel()
+        ~TCPModel()
         {
             listening_RTSPsocket.Close();
-            
+
         }
 
         public Socket AcceptOneClient()

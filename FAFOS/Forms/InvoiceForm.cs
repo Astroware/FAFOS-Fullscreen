@@ -25,7 +25,7 @@ namespace FAFOS
 
             user = new Users();
 
-           
+
             my_controller = new InvoiceController();
 
             this.Find_btn.Click += new System.EventHandler(my_controller.Find_btn_Click);
@@ -153,7 +153,7 @@ namespace FAFOS
 
                 //Create the font called Times Bold
                 TimesBold.CreateFontDict("T3", "Times-Bold");
-                
+
                 //Create the font called Courier
                 Courier.CreateFontDict("T4", "Courier");
 
@@ -217,8 +217,8 @@ namespace FAFOS
 
                 String[] client = new String[9];
                 client = clientInfo.Split(',');
-                
-                
+
+
                 String[] franchisee = new String[6];
                 franchisee = franchiseeInfo.Split(',');
 
@@ -227,31 +227,31 @@ namespace FAFOS
                 user = userInfo.Split(',');
 
                 //Add text to the page
-                textAndtable.AddText(50, 50, "Invoice: "+invoice.getID(), 10, "T3", Align.LeftAlign);
+                textAndtable.AddText(50, 50, "Invoice: " + invoice.getID(), 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 60, "Total: " + txtTotal.Text, 10, "T3", Align.LeftAlign);
-                
-                
-                textAndtable.AddText(50, 100, "Bill To: "+client[0], 10, "T3", Align.LeftAlign);
+
+
+                textAndtable.AddText(50, 100, "Bill To: " + client[0], 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 110, client[4], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(50, 120, client[6] + ", " + client[7] + ", " + client[8] + " " + client[2], 10, "T1", Align.LeftAlign);
-                textAndtable.AddText(50, 130, "Primary Contact: "+client[5], 10, "T1", Align.LeftAlign);
-                textAndtable.AddText(50, 140, "Ph: "+client[3], 10, "T1", Align.LeftAlign);
+                textAndtable.AddText(50, 130, "Primary Contact: " + client[5], 10, "T1", Align.LeftAlign);
+                textAndtable.AddText(50, 140, "Ph: " + client[3], 10, "T1", Align.LeftAlign);
 
 
                 textAndtable.AddText(300, 100, "Forward Payment To: ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(300, 110, franchisee[5], 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(300, 120, franchisee[0], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(300, 130, franchisee[2] + ", " + franchisee[3] + ", " + franchisee[4] + " " + franchisee[1], 10, "T1", Align.LeftAlign);
-                textAndtable.AddText(300, 140, "Contact: " + user[0]+ " "+ user[1], 10, "T1", Align.LeftAlign);
+                textAndtable.AddText(300, 140, "Contact: " + user[0] + " " + user[1], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(300, 150, "Ph: " + user[2], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(300, 160, "Email: " + user[3], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(300, 170, "Web: http://www.fire-alert.ca", 10, "T1", Align.LeftAlign);
 
-                textAndtable.AddText(50, 150, "WO, ID: "+txtSalesOrder.SelectedValue.ToString(), 10, "T3", Align.LeftAlign);
+                textAndtable.AddText(50, 150, "WO, ID: " + txtSalesOrder.SelectedValue.ToString(), 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 160, "Service Address: ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 170, sAd[0], 10, "T1", Align.LeftAlign);
-               // textAndtable.AddText(50, 180, sAd[1], 10, "T1", Align.LeftAlign);
-                textAndtable.AddText(50, 180, sAd[3]+ ", "+sAd[4]+", "+sAd[5]+" "+sAd[1], 10, "T1", Align.LeftAlign);
+                // textAndtable.AddText(50, 180, sAd[1], 10, "T1", Align.LeftAlign);
+                textAndtable.AddText(50, 180, sAd[3] + ", " + sAd[4] + ", " + sAd[5] + " " + sAd[1], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(50, 190, "On-site Contact: ", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(50, 200, sAd[2], 10, "T1", Align.LeftAlign);
                 textAndtable.AddText(50, 210, "Date of Service: ", 10, "T1", Align.LeftAlign);
@@ -284,7 +284,7 @@ namespace FAFOS
                 textAndtable.SetParams(table, cellColor, Align.CenterAlign, 3);
                 textAndtable.AddRow(false, 8, "T3", alignC, true, "Terms", "Purchase Order", "Date Issued", "Due Date");
                 //After drawing table and text add them to the page 
-                content.SetStream(textAndtable.EndTable(lineColor,true));
+                content.SetStream(textAndtable.EndTable(lineColor, true));
 
                 TextAndTables textAndtable2 = new TextAndTables(pSize);
                 //Specify the color for the cell and the line
@@ -295,7 +295,7 @@ namespace FAFOS
                 table2.xPos = 50;
                 table2.rowHeight = 15;
                 textAndtable2.SetParams(table2, cell1, Align.CenterAlign, 3);
-                textAndtable2.AddRow(false, 8, "T3", alignR, false, "Net"+txtTerm.Text, txtSalesOrder.SelectedValue.ToString(),
+                textAndtable2.AddRow(false, 8, "T3", alignR, false, "Net" + txtTerm.Text, txtSalesOrder.SelectedValue.ToString(),
                     Issued.Value.ToShortDateString(), Issued.Value.AddDays(Convert.ToDouble(txtTerm.Text)).ToShortDateString());
                 content.SetStream(textAndtable2.EndTable(line1, true));
 
@@ -322,7 +322,7 @@ namespace FAFOS
                 //Specify the color for the cell and the line
                 ColorSpec cell2 = new ColorSpec(196, 34, 34);
                 ColorSpec line2 = new ColorSpec(1, 1, 1);
-                TableParams table3 = new TableParams(7, 15, 100, 160, 40,40,60,60);
+                TableParams table3 = new TableParams(7, 15, 100, 160, 40, 40, 60, 60);
                 table3.yPos = 510;
                 table3.xPos = 50;
                 table3.rowHeight = 15;
@@ -362,7 +362,7 @@ namespace FAFOS
                 Align[] align = new Align[1];
                 align[0] = Align.RightAlign;
                 //Specify the color for the cell and the line
-                TableParams table5 = new TableParams(1,60);
+                TableParams table5 = new TableParams(1, 60);
                 table5.yPos = 152;
                 table5.xPos = 100;
                 table5.rowHeight = 15;
@@ -379,9 +379,9 @@ namespace FAFOS
                 table6.rowHeight = 15;
                 textAndtable6.SetParams(table6, cell2, Align.RightAlign, 3);
                 textAndtable6.AddRow(false, 10, "T3", align, true, txtTotal.Text);
-                
-                if (txtAmount.Text =="")
-                    txtAmount.Text="$0.00";
+
+                if (txtAmount.Text == "")
+                    txtAmount.Text = "$0.00";
                 textAndtable6.AddRow(false, 10, "T3", align, true, "$" + String.Format("{0:0.00}", Math.Round(Convert.ToDouble(txtAmount.Text.Replace("$", "")))));
                 textAndtable6.AddRow(false, 10, "T3", align, true, "$" + String.Format("{0:0.00}", Math.Round(Convert.ToDouble(txtTotal.Text.Replace("$", "")) -
                     Convert.ToDouble(txtAmount.Text.Replace("$", "")), 2)));
@@ -421,7 +421,7 @@ namespace FAFOS
             }
             catch (Exception ex)
             {
-               MessageBox.Show("Could not display the document with the incorrect Information");
+                MessageBox.Show("Could not display the document with the incorrect Information");
             }
 
         }
@@ -432,15 +432,15 @@ namespace FAFOS
             dataGridView1.DataSource = dt;
         }
 
-        public void SetTotal(double total,double tax)
+        public void SetTotal(double total, double tax)
         {
             txtSub.Text = "$" + String.Format("{0:0.00}", Math.Round(total, 2));
-            txtTax.Text = "$"+String.Format("{0:0.00}", Math.Round(total * tax,2));
-            txtTotal.Text = "$"+String.Format("{0:0.00}", Math.Round(total * (1 + tax),2));
-            
+            txtTax.Text = "$" + String.Format("{0:0.00}", Math.Round(total * tax, 2));
+            txtTotal.Text = "$" + String.Format("{0:0.00}", Math.Round(total * (1 + tax), 2));
+
         }
 
-     
-     
+
+
     }
 }

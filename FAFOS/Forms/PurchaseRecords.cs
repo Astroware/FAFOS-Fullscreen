@@ -8,32 +8,32 @@ using System.Text;
 using System.Windows.Forms;
 namespace FAFOS
 {
-    public partial class PurchaseRecord: FAFOS.Background
+    public partial class PurchaseRecord : FAFOS.Background
     {
         InventoryController my_controller;
         Users user;
         int userid;
-        
+
         public PurchaseRecord(int id)
         {
             InitializeComponent();
             my_controller = new InventoryController();
 
             this.Load += new EventHandler(my_controller.purchaseLoad);
-            this.comboSupplier.SelectedIndexChanged +=new EventHandler(my_controller.fillItemList);
-            this.purchaseRecordsdgv.CellValueChanged +=new DataGridViewCellEventHandler(my_controller.PurchaseRecords_CellValueChanged);
+            this.comboSupplier.SelectedIndexChanged += new EventHandler(my_controller.fillItemList);
+            this.purchaseRecordsdgv.CellValueChanged += new DataGridViewCellEventHandler(my_controller.PurchaseRecords_CellValueChanged);
             this.purchaseRecordsdgv.CellValidated += new DataGridViewCellEventHandler(PurchaseRecords_CellValidated);
-            this.SavePurchase_btn.Click +=new EventHandler(my_controller.purchaseRecord_btn_Click);
-          
+            this.SavePurchase_btn.Click += new EventHandler(my_controller.purchaseRecord_btn_Click);
+
             //User label
             user = new Users();
             userid = id;
-           // lblUserInfo.Text = "Logged in:\n " + user.getName(Convert.ToInt32(userid));
+            // lblUserInfo.Text = "Logged in:\n " + user.getName(Convert.ToInt32(userid));
             setup(userid.ToString(), "FAFOS Purchase Records");
 
-         
+
         }
-     
+
         public String getUser()
         {
             return userid.ToString();
@@ -58,7 +58,7 @@ namespace FAFOS
         }
         public DataGridView setNumberColumn(DataGridView dgv)
         {
-            for (int i = 0; i < dgv.Rows.Count-1; i++)
+            for (int i = 0; i < dgv.Rows.Count - 1; i++)
             {
                 dgv.Rows[i].Cells[0].Value = i + 1;
             }
@@ -83,7 +83,7 @@ namespace FAFOS
                     {
                         total += Convert.ToInt32(purchaseRecordsdgv.Rows[i].Cells[5].Value);
                     }
-                    txtTotal.Text = "$"+total.ToString();
+                    txtTotal.Text = "$" + total.ToString();
                 }
                 catch
                 {
@@ -94,7 +94,7 @@ namespace FAFOS
         {
             return txtTotal;
         }
-       
+
 
     }
 }

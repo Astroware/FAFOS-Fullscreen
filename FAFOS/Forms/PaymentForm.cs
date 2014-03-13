@@ -51,19 +51,19 @@ namespace FAFOS
                 string total = drv["Total"].ToString();
                 // Get the bounds for the first column
                 Rectangle r1 = args.Bounds;
-                r1.Width =400/ 4;
+                r1.Width = 400 / 4;
 
                 // Draw the text on the first column
                 using (SolidBrush sb = new SolidBrush(args.ForeColor))
                 {
-                    args.Graphics.DrawString(paymentid,  new Font(args.Font.FontFamily, args.Font.Size, FontStyle.Bold), sb, r1);
+                    args.Graphics.DrawString(paymentid, new Font(args.Font.FontFamily, args.Font.Size, FontStyle.Bold), sb, r1);
                 }
 
                 Rectangle r2 = drawColumns(args, r1, date, 100);
-               Rectangle r3 = drawColumns(args, r2, due,200);
-               drawColumns(args, r3, total, 300);
+                Rectangle r3 = drawColumns(args, r2, due, 200);
+                drawColumns(args, r3, total, 300);
 
-               txtInvoice.DropDownWidth = 450;
+                txtInvoice.DropDownWidth = 450;
 
             };
 
@@ -93,7 +93,7 @@ namespace FAFOS
             // Get the bounds for the second column
             Rectangle r2 = args.Bounds;
             r2.X = x;
-            r2.Width = 400/ 4;
+            r2.Width = 400 / 4;
 
             // Draw the text on the second column
             using (SolidBrush sb = new SolidBrush(args.ForeColor))
@@ -102,26 +102,26 @@ namespace FAFOS
             }
             return r2;
         }
-      /*  private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        void button1_MouseLeave(object sender, EventArgs e)
-        {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            this.button1.Location = new Point(65, 38);
-            this.button1.Size = new Size(84, 78);
-            this.button1.ImageAlign = ContentAlignment.MiddleCenter;
-        }
+        /*  private void button1_Click(object sender, EventArgs e)
+          {
+              this.Close();
+          }
+          void button1_MouseLeave(object sender, EventArgs e)
+          {
+              this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
+              this.button1.Location = new Point(65, 38);
+              this.button1.Size = new Size(84, 78);
+              this.button1.ImageAlign = ContentAlignment.MiddleCenter;
+          }
 
 
-        void button1_MouseEnter(object sender, EventArgs e)
-        {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
-            this.button1.Location = new Point(65, 38);
-            this.button1.Size = new Size(84, 78);
-            this.button1.ImageAlign = ContentAlignment.MiddleCenter;
-        }*/
+          void button1_MouseEnter(object sender, EventArgs e)
+          {
+              this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
+              this.button1.Location = new Point(65, 38);
+              this.button1.Size = new Size(84, 78);
+              this.button1.ImageAlign = ContentAlignment.MiddleCenter;
+          }*/
 
         private void txtInvoice_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -137,10 +137,10 @@ namespace FAFOS
                 PaymentBox.Visible = true;
                 Submit_btn.Visible = true;
 
-               DataRowView drv = (DataRowView)this.txtInvoice.Items[txtInvoice.SelectedIndex];
-                double paid=0;
+                DataRowView drv = (DataRowView)this.txtInvoice.Items[txtInvoice.SelectedIndex];
+                double paid = 0;
                 txtTotal.Text = drv["Total"].ToString();
-               // MessageBox.Show(drv["id"].ToString());
+                // MessageBox.Show(drv["id"].ToString());
                 if (drv["id"].ToString() != "")
                 {
                     DataTable dt = payment.getAmount(drv["id"].ToString());
@@ -150,7 +150,7 @@ namespace FAFOS
                     txtBalance.Text = (Convert.ToDouble(drv["Total"].ToString()) - paid).ToString();
                 }
             }
-            
+
         }
 
         private void Submit_btn_Click(object sender, EventArgs e)

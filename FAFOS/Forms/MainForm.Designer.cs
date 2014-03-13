@@ -6,8 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        //Hunter Do Good
-        //No. Just no
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
             this.Exit_btn = new System.Windows.Forms.Button();
-            this.quote = new tiles.tile();
-            this.invoice = new tiles.tile();
-            this.salesOrder = new tiles.tile();
-            this.inventory = new tiles.tile();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -46,38 +41,43 @@
             this.Logout_btn = new System.Windows.Forms.Button();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
             this.SEdgeLogo = new System.Windows.Forms.Label();
-            this.payment = new tiles.tile();
-            this.itinerary = new tiles.tile();
-            this.addClient = new tiles.tile();
-            this.editClient = new tiles.tile();
-            this.addContract = new tiles.tile();
-            this.editContract = new tiles.tile();
-            this.convertSalesOrder = new tiles.tile();
-            this.editSalesOrder = new tiles.tile();
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.statement = new tiles.tile();
-            this.royaltyFee = new tiles.tile();
-            this.jobReport = new tiles.tile();
-            this.revenueReport = new tiles.tile();
-            this.editQuote = new tiles.tile();
-            this.purchaseRecord = new tiles.tile();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.userSettings = new System.Windows.Forms.Button();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.inspection = new tiles.tile();
             this.label9 = new System.Windows.Forms.Label();
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
+            this.Operation = new System.Windows.Forms.Button();
+            this.Document = new System.Windows.Forms.Button();
+            this.Client = new System.Windows.Forms.Button();
+            this.Report = new System.Windows.Forms.Button();
+            this.Quote = new System.Windows.Forms.Button();
+            this.EditQuote = new System.Windows.Forms.Button();
+            this.SalesOrder = new System.Windows.Forms.Button();
+            this.EditSalesOrder = new System.Windows.Forms.Button();
+            this.ConvertSalesOrder = new System.Windows.Forms.Button();
+            this.Invoice = new System.Windows.Forms.Button();
+            this.Itinerary = new System.Windows.Forms.Button();
+            this.Inventory = new System.Windows.Forms.Button();
+            this.PurchaseRecord = new System.Windows.Forms.Button();
+            this.Payment = new System.Windows.Forms.Button();
+            this.Inspection = new System.Windows.Forms.Button();
+            this.AddClient = new System.Windows.Forms.Button();
+            this.EditClient = new System.Windows.Forms.Button();
+            this.AddContract = new System.Windows.Forms.Button();
+            this.EditContract = new System.Windows.Forms.Button();
+            this.Statement = new System.Windows.Forms.Button();
+            this.JobReport = new System.Windows.Forms.Button();
+            this.RevenueReport = new System.Windows.Forms.Button();
+            this.RoyaltyFee = new System.Windows.Forms.Button();
+            this.ItineraryTT = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -102,93 +102,13 @@
             this.Exit_btn.UseVisualStyleBackColor = false;
             this.Exit_btn.Click += new System.EventHandler(this.Exit_btn_Click);
             // 
-            // quote
-            // 
-            this.quote.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.quote.BackColor = System.Drawing.Color.Transparent;
-            this.quote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.quote.Location = new System.Drawing.Point(373, 248);
-            this.quote.Margin = new System.Windows.Forms.Padding(0);
-            this.quote.Name = "quote";
-            this.quote.Resize = new System.Drawing.Size(100, 100);
-            this.quote.Size = new System.Drawing.Size(100, 100);
-            this.quote.TabIndex = 9;
-            this.quote.tileHieght = 100;
-            this.quote.tileLocation = new System.Drawing.Point(0, 0);
-            this.quote.tileSize = new System.Drawing.Size(100, 100);
-            this.quote.tileTimer_Interval = 100D;
-            this.quote.tileWidth = 100;
-            this.quote.Visible = false;
-            this.quote.XScale = 0;
-            this.quote.YScale = 0;
-            // 
-            // invoice
-            // 
-            this.invoice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.invoice.BackColor = System.Drawing.Color.Transparent;
-            this.invoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.invoice.Location = new System.Drawing.Point(482, 466);
-            this.invoice.Margin = new System.Windows.Forms.Padding(0);
-            this.invoice.Name = "invoice";
-            this.invoice.Resize = new System.Drawing.Size(100, 100);
-            this.invoice.Size = new System.Drawing.Size(100, 100);
-            this.invoice.TabIndex = 13;
-            this.invoice.tileHieght = 100;
-            this.invoice.tileLocation = new System.Drawing.Point(133, 89);
-            this.invoice.tileSize = new System.Drawing.Size(100, 100);
-            this.invoice.tileTimer_Interval = 100D;
-            this.invoice.tileWidth = 100;
-            this.invoice.Visible = false;
-            this.invoice.XScale = 0;
-            this.invoice.YScale = 0;
-            // 
-            // salesOrder
-            // 
-            this.salesOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.salesOrder.BackColor = System.Drawing.Color.Transparent;
-            this.salesOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.salesOrder.Location = new System.Drawing.Point(373, 357);
-            this.salesOrder.Margin = new System.Windows.Forms.Padding(0);
-            this.salesOrder.Name = "salesOrder";
-            this.salesOrder.Resize = new System.Drawing.Size(100, 100);
-            this.salesOrder.Size = new System.Drawing.Size(100, 100);
-            this.salesOrder.TabIndex = 14;
-            this.salesOrder.tileHieght = 100;
-            this.salesOrder.tileLocation = new System.Drawing.Point(0, 0);
-            this.salesOrder.tileSize = new System.Drawing.Size(100, 100);
-            this.salesOrder.tileTimer_Interval = 100D;
-            this.salesOrder.tileWidth = 100;
-            this.salesOrder.Visible = false;
-            this.salesOrder.XScale = 0;
-            this.salesOrder.YScale = 0;
-            // 
-            // inventory
-            // 
-            this.inventory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.inventory.BackColor = System.Drawing.Color.Transparent;
-            this.inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.inventory.Location = new System.Drawing.Point(107, 357);
-            this.inventory.Margin = new System.Windows.Forms.Padding(0);
-            this.inventory.Name = "inventory";
-            this.inventory.Resize = new System.Drawing.Size(100, 100);
-            this.inventory.Size = new System.Drawing.Size(100, 100);
-            this.inventory.TabIndex = 15;
-            this.inventory.tileHieght = 100;
-            this.inventory.tileLocation = new System.Drawing.Point(0, 0);
-            this.inventory.tileSize = new System.Drawing.Size(100, 100);
-            this.inventory.tileTimer_Interval = 100D;
-            this.inventory.tileWidth = 100;
-            this.inventory.Visible = false;
-            this.inventory.XScale = 0;
-            this.inventory.YScale = 0;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(97, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(672, 38);
+            this.label2.Size = new System.Drawing.Size(547, 32);
             this.label2.TabIndex = 17;
             this.label2.Text = "FAFOS Operational Management System";
             // 
@@ -201,6 +121,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(220, 30);
             this.txtUsername.TabIndex = 20;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblUsername
             // 
@@ -209,7 +130,7 @@
             this.lblUsername.Location = new System.Drawing.Point(13, 6);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(93, 20);
+            this.lblUsername.Size = new System.Drawing.Size(77, 16);
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "Username";
             // 
@@ -236,7 +157,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 30);
+            this.txtPassword.Size = new System.Drawing.Size(217, 26);
             this.txtPassword.TabIndex = 22;
             // 
             // lblPassword
@@ -246,7 +167,7 @@
             this.lblPassword.Location = new System.Drawing.Point(13, 74);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(90, 20);
+            this.lblPassword.Size = new System.Drawing.Size(75, 16);
             this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Password";
             // 
@@ -294,166 +215,6 @@
             this.SEdgeLogo.Size = new System.Drawing.Size(180, 72);
             this.SEdgeLogo.TabIndex = 25;
             // 
-            // payment
-            // 
-            this.payment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.payment.BackColor = System.Drawing.Color.Transparent;
-            this.payment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.payment.Location = new System.Drawing.Point(107, 466);
-            this.payment.Margin = new System.Windows.Forms.Padding(0);
-            this.payment.Name = "payment";
-            this.payment.Resize = new System.Drawing.Size(100, 100);
-            this.payment.Size = new System.Drawing.Size(100, 100);
-            this.payment.TabIndex = 27;
-            this.payment.tileHieght = 100;
-            this.payment.tileLocation = new System.Drawing.Point(0, 0);
-            this.payment.tileSize = new System.Drawing.Size(100, 100);
-            this.payment.tileTimer_Interval = 100D;
-            this.payment.tileWidth = 100;
-            this.payment.Visible = false;
-            this.payment.XScale = 0;
-            this.payment.YScale = 0;
-            // 
-            // itinerary
-            // 
-            this.itinerary.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.itinerary.BackColor = System.Drawing.Color.Transparent;
-            this.itinerary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.itinerary.Location = new System.Drawing.Point(106, 248);
-            this.itinerary.Margin = new System.Windows.Forms.Padding(0);
-            this.itinerary.Name = "itinerary";
-            this.itinerary.Resize = new System.Drawing.Size(100, 100);
-            this.itinerary.Size = new System.Drawing.Size(100, 100);
-            this.itinerary.TabIndex = 28;
-            this.itinerary.tileHieght = 100;
-            this.itinerary.tileLocation = new System.Drawing.Point(0, 0);
-            this.itinerary.tileSize = new System.Drawing.Size(100, 100);
-            this.itinerary.tileTimer_Interval = 100D;
-            this.itinerary.tileWidth = 100;
-            this.itinerary.Visible = false;
-            this.itinerary.XScale = 0;
-            this.itinerary.YScale = 0;
-            // 
-            // addClient
-            // 
-            this.addClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addClient.BackColor = System.Drawing.Color.Transparent;
-            this.addClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addClient.Location = new System.Drawing.Point(644, 248);
-            this.addClient.Margin = new System.Windows.Forms.Padding(0);
-            this.addClient.Name = "addClient";
-            this.addClient.Resize = new System.Drawing.Size(100, 100);
-            this.addClient.Size = new System.Drawing.Size(100, 100);
-            this.addClient.TabIndex = 29;
-            this.addClient.tileHieght = 100;
-            this.addClient.tileLocation = new System.Drawing.Point(0, 0);
-            this.addClient.tileSize = new System.Drawing.Size(100, 100);
-            this.addClient.tileTimer_Interval = 100D;
-            this.addClient.tileWidth = 100;
-            this.addClient.Visible = false;
-            this.addClient.XScale = 0;
-            this.addClient.YScale = 0;
-            // 
-            // editClient
-            // 
-            this.editClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editClient.BackColor = System.Drawing.Color.Transparent;
-            this.editClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editClient.Location = new System.Drawing.Point(644, 357);
-            this.editClient.Margin = new System.Windows.Forms.Padding(0);
-            this.editClient.Name = "editClient";
-            this.editClient.Resize = new System.Drawing.Size(100, 100);
-            this.editClient.Size = new System.Drawing.Size(100, 100);
-            this.editClient.TabIndex = 30;
-            this.editClient.tileHieght = 100;
-            this.editClient.tileLocation = new System.Drawing.Point(0, 0);
-            this.editClient.tileSize = new System.Drawing.Size(100, 100);
-            this.editClient.tileTimer_Interval = 100D;
-            this.editClient.tileWidth = 100;
-            this.editClient.Visible = false;
-            this.editClient.XScale = 0;
-            this.editClient.YScale = 0;
-            // 
-            // addContract
-            // 
-            this.addContract.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addContract.BackColor = System.Drawing.Color.Transparent;
-            this.addContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addContract.Location = new System.Drawing.Point(753, 248);
-            this.addContract.Margin = new System.Windows.Forms.Padding(0);
-            this.addContract.Name = "addContract";
-            this.addContract.Resize = new System.Drawing.Size(100, 100);
-            this.addContract.Size = new System.Drawing.Size(100, 100);
-            this.addContract.TabIndex = 31;
-            this.addContract.tileHieght = 100;
-            this.addContract.tileLocation = new System.Drawing.Point(0, 0);
-            this.addContract.tileSize = new System.Drawing.Size(100, 100);
-            this.addContract.tileTimer_Interval = 100D;
-            this.addContract.tileWidth = 100;
-            this.addContract.Visible = false;
-            this.addContract.XScale = 0;
-            this.addContract.YScale = 0;
-            // 
-            // editContract
-            // 
-            this.editContract.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editContract.BackColor = System.Drawing.Color.Transparent;
-            this.editContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editContract.Location = new System.Drawing.Point(753, 357);
-            this.editContract.Margin = new System.Windows.Forms.Padding(0);
-            this.editContract.Name = "editContract";
-            this.editContract.Resize = new System.Drawing.Size(100, 100);
-            this.editContract.Size = new System.Drawing.Size(100, 100);
-            this.editContract.TabIndex = 32;
-            this.editContract.tileHieght = 100;
-            this.editContract.tileLocation = new System.Drawing.Point(0, 0);
-            this.editContract.tileSize = new System.Drawing.Size(100, 100);
-            this.editContract.tileTimer_Interval = 100D;
-            this.editContract.tileWidth = 100;
-            this.editContract.Visible = false;
-            this.editContract.XScale = 0;
-            this.editContract.YScale = 0;
-            // 
-            // convertSalesOrder
-            // 
-            this.convertSalesOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.convertSalesOrder.BackColor = System.Drawing.Color.Transparent;
-            this.convertSalesOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.convertSalesOrder.Location = new System.Drawing.Point(482, 358);
-            this.convertSalesOrder.Margin = new System.Windows.Forms.Padding(0);
-            this.convertSalesOrder.Name = "convertSalesOrder";
-            this.convertSalesOrder.Resize = new System.Drawing.Size(100, 100);
-            this.convertSalesOrder.Size = new System.Drawing.Size(100, 100);
-            this.convertSalesOrder.TabIndex = 34;
-            this.convertSalesOrder.tileHieght = 100;
-            this.convertSalesOrder.tileLocation = new System.Drawing.Point(0, 0);
-            this.convertSalesOrder.tileSize = new System.Drawing.Size(100, 100);
-            this.convertSalesOrder.tileTimer_Interval = 100D;
-            this.convertSalesOrder.tileWidth = 100;
-            this.convertSalesOrder.Visible = false;
-            this.convertSalesOrder.XScale = 0;
-            this.convertSalesOrder.YScale = 0;
-            // 
-            // editSalesOrder
-            // 
-            this.editSalesOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editSalesOrder.BackColor = System.Drawing.Color.Transparent;
-            this.editSalesOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editSalesOrder.Location = new System.Drawing.Point(373, 466);
-            this.editSalesOrder.Margin = new System.Windows.Forms.Padding(0);
-            this.editSalesOrder.Name = "editSalesOrder";
-            this.editSalesOrder.Resize = new System.Drawing.Size(100, 100);
-            this.editSalesOrder.Size = new System.Drawing.Size(100, 100);
-            this.editSalesOrder.TabIndex = 35;
-            this.editSalesOrder.tileHieght = 100;
-            this.editSalesOrder.tileLocation = new System.Drawing.Point(0, 0);
-            this.editSalesOrder.tileSize = new System.Drawing.Size(100, 100);
-            this.editSalesOrder.tileTimer_Interval = 100D;
-            this.editSalesOrder.tileWidth = 100;
-            this.editSalesOrder.Visible = false;
-            this.editSalesOrder.XScale = 0;
-            this.editSalesOrder.YScale = 0;
-            // 
             // notificationPanel
             // 
             this.notificationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -492,7 +253,7 @@
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 17);
+            this.label3.Size = new System.Drawing.Size(95, 14);
             this.label3.TabIndex = 3;
             this.label3.Text = "Payments Due:";
             // 
@@ -502,7 +263,7 @@
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.Size = new System.Drawing.Size(62, 14);
             this.label4.TabIndex = 2;
             this.label4.Text = "Services:";
             // 
@@ -512,173 +273,9 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 23);
+            this.label1.Size = new System.Drawing.Size(143, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
-            // 
-            // statement
-            // 
-            this.statement.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.statement.BackColor = System.Drawing.Color.Transparent;
-            this.statement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statement.Location = new System.Drawing.Point(904, 248);
-            this.statement.Margin = new System.Windows.Forms.Padding(0);
-            this.statement.Name = "statement";
-            this.statement.Resize = new System.Drawing.Size(100, 100);
-            this.statement.Size = new System.Drawing.Size(100, 100);
-            this.statement.TabIndex = 37;
-            this.statement.tileHieght = 100;
-            this.statement.tileLocation = new System.Drawing.Point(0, 0);
-            this.statement.tileSize = new System.Drawing.Size(100, 100);
-            this.statement.tileTimer_Interval = 100D;
-            this.statement.tileWidth = 100;
-            this.statement.Visible = false;
-            this.statement.XScale = 0;
-            this.statement.YScale = 0;
-            // 
-            // royaltyFee
-            // 
-            this.royaltyFee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.royaltyFee.BackColor = System.Drawing.Color.Transparent;
-            this.royaltyFee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.royaltyFee.Location = new System.Drawing.Point(1013, 358);
-            this.royaltyFee.Margin = new System.Windows.Forms.Padding(0);
-            this.royaltyFee.Name = "royaltyFee";
-            this.royaltyFee.Resize = new System.Drawing.Size(100, 100);
-            this.royaltyFee.Size = new System.Drawing.Size(100, 100);
-            this.royaltyFee.TabIndex = 38;
-            this.royaltyFee.tileHieght = 100;
-            this.royaltyFee.tileLocation = new System.Drawing.Point(0, 0);
-            this.royaltyFee.tileSize = new System.Drawing.Size(100, 100);
-            this.royaltyFee.tileTimer_Interval = 100D;
-            this.royaltyFee.tileWidth = 100;
-            this.royaltyFee.Visible = false;
-            this.royaltyFee.XScale = 0;
-            this.royaltyFee.YScale = 0;
-            // 
-            // jobReport
-            // 
-            this.jobReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.jobReport.BackColor = System.Drawing.Color.Transparent;
-            this.jobReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.jobReport.Location = new System.Drawing.Point(1013, 248);
-            this.jobReport.Margin = new System.Windows.Forms.Padding(0);
-            this.jobReport.Name = "jobReport";
-            this.jobReport.Resize = new System.Drawing.Size(100, 100);
-            this.jobReport.Size = new System.Drawing.Size(100, 100);
-            this.jobReport.TabIndex = 39;
-            this.jobReport.tileHieght = 100;
-            this.jobReport.tileLocation = new System.Drawing.Point(0, 0);
-            this.jobReport.tileSize = new System.Drawing.Size(100, 100);
-            this.jobReport.tileTimer_Interval = 100D;
-            this.jobReport.tileWidth = 100;
-            this.jobReport.Visible = false;
-            this.jobReport.XScale = 0;
-            this.jobReport.YScale = 0;
-            // 
-            // revenueReport
-            // 
-            this.revenueReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.revenueReport.BackColor = System.Drawing.Color.Transparent;
-            this.revenueReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.revenueReport.Location = new System.Drawing.Point(904, 358);
-            this.revenueReport.Margin = new System.Windows.Forms.Padding(0);
-            this.revenueReport.Name = "revenueReport";
-            this.revenueReport.Resize = new System.Drawing.Size(100, 100);
-            this.revenueReport.Size = new System.Drawing.Size(100, 100);
-            this.revenueReport.TabIndex = 40;
-            this.revenueReport.tileHieght = 100;
-            this.revenueReport.tileLocation = new System.Drawing.Point(0, 0);
-            this.revenueReport.tileSize = new System.Drawing.Size(100, 100);
-            this.revenueReport.tileTimer_Interval = 100D;
-            this.revenueReport.tileWidth = 100;
-            this.revenueReport.Visible = false;
-            this.revenueReport.XScale = 0;
-            this.revenueReport.YScale = 0;
-            // 
-            // editQuote
-            // 
-            this.editQuote.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editQuote.BackColor = System.Drawing.Color.Transparent;
-            this.editQuote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editQuote.Location = new System.Drawing.Point(482, 248);
-            this.editQuote.Margin = new System.Windows.Forms.Padding(0);
-            this.editQuote.Name = "editQuote";
-            this.editQuote.Resize = new System.Drawing.Size(100, 100);
-            this.editQuote.Size = new System.Drawing.Size(100, 100);
-            this.editQuote.TabIndex = 42;
-            this.editQuote.tileHieght = 100;
-            this.editQuote.tileLocation = new System.Drawing.Point(0, 0);
-            this.editQuote.tileSize = new System.Drawing.Size(100, 100);
-            this.editQuote.tileTimer_Interval = 100D;
-            this.editQuote.tileWidth = 100;
-            this.editQuote.Visible = false;
-            this.editQuote.XScale = 0;
-            this.editQuote.YScale = 0;
-            // 
-            // purchaseRecord
-            // 
-            this.purchaseRecord.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.purchaseRecord.BackColor = System.Drawing.Color.Transparent;
-            this.purchaseRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.purchaseRecord.Location = new System.Drawing.Point(215, 357);
-            this.purchaseRecord.Margin = new System.Windows.Forms.Padding(0);
-            this.purchaseRecord.Name = "purchaseRecord";
-            this.purchaseRecord.Resize = new System.Drawing.Size(100, 100);
-            this.purchaseRecord.Size = new System.Drawing.Size(100, 100);
-            this.purchaseRecord.TabIndex = 43;
-            this.purchaseRecord.tileHieght = 100;
-            this.purchaseRecord.tileLocation = new System.Drawing.Point(0, 0);
-            this.purchaseRecord.tileSize = new System.Drawing.Size(100, 100);
-            this.purchaseRecord.tileTimer_Interval = 100D;
-            this.purchaseRecord.tileWidth = 100;
-            this.purchaseRecord.Visible = false;
-            this.purchaseRecord.XScale = 0;
-            this.purchaseRecord.YScale = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(103, 210);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 23);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Operations";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(369, 210);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 23);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Documents";
-            this.label6.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(640, 210);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 23);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Clients";
-            this.label7.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(900, 210);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 23);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Reports";
-            this.label8.Visible = false;
             // 
             // userSettings
             // 
@@ -708,33 +305,13 @@
             this.profilePic.TabStop = false;
             this.profilePic.Visible = false;
             // 
-            // inspection
-            // 
-            this.inspection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.inspection.BackColor = System.Drawing.Color.Transparent;
-            this.inspection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.inspection.Location = new System.Drawing.Point(215, 248);
-            this.inspection.Margin = new System.Windows.Forms.Padding(0);
-            this.inspection.Name = "inspection";
-            this.inspection.Resize = new System.Drawing.Size(100, 100);
-            this.inspection.Size = new System.Drawing.Size(100, 100);
-            this.inspection.TabIndex = 51;
-            this.inspection.tileHieght = 100;
-            this.inspection.tileLocation = new System.Drawing.Point(0, 0);
-            this.inspection.tileSize = new System.Drawing.Size(100, 100);
-            this.inspection.tileTimer_Interval = 100D;
-            this.inspection.tileWidth = 100;
-            this.inspection.Visible = false;
-            this.inspection.XScale = 0;
-            this.inspection.YScale = 0;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(110, 676);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 23);
+            this.label9.Size = new System.Drawing.Size(100, 18);
             this.label9.TabIndex = 52;
             this.label9.Text = "Sync Options";
             this.label9.Visible = false;
@@ -762,7 +339,7 @@
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncAndroid.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(114, 773);
+            this.syncAndroid.Location = new System.Drawing.Point(255, 716);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(133, 49);
@@ -794,54 +371,383 @@
             this.pnlUser.Size = new System.Drawing.Size(310, 123);
             this.pnlUser.TabIndex = 56;
             // 
+            // Operation
+            // 
+            this.Operation.Location = new System.Drawing.Point(99, 175);
+            this.Operation.Name = "Operation";
+            this.Operation.Size = new System.Drawing.Size(200, 35);
+            this.Operation.TabIndex = 57;
+            this.Operation.Text = "Operations";
+            this.Operation.UseVisualStyleBackColor = true;
+            this.Operation.Visible = false;
+            this.Operation.Click += new System.EventHandler(this.Operation_Click);
+            this.Operation.MouseEnter += new System.EventHandler(this.Operation_MouseEnter);
+            this.Operation.MouseHover += new System.EventHandler(this.Operation_MouseHover);
+            // 
+            // Document
+            // 
+            this.Document.BackColor = System.Drawing.Color.Transparent;
+            this.Document.Location = new System.Drawing.Point(315, 175);
+            this.Document.Name = "Document";
+            this.Document.Size = new System.Drawing.Size(201, 32);
+            this.Document.TabIndex = 58;
+            this.Document.Text = "Document";
+            this.Document.UseVisualStyleBackColor = false;
+            this.Document.Visible = false;
+            this.Document.MouseEnter += new System.EventHandler(this.Document_MouseEnter);
+            this.Document.MouseHover += new System.EventHandler(this.Document_MouseHover);
+            // 
+            // Client
+            // 
+            this.Client.Location = new System.Drawing.Point(531, 175);
+            this.Client.Name = "Client";
+            this.Client.Size = new System.Drawing.Size(200, 35);
+            this.Client.TabIndex = 59;
+            this.Client.Text = "Client";
+            this.Client.UseVisualStyleBackColor = true;
+            this.Client.Visible = false;
+            this.Client.MouseEnter += new System.EventHandler(this.Client_MouseEnter);
+            this.Client.MouseHover += new System.EventHandler(this.Client_MouseHover);
+            // 
+            // Report
+            // 
+            this.Report.Location = new System.Drawing.Point(757, 175);
+            this.Report.Name = "Report";
+            this.Report.Size = new System.Drawing.Size(200, 35);
+            this.Report.TabIndex = 60;
+            this.Report.Text = "Report";
+            this.Report.UseVisualStyleBackColor = true;
+            this.Report.Visible = false;
+            this.Report.Enter += new System.EventHandler(this.Report_Enter);
+            this.Report.MouseEnter += new System.EventHandler(this.Report_MouseEnter);
+            // 
+            // Quote
+            // 
+            this.Quote.BackColor = System.Drawing.Color.White;
+            this.Quote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quote.Location = new System.Drawing.Point(316, 215);
+            this.Quote.Name = "Quote";
+            this.Quote.Size = new System.Drawing.Size(201, 30);
+            this.Quote.TabIndex = 61;
+            this.Quote.Text = "Quote";
+            this.ItineraryTT.SetToolTip(this.Quote, "Generates quotes, providing information on the cost of an order.");
+            this.Quote.UseVisualStyleBackColor = false;
+            this.Quote.Visible = false;
+            this.Quote.Click += new System.EventHandler(this.Quote_Click);
+            // 
+            // EditQuote
+            // 
+            this.EditQuote.BackColor = System.Drawing.Color.White;
+            this.EditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditQuote.Location = new System.Drawing.Point(315, 259);
+            this.EditQuote.Name = "EditQuote";
+            this.EditQuote.Size = new System.Drawing.Size(201, 35);
+            this.EditQuote.TabIndex = 62;
+            this.EditQuote.Text = "Edit Quote";
+            this.ItineraryTT.SetToolTip(this.EditQuote, "Allows one to edit quotes, providing information on the cost of an order.");
+            this.EditQuote.UseVisualStyleBackColor = false;
+            this.EditQuote.Visible = false;
+            this.EditQuote.Click += new System.EventHandler(this.EditQuote_Click);
+            // 
+            // SalesOrder
+            // 
+            this.SalesOrder.BackColor = System.Drawing.Color.White;
+            this.SalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesOrder.Location = new System.Drawing.Point(316, 301);
+            this.SalesOrder.Name = "SalesOrder";
+            this.SalesOrder.Size = new System.Drawing.Size(200, 35);
+            this.SalesOrder.TabIndex = 63;
+            this.SalesOrder.Text = "Sales Order";
+            this.ItineraryTT.SetToolTip(this.SalesOrder, "Allows you to create a sales order form about a sepcific service address.");
+            this.SalesOrder.UseVisualStyleBackColor = false;
+            this.SalesOrder.Visible = false;
+            this.SalesOrder.Click += new System.EventHandler(this.SalesOrder_Click);
+            // 
+            // EditSalesOrder
+            // 
+            this.EditSalesOrder.BackColor = System.Drawing.Color.White;
+            this.EditSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditSalesOrder.Location = new System.Drawing.Point(316, 343);
+            this.EditSalesOrder.Name = "EditSalesOrder";
+            this.EditSalesOrder.Size = new System.Drawing.Size(200, 35);
+            this.EditSalesOrder.TabIndex = 64;
+            this.EditSalesOrder.Text = "Edit Sales Order";
+            this.ItineraryTT.SetToolTip(this.EditSalesOrder, "Edit a sales order form, to modify specific service addresses.");
+            this.EditSalesOrder.UseVisualStyleBackColor = false;
+            this.EditSalesOrder.Visible = false;
+            this.EditSalesOrder.Click += new System.EventHandler(this.EditSalesOrder_Click);
+            // 
+            // ConvertSalesOrder
+            // 
+            this.ConvertSalesOrder.BackColor = System.Drawing.Color.White;
+            this.ConvertSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConvertSalesOrder.Location = new System.Drawing.Point(316, 385);
+            this.ConvertSalesOrder.Name = "ConvertSalesOrder";
+            this.ConvertSalesOrder.Size = new System.Drawing.Size(200, 35);
+            this.ConvertSalesOrder.TabIndex = 65;
+            this.ConvertSalesOrder.Text = "Convert Sales Order";
+            this.ItineraryTT.SetToolTip(this.ConvertSalesOrder, "Generates a report based on a sales order form.");
+            this.ConvertSalesOrder.UseVisualStyleBackColor = false;
+            this.ConvertSalesOrder.Visible = false;
+            this.ConvertSalesOrder.Click += new System.EventHandler(this.ConvertSalesOrder_Click);
+            // 
+            // Invoice
+            // 
+            this.Invoice.BackColor = System.Drawing.Color.White;
+            this.Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Invoice.Location = new System.Drawing.Point(316, 427);
+            this.Invoice.Name = "Invoice";
+            this.Invoice.Size = new System.Drawing.Size(200, 35);
+            this.Invoice.TabIndex = 66;
+            this.Invoice.Text = "Invoice";
+            this.ItineraryTT.SetToolTip(this.Invoice, "Uses sale order to create an invoice for customer records.");
+            this.Invoice.UseVisualStyleBackColor = false;
+            this.Invoice.Visible = false;
+            this.Invoice.Click += new System.EventHandler(this.Invoice_Click);
+            // 
+            // Itinerary
+            // 
+            this.Itinerary.BackColor = System.Drawing.Color.White;
+            this.Itinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Itinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Itinerary.Location = new System.Drawing.Point(99, 216);
+            this.Itinerary.Margin = new System.Windows.Forms.Padding(0);
+            this.Itinerary.Name = "Itinerary";
+            this.Itinerary.Size = new System.Drawing.Size(200, 30);
+            this.Itinerary.TabIndex = 67;
+            this.Itinerary.Text = "Itinerary";
+            this.ItineraryTT.SetToolTip(this.Itinerary, "Shows locations based on the daily Itinerary and maps them out via google maps.");
+            this.Itinerary.UseVisualStyleBackColor = false;
+            this.Itinerary.Visible = false;
+            this.Itinerary.Click += new System.EventHandler(this.Itinerary_Click);
+            // 
+            // Inventory
+            // 
+            this.Inventory.BackColor = System.Drawing.Color.White;
+            this.Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Inventory.Location = new System.Drawing.Point(99, 259);
+            this.Inventory.Name = "Inventory";
+            this.Inventory.Size = new System.Drawing.Size(200, 30);
+            this.Inventory.TabIndex = 68;
+            this.Inventory.Text = "Inventory";
+            this.ItineraryTT.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
+        "provided.");
+            this.Inventory.UseVisualStyleBackColor = false;
+            this.Inventory.Visible = false;
+            this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
+            // 
+            // PurchaseRecord
+            // 
+            this.PurchaseRecord.BackColor = System.Drawing.Color.White;
+            this.PurchaseRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PurchaseRecord.Location = new System.Drawing.Point(99, 299);
+            this.PurchaseRecord.Name = "PurchaseRecord";
+            this.PurchaseRecord.Size = new System.Drawing.Size(200, 35);
+            this.PurchaseRecord.TabIndex = 69;
+            this.PurchaseRecord.Text = "Puchase Record";
+            this.ItineraryTT.SetToolTip(this.PurchaseRecord, "Creates and records any purchases from suppliers.");
+            this.PurchaseRecord.UseVisualStyleBackColor = false;
+            this.PurchaseRecord.Visible = false;
+            this.PurchaseRecord.Click += new System.EventHandler(this.PurchaseRecord_Click);
+            // 
+            // Payment
+            // 
+            this.Payment.BackColor = System.Drawing.Color.White;
+            this.Payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Payment.Location = new System.Drawing.Point(99, 343);
+            this.Payment.Name = "Payment";
+            this.Payment.Size = new System.Drawing.Size(200, 35);
+            this.Payment.TabIndex = 70;
+            this.Payment.Text = "Payment";
+            this.ItineraryTT.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
+        " has been made.");
+            this.Payment.UseVisualStyleBackColor = false;
+            this.Payment.Visible = false;
+            this.Payment.Click += new System.EventHandler(this.Payment_Click);
+            // 
+            // Inspection
+            // 
+            this.Inspection.BackColor = System.Drawing.Color.White;
+            this.Inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Inspection.Location = new System.Drawing.Point(99, 385);
+            this.Inspection.Name = "Inspection";
+            this.Inspection.Size = new System.Drawing.Size(200, 35);
+            this.Inspection.TabIndex = 71;
+            this.Inspection.Text = "Inspection";
+            this.ItineraryTT.SetToolTip(this.Inspection, "Attaches a service address to an inspection report.");
+            this.Inspection.UseVisualStyleBackColor = false;
+            this.Inspection.Visible = false;
+            this.Inspection.Click += new System.EventHandler(this.Inspection_Click);
+            // 
+            // AddClient
+            // 
+            this.AddClient.BackColor = System.Drawing.Color.White;
+            this.AddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddClient.Location = new System.Drawing.Point(531, 216);
+            this.AddClient.Name = "AddClient";
+            this.AddClient.Size = new System.Drawing.Size(200, 30);
+            this.AddClient.TabIndex = 72;
+            this.AddClient.Text = "Add Client";
+            this.ItineraryTT.SetToolTip(this.AddClient, "Allows the user to enter a client to the database.");
+            this.AddClient.UseVisualStyleBackColor = false;
+            this.AddClient.Visible = false;
+            this.AddClient.Click += new System.EventHandler(this.AddClient_Click);
+            // 
+            // EditClient
+            // 
+            this.EditClient.BackColor = System.Drawing.Color.White;
+            this.EditClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditClient.Location = new System.Drawing.Point(531, 259);
+            this.EditClient.Name = "EditClient";
+            this.EditClient.Size = new System.Drawing.Size(200, 35);
+            this.EditClient.TabIndex = 73;
+            this.EditClient.Text = "Edit Client";
+            this.ItineraryTT.SetToolTip(this.EditClient, "Allows the user to edit an entered client.");
+            this.EditClient.UseVisualStyleBackColor = false;
+            this.EditClient.Visible = false;
+            this.EditClient.Click += new System.EventHandler(this.EditClient_Click);
+            // 
+            // AddContract
+            // 
+            this.AddContract.BackColor = System.Drawing.Color.White;
+            this.AddContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddContract.Location = new System.Drawing.Point(531, 301);
+            this.AddContract.Name = "AddContract";
+            this.AddContract.Size = new System.Drawing.Size(200, 35);
+            this.AddContract.TabIndex = 74;
+            this.AddContract.Text = "Add Contract";
+            this.ItineraryTT.SetToolTip(this.AddContract, "Allows the user to create a contract pertaining to a specified client.");
+            this.AddContract.UseVisualStyleBackColor = false;
+            this.AddContract.Visible = false;
+            this.AddContract.Click += new System.EventHandler(this.AddContract_Click);
+            // 
+            // EditContract
+            // 
+            this.EditContract.BackColor = System.Drawing.Color.White;
+            this.EditContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditContract.Location = new System.Drawing.Point(531, 343);
+            this.EditContract.Name = "EditContract";
+            this.EditContract.Size = new System.Drawing.Size(200, 35);
+            this.EditContract.TabIndex = 75;
+            this.EditContract.Text = "Edit Contract";
+            this.ItineraryTT.SetToolTip(this.EditContract, "Allows the user to edit a contract pertaining to a specified client.");
+            this.EditContract.UseVisualStyleBackColor = false;
+            this.EditContract.Visible = false;
+            this.EditContract.Click += new System.EventHandler(this.EditContract_Click);
+            // 
+            // Statement
+            // 
+            this.Statement.BackColor = System.Drawing.Color.White;
+            this.Statement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Statement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statement.Location = new System.Drawing.Point(757, 216);
+            this.Statement.Name = "Statement";
+            this.Statement.Size = new System.Drawing.Size(200, 30);
+            this.Statement.TabIndex = 76;
+            this.Statement.Text = "Statement";
+            this.ItineraryTT.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
+        " the invoices.");
+            this.Statement.UseVisualStyleBackColor = false;
+            this.Statement.Visible = false;
+            this.Statement.Click += new System.EventHandler(this.Statement_Click);
+            // 
+            // JobReport
+            // 
+            this.JobReport.BackColor = System.Drawing.Color.White;
+            this.JobReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.JobReport.Location = new System.Drawing.Point(757, 259);
+            this.JobReport.Name = "JobReport";
+            this.JobReport.Size = new System.Drawing.Size(200, 35);
+            this.JobReport.TabIndex = 77;
+            this.JobReport.Text = "Job Report";
+            this.ItineraryTT.SetToolTip(this.JobReport, "DOESN\'T WORK");
+            this.JobReport.UseVisualStyleBackColor = false;
+            this.JobReport.Visible = false;
+            this.JobReport.Click += new System.EventHandler(this.JobReport_Click);
+            // 
+            // RevenueReport
+            // 
+            this.RevenueReport.BackColor = System.Drawing.Color.White;
+            this.RevenueReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RevenueReport.Location = new System.Drawing.Point(757, 301);
+            this.RevenueReport.Name = "RevenueReport";
+            this.RevenueReport.Size = new System.Drawing.Size(200, 35);
+            this.RevenueReport.TabIndex = 78;
+            this.RevenueReport.Text = "Revenue Report";
+            this.ItineraryTT.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
+        "hreshold.");
+            this.RevenueReport.UseVisualStyleBackColor = false;
+            this.RevenueReport.Visible = false;
+            this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
+            // 
+            // RoyaltyFee
+            // 
+            this.RoyaltyFee.BackColor = System.Drawing.Color.White;
+            this.RoyaltyFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoyaltyFee.Location = new System.Drawing.Point(757, 343);
+            this.RoyaltyFee.Name = "RoyaltyFee";
+            this.RoyaltyFee.Size = new System.Drawing.Size(200, 35);
+            this.RoyaltyFee.TabIndex = 79;
+            this.RoyaltyFee.Text = "Royalty Fee";
+            this.ItineraryTT.SetToolTip(this.RoyaltyFee, "Shows the royalties owed to Fire-Alert for a given year.");
+            this.RoyaltyFee.UseVisualStyleBackColor = false;
+            this.RoyaltyFee.Visible = false;
+            this.RoyaltyFee.Click += new System.EventHandler(this.RoyaltyFee_Click);
+            // 
+            // ItineraryTT
+            // 
+            this.ItineraryTT.ToolTipTitle = "Help";
+            this.ItineraryTT.Popup += new System.Windows.Forms.PopupEventHandler(this.ItineraryTT_Popup);
+            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1452, 912);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+            this.Controls.Add(this.RoyaltyFee);
+            this.Controls.Add(this.RevenueReport);
+            this.Controls.Add(this.JobReport);
+            this.Controls.Add(this.Statement);
+            this.Controls.Add(this.EditContract);
+            this.Controls.Add(this.AddContract);
+            this.Controls.Add(this.EditClient);
+            this.Controls.Add(this.AddClient);
+            this.Controls.Add(this.Inspection);
+            this.Controls.Add(this.Payment);
+            this.Controls.Add(this.PurchaseRecord);
+            this.Controls.Add(this.Inventory);
+            this.Controls.Add(this.Itinerary);
+            this.Controls.Add(this.Invoice);
+            this.Controls.Add(this.ConvertSalesOrder);
+            this.Controls.Add(this.EditSalesOrder);
+            this.Controls.Add(this.SalesOrder);
+            this.Controls.Add(this.EditQuote);
+            this.Controls.Add(this.Quote);
+            this.Controls.Add(this.Report);
+            this.Controls.Add(this.Client);
+            this.Controls.Add(this.Document);
+            this.Controls.Add(this.Operation);
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.syncAndroid);
             this.Controls.Add(this.syncHQ);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.inspection);
-            this.Controls.Add(this.royaltyFee);
-            this.Controls.Add(this.itinerary);
-            this.Controls.Add(this.inventory);
-            this.Controls.Add(this.payment);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.purchaseRecord);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.editQuote);
-            this.Controls.Add(this.revenueReport);
-            this.Controls.Add(this.jobReport);
-            this.Controls.Add(this.statement);
             this.Controls.Add(this.notificationPanel);
-            this.Controls.Add(this.editSalesOrder);
-            this.Controls.Add(this.convertSalesOrder);
-            this.Controls.Add(this.editContract);
-            this.Controls.Add(this.addContract);
-            this.Controls.Add(this.editClient);
-            this.Controls.Add(this.addClient);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.salesOrder);
-            this.Controls.Add(this.invoice);
-            this.Controls.Add(this.quote);
             this.Controls.Add(this.Exit_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "View";
-            this.Text = "FAFOS System";
+            this.Text = "//";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).EndInit();
@@ -859,10 +765,6 @@
         #endregion
 
         private System.Windows.Forms.Button Exit_btn;
-        private tiles.tile quote;
-        private tiles.tile invoice;
-        private tiles.tile salesOrder;
-        private tiles.tile inventory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblUsername;
@@ -873,38 +775,43 @@
         private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.PictureBox FireAlertLogo;
-        private tiles.tile payment;
-        private tiles.tile itinerary;
-        private tiles.tile addClient;
-        private tiles.tile editClient;
-        private tiles.tile addContract;
-        private tiles.tile editContract;
-        private tiles.tile convertSalesOrder;
-        private tiles.tile editSalesOrder;
         private System.Windows.Forms.Panel notificationPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label paymentNotification;
         private System.Windows.Forms.Label serviceNotification;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private tiles.tile statement;
-        private tiles.tile royaltyFee;
-        private tiles.tile jobReport;
-        private tiles.tile revenueReport;
-        private tiles.tile editQuote;
-        private tiles.tile purchaseRecord;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button userSettings;
         private System.Windows.Forms.PictureBox profilePic;
-        private tiles.tile inspection;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Button syncAndroid;
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlUser;
+        private System.Windows.Forms.Button Operation;
+        private System.Windows.Forms.Button Document;
+        private System.Windows.Forms.Button Client;
+        private System.Windows.Forms.Button Report;
+        private System.Windows.Forms.Button Quote;
+        private System.Windows.Forms.Button EditQuote;
+        private System.Windows.Forms.Button SalesOrder;
+        private System.Windows.Forms.Button EditSalesOrder;
+        private System.Windows.Forms.Button ConvertSalesOrder;
+        private System.Windows.Forms.Button Invoice;
+        private System.Windows.Forms.Button Itinerary;
+        private System.Windows.Forms.Button Inventory;
+        private System.Windows.Forms.Button PurchaseRecord;
+        private System.Windows.Forms.Button Payment;
+        private System.Windows.Forms.Button Inspection;
+        private System.Windows.Forms.Button AddClient;
+        private System.Windows.Forms.Button EditClient;
+        private System.Windows.Forms.Button AddContract;
+        private System.Windows.Forms.Button EditContract;
+        private System.Windows.Forms.Button Statement;
+        private System.Windows.Forms.Button JobReport;
+        private System.Windows.Forms.Button RevenueReport;
+        private System.Windows.Forms.Button RoyaltyFee;
+        private System.Windows.Forms.ToolTip ItineraryTT;
 
     }
 }
