@@ -37,8 +37,6 @@
             this.Login_btn = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblUserInfo = new System.Windows.Forms.Label();
-            this.Logout_btn = new System.Windows.Forms.Button();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
             this.SEdgeLogo = new System.Windows.Forms.Label();
             this.notificationPanel = new System.Windows.Forms.Panel();
@@ -47,13 +45,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.userSettings = new System.Windows.Forms.Button();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.pnlUser = new System.Windows.Forms.Panel();
+            this.EditContract = new System.Windows.Forms.Button();
             this.Operation = new System.Windows.Forms.Button();
             this.Document = new System.Windows.Forms.Button();
             this.Client = new System.Windows.Forms.Button();
@@ -72,17 +69,46 @@
             this.AddClient = new System.Windows.Forms.Button();
             this.EditClient = new System.Windows.Forms.Button();
             this.AddContract = new System.Windows.Forms.Button();
-            this.EditContract = new System.Windows.Forms.Button();
             this.Statement = new System.Windows.Forms.Button();
             this.JobReport = new System.Windows.Forms.Button();
             this.RevenueReport = new System.Windows.Forms.Button();
             this.RoyaltyFee = new System.Windows.Forms.Button();
-            this.ItineraryTT = new System.Windows.Forms.ToolTip(this.components);
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lblUserInfo = new System.Windows.Forms.Label();
+            this.Logout = new System.Windows.Forms.Button();
+            this.UserSettings = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.manageAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itineraryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.purchaseRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inspectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createQuoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editQuoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createSalesOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSalesOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertSalesOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jobReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.royaltyFeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.pnlLogin.SuspendLayout();
-            this.pnlUser.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Exit_btn
@@ -106,7 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 100);
+            this.label2.Location = new System.Drawing.Point(63, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(547, 32);
             this.label2.TabIndex = 17;
@@ -171,32 +197,6 @@
             this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Password";
             // 
-            // lblUserInfo
-            // 
-            this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserInfo.Location = new System.Drawing.Point(72, 10);
-            this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
-            this.lblUserInfo.TabIndex = 23;
-            this.lblUserInfo.Visible = false;
-            // 
-            // Logout_btn
-            // 
-            this.Logout_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.Logout_btn.FlatAppearance.BorderSize = 0;
-            this.Logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_btn.ForeColor = System.Drawing.Color.White;
-            this.Logout_btn.Location = new System.Drawing.Point(204, 10);
-            this.Logout_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.Logout_btn.Name = "Logout_btn";
-            this.Logout_btn.Size = new System.Drawing.Size(100, 50);
-            this.Logout_btn.TabIndex = 24;
-            this.Logout_btn.Text = "Logout";
-            this.Logout_btn.UseVisualStyleBackColor = false;
-            this.Logout_btn.Visible = false;
-            this.Logout_btn.Click += new System.EventHandler(this.Logout_btn_Click);
-            // 
             // FireAlertLogo
             // 
             this.FireAlertLogo.Image = global::FAFOS.Properties.Resources.Logo;
@@ -223,9 +223,9 @@
             this.notificationPanel.Controls.Add(this.label3);
             this.notificationPanel.Controls.Add(this.label4);
             this.notificationPanel.Controls.Add(this.label1);
-            this.notificationPanel.Location = new System.Drawing.Point(1179, 334);
+            this.notificationPanel.Location = new System.Drawing.Point(1222, 289);
             this.notificationPanel.Name = "notificationPanel";
-            this.notificationPanel.Size = new System.Drawing.Size(250, 299);
+            this.notificationPanel.Size = new System.Drawing.Size(235, 299);
             this.notificationPanel.TabIndex = 36;
             this.notificationPanel.Visible = false;
             // 
@@ -277,29 +277,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
-            // userSettings
-            // 
-            this.userSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.userSettings.FlatAppearance.BorderSize = 0;
-            this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSettings.ForeColor = System.Drawing.Color.White;
-            this.userSettings.Location = new System.Drawing.Point(204, 68);
-            this.userSettings.Margin = new System.Windows.Forms.Padding(4);
-            this.userSettings.Name = "userSettings";
-            this.userSettings.Size = new System.Drawing.Size(100, 50);
-            this.userSettings.TabIndex = 49;
-            this.userSettings.Text = "User Settings";
-            this.userSettings.UseVisualStyleBackColor = false;
-            this.userSettings.Visible = false;
-            this.userSettings.Click += new System.EventHandler(this.userSettings_Click);
-            // 
             // profilePic
             // 
             this.profilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.profilePic.Location = new System.Drawing.Point(23, 10);
+            this.profilePic.Location = new System.Drawing.Point(0, 702);
             this.profilePic.Name = "profilePic";
-            this.profilePic.Size = new System.Drawing.Size(43, 50);
+            this.profilePic.Size = new System.Drawing.Size(103, 66);
             this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePic.TabIndex = 50;
             this.profilePic.TabStop = false;
@@ -309,7 +292,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(110, 676);
+            this.label9.Location = new System.Drawing.Point(576, 732);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 18);
             this.label9.TabIndex = 52;
@@ -318,12 +301,11 @@
             // 
             // syncHQ
             // 
-            this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.syncHQ.BackColor = System.Drawing.Color.White;
             this.syncHQ.FlatAppearance.BorderSize = 0;
-            this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncHQ.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(114, 714);
+            this.syncHQ.ForeColor = System.Drawing.Color.Black;
+            this.syncHQ.Location = new System.Drawing.Point(683, 719);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
             this.syncHQ.Size = new System.Drawing.Size(133, 51);
@@ -334,12 +316,11 @@
             // 
             // syncAndroid
             // 
-            this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.syncAndroid.BackColor = System.Drawing.Color.White;
             this.syncAndroid.FlatAppearance.BorderSize = 0;
-            this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncAndroid.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(255, 716);
+            this.syncAndroid.ForeColor = System.Drawing.Color.Black;
+            this.syncAndroid.Location = new System.Drawing.Point(824, 719);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(133, 49);
@@ -355,27 +336,32 @@
             this.pnlLogin.Controls.Add(this.txtUsername);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.txtPassword);
-            this.pnlLogin.Location = new System.Drawing.Point(627, 432);
+            this.pnlLogin.Location = new System.Drawing.Point(579, 472);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(274, 219);
             this.pnlLogin.TabIndex = 55;
             // 
-            // pnlUser
+            // EditContract
             // 
-            this.pnlUser.Controls.Add(this.userSettings);
-            this.pnlUser.Controls.Add(this.lblUserInfo);
-            this.pnlUser.Controls.Add(this.Logout_btn);
-            this.pnlUser.Controls.Add(this.profilePic);
-            this.pnlUser.Location = new System.Drawing.Point(1130, 205);
-            this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(310, 123);
-            this.pnlUser.TabIndex = 56;
+            this.EditContract.BackColor = System.Drawing.Color.White;
+            this.EditContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditContract.Location = new System.Drawing.Point(606, 432);
+            this.EditContract.Name = "EditContract";
+            this.EditContract.Size = new System.Drawing.Size(260, 75);
+            this.EditContract.TabIndex = 75;
+            this.EditContract.Text = "Edit Contract";
+            this.ToolTip.SetToolTip(this.EditContract, "Allows the user to edit a contract pertaining to a specified client.");
+            this.EditContract.UseVisualStyleBackColor = false;
+            this.EditContract.Visible = false;
+            this.EditContract.Click += new System.EventHandler(this.EditContract_Click);
             // 
             // Operation
             // 
-            this.Operation.Location = new System.Drawing.Point(99, 175);
+            this.Operation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Operation.Location = new System.Drawing.Point(72, 99);
             this.Operation.Name = "Operation";
-            this.Operation.Size = new System.Drawing.Size(200, 35);
+            this.Operation.Size = new System.Drawing.Size(260, 75);
             this.Operation.TabIndex = 57;
             this.Operation.Text = "Operations";
             this.Operation.UseVisualStyleBackColor = true;
@@ -387,11 +373,12 @@
             // Document
             // 
             this.Document.BackColor = System.Drawing.Color.Transparent;
-            this.Document.Location = new System.Drawing.Point(315, 175);
+            this.Document.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Document.Location = new System.Drawing.Point(340, 99);
             this.Document.Name = "Document";
-            this.Document.Size = new System.Drawing.Size(201, 32);
+            this.Document.Size = new System.Drawing.Size(260, 75);
             this.Document.TabIndex = 58;
-            this.Document.Text = "Document";
+            this.Document.Text = "Documents";
             this.Document.UseVisualStyleBackColor = false;
             this.Document.Visible = false;
             this.Document.MouseEnter += new System.EventHandler(this.Document_MouseEnter);
@@ -399,11 +386,12 @@
             // 
             // Client
             // 
-            this.Client.Location = new System.Drawing.Point(531, 175);
+            this.Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Client.Location = new System.Drawing.Point(606, 99);
             this.Client.Name = "Client";
-            this.Client.Size = new System.Drawing.Size(200, 35);
+            this.Client.Size = new System.Drawing.Size(260, 75);
             this.Client.TabIndex = 59;
-            this.Client.Text = "Client";
+            this.Client.Text = "Clients";
             this.Client.UseVisualStyleBackColor = true;
             this.Client.Visible = false;
             this.Client.MouseEnter += new System.EventHandler(this.Client_MouseEnter);
@@ -411,11 +399,12 @@
             // 
             // Report
             // 
-            this.Report.Location = new System.Drawing.Point(757, 175);
+            this.Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Report.Location = new System.Drawing.Point(872, 99);
             this.Report.Name = "Report";
-            this.Report.Size = new System.Drawing.Size(200, 35);
+            this.Report.Size = new System.Drawing.Size(260, 75);
             this.Report.TabIndex = 60;
-            this.Report.Text = "Report";
+            this.Report.Text = "Reports";
             this.Report.UseVisualStyleBackColor = true;
             this.Report.Visible = false;
             this.Report.Enter += new System.EventHandler(this.Report_Enter);
@@ -425,13 +414,13 @@
             // 
             this.Quote.BackColor = System.Drawing.Color.White;
             this.Quote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quote.Location = new System.Drawing.Point(316, 215);
+            this.Quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quote.Location = new System.Drawing.Point(340, 183);
             this.Quote.Name = "Quote";
-            this.Quote.Size = new System.Drawing.Size(201, 30);
+            this.Quote.Size = new System.Drawing.Size(260, 75);
             this.Quote.TabIndex = 61;
-            this.Quote.Text = "Quote";
-            this.ItineraryTT.SetToolTip(this.Quote, "Generates quotes, providing information on the cost of an order.");
+            this.Quote.Text = "Create Quote";
+            this.ToolTip.SetToolTip(this.Quote, "Generates quotes, providing information on the cost of an order.");
             this.Quote.UseVisualStyleBackColor = false;
             this.Quote.Visible = false;
             this.Quote.Click += new System.EventHandler(this.Quote_Click);
@@ -440,12 +429,13 @@
             // 
             this.EditQuote.BackColor = System.Drawing.Color.White;
             this.EditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditQuote.Location = new System.Drawing.Point(315, 259);
+            this.EditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditQuote.Location = new System.Drawing.Point(340, 267);
             this.EditQuote.Name = "EditQuote";
-            this.EditQuote.Size = new System.Drawing.Size(201, 35);
+            this.EditQuote.Size = new System.Drawing.Size(260, 75);
             this.EditQuote.TabIndex = 62;
             this.EditQuote.Text = "Edit Quote";
-            this.ItineraryTT.SetToolTip(this.EditQuote, "Allows one to edit quotes, providing information on the cost of an order.");
+            this.ToolTip.SetToolTip(this.EditQuote, "Allows one to edit quotes, providing information on the cost of an order.");
             this.EditQuote.UseVisualStyleBackColor = false;
             this.EditQuote.Visible = false;
             this.EditQuote.Click += new System.EventHandler(this.EditQuote_Click);
@@ -454,12 +444,13 @@
             // 
             this.SalesOrder.BackColor = System.Drawing.Color.White;
             this.SalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesOrder.Location = new System.Drawing.Point(316, 301);
+            this.SalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesOrder.Location = new System.Drawing.Point(340, 351);
             this.SalesOrder.Name = "SalesOrder";
-            this.SalesOrder.Size = new System.Drawing.Size(200, 35);
+            this.SalesOrder.Size = new System.Drawing.Size(260, 75);
             this.SalesOrder.TabIndex = 63;
             this.SalesOrder.Text = "Sales Order";
-            this.ItineraryTT.SetToolTip(this.SalesOrder, "Allows you to create a sales order form about a sepcific service address.");
+            this.ToolTip.SetToolTip(this.SalesOrder, "Allows you to create a sales order form about a sepcific service address.");
             this.SalesOrder.UseVisualStyleBackColor = false;
             this.SalesOrder.Visible = false;
             this.SalesOrder.Click += new System.EventHandler(this.SalesOrder_Click);
@@ -468,12 +459,13 @@
             // 
             this.EditSalesOrder.BackColor = System.Drawing.Color.White;
             this.EditSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditSalesOrder.Location = new System.Drawing.Point(316, 343);
+            this.EditSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditSalesOrder.Location = new System.Drawing.Point(340, 432);
             this.EditSalesOrder.Name = "EditSalesOrder";
-            this.EditSalesOrder.Size = new System.Drawing.Size(200, 35);
+            this.EditSalesOrder.Size = new System.Drawing.Size(260, 75);
             this.EditSalesOrder.TabIndex = 64;
             this.EditSalesOrder.Text = "Edit Sales Order";
-            this.ItineraryTT.SetToolTip(this.EditSalesOrder, "Edit a sales order form, to modify specific service addresses.");
+            this.ToolTip.SetToolTip(this.EditSalesOrder, "Edit a sales order form, to modify specific service addresses.");
             this.EditSalesOrder.UseVisualStyleBackColor = false;
             this.EditSalesOrder.Visible = false;
             this.EditSalesOrder.Click += new System.EventHandler(this.EditSalesOrder_Click);
@@ -482,12 +474,13 @@
             // 
             this.ConvertSalesOrder.BackColor = System.Drawing.Color.White;
             this.ConvertSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConvertSalesOrder.Location = new System.Drawing.Point(316, 385);
+            this.ConvertSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConvertSalesOrder.Location = new System.Drawing.Point(340, 513);
             this.ConvertSalesOrder.Name = "ConvertSalesOrder";
-            this.ConvertSalesOrder.Size = new System.Drawing.Size(200, 35);
+            this.ConvertSalesOrder.Size = new System.Drawing.Size(260, 75);
             this.ConvertSalesOrder.TabIndex = 65;
             this.ConvertSalesOrder.Text = "Convert Sales Order";
-            this.ItineraryTT.SetToolTip(this.ConvertSalesOrder, "Generates a report based on a sales order form.");
+            this.ToolTip.SetToolTip(this.ConvertSalesOrder, "Generates a report based on a sales order form.");
             this.ConvertSalesOrder.UseVisualStyleBackColor = false;
             this.ConvertSalesOrder.Visible = false;
             this.ConvertSalesOrder.Click += new System.EventHandler(this.ConvertSalesOrder_Click);
@@ -496,12 +489,13 @@
             // 
             this.Invoice.BackColor = System.Drawing.Color.White;
             this.Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Invoice.Location = new System.Drawing.Point(316, 427);
+            this.Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Invoice.Location = new System.Drawing.Point(340, 594);
             this.Invoice.Name = "Invoice";
-            this.Invoice.Size = new System.Drawing.Size(200, 35);
+            this.Invoice.Size = new System.Drawing.Size(260, 75);
             this.Invoice.TabIndex = 66;
             this.Invoice.Text = "Invoice";
-            this.ItineraryTT.SetToolTip(this.Invoice, "Uses sale order to create an invoice for customer records.");
+            this.ToolTip.SetToolTip(this.Invoice, "Uses sale order to create an invoice for customer records.");
             this.Invoice.UseVisualStyleBackColor = false;
             this.Invoice.Visible = false;
             this.Invoice.Click += new System.EventHandler(this.Invoice_Click);
@@ -510,14 +504,14 @@
             // 
             this.Itinerary.BackColor = System.Drawing.Color.White;
             this.Itinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Itinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Itinerary.Location = new System.Drawing.Point(99, 216);
+            this.Itinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Itinerary.Location = new System.Drawing.Point(72, 183);
             this.Itinerary.Margin = new System.Windows.Forms.Padding(0);
             this.Itinerary.Name = "Itinerary";
-            this.Itinerary.Size = new System.Drawing.Size(200, 30);
+            this.Itinerary.Size = new System.Drawing.Size(260, 75);
             this.Itinerary.TabIndex = 67;
             this.Itinerary.Text = "Itinerary";
-            this.ItineraryTT.SetToolTip(this.Itinerary, "Shows locations based on the daily Itinerary and maps them out via google maps.");
+            this.ToolTip.SetToolTip(this.Itinerary, "Shows locations based on the daily Itinerary and maps them out via google maps.");
             this.Itinerary.UseVisualStyleBackColor = false;
             this.Itinerary.Visible = false;
             this.Itinerary.Click += new System.EventHandler(this.Itinerary_Click);
@@ -526,12 +520,13 @@
             // 
             this.Inventory.BackColor = System.Drawing.Color.White;
             this.Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Inventory.Location = new System.Drawing.Point(99, 259);
+            this.Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inventory.Location = new System.Drawing.Point(72, 266);
             this.Inventory.Name = "Inventory";
-            this.Inventory.Size = new System.Drawing.Size(200, 30);
+            this.Inventory.Size = new System.Drawing.Size(260, 75);
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
-            this.ItineraryTT.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
+            this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
         "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
@@ -541,12 +536,13 @@
             // 
             this.PurchaseRecord.BackColor = System.Drawing.Color.White;
             this.PurchaseRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PurchaseRecord.Location = new System.Drawing.Point(99, 299);
+            this.PurchaseRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchaseRecord.Location = new System.Drawing.Point(72, 351);
             this.PurchaseRecord.Name = "PurchaseRecord";
-            this.PurchaseRecord.Size = new System.Drawing.Size(200, 35);
+            this.PurchaseRecord.Size = new System.Drawing.Size(260, 75);
             this.PurchaseRecord.TabIndex = 69;
             this.PurchaseRecord.Text = "Puchase Record";
-            this.ItineraryTT.SetToolTip(this.PurchaseRecord, "Creates and records any purchases from suppliers.");
+            this.ToolTip.SetToolTip(this.PurchaseRecord, "Creates and records any purchases from suppliers.");
             this.PurchaseRecord.UseVisualStyleBackColor = false;
             this.PurchaseRecord.Visible = false;
             this.PurchaseRecord.Click += new System.EventHandler(this.PurchaseRecord_Click);
@@ -555,12 +551,13 @@
             // 
             this.Payment.BackColor = System.Drawing.Color.White;
             this.Payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Payment.Location = new System.Drawing.Point(99, 343);
+            this.Payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Payment.Location = new System.Drawing.Point(72, 432);
             this.Payment.Name = "Payment";
-            this.Payment.Size = new System.Drawing.Size(200, 35);
+            this.Payment.Size = new System.Drawing.Size(260, 75);
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
-            this.ItineraryTT.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
+            this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
         " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
@@ -570,12 +567,13 @@
             // 
             this.Inspection.BackColor = System.Drawing.Color.White;
             this.Inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Inspection.Location = new System.Drawing.Point(99, 385);
+            this.Inspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inspection.Location = new System.Drawing.Point(72, 513);
             this.Inspection.Name = "Inspection";
-            this.Inspection.Size = new System.Drawing.Size(200, 35);
+            this.Inspection.Size = new System.Drawing.Size(260, 75);
             this.Inspection.TabIndex = 71;
             this.Inspection.Text = "Inspection";
-            this.ItineraryTT.SetToolTip(this.Inspection, "Attaches a service address to an inspection report.");
+            this.ToolTip.SetToolTip(this.Inspection, "Attaches a service address to an inspection report.");
             this.Inspection.UseVisualStyleBackColor = false;
             this.Inspection.Visible = false;
             this.Inspection.Click += new System.EventHandler(this.Inspection_Click);
@@ -584,13 +582,13 @@
             // 
             this.AddClient.BackColor = System.Drawing.Color.White;
             this.AddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddClient.Location = new System.Drawing.Point(531, 216);
+            this.AddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddClient.Location = new System.Drawing.Point(606, 183);
             this.AddClient.Name = "AddClient";
-            this.AddClient.Size = new System.Drawing.Size(200, 30);
+            this.AddClient.Size = new System.Drawing.Size(260, 75);
             this.AddClient.TabIndex = 72;
             this.AddClient.Text = "Add Client";
-            this.ItineraryTT.SetToolTip(this.AddClient, "Allows the user to enter a client to the database.");
+            this.ToolTip.SetToolTip(this.AddClient, "Allows the user to enter a client to the database.");
             this.AddClient.UseVisualStyleBackColor = false;
             this.AddClient.Visible = false;
             this.AddClient.Click += new System.EventHandler(this.AddClient_Click);
@@ -599,12 +597,13 @@
             // 
             this.EditClient.BackColor = System.Drawing.Color.White;
             this.EditClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditClient.Location = new System.Drawing.Point(531, 259);
+            this.EditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditClient.Location = new System.Drawing.Point(606, 267);
             this.EditClient.Name = "EditClient";
-            this.EditClient.Size = new System.Drawing.Size(200, 35);
+            this.EditClient.Size = new System.Drawing.Size(260, 75);
             this.EditClient.TabIndex = 73;
             this.EditClient.Text = "Edit Client";
-            this.ItineraryTT.SetToolTip(this.EditClient, "Allows the user to edit an entered client.");
+            this.ToolTip.SetToolTip(this.EditClient, "Allows the user to edit an entered client.");
             this.EditClient.UseVisualStyleBackColor = false;
             this.EditClient.Visible = false;
             this.EditClient.Click += new System.EventHandler(this.EditClient_Click);
@@ -613,41 +612,28 @@
             // 
             this.AddContract.BackColor = System.Drawing.Color.White;
             this.AddContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddContract.Location = new System.Drawing.Point(531, 301);
+            this.AddContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddContract.Location = new System.Drawing.Point(606, 351);
             this.AddContract.Name = "AddContract";
-            this.AddContract.Size = new System.Drawing.Size(200, 35);
+            this.AddContract.Size = new System.Drawing.Size(260, 75);
             this.AddContract.TabIndex = 74;
             this.AddContract.Text = "Add Contract";
-            this.ItineraryTT.SetToolTip(this.AddContract, "Allows the user to create a contract pertaining to a specified client.");
+            this.ToolTip.SetToolTip(this.AddContract, "Allows the user to create a contract pertaining to a specified client.");
             this.AddContract.UseVisualStyleBackColor = false;
             this.AddContract.Visible = false;
             this.AddContract.Click += new System.EventHandler(this.AddContract_Click);
-            // 
-            // EditContract
-            // 
-            this.EditContract.BackColor = System.Drawing.Color.White;
-            this.EditContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditContract.Location = new System.Drawing.Point(531, 343);
-            this.EditContract.Name = "EditContract";
-            this.EditContract.Size = new System.Drawing.Size(200, 35);
-            this.EditContract.TabIndex = 75;
-            this.EditContract.Text = "Edit Contract";
-            this.ItineraryTT.SetToolTip(this.EditContract, "Allows the user to edit a contract pertaining to a specified client.");
-            this.EditContract.UseVisualStyleBackColor = false;
-            this.EditContract.Visible = false;
-            this.EditContract.Click += new System.EventHandler(this.EditContract_Click);
             // 
             // Statement
             // 
             this.Statement.BackColor = System.Drawing.Color.White;
             this.Statement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Statement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Statement.Location = new System.Drawing.Point(757, 216);
+            this.Statement.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statement.Location = new System.Drawing.Point(872, 183);
             this.Statement.Name = "Statement";
-            this.Statement.Size = new System.Drawing.Size(200, 30);
+            this.Statement.Size = new System.Drawing.Size(260, 75);
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
-            this.ItineraryTT.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
+            this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
         " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
@@ -657,12 +643,13 @@
             // 
             this.JobReport.BackColor = System.Drawing.Color.White;
             this.JobReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.JobReport.Location = new System.Drawing.Point(757, 259);
+            this.JobReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JobReport.Location = new System.Drawing.Point(872, 266);
             this.JobReport.Name = "JobReport";
-            this.JobReport.Size = new System.Drawing.Size(200, 35);
+            this.JobReport.Size = new System.Drawing.Size(260, 75);
             this.JobReport.TabIndex = 77;
             this.JobReport.Text = "Job Report";
-            this.ItineraryTT.SetToolTip(this.JobReport, "DOESN\'T WORK");
+            this.ToolTip.SetToolTip(this.JobReport, "DOESN\'T WORK");
             this.JobReport.UseVisualStyleBackColor = false;
             this.JobReport.Visible = false;
             this.JobReport.Click += new System.EventHandler(this.JobReport_Click);
@@ -671,12 +658,13 @@
             // 
             this.RevenueReport.BackColor = System.Drawing.Color.White;
             this.RevenueReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RevenueReport.Location = new System.Drawing.Point(757, 301);
+            this.RevenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RevenueReport.Location = new System.Drawing.Point(872, 351);
             this.RevenueReport.Name = "RevenueReport";
-            this.RevenueReport.Size = new System.Drawing.Size(200, 35);
+            this.RevenueReport.Size = new System.Drawing.Size(260, 75);
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
-            this.ItineraryTT.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
+            this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
         "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
@@ -686,20 +674,277 @@
             // 
             this.RoyaltyFee.BackColor = System.Drawing.Color.White;
             this.RoyaltyFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoyaltyFee.Location = new System.Drawing.Point(757, 343);
+            this.RoyaltyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoyaltyFee.Location = new System.Drawing.Point(872, 432);
             this.RoyaltyFee.Name = "RoyaltyFee";
-            this.RoyaltyFee.Size = new System.Drawing.Size(200, 35);
+            this.RoyaltyFee.Size = new System.Drawing.Size(260, 75);
             this.RoyaltyFee.TabIndex = 79;
             this.RoyaltyFee.Text = "Royalty Fee";
-            this.ItineraryTT.SetToolTip(this.RoyaltyFee, "Shows the royalties owed to Fire-Alert for a given year.");
+            this.ToolTip.SetToolTip(this.RoyaltyFee, "Shows the royalties owed to Fire-Alert for a given year.");
             this.RoyaltyFee.UseVisualStyleBackColor = false;
             this.RoyaltyFee.Visible = false;
             this.RoyaltyFee.Click += new System.EventHandler(this.RoyaltyFee_Click);
             // 
-            // ItineraryTT
+            // ToolTip
             // 
-            this.ItineraryTT.ToolTipTitle = "Help";
-            this.ItineraryTT.Popup += new System.Windows.Forms.PopupEventHandler(this.ItineraryTT_Popup);
+            this.ToolTip.Popup += new System.Windows.Forms.PopupEventHandler(this.ItineraryTT_Popup);
+            // 
+            // lblUserInfo
+            // 
+            this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.Location = new System.Drawing.Point(109, 713);
+            this.lblUserInfo.Name = "lblUserInfo";
+            this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
+            this.lblUserInfo.TabIndex = 23;
+            this.lblUserInfo.Visible = false;
+            // 
+            // Logout
+            // 
+            this.Logout.BackColor = System.Drawing.Color.White;
+            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout.Location = new System.Drawing.Point(279, 711);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(140, 60);
+            this.Logout.TabIndex = 80;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = false;
+            this.Logout.Visible = false;
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
+            // UserSettings
+            // 
+            this.UserSettings.BackColor = System.Drawing.Color.White;
+            this.UserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserSettings.Location = new System.Drawing.Point(429, 712);
+            this.UserSettings.Name = "UserSettings";
+            this.UserSettings.Size = new System.Drawing.Size(140, 60);
+            this.UserSettings.TabIndex = 81;
+            this.UserSettings.Text = "User Settings";
+            this.UserSettings.UseVisualStyleBackColor = false;
+            this.UserSettings.Visible = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageAccountToolStripMenuItem,
+            this.operationsToolStripMenuItem,
+            this.documentToolStripMenuItem,
+            this.clientToolStripMenuItem,
+            this.reportToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1378, 24);
+            this.menuStrip1.TabIndex = 82;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
+            // 
+            // manageAccountToolStripMenuItem
+            // 
+            this.manageAccountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userSettingsToolStripMenuItem});
+            this.manageAccountToolStripMenuItem.Name = "manageAccountToolStripMenuItem";
+            this.manageAccountToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.manageAccountToolStripMenuItem.Text = "Manage Account";
+            // 
+            // userSettingsToolStripMenuItem
+            // 
+            this.userSettingsToolStripMenuItem.Name = "userSettingsToolStripMenuItem";
+            this.userSettingsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.userSettingsToolStripMenuItem.Text = "User Settings";
+            this.userSettingsToolStripMenuItem.Click += new System.EventHandler(this.userSettingsToolStripMenuItem_Click);
+            // 
+            // operationsToolStripMenuItem
+            // 
+            this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itineraryToolStripMenuItem,
+            this.inventoryToolStripMenuItem,
+            this.purchaseRecordToolStripMenuItem,
+            this.paymentToolStripMenuItem,
+            this.inspectionToolStripMenuItem});
+            this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
+            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.operationsToolStripMenuItem.Text = "Operations";
+            // 
+            // itineraryToolStripMenuItem
+            // 
+            this.itineraryToolStripMenuItem.Name = "itineraryToolStripMenuItem";
+            this.itineraryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.itineraryToolStripMenuItem.Text = "Itinerary";
+            this.itineraryToolStripMenuItem.Click += new System.EventHandler(this.itineraryToolStripMenuItem_Click);
+            // 
+            // inventoryToolStripMenuItem
+            // 
+            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.inventoryToolStripMenuItem.Text = "Inventory";
+            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
+            // 
+            // purchaseRecordToolStripMenuItem
+            // 
+            this.purchaseRecordToolStripMenuItem.Name = "purchaseRecordToolStripMenuItem";
+            this.purchaseRecordToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.purchaseRecordToolStripMenuItem.Text = "Purchase Record";
+            this.purchaseRecordToolStripMenuItem.Click += new System.EventHandler(this.purchaseRecordToolStripMenuItem_Click);
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
+            // inspectionToolStripMenuItem
+            // 
+            this.inspectionToolStripMenuItem.Name = "inspectionToolStripMenuItem";
+            this.inspectionToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.inspectionToolStripMenuItem.Text = "Inspection";
+            this.inspectionToolStripMenuItem.Click += new System.EventHandler(this.inspectionToolStripMenuItem_Click);
+            // 
+            // documentToolStripMenuItem
+            // 
+            this.documentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createQuoteToolStripMenuItem,
+            this.editQuoteToolStripMenuItem,
+            this.createSalesOrderToolStripMenuItem,
+            this.editSalesOrderToolStripMenuItem,
+            this.convertSalesOrderToolStripMenuItem,
+            this.invoiceToolStripMenuItem});
+            this.documentToolStripMenuItem.Name = "documentToolStripMenuItem";
+            this.documentToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.documentToolStripMenuItem.Text = "Document";
+            // 
+            // createQuoteToolStripMenuItem
+            // 
+            this.createQuoteToolStripMenuItem.Name = "createQuoteToolStripMenuItem";
+            this.createQuoteToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.createQuoteToolStripMenuItem.Text = "Create Quote";
+            this.createQuoteToolStripMenuItem.Click += new System.EventHandler(this.createQuoteToolStripMenuItem_Click);
+            // 
+            // editQuoteToolStripMenuItem
+            // 
+            this.editQuoteToolStripMenuItem.Name = "editQuoteToolStripMenuItem";
+            this.editQuoteToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.editQuoteToolStripMenuItem.Text = "Edit Quote";
+            this.editQuoteToolStripMenuItem.Click += new System.EventHandler(this.editQuoteToolStripMenuItem_Click);
+            // 
+            // createSalesOrderToolStripMenuItem
+            // 
+            this.createSalesOrderToolStripMenuItem.Name = "createSalesOrderToolStripMenuItem";
+            this.createSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.createSalesOrderToolStripMenuItem.Text = "Create Sales Order";
+            this.createSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.createSalesOrderToolStripMenuItem_Click);
+            // 
+            // editSalesOrderToolStripMenuItem
+            // 
+            this.editSalesOrderToolStripMenuItem.Name = "editSalesOrderToolStripMenuItem";
+            this.editSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.editSalesOrderToolStripMenuItem.Text = "Edit Sales Order";
+            this.editSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.editSalesOrderToolStripMenuItem_Click);
+            // 
+            // convertSalesOrderToolStripMenuItem
+            // 
+            this.convertSalesOrderToolStripMenuItem.Name = "convertSalesOrderToolStripMenuItem";
+            this.convertSalesOrderToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.convertSalesOrderToolStripMenuItem.Text = "Convert Sales Order";
+            this.convertSalesOrderToolStripMenuItem.Click += new System.EventHandler(this.convertSalesOrderToolStripMenuItem_Click);
+            // 
+            // invoiceToolStripMenuItem
+            // 
+            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.invoiceToolStripMenuItem.Text = "Invoice";
+            this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.invoiceToolStripMenuItem_Click);
+            // 
+            // clientToolStripMenuItem
+            // 
+            this.clientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addClientToolStripMenuItem,
+            this.editClientToolStripMenuItem,
+            this.addContractToolStripMenuItem,
+            this.editContractToolStripMenuItem});
+            this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
+            this.clientToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.clientToolStripMenuItem.Text = "Client";
+            // 
+            // addClientToolStripMenuItem
+            // 
+            this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
+            this.addClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addClientToolStripMenuItem.Text = "Add Client";
+            this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
+            // 
+            // editClientToolStripMenuItem
+            // 
+            this.editClientToolStripMenuItem.Name = "editClientToolStripMenuItem";
+            this.editClientToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.editClientToolStripMenuItem.Text = "Edit Client";
+            this.editClientToolStripMenuItem.Click += new System.EventHandler(this.editClientToolStripMenuItem_Click);
+            // 
+            // addContractToolStripMenuItem
+            // 
+            this.addContractToolStripMenuItem.Name = "addContractToolStripMenuItem";
+            this.addContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addContractToolStripMenuItem.Text = "Add Contract";
+            this.addContractToolStripMenuItem.Click += new System.EventHandler(this.addContractToolStripMenuItem_Click);
+            // 
+            // editContractToolStripMenuItem
+            // 
+            this.editContractToolStripMenuItem.Name = "editContractToolStripMenuItem";
+            this.editContractToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.editContractToolStripMenuItem.Text = "Edit Contract";
+            this.editContractToolStripMenuItem.Click += new System.EventHandler(this.editContractToolStripMenuItem_Click);
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statementToolStripMenuItem,
+            this.jobReportToolStripMenuItem,
+            this.revenueReportToolStripMenuItem,
+            this.royaltyFeeToolStripMenuItem});
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.reportToolStripMenuItem.Text = "Report";
+            // 
+            // statementToolStripMenuItem
+            // 
+            this.statementToolStripMenuItem.Name = "statementToolStripMenuItem";
+            this.statementToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.statementToolStripMenuItem.Text = "Statement";
+            this.statementToolStripMenuItem.Click += new System.EventHandler(this.statementToolStripMenuItem_Click);
+            // 
+            // jobReportToolStripMenuItem
+            // 
+            this.jobReportToolStripMenuItem.Name = "jobReportToolStripMenuItem";
+            this.jobReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.jobReportToolStripMenuItem.Text = "Job Report";
+            this.jobReportToolStripMenuItem.Click += new System.EventHandler(this.jobReportToolStripMenuItem_Click);
+            // 
+            // revenueReportToolStripMenuItem
+            // 
+            this.revenueReportToolStripMenuItem.Name = "revenueReportToolStripMenuItem";
+            this.revenueReportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.revenueReportToolStripMenuItem.Text = "Revenue Report";
+            this.revenueReportToolStripMenuItem.Click += new System.EventHandler(this.revenueReportToolStripMenuItem_Click);
+            // 
+            // royaltyFeeToolStripMenuItem
+            // 
+            this.royaltyFeeToolStripMenuItem.Name = "royaltyFeeToolStripMenuItem";
+            this.royaltyFeeToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.royaltyFeeToolStripMenuItem.Text = "Royalty Fee";
+            this.royaltyFeeToolStripMenuItem.Click += new System.EventHandler(this.royaltyFeeToolStripMenuItem_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Location = new System.Drawing.Point(968, 720);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(137, 48);
+            this.Exit.TabIndex = 83;
+            this.Exit.Text = "Exit";
+            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // View
             // 
@@ -709,11 +954,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.UserSettings);
+            this.Controls.Add(this.Logout);
             this.Controls.Add(this.RoyaltyFee);
+            this.Controls.Add(this.lblUserInfo);
+            this.Controls.Add(this.EditContract);
             this.Controls.Add(this.RevenueReport);
+            this.Controls.Add(this.profilePic);
             this.Controls.Add(this.JobReport);
             this.Controls.Add(this.Statement);
-            this.Controls.Add(this.EditContract);
             this.Controls.Add(this.AddContract);
             this.Controls.Add(this.EditClient);
             this.Controls.Add(this.AddClient);
@@ -732,7 +982,6 @@
             this.Controls.Add(this.Client);
             this.Controls.Add(this.Document);
             this.Controls.Add(this.Operation);
-            this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.syncAndroid);
             this.Controls.Add(this.syncHQ);
@@ -742,8 +991,10 @@
             this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit_btn);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "View";
@@ -756,7 +1007,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            this.pnlUser.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -771,8 +1023,6 @@
         private System.Windows.Forms.Button Login_btn;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblUserInfo;
-        private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.PictureBox FireAlertLogo;
         private System.Windows.Forms.Panel notificationPanel;
@@ -781,13 +1031,11 @@
         private System.Windows.Forms.Label serviceNotification;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button userSettings;
         private System.Windows.Forms.PictureBox profilePic;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Button syncAndroid;
         private System.Windows.Forms.Panel pnlLogin;
-        private System.Windows.Forms.Panel pnlUser;
         private System.Windows.Forms.Button Operation;
         private System.Windows.Forms.Button Document;
         private System.Windows.Forms.Button Client;
@@ -811,7 +1059,37 @@
         private System.Windows.Forms.Button JobReport;
         private System.Windows.Forms.Button RevenueReport;
         private System.Windows.Forms.Button RoyaltyFee;
-        private System.Windows.Forms.ToolTip ItineraryTT;
+        private System.Windows.Forms.ToolTip ToolTip;
+        private System.Windows.Forms.Label lblUserInfo;
+        private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.Button UserSettings;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem manageAccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itineraryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem purchaseRecordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inspectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem documentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createQuoteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editQuoteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createSalesOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editSalesOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem convertSalesOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addContractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editContractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jobReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem revenueReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem royaltyFeeToolStripMenuItem;
+        private System.Windows.Forms.Button Exit;
 
     }
 }
