@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         //Hunter Do Good
+        //No. Just no
 
         /// <summary>
         /// Clean up any resources being used.
