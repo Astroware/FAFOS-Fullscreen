@@ -761,6 +761,10 @@ namespace FAFOS
         {
             if (Statement.Visible == false)
             {
+                this.Report.BackColor = Color.LightPink;
+                this.Document.BackColor = Color.White;
+                this.Client.BackColor = Color.White;
+                this.Operation.BackColor = Color.White;
                 Statement.Visible = true;
                 JobReport.Visible = true;
                 RevenueReport.Visible = true;
@@ -822,6 +826,10 @@ namespace FAFOS
         {
             if (Quote.Visible == false)
             {
+                this.Document.BackColor = Color.LightPink;
+                this.Client.BackColor = Color.White;
+                this.Operation.BackColor = Color.White;
+                this.Report.BackColor = Color.White;
                 Quote.Visible = true;
                 EditQuote.Visible = true;
                 SalesOrder.Visible = true;
@@ -884,6 +892,10 @@ namespace FAFOS
         {
             if (AddClient.Visible == false)
             {
+                this.Document.BackColor = Color.White;
+                this.Client.BackColor = Color.LightPink;
+                this.Operation.BackColor = Color.White;
+                this.Report.BackColor = Color.White;
                 AddClient.Visible = true;
                 EditClient.Visible = true;
                 AddContract.Visible = true;
@@ -945,6 +957,10 @@ namespace FAFOS
         {
             if (Itinerary.Visible == false)
             {
+                this.Operation.BackColor = Color.LightPink;
+                this.Document.BackColor = Color.White;
+                this.Client.BackColor = Color.White;
+                this.Report.BackColor = Color.White;
                 Itinerary.Visible = true;
                 Inventory.Visible = true;
                 PurchaseRecord.Visible = true;
@@ -1287,6 +1303,21 @@ namespace FAFOS
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Document_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Report_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Client_Click(object sender, EventArgs e)
+        {
+
         }
 
         

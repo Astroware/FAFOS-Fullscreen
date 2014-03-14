@@ -344,6 +344,8 @@
             // EditContract
             // 
             this.EditContract.BackColor = System.Drawing.Color.White;
+            this.EditContract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditContract.BackgroundImage")));
+            this.EditContract.FlatAppearance.BorderSize = 0;
             this.EditContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditContract.Location = new System.Drawing.Point(606, 432);
@@ -358,13 +360,18 @@
             // 
             // Operation
             // 
+            this.Operation.BackColor = System.Drawing.Color.Transparent;
+            this.Operation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Operation.BackgroundImage")));
+            this.Operation.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Operation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Operation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Operation.Location = new System.Drawing.Point(72, 99);
+            this.Operation.Margin = new System.Windows.Forms.Padding(0);
             this.Operation.Name = "Operation";
             this.Operation.Size = new System.Drawing.Size(260, 75);
             this.Operation.TabIndex = 57;
             this.Operation.Text = "Operations";
-            this.Operation.UseVisualStyleBackColor = true;
+            this.Operation.UseVisualStyleBackColor = false;
             this.Operation.Visible = false;
             this.Operation.Click += new System.EventHandler(this.Operation_Click);
             this.Operation.MouseEnter += new System.EventHandler(this.Operation_MouseEnter);
@@ -372,33 +379,46 @@
             // 
             // Document
             // 
-            this.Document.BackColor = System.Drawing.Color.Transparent;
+            this.Document.BackColor = System.Drawing.Color.White;
+            this.Document.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Document.BackgroundImage")));
+            this.Document.FlatAppearance.BorderSize = 0;
+            this.Document.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Document.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Document.Location = new System.Drawing.Point(340, 99);
+            this.Document.Margin = new System.Windows.Forms.Padding(0);
             this.Document.Name = "Document";
             this.Document.Size = new System.Drawing.Size(260, 75);
             this.Document.TabIndex = 58;
             this.Document.Text = "Documents";
             this.Document.UseVisualStyleBackColor = false;
             this.Document.Visible = false;
+            this.Document.Click += new System.EventHandler(this.Document_Click);
             this.Document.MouseEnter += new System.EventHandler(this.Document_MouseEnter);
             this.Document.MouseHover += new System.EventHandler(this.Document_MouseHover);
             // 
             // Client
             // 
+            this.Client.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Client.BackgroundImage")));
+            this.Client.FlatAppearance.BorderSize = 0;
+            this.Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Client.Location = new System.Drawing.Point(606, 99);
+            this.Client.Margin = new System.Windows.Forms.Padding(0);
             this.Client.Name = "Client";
             this.Client.Size = new System.Drawing.Size(260, 75);
             this.Client.TabIndex = 59;
             this.Client.Text = "Clients";
             this.Client.UseVisualStyleBackColor = true;
             this.Client.Visible = false;
+            this.Client.Click += new System.EventHandler(this.Client_Click);
             this.Client.MouseEnter += new System.EventHandler(this.Client_MouseEnter);
             this.Client.MouseHover += new System.EventHandler(this.Client_MouseHover);
             // 
             // Report
             // 
+            this.Report.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Report.BackgroundImage")));
+            this.Report.FlatAppearance.BorderSize = 0;
+            this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Report.Location = new System.Drawing.Point(872, 99);
             this.Report.Name = "Report";
@@ -407,12 +427,15 @@
             this.Report.Text = "Reports";
             this.Report.UseVisualStyleBackColor = true;
             this.Report.Visible = false;
+            this.Report.Click += new System.EventHandler(this.Report_Click);
             this.Report.Enter += new System.EventHandler(this.Report_Enter);
             this.Report.MouseEnter += new System.EventHandler(this.Report_MouseEnter);
             // 
             // Quote
             // 
             this.Quote.BackColor = System.Drawing.Color.White;
+            this.Quote.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Quote.BackgroundImage")));
+            this.Quote.FlatAppearance.BorderSize = 0;
             this.Quote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quote.Location = new System.Drawing.Point(340, 183);
@@ -428,6 +451,8 @@
             // EditQuote
             // 
             this.EditQuote.BackColor = System.Drawing.Color.White;
+            this.EditQuote.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditQuote.BackgroundImage")));
+            this.EditQuote.FlatAppearance.BorderSize = 0;
             this.EditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditQuote.Location = new System.Drawing.Point(340, 267);
@@ -443,6 +468,8 @@
             // SalesOrder
             // 
             this.SalesOrder.BackColor = System.Drawing.Color.White;
+            this.SalesOrder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SalesOrder.BackgroundImage")));
+            this.SalesOrder.FlatAppearance.BorderSize = 0;
             this.SalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesOrder.Location = new System.Drawing.Point(340, 351);
@@ -458,6 +485,8 @@
             // EditSalesOrder
             // 
             this.EditSalesOrder.BackColor = System.Drawing.Color.White;
+            this.EditSalesOrder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditSalesOrder.BackgroundImage")));
+            this.EditSalesOrder.FlatAppearance.BorderSize = 0;
             this.EditSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditSalesOrder.Location = new System.Drawing.Point(340, 432);
@@ -473,6 +502,8 @@
             // ConvertSalesOrder
             // 
             this.ConvertSalesOrder.BackColor = System.Drawing.Color.White;
+            this.ConvertSalesOrder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ConvertSalesOrder.BackgroundImage")));
+            this.ConvertSalesOrder.FlatAppearance.BorderSize = 0;
             this.ConvertSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConvertSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConvertSalesOrder.Location = new System.Drawing.Point(340, 513);
@@ -488,6 +519,8 @@
             // Invoice
             // 
             this.Invoice.BackColor = System.Drawing.Color.White;
+            this.Invoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Invoice.BackgroundImage")));
+            this.Invoice.FlatAppearance.BorderSize = 0;
             this.Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Invoice.Location = new System.Drawing.Point(340, 594);
@@ -503,6 +536,8 @@
             // Itinerary
             // 
             this.Itinerary.BackColor = System.Drawing.Color.White;
+            this.Itinerary.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Itinerary.BackgroundImage")));
+            this.Itinerary.FlatAppearance.BorderSize = 0;
             this.Itinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Itinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Itinerary.Location = new System.Drawing.Point(72, 183);
@@ -519,6 +554,8 @@
             // Inventory
             // 
             this.Inventory.BackColor = System.Drawing.Color.White;
+            this.Inventory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Inventory.BackgroundImage")));
+            this.Inventory.FlatAppearance.BorderSize = 0;
             this.Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inventory.Location = new System.Drawing.Point(72, 266);
@@ -527,7 +564,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-        "provided.");
+                    "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -535,6 +572,8 @@
             // PurchaseRecord
             // 
             this.PurchaseRecord.BackColor = System.Drawing.Color.White;
+            this.PurchaseRecord.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PurchaseRecord.BackgroundImage")));
+            this.PurchaseRecord.FlatAppearance.BorderSize = 0;
             this.PurchaseRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PurchaseRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PurchaseRecord.Location = new System.Drawing.Point(72, 351);
@@ -550,6 +589,8 @@
             // Payment
             // 
             this.Payment.BackColor = System.Drawing.Color.White;
+            this.Payment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Payment.BackgroundImage")));
+            this.Payment.FlatAppearance.BorderSize = 0;
             this.Payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Payment.Location = new System.Drawing.Point(72, 432);
@@ -558,7 +599,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-        " has been made.");
+                    " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -566,6 +607,8 @@
             // Inspection
             // 
             this.Inspection.BackColor = System.Drawing.Color.White;
+            this.Inspection.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Inspection.BackgroundImage")));
+            this.Inspection.FlatAppearance.BorderSize = 0;
             this.Inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Inspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inspection.Location = new System.Drawing.Point(72, 513);
@@ -581,6 +624,8 @@
             // AddClient
             // 
             this.AddClient.BackColor = System.Drawing.Color.White;
+            this.AddClient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddClient.BackgroundImage")));
+            this.AddClient.FlatAppearance.BorderSize = 0;
             this.AddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddClient.Location = new System.Drawing.Point(606, 183);
@@ -596,6 +641,8 @@
             // EditClient
             // 
             this.EditClient.BackColor = System.Drawing.Color.White;
+            this.EditClient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditClient.BackgroundImage")));
+            this.EditClient.FlatAppearance.BorderSize = 0;
             this.EditClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditClient.Location = new System.Drawing.Point(606, 267);
@@ -611,6 +658,8 @@
             // AddContract
             // 
             this.AddContract.BackColor = System.Drawing.Color.White;
+            this.AddContract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddContract.BackgroundImage")));
+            this.AddContract.FlatAppearance.BorderSize = 0;
             this.AddContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddContract.Location = new System.Drawing.Point(606, 351);
@@ -626,6 +675,8 @@
             // Statement
             // 
             this.Statement.BackColor = System.Drawing.Color.White;
+            this.Statement.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Statement.BackgroundImage")));
+            this.Statement.FlatAppearance.BorderSize = 0;
             this.Statement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Statement.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Statement.Location = new System.Drawing.Point(872, 183);
@@ -634,7 +685,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-        " the invoices.");
+                    " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -642,6 +693,8 @@
             // JobReport
             // 
             this.JobReport.BackColor = System.Drawing.Color.White;
+            this.JobReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("JobReport.BackgroundImage")));
+            this.JobReport.FlatAppearance.BorderSize = 0;
             this.JobReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JobReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JobReport.Location = new System.Drawing.Point(872, 266);
@@ -657,6 +710,8 @@
             // RevenueReport
             // 
             this.RevenueReport.BackColor = System.Drawing.Color.White;
+            this.RevenueReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RevenueReport.BackgroundImage")));
+            this.RevenueReport.FlatAppearance.BorderSize = 0;
             this.RevenueReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RevenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RevenueReport.Location = new System.Drawing.Point(872, 351);
@@ -665,7 +720,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-        "hreshold.");
+                    "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -673,6 +728,8 @@
             // RoyaltyFee
             // 
             this.RoyaltyFee.BackColor = System.Drawing.Color.White;
+            this.RoyaltyFee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RoyaltyFee.BackgroundImage")));
+            this.RoyaltyFee.FlatAppearance.BorderSize = 0;
             this.RoyaltyFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoyaltyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoyaltyFee.Location = new System.Drawing.Point(872, 432);
