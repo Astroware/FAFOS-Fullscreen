@@ -57,8 +57,8 @@ namespace FAFOS
             pnlLogin.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlLogin.Size.Width) / 2,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlLogin.Size.Height) / 2);
 
-            notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width) - 20,
-               notificationPanel.Location.Y);
+            /*notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width) - 20,
+               notificationPanel.Location.Y);*/
 
             /*pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
               pnlUser.Location.Y);*/
@@ -442,6 +442,7 @@ namespace FAFOS
             Logout.Visible = true;
             UserSettings.Visible = true;
             menuStrip1.Visible = true;
+            Notification.Visible = true;
             /*quote.Visible = true;
             editQuote.Visible = true;
             salesOrder.Visible = true;
@@ -476,7 +477,7 @@ namespace FAFOS
             Document.Visible = true;
             Client.Visible = true;
             Report.Visible = true;
-            label9.Visible = true;
+            //label9.Visible = true;
 
 
             lblUsername.Visible = false;
@@ -487,7 +488,7 @@ namespace FAFOS
             /*Logout_btn.Visible = true;
             userSettings.Visible = true;*/
             lblUserInfo.Visible = true;
-            notificationPanel.Visible = true;
+            //notificationPanel.Visible = true;
             profilePic.Visible = true;
             //pnlUser.Visible = true;
 
@@ -588,7 +589,7 @@ namespace FAFOS
             royaltyFee.Visible = false;*/
             // allRevenue.Visible = false;
 
-            Notifications();
+            //Notifications();
             //}
 
         }
@@ -702,7 +703,7 @@ namespace FAFOS
             syncAndroid.Visible = false;
             syncHQ.Visible = false;
 
-            label9.Visible = false;
+            //label9.Visible = false;
             //pnlUser.Visible = false;
 
             lblUsername.Visible = true;
@@ -1327,6 +1328,27 @@ namespace FAFOS
         {
             MaintainUsersForm form = new MaintainUsersForm(userid, MUser.GetPicID(userid.ToString()));
             form.Show();
+        }
+
+        private void syncAndroid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void syncHQ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Notification_MouseEnter(object sender, EventArgs e)
+        {
+            Notifications();
+            notificationPanel.Visible = true;
+        }
+
+        private void Notification_MouseLeave(object sender, EventArgs e)
+        {
+            notificationPanel.Visible = false;
         }
         
     }

@@ -46,7 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
@@ -106,6 +105,7 @@
             this.Exit = new System.Windows.Forms.Button();
             this.RedBar = new System.Windows.Forms.Panel();
             this.Watermark = new System.Windows.Forms.PictureBox();
+            this.Notification = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -220,22 +220,22 @@
             // 
             // notificationPanel
             // 
-            this.notificationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.notificationPanel.BackColor = System.Drawing.Color.Salmon;
             this.notificationPanel.Controls.Add(this.paymentNotification);
             this.notificationPanel.Controls.Add(this.serviceNotification);
-            this.notificationPanel.Controls.Add(this.label3);
             this.notificationPanel.Controls.Add(this.label4);
             this.notificationPanel.Controls.Add(this.label1);
-            this.notificationPanel.Location = new System.Drawing.Point(1138, 289);
+            this.notificationPanel.Controls.Add(this.label3);
+            this.notificationPanel.Location = new System.Drawing.Point(169, 247);
             this.notificationPanel.Name = "notificationPanel";
-            this.notificationPanel.Size = new System.Drawing.Size(235, 299);
+            this.notificationPanel.Size = new System.Drawing.Size(504, 154);
             this.notificationPanel.TabIndex = 36;
             this.notificationPanel.Visible = false;
             // 
             // paymentNotification
             // 
             this.paymentNotification.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentNotification.Location = new System.Drawing.Point(22, 207);
+            this.paymentNotification.Location = new System.Drawing.Point(238, 35);
             this.paymentNotification.Name = "paymentNotification";
             this.paymentNotification.Size = new System.Drawing.Size(219, 89);
             this.paymentNotification.TabIndex = 5;
@@ -244,9 +244,9 @@
             // serviceNotification
             // 
             this.serviceNotification.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceNotification.Location = new System.Drawing.Point(15, 79);
+            this.serviceNotification.Location = new System.Drawing.Point(3, 35);
             this.serviceNotification.Name = "serviceNotification";
-            this.serviceNotification.Size = new System.Drawing.Size(226, 90);
+            this.serviceNotification.Size = new System.Drawing.Size(229, 74);
             this.serviceNotification.TabIndex = 4;
             this.serviceNotification.Text = "None";
             // 
@@ -254,7 +254,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 183);
+            this.label3.Location = new System.Drawing.Point(238, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 14);
             this.label3.TabIndex = 3;
@@ -264,7 +264,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 51);
+            this.label4.Location = new System.Drawing.Point(3, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 14);
             this.label4.TabIndex = 2;
@@ -274,7 +274,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 14);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 18);
             this.label1.TabIndex = 0;
@@ -283,7 +283,7 @@
             // profilePic
             // 
             this.profilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.profilePic.Location = new System.Drawing.Point(0, 702);
+            this.profilePic.Location = new System.Drawing.Point(35, 105);
             this.profilePic.Name = "profilePic";
             this.profilePic.Size = new System.Drawing.Size(103, 66);
             this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,31 +291,21 @@
             this.profilePic.TabStop = false;
             this.profilePic.Visible = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(576, 732);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 18);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Sync Options";
-            this.label9.Visible = false;
-            // 
             // syncHQ
             // 
             this.syncHQ.BackColor = System.Drawing.Color.White;
             this.syncHQ.FlatAppearance.BorderSize = 0;
             this.syncHQ.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.Black;
-            this.syncHQ.Location = new System.Drawing.Point(683, 719);
+            this.syncHQ.Location = new System.Drawing.Point(23, 369);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
-            this.syncHQ.Size = new System.Drawing.Size(133, 51);
+            this.syncHQ.Size = new System.Drawing.Size(140, 63);
             this.syncHQ.TabIndex = 53;
             this.syncHQ.Text = "Sync Reports to HQ";
             this.syncHQ.UseVisualStyleBackColor = false;
             this.syncHQ.Visible = false;
+            this.syncHQ.Click += new System.EventHandler(this.syncHQ_Click);
             // 
             // syncAndroid
             // 
@@ -323,14 +313,15 @@
             this.syncAndroid.FlatAppearance.BorderSize = 0;
             this.syncAndroid.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.Black;
-            this.syncAndroid.Location = new System.Drawing.Point(824, 719);
+            this.syncAndroid.Location = new System.Drawing.Point(23, 440);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
-            this.syncAndroid.Size = new System.Drawing.Size(133, 49);
+            this.syncAndroid.Size = new System.Drawing.Size(140, 58);
             this.syncAndroid.TabIndex = 54;
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Visible = false;
+            this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
             // 
             // pnlLogin
             // 
@@ -339,7 +330,7 @@
             this.pnlLogin.Controls.Add(this.txtUsername);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.txtPassword);
-            this.pnlLogin.Location = new System.Drawing.Point(579, 472);
+            this.pnlLogin.Location = new System.Drawing.Point(763, 469);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(274, 219);
             this.pnlLogin.TabIndex = 55;
@@ -351,7 +342,7 @@
             this.EditContract.FlatAppearance.BorderSize = 0;
             this.EditContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditContract.Location = new System.Drawing.Point(606, 432);
+            this.EditContract.Location = new System.Drawing.Point(790, 429);
             this.EditContract.Name = "EditContract";
             this.EditContract.Size = new System.Drawing.Size(260, 75);
             this.EditContract.TabIndex = 75;
@@ -369,7 +360,7 @@
             this.Operation.FlatAppearance.BorderSize = 0;
             this.Operation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Operation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Operation.Location = new System.Drawing.Point(72, 99);
+            this.Operation.Location = new System.Drawing.Point(256, 96);
             this.Operation.Margin = new System.Windows.Forms.Padding(0);
             this.Operation.Name = "Operation";
             this.Operation.Size = new System.Drawing.Size(260, 75);
@@ -388,7 +379,7 @@
             this.Document.FlatAppearance.BorderSize = 0;
             this.Document.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Document.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Document.Location = new System.Drawing.Point(340, 99);
+            this.Document.Location = new System.Drawing.Point(524, 96);
             this.Document.Margin = new System.Windows.Forms.Padding(0);
             this.Document.Name = "Document";
             this.Document.Size = new System.Drawing.Size(260, 75);
@@ -406,7 +397,7 @@
             this.Client.FlatAppearance.BorderSize = 0;
             this.Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Client.Location = new System.Drawing.Point(606, 99);
+            this.Client.Location = new System.Drawing.Point(790, 96);
             this.Client.Margin = new System.Windows.Forms.Padding(0);
             this.Client.Name = "Client";
             this.Client.Size = new System.Drawing.Size(260, 75);
@@ -424,7 +415,7 @@
             this.Report.FlatAppearance.BorderSize = 0;
             this.Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Report.Location = new System.Drawing.Point(872, 99);
+            this.Report.Location = new System.Drawing.Point(1056, 96);
             this.Report.Name = "Report";
             this.Report.Size = new System.Drawing.Size(260, 75);
             this.Report.TabIndex = 60;
@@ -442,7 +433,7 @@
             this.Quote.FlatAppearance.BorderSize = 0;
             this.Quote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quote.Location = new System.Drawing.Point(340, 183);
+            this.Quote.Location = new System.Drawing.Point(524, 180);
             this.Quote.Name = "Quote";
             this.Quote.Size = new System.Drawing.Size(260, 75);
             this.Quote.TabIndex = 61;
@@ -459,7 +450,7 @@
             this.EditQuote.FlatAppearance.BorderSize = 0;
             this.EditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditQuote.Location = new System.Drawing.Point(340, 267);
+            this.EditQuote.Location = new System.Drawing.Point(524, 264);
             this.EditQuote.Name = "EditQuote";
             this.EditQuote.Size = new System.Drawing.Size(260, 75);
             this.EditQuote.TabIndex = 62;
@@ -476,7 +467,7 @@
             this.SalesOrder.FlatAppearance.BorderSize = 0;
             this.SalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalesOrder.Location = new System.Drawing.Point(340, 351);
+            this.SalesOrder.Location = new System.Drawing.Point(524, 348);
             this.SalesOrder.Name = "SalesOrder";
             this.SalesOrder.Size = new System.Drawing.Size(260, 75);
             this.SalesOrder.TabIndex = 63;
@@ -493,7 +484,7 @@
             this.EditSalesOrder.FlatAppearance.BorderSize = 0;
             this.EditSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditSalesOrder.Location = new System.Drawing.Point(340, 432);
+            this.EditSalesOrder.Location = new System.Drawing.Point(524, 429);
             this.EditSalesOrder.Name = "EditSalesOrder";
             this.EditSalesOrder.Size = new System.Drawing.Size(260, 75);
             this.EditSalesOrder.TabIndex = 64;
@@ -510,7 +501,7 @@
             this.ConvertSalesOrder.FlatAppearance.BorderSize = 0;
             this.ConvertSalesOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConvertSalesOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConvertSalesOrder.Location = new System.Drawing.Point(340, 513);
+            this.ConvertSalesOrder.Location = new System.Drawing.Point(524, 510);
             this.ConvertSalesOrder.Name = "ConvertSalesOrder";
             this.ConvertSalesOrder.Size = new System.Drawing.Size(260, 75);
             this.ConvertSalesOrder.TabIndex = 65;
@@ -527,7 +518,7 @@
             this.Invoice.FlatAppearance.BorderSize = 0;
             this.Invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Invoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Invoice.Location = new System.Drawing.Point(340, 594);
+            this.Invoice.Location = new System.Drawing.Point(524, 591);
             this.Invoice.Name = "Invoice";
             this.Invoice.Size = new System.Drawing.Size(260, 75);
             this.Invoice.TabIndex = 66;
@@ -544,7 +535,7 @@
             this.Itinerary.FlatAppearance.BorderSize = 0;
             this.Itinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Itinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Itinerary.Location = new System.Drawing.Point(72, 183);
+            this.Itinerary.Location = new System.Drawing.Point(256, 180);
             this.Itinerary.Margin = new System.Windows.Forms.Padding(0);
             this.Itinerary.Name = "Itinerary";
             this.Itinerary.Size = new System.Drawing.Size(260, 75);
@@ -562,7 +553,7 @@
             this.Inventory.FlatAppearance.BorderSize = 0;
             this.Inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inventory.Location = new System.Drawing.Point(72, 266);
+            this.Inventory.Location = new System.Drawing.Point(256, 263);
             this.Inventory.Name = "Inventory";
             this.Inventory.Size = new System.Drawing.Size(260, 75);
             this.Inventory.TabIndex = 68;
@@ -580,7 +571,7 @@
             this.PurchaseRecord.FlatAppearance.BorderSize = 0;
             this.PurchaseRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PurchaseRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseRecord.Location = new System.Drawing.Point(72, 351);
+            this.PurchaseRecord.Location = new System.Drawing.Point(256, 348);
             this.PurchaseRecord.Name = "PurchaseRecord";
             this.PurchaseRecord.Size = new System.Drawing.Size(260, 75);
             this.PurchaseRecord.TabIndex = 69;
@@ -597,7 +588,7 @@
             this.Payment.FlatAppearance.BorderSize = 0;
             this.Payment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Payment.Location = new System.Drawing.Point(72, 432);
+            this.Payment.Location = new System.Drawing.Point(256, 429);
             this.Payment.Name = "Payment";
             this.Payment.Size = new System.Drawing.Size(260, 75);
             this.Payment.TabIndex = 70;
@@ -615,7 +606,7 @@
             this.Inspection.FlatAppearance.BorderSize = 0;
             this.Inspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Inspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inspection.Location = new System.Drawing.Point(72, 513);
+            this.Inspection.Location = new System.Drawing.Point(256, 510);
             this.Inspection.Name = "Inspection";
             this.Inspection.Size = new System.Drawing.Size(260, 75);
             this.Inspection.TabIndex = 71;
@@ -632,7 +623,7 @@
             this.AddClient.FlatAppearance.BorderSize = 0;
             this.AddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddClient.Location = new System.Drawing.Point(606, 183);
+            this.AddClient.Location = new System.Drawing.Point(790, 180);
             this.AddClient.Name = "AddClient";
             this.AddClient.Size = new System.Drawing.Size(260, 75);
             this.AddClient.TabIndex = 72;
@@ -649,7 +640,7 @@
             this.EditClient.FlatAppearance.BorderSize = 0;
             this.EditClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditClient.Location = new System.Drawing.Point(606, 267);
+            this.EditClient.Location = new System.Drawing.Point(790, 264);
             this.EditClient.Name = "EditClient";
             this.EditClient.Size = new System.Drawing.Size(260, 75);
             this.EditClient.TabIndex = 73;
@@ -666,7 +657,7 @@
             this.AddContract.FlatAppearance.BorderSize = 0;
             this.AddContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddContract.Location = new System.Drawing.Point(606, 351);
+            this.AddContract.Location = new System.Drawing.Point(790, 348);
             this.AddContract.Name = "AddContract";
             this.AddContract.Size = new System.Drawing.Size(260, 75);
             this.AddContract.TabIndex = 74;
@@ -683,7 +674,7 @@
             this.Statement.FlatAppearance.BorderSize = 0;
             this.Statement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Statement.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Statement.Location = new System.Drawing.Point(872, 183);
+            this.Statement.Location = new System.Drawing.Point(1056, 180);
             this.Statement.Name = "Statement";
             this.Statement.Size = new System.Drawing.Size(260, 75);
             this.Statement.TabIndex = 76;
@@ -701,7 +692,7 @@
             this.JobReport.FlatAppearance.BorderSize = 0;
             this.JobReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JobReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JobReport.Location = new System.Drawing.Point(872, 266);
+            this.JobReport.Location = new System.Drawing.Point(1056, 263);
             this.JobReport.Name = "JobReport";
             this.JobReport.Size = new System.Drawing.Size(260, 75);
             this.JobReport.TabIndex = 77;
@@ -718,7 +709,7 @@
             this.RevenueReport.FlatAppearance.BorderSize = 0;
             this.RevenueReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RevenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RevenueReport.Location = new System.Drawing.Point(872, 351);
+            this.RevenueReport.Location = new System.Drawing.Point(1056, 348);
             this.RevenueReport.Name = "RevenueReport";
             this.RevenueReport.Size = new System.Drawing.Size(260, 75);
             this.RevenueReport.TabIndex = 78;
@@ -736,7 +727,7 @@
             this.RoyaltyFee.FlatAppearance.BorderSize = 0;
             this.RoyaltyFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoyaltyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoyaltyFee.Location = new System.Drawing.Point(872, 432);
+            this.RoyaltyFee.Location = new System.Drawing.Point(1056, 429);
             this.RoyaltyFee.Name = "RoyaltyFee";
             this.RoyaltyFee.Size = new System.Drawing.Size(260, 75);
             this.RoyaltyFee.TabIndex = 79;
@@ -753,7 +744,7 @@
             // lblUserInfo
             // 
             this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserInfo.Location = new System.Drawing.Point(109, 713);
+            this.lblUserInfo.Location = new System.Drawing.Point(20, 174);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
             this.lblUserInfo.TabIndex = 23;
@@ -764,7 +755,7 @@
             this.Logout.BackColor = System.Drawing.Color.White;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout.Location = new System.Drawing.Point(279, 711);
+            this.Logout.Location = new System.Drawing.Point(23, 504);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(140, 60);
             this.Logout.TabIndex = 80;
@@ -778,7 +769,7 @@
             this.UserSettings.BackColor = System.Drawing.Color.White;
             this.UserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserSettings.Location = new System.Drawing.Point(429, 712);
+            this.UserSettings.Location = new System.Drawing.Point(23, 302);
             this.UserSettings.Name = "UserSettings";
             this.UserSettings.Size = new System.Drawing.Size(140, 60);
             this.UserSettings.TabIndex = 81;
@@ -1000,9 +991,9 @@
             // Exit
             // 
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(968, 720);
+            this.Exit.Location = new System.Drawing.Point(23, 570);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(137, 48);
+            this.Exit.Size = new System.Drawing.Size(140, 48);
             this.Exit.TabIndex = 83;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
@@ -1012,7 +1003,7 @@
             // 
             this.RedBar.BackColor = System.Drawing.Color.Red;
             this.RedBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RedBar.Location = new System.Drawing.Point(40, 96);
+            this.RedBar.Location = new System.Drawing.Point(224, 93);
             this.RedBar.Name = "RedBar";
             this.RedBar.Size = new System.Drawing.Size(1128, 81);
             this.RedBar.TabIndex = 84;
@@ -1022,12 +1013,26 @@
             // 
             this.Watermark.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Watermark.BackgroundImage")));
             this.Watermark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Watermark.Location = new System.Drawing.Point(356, 267);
+            this.Watermark.Location = new System.Drawing.Point(540, 264);
             this.Watermark.Name = "Watermark";
             this.Watermark.Size = new System.Drawing.Size(481, 395);
             this.Watermark.TabIndex = 85;
             this.Watermark.TabStop = false;
             this.Watermark.Visible = false;
+            // 
+            // Notification
+            // 
+            this.Notification.BackColor = System.Drawing.Color.White;
+            this.Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notification.Location = new System.Drawing.Point(23, 247);
+            this.Notification.Name = "Notification";
+            this.Notification.Size = new System.Drawing.Size(140, 49);
+            this.Notification.TabIndex = 86;
+            this.Notification.Text = "Notifications";
+            this.Notification.UseVisualStyleBackColor = false;
+            this.Notification.MouseEnter += new System.EventHandler(this.Notification_MouseEnter);
+            this.Notification.MouseLeave += new System.EventHandler(this.Notification_MouseLeave);
+            this.Notification.Visible = false;
             // 
             // View
             // 
@@ -1037,6 +1042,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+            this.Controls.Add(this.Notification);
             this.Controls.Add(this.Watermark);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.UserSettings);
@@ -1069,7 +1075,6 @@
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.syncAndroid);
             this.Controls.Add(this.syncHQ);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.notificationPanel);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
@@ -1118,7 +1123,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox profilePic;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Button syncAndroid;
         private System.Windows.Forms.Panel pnlLogin;
@@ -1178,6 +1182,7 @@
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Panel RedBar;
         private System.Windows.Forms.PictureBox Watermark;
+        private System.Windows.Forms.Button Notification;
 
     }
 }
