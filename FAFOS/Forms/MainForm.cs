@@ -1323,7 +1323,11 @@ namespace FAFOS
 
         }
 
-
+        private void UserSettings_Click_2(object sender, EventArgs e)
+        {
+            MaintainUsersForm form = new MaintainUsersForm(userid, MUser.GetPicID(userid.ToString()));
+            form.Show();
+        }
         
     }
 }
