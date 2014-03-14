@@ -136,7 +136,8 @@ namespace FAFOS
             //  this.allRevenue.tileTimer_Interval = 40;
             //  this.allRevenue.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
 
-            FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350, 40);
+            //FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350, 40);
+
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
             //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
@@ -469,7 +470,8 @@ namespace FAFOS
 
             syncAndroid.Visible = true;
             syncHQ.Visible = true;
-
+            Watermark.Visible = true;
+            Watermark.SendToBack();
             Operation.Visible = true;
             Document.Visible = true;
             Client.Visible = true;
@@ -1319,6 +1321,7 @@ namespace FAFOS
         {
 
         }
+
 
         
     }
