@@ -467,7 +467,7 @@ namespace FAFOS
             if (!user.checkAdmin(userid))
                 royaltyFee.Visible = false;*/
             //   allRevenue.Visible = true;
-
+            RedBar.Visible = true;
             syncAndroid.Visible = true;
             syncHQ.Visible = true;
             Watermark.Visible = true;
@@ -651,7 +651,8 @@ namespace FAFOS
 
             Logout.Visible = false;
             UserSettings.Visible = false;
-
+            RedBar.Visible = false;
+            Watermark.Visible = false;
             EditQuote.Visible = false;
             Quote.Visible = false;
             SalesOrder.Visible = false;

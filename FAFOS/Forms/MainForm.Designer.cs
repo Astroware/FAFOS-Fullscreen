@@ -104,7 +104,7 @@
             this.revenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.royaltyFeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.RedBar = new System.Windows.Forms.Panel();
             this.Watermark = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
@@ -1007,14 +1007,15 @@
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // panel1
+            // RedBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(40, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 81);
-            this.panel1.TabIndex = 84;
+            this.RedBar.BackColor = System.Drawing.Color.Red;
+            this.RedBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedBar.Location = new System.Drawing.Point(40, 96);
+            this.RedBar.Name = "RedBar";
+            this.RedBar.Size = new System.Drawing.Size(1128, 81);
+            this.RedBar.TabIndex = 84;
+            this.RedBar.Visible = false;
             // 
             // Watermark
             // 
@@ -1073,7 +1074,7 @@
             this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit_btn);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.RedBar);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1174,7 +1175,7 @@
         private System.Windows.Forms.ToolStripMenuItem revenueReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem royaltyFeeToolStripMenuItem;
         private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel RedBar;
         private System.Windows.Forms.PictureBox Watermark;
 
     }
