@@ -199,26 +199,31 @@ namespace FAFOS
 
         public String[] GetInputs()
         {
-            String[] allFeilds = new String[15];
+            String[] allFields = new String[15];
 
-            allFeilds[1] = nameTxtBox.Text.ToString();
-            allFeilds[2] = this.typeTextBox.Text.ToString();
-            allFeilds[3] = this.addrTextBox.Text.ToString();
-            allFeilds[4] = this.postalCodeTextBox.Text.ToString();
-            allFeilds[5] = this.mainPhoneTxtBox.Text.ToString();
-            allFeilds[6] = this.SecondPhoneTextBox.Text.ToString();
-            allFeilds[7] = this.FaxTextBox.Text.ToString();
-            allFeilds[8] = this.EmailTextBox.Text.ToString();
-            allFeilds[9] = this.PoBoxTextBox.Text.ToString();
-            allFeilds[10] = this.PrimContactTextBox.Text.ToString();
+            for (int i = 0; i < allFields.Length;i++ )
+            {
+                allFields[i] = null;
+            }
+
+            allFields[1] = nameTxtBox.Text.ToString();
+            allFields[2] = this.typeTextBox.Text.ToString();
+            allFields[3] = this.addrTextBox.Text.ToString();
+            allFields[4] = this.postalCodeTextBox.Text.ToString();
+            allFields[5] = this.mainPhoneTxtBox.Text.ToString();
+            allFields[6] = this.SecondPhoneTextBox.Text.ToString();
+            allFields[7] = this.FaxTextBox.Text.ToString();
+            allFields[8] = this.EmailTextBox.Text.ToString();
+            allFields[9] = this.PoBoxTextBox.Text.ToString();
+            allFields[10] = this.PrimContactTextBox.Text.ToString();
             if (this.CountryBox.SelectedValue != null)
-                allFeilds[11] = this.CountryBox.SelectedValue.ToString();
+                allFields[11] = this.CountryBox.SelectedValue.ToString();
             if (this.ProvStateBox.SelectedValue != null)
-                allFeilds[12] = this.ProvStateBox.SelectedValue.ToString();
+                allFields[12] = this.ProvStateBox.SelectedValue.ToString();
             if (this.CityBox.SelectedValue != null)
-                allFeilds[13] = this.CityBox.SelectedValue.ToString();
+                allFields[13] = this.CityBox.SelectedValue.ToString();
 
-            return allFeilds;
+            return allFields;
         }
         public void SetError(String name, String message)
         {
@@ -305,10 +310,15 @@ namespace FAFOS
 
         public bool getClientTextBox()
         {
-            if (nameTxtBox != null)
+            if (this.nameTxtBox.Text != null)
                 return true;
             else
                 return false;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
         /* void button1_MouseLeave(object sender, EventArgs e)
