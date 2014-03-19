@@ -111,8 +111,7 @@ namespace FAFOS
 
         public void Client_Contract_Button_Click(object sender, EventArgs e)
         {
-            AddEditClientForm hey = new AddEditClientForm();
-            if (hey.getClientTextBox())
+            if (_clientForm.getClientTextBox())
             {
                 String id = _client.GetContract();
 
@@ -171,8 +170,7 @@ namespace FAFOS
 
         public void Client_Delete_Button_Click(object sender, EventArgs e)
         {
-            AddEditClientForm hey = new AddEditClientForm();
-            if (hey.getClientTextBox() == true)
+            if (_clientForm.getClientTextBox() == true)
             {
                 if (MessageBox.Show("Are you sure you want Delete this client?", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
@@ -191,26 +189,21 @@ namespace FAFOS
 
         public void Client_Ok_Button_Click(object sender, EventArgs e)
         {
-            if (_clientForm.noChanges)
-            {
+            //if (_clientForm.noChanges)
+            //{
 
-                _clientForm.Close();
-            }
-            else
-            {
-            bool okToSubmit = true;
-            AddEditClientForm hey = new AddEditClientForm();
-            if (hey.getClientTextBox() == true)
-                okToSubmit = false;
+                //_clientForm.Close();
+            //}
+            //else
+            //{
 
                 String[] values = _clientForm.GetInputs();
 
                 
                 //for (int i = 0; i < values.Length; i++)
                     //if (values[i] == null)
-                        
 
-                if (okToSubmit)
+                if (_clientForm.checkFields() == true)
                 {
                     if (MessageBox.Show("Are you sure you want to submit this information?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase        
@@ -221,10 +214,9 @@ namespace FAFOS
                         _clientForm.Close();
                     }
                 }
-
                 else
                     MessageBox.Show("Some fields have not been filled in!", "Errors");
-            }
+            //}
         }
 
         public void Client_Cancel_Button_Click(object sender, EventArgs e)

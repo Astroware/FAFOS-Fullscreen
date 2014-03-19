@@ -1062,6 +1062,14 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.Notification);
+            this.Controls.Add(this.Watermark);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.UserSettings);
+            this.Controls.Add(this.Logout);
+>>>>>>> Fixed everything with client form except getting to contract form
             this.Controls.Add(this.RoyaltyFee);
             this.Controls.Add(this.EditContract);
             this.Controls.Add(this.RevenueReport);

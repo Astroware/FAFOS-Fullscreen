@@ -1327,7 +1327,11 @@ namespace FAFOS
 
         private void Client_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> Fixed everything with client form except getting to contract form
         }
 
         private void UserSettings_Click_2(object sender, EventArgs e)
@@ -1356,5 +1360,9 @@ namespace FAFOS
         {
             notificationPanel.Visible = false;
         }
+<<<<<<< HEAD
+        
+=======
+>>>>>>> Fixed everything with client form except getting to contract form
     }
 }

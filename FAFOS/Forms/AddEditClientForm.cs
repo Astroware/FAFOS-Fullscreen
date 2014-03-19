@@ -310,10 +310,35 @@ namespace FAFOS
 
         public bool getClientTextBox()
         {
-            if (this.nameTxtBox.Text != null)
-                return true;
+            if (nameTxtBox != null)
+            {
+                if (nameTxtBox.Text.Trim() != "")
+                    return true;
+                else
+                    return false;
+            }
             else
+            {
                 return false;
+            }
+        }
+        public bool checkFields()
+        {
+            if (nameTxtBox != null && typeTextBox != null && addrTextBox != null && CountryBox != null && ProvStateBox != null && CityBox != null && postalCodeTextBox != null && PoBoxTextBox != null && PrimContactTextBox != null && EmailTextBox != null && mainPhoneTxtBox != null)
+            {
+                if (nameTxtBox.Text.Trim() != "" && typeTextBox.Text.Trim() != "" && addrTextBox.Text.Trim() != "" && CountryBox.Text.Trim() != "" && ProvStateBox.Text.Trim() != "" && CityBox.Text.Trim() != "" && postalCodeTextBox.Text.Trim() != "" && PoBoxTextBox.Text.Trim() != "" && PrimContactTextBox.Text.Trim() != "" && EmailTextBox.Text.Trim() != "" && mainPhoneTxtBox.Text.Trim() != "")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
