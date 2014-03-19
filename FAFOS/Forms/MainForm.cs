@@ -439,6 +439,7 @@ namespace FAFOS
             pnlLogin.Visible = false;
             this.Exit_btn.Focus();
 
+            Exit.Visible = true;
             Logout.Visible = true;
             UserSettings.Visible = true;
             menuStrip1.Visible = true;
@@ -721,6 +722,8 @@ namespace FAFOS
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
+            Exit.Visible = false;
+            Notification.Visible = false;
             lblUserInfo.Text = "";
             txtUsername.Text = "";
             txtPassword.Text = "";

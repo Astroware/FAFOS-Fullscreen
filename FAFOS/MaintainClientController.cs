@@ -112,7 +112,7 @@ namespace FAFOS
         public void Client_Contract_Button_Click(object sender, EventArgs e)
         {
             AddEditClientForm hey = new AddEditClientForm();
-            if (hey.getClientTextBox() == true)
+            if (hey.getClientTextBox())
             {
                 String id = _client.GetContract();
 
@@ -198,13 +198,17 @@ namespace FAFOS
             }
             else
             {
+            bool okToSubmit = true;
+            AddEditClientForm hey = new AddEditClientForm();
+            if (hey.getClientTextBox() == true)
+                okToSubmit = false;
 
                 String[] values = _clientForm.GetInputs();
 
-                bool okToSubmit = true;
-                for (int i = 0; i < values.Length; i++)
-                    if (values[i] == "")
-                        okToSubmit = false;
+                
+                //for (int i = 0; i < values.Length; i++)
+                    //if (values[i] == null)
+                        
 
                 if (okToSubmit)
                 {
