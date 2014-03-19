@@ -1036,7 +1036,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
-            this.Controls.Add(this.Watermark);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.UserSettings);
             this.Controls.Add(this.Logout);
@@ -1075,6 +1074,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit_btn);
             this.Controls.Add(this.RedBar);
+            this.Controls.Add(this.Watermark);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

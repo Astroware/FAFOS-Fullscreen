@@ -921,6 +921,7 @@ namespace FAFOS
                 JobReport.Visible = false;
                 RevenueReport.Visible = false;
                 RoyaltyFee.Visible = false;
+              
             }
             /*if (addClient.Visible == false)
             {
@@ -1321,9 +1322,6 @@ namespace FAFOS
         private void Client_Click(object sender, EventArgs e)
         {
 
-        }
-
-
-        
+        }        
     }
 }
