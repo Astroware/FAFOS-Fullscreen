@@ -42,9 +42,9 @@
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
@@ -106,12 +106,14 @@
             this.RedBar = new System.Windows.Forms.Panel();
             this.Watermark = new System.Windows.Forms.PictureBox();
             this.Notification = new System.Windows.Forms.Button();
+            this.sidepanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.pnlLogin.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Watermark)).BeginInit();
+            this.sidepanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Exit_btn
@@ -250,16 +252,6 @@
             this.serviceNotification.TabIndex = 4;
             this.serviceNotification.Text = "None";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 14);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Payments Due:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -280,10 +272,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(238, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 14);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Payments Due:";
+            // 
             // profilePic
             // 
             this.profilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.profilePic.Location = new System.Drawing.Point(35, 105);
+            this.profilePic.Location = new System.Drawing.Point(32, 13);
             this.profilePic.Name = "profilePic";
             this.profilePic.Size = new System.Drawing.Size(103, 66);
             this.profilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -297,7 +299,7 @@
             this.syncHQ.FlatAppearance.BorderSize = 0;
             this.syncHQ.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.Black;
-            this.syncHQ.Location = new System.Drawing.Point(23, 369);
+            this.syncHQ.Location = new System.Drawing.Point(20, 277);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
             this.syncHQ.Size = new System.Drawing.Size(140, 63);
@@ -313,7 +315,7 @@
             this.syncAndroid.FlatAppearance.BorderSize = 0;
             this.syncAndroid.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.Black;
-            this.syncAndroid.Location = new System.Drawing.Point(23, 440);
+            this.syncAndroid.Location = new System.Drawing.Point(20, 348);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(140, 58);
@@ -559,7 +561,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-        "provided.");
+                    "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -594,7 +596,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-        " has been made.");
+                    " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -680,7 +682,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-        " the invoices.");
+                    " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -715,7 +717,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-        "hreshold.");
+                    "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -744,7 +746,7 @@
             // lblUserInfo
             // 
             this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserInfo.Location = new System.Drawing.Point(20, 174);
+            this.lblUserInfo.Location = new System.Drawing.Point(29, 87);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
             this.lblUserInfo.TabIndex = 23;
@@ -755,7 +757,7 @@
             this.Logout.BackColor = System.Drawing.Color.White;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout.Location = new System.Drawing.Point(23, 504);
+            this.Logout.Location = new System.Drawing.Point(20, 412);
             this.Logout.Name = "Logout";
             this.Logout.Size = new System.Drawing.Size(140, 60);
             this.Logout.TabIndex = 80;
@@ -769,7 +771,7 @@
             this.UserSettings.BackColor = System.Drawing.Color.White;
             this.UserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserSettings.Location = new System.Drawing.Point(23, 302);
+            this.UserSettings.Location = new System.Drawing.Point(20, 210);
             this.UserSettings.Name = "UserSettings";
             this.UserSettings.Size = new System.Drawing.Size(140, 60);
             this.UserSettings.TabIndex = 81;
@@ -991,7 +993,7 @@
             // Exit
             // 
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(23, 570);
+            this.Exit.Location = new System.Drawing.Point(20, 478);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(140, 48);
             this.Exit.TabIndex = 83;
@@ -1003,9 +1005,9 @@
             // 
             this.RedBar.BackColor = System.Drawing.Color.Red;
             this.RedBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RedBar.Location = new System.Drawing.Point(224, 93);
+            this.RedBar.Location = new System.Drawing.Point(178, 93);
             this.RedBar.Name = "RedBar";
-            this.RedBar.Size = new System.Drawing.Size(1128, 81);
+            this.RedBar.Size = new System.Drawing.Size(1177, 81);
             this.RedBar.TabIndex = 84;
             this.RedBar.Visible = false;
             // 
@@ -1024,15 +1026,32 @@
             // 
             this.Notification.BackColor = System.Drawing.Color.White;
             this.Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Notification.Location = new System.Drawing.Point(23, 247);
+            this.Notification.Location = new System.Drawing.Point(20, 155);
             this.Notification.Name = "Notification";
             this.Notification.Size = new System.Drawing.Size(140, 49);
             this.Notification.TabIndex = 86;
             this.Notification.Text = "Notifications";
             this.Notification.UseVisualStyleBackColor = false;
+            this.Notification.Visible = false;
             this.Notification.MouseEnter += new System.EventHandler(this.Notification_MouseEnter);
             this.Notification.MouseLeave += new System.EventHandler(this.Notification_MouseLeave);
-            this.Notification.Visible = false;
+            // 
+            // sidepanel
+            // 
+            this.sidepanel.BackColor = System.Drawing.Color.Red;
+            this.sidepanel.Controls.Add(this.lblUserInfo);
+            this.sidepanel.Controls.Add(this.Notification);
+            this.sidepanel.Controls.Add(this.Exit);
+            this.sidepanel.Controls.Add(this.UserSettings);
+            this.sidepanel.Controls.Add(this.Logout);
+            this.sidepanel.Controls.Add(this.profilePic);
+            this.sidepanel.Controls.Add(this.syncAndroid);
+            this.sidepanel.Controls.Add(this.syncHQ);
+            this.sidepanel.Location = new System.Drawing.Point(3, 93);
+            this.sidepanel.Name = "sidepanel";
+            this.sidepanel.Size = new System.Drawing.Size(176, 573);
+            this.sidepanel.TabIndex = 87;
+            this.sidepanel.Visible = false;
             // 
             // View
             // 
@@ -1042,19 +1061,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
-<<<<<<< HEAD
-=======
-            this.Controls.Add(this.Notification);
-            this.Controls.Add(this.Watermark);
->>>>>>> d97c7f60857e333ecc413ab30f3451ea44d7bf02
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.UserSettings);
-            this.Controls.Add(this.Logout);
             this.Controls.Add(this.RoyaltyFee);
-            this.Controls.Add(this.lblUserInfo);
             this.Controls.Add(this.EditContract);
             this.Controls.Add(this.RevenueReport);
-            this.Controls.Add(this.profilePic);
             this.Controls.Add(this.JobReport);
             this.Controls.Add(this.Statement);
             this.Controls.Add(this.AddContract);
@@ -1076,8 +1085,6 @@
             this.Controls.Add(this.Document);
             this.Controls.Add(this.Operation);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.syncAndroid);
-            this.Controls.Add(this.syncHQ);
             this.Controls.Add(this.notificationPanel);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
@@ -1085,6 +1092,7 @@
             this.Controls.Add(this.Exit_btn);
             this.Controls.Add(this.RedBar);
             this.Controls.Add(this.Watermark);
+            this.Controls.Add(this.sidepanel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1104,6 +1112,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Watermark)).EndInit();
+            this.sidepanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1187,6 +1196,7 @@
         private System.Windows.Forms.Panel RedBar;
         private System.Windows.Forms.PictureBox Watermark;
         private System.Windows.Forms.Button Notification;
+        private System.Windows.Forms.Panel sidepanel;
 
     }
 }

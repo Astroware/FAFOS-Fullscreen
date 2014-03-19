@@ -51,10 +51,9 @@
             this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Cancel_Button.ForeColor = System.Drawing.Color.White;
-            this.Cancel_Button.Location = new System.Drawing.Point(681, 259);
-            this.Cancel_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.Cancel_Button.Location = new System.Drawing.Point(511, 210);
             this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.Size = new System.Drawing.Size(131, 57);
+            this.Cancel_Button.Size = new System.Drawing.Size(98, 46);
             this.Cancel_Button.TabIndex = 59;
             this.Cancel_Button.Text = "Cancel";
             this.Cancel_Button.UseVisualStyleBackColor = false;
@@ -66,10 +65,9 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Ok_Button.ForeColor = System.Drawing.Color.White;
-            this.Ok_Button.Location = new System.Drawing.Point(542, 259);
-            this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.Ok_Button.Location = new System.Drawing.Point(406, 210);
             this.Ok_Button.Name = "Ok_Button";
-            this.Ok_Button.Size = new System.Drawing.Size(131, 57);
+            this.Ok_Button.Size = new System.Drawing.Size(98, 46);
             this.Ok_Button.TabIndex = 31;
             this.Ok_Button.Text = "Ok";
             this.Ok_Button.UseVisualStyleBackColor = false;
@@ -79,10 +77,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label2.Location = new System.Drawing.Point(16, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
+            this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 62;
             this.label2.Text = "Address:";
             // 
@@ -91,10 +88,9 @@
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.BackColor = System.Drawing.Color.Transparent;
             this.AddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.AddressLabel.Location = new System.Drawing.Point(109, 11);
-            this.AddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AddressLabel.Location = new System.Drawing.Point(82, 9);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(117, 20);
+            this.AddressLabel.Size = new System.Drawing.Size(98, 17);
             this.AddressLabel.TabIndex = 63;
             this.AddressLabel.Text = "<No Address>";
             // 
@@ -110,10 +106,9 @@
             this.EffectDate,
             this.note,
             this.removeButton});
-            this.TermsView.Location = new System.Drawing.Point(16, 68);
-            this.TermsView.Margin = new System.Windows.Forms.Padding(4);
+            this.TermsView.Location = new System.Drawing.Point(12, 55);
             this.TermsView.Name = "TermsView";
-            this.TermsView.Size = new System.Drawing.Size(796, 185);
+            this.TermsView.Size = new System.Drawing.Size(597, 150);
             this.TermsView.TabIndex = 64;
             this.TermsView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.TermsView_CellValueChanged);
             this.TermsView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.TermsView_DataError);
@@ -162,10 +157,9 @@
             this.Add_Service_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Service_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Add_Service_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Service_Button.Location = new System.Drawing.Point(681, 29);
-            this.Add_Service_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.Add_Service_Button.Location = new System.Drawing.Point(511, 24);
             this.Add_Service_Button.Name = "Add_Service_Button";
-            this.Add_Service_Button.Size = new System.Drawing.Size(131, 31);
+            this.Add_Service_Button.Size = new System.Drawing.Size(98, 25);
             this.Add_Service_Button.TabIndex = 65;
             this.Add_Service_Button.Text = "Add Service";
             this.Add_Service_Button.UseVisualStyleBackColor = false;
@@ -173,10 +167,9 @@
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(319, 36);
-            this.DatePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DatePicker.Location = new System.Drawing.Point(239, 29);
             this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(163, 22);
+            this.DatePicker.Size = new System.Drawing.Size(123, 20);
             this.DatePicker.TabIndex = 66;
             this.DatePicker.Value = new System.DateTime(2013, 4, 4, 0, 0, 0, 0);
             this.DatePicker.Visible = false;
@@ -184,11 +177,11 @@
             // 
             // AddEditSrvAddrForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(828, 329);
+            this.ClientSize = new System.Drawing.Size(621, 267);
             this.ControlBox = false;
             this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.Add_Service_Button);
@@ -197,10 +190,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Ok_Button);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditSrvAddrForm";
             this.Text = "Edit Service Address";
             this.TopMost = true;
+            this.MouseLeave += new System.EventHandler(this.AddEditSrvAddrForm_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.TermsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

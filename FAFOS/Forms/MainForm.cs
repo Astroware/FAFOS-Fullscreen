@@ -469,6 +469,7 @@ namespace FAFOS
                 royaltyFee.Visible = false;*/
             //   allRevenue.Visible = true;
             RedBar.Visible = true;
+            sidepanel.Visible = true;
             syncAndroid.Visible = true;
             syncHQ.Visible = true;
             Watermark.Visible = true;
@@ -653,6 +654,7 @@ namespace FAFOS
             Logout.Visible = false;
             UserSettings.Visible = false;
             RedBar.Visible = false;
+            sidepanel.Visible = false;
             Watermark.Visible = false;
             EditQuote.Visible = false;
             Quote.Visible = false;
@@ -1322,10 +1324,7 @@ namespace FAFOS
 
         private void Client_Click(object sender, EventArgs e)
         {
-
-<<<<<<< HEAD
-        }        
-=======
+      
         }
 
         private void UserSettings_Click_2(object sender, EventArgs e)
@@ -1355,6 +1354,5 @@ namespace FAFOS
             notificationPanel.Visible = false;
         }
         
->>>>>>> d97c7f60857e333ecc413ab30f3451ea44d7bf02
     }
 }

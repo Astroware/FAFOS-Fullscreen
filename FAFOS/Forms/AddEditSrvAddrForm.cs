@@ -132,5 +132,10 @@ namespace FAFOS
         {
 
         }
+
+        private void AddEditSrvAddrForm_MouseLeave(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

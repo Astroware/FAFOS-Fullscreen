@@ -210,7 +210,21 @@ namespace FAFOS
             { isgood = false; errProv.SetError(cnfTxtBox, "Passwords Must Match!");}
             if (String.Equals(PassTxtBox.Text.ToString(), ""))
             { isgood = false; errProv.SetError(PassTxtBox, "Password cannot be blank!"); }
-
+            if (String.Equals(EmailTextBox.Text.ToString(), ""))
+            { isgood = false; errProv.SetError(EmailTextBox, "Email cannot be blank!");
+            MessageBox.Show("Email Cannot be Blank", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            if (String.Equals(cellTextBox.Text.ToString(), ""))
+            { isgood = false; errProv.SetError(cellTextBox, "Cell Number cannot be blank!");
+            MessageBox.Show("Cell Number Cannot be Blank", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            if (String.Equals(homeTxtBox.Text.ToString(), ""))
+            { isgood = false; errProv.SetError(homeTxtBox, "Home Number cannot be blank!"); 
+            MessageBox.Show("Home Number Cannot be Blank", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            if (String.Equals(addrTextBox.Text.ToString(), ""))
+            { isgood = false; errProv.SetError(addrTextBox, "Address cannot be blank!"); 
+            MessageBox.Show("Address Cannot be Blank", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            if (String.Equals(postalCodeTextBox.Text.ToString(), ""))
+            { isgood = false; errProv.SetError(postalCodeTextBox, "Postal Code cannot be blank!"); 
+            MessageBox.Show("Postal Code Cannot be Blank", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);}
             return isgood;
         }
         public Point GetWindowMidRight()
@@ -263,15 +277,53 @@ namespace FAFOS
         private void CountryBoxChanged(object sender, EventArgs e)
         {
             InitializeCombos("noChange", ProvStateBox.SelectedValue.ToString(), CityBox.SelectedValue.ToString());
+            noChanges = false;
         }
         private void ProvBoxChanged(object sendr, EventArgs e)
         {
             InitializeCombos("noChange", "noChange", CityBox.SelectedValue.ToString());
+            noChanges = false;
         }
         private void somethingChanged(object sender, EventArgs e)
         {
             noChanges = false;
             errProv.Clear();
         }
+
+        private void addrTextBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
+        private void postalCodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
+        private void homeTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
+        private void cellTextBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
+        private void FaxTextBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
+        private void SkypeBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
+        private void EmailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
     }
 }
