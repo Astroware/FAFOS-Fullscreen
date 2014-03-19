@@ -228,7 +228,7 @@
             this.notificationPanel.Controls.Add(this.label4);
             this.notificationPanel.Controls.Add(this.label1);
             this.notificationPanel.Controls.Add(this.label3);
-            this.notificationPanel.Location = new System.Drawing.Point(169, 247);
+            this.notificationPanel.Location = new System.Drawing.Point(178, 231);
             this.notificationPanel.Name = "notificationPanel";
             this.notificationPanel.Size = new System.Drawing.Size(504, 154);
             this.notificationPanel.TabIndex = 36;
@@ -297,12 +297,13 @@
             // 
             this.syncHQ.BackColor = System.Drawing.Color.White;
             this.syncHQ.FlatAppearance.BorderSize = 0;
-            this.syncHQ.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syncHQ.ForeColor = System.Drawing.Color.Black;
-            this.syncHQ.Location = new System.Drawing.Point(20, 277);
+            this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncHQ.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.syncHQ.Location = new System.Drawing.Point(5, 313);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
-            this.syncHQ.Size = new System.Drawing.Size(140, 63);
+            this.syncHQ.Size = new System.Drawing.Size(158, 85);
             this.syncHQ.TabIndex = 53;
             this.syncHQ.Text = "Sync Reports to HQ";
             this.syncHQ.UseVisualStyleBackColor = false;
@@ -313,17 +314,17 @@
             // 
             this.syncAndroid.BackColor = System.Drawing.Color.White;
             this.syncAndroid.FlatAppearance.BorderSize = 0;
-            this.syncAndroid.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syncAndroid.ForeColor = System.Drawing.Color.Black;
-            this.syncAndroid.Location = new System.Drawing.Point(20, 348);
+            this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.syncAndroid.Location = new System.Drawing.Point(5, 402);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
-            this.syncAndroid.Size = new System.Drawing.Size(140, 58);
+            this.syncAndroid.Size = new System.Drawing.Size(158, 85);
             this.syncAndroid.TabIndex = 54;
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Visible = false;
-            //this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
             // 
             // pnlLogin
             // 
@@ -561,7 +562,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-                    "provided.");
+        "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -596,7 +597,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-                    " has been made.");
+        " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -682,7 +683,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-                    " the invoices.");
+        " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -717,7 +718,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-                    "hreshold.");
+        "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -746,9 +747,9 @@
             // lblUserInfo
             // 
             this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserInfo.Location = new System.Drawing.Point(29, 87);
+            this.lblUserInfo.Location = new System.Drawing.Point(17, 82);
             this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
+            this.lblUserInfo.Size = new System.Drawing.Size(133, 50);
             this.lblUserInfo.TabIndex = 23;
             this.lblUserInfo.Visible = false;
             // 
@@ -756,10 +757,11 @@
             // 
             this.Logout.BackColor = System.Drawing.Color.White;
             this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout.Location = new System.Drawing.Point(20, 412);
+            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Logout.Location = new System.Drawing.Point(5, 491);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(140, 60);
+            this.Logout.Size = new System.Drawing.Size(158, 85);
             this.Logout.TabIndex = 80;
             this.Logout.Text = "Logout";
             this.Logout.UseVisualStyleBackColor = false;
@@ -770,10 +772,10 @@
             // 
             this.UserSettings.BackColor = System.Drawing.Color.White;
             this.UserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserSettings.Location = new System.Drawing.Point(20, 210);
+            this.UserSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserSettings.Location = new System.Drawing.Point(5, 225);
             this.UserSettings.Name = "UserSettings";
-            this.UserSettings.Size = new System.Drawing.Size(140, 60);
+            this.UserSettings.Size = new System.Drawing.Size(158, 85);
             this.UserSettings.TabIndex = 81;
             this.UserSettings.Text = "User Settings";
             this.UserSettings.UseVisualStyleBackColor = false;
@@ -992,15 +994,17 @@
             // 
             // Exit
             // 
-            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(20, 478);
+            this.Exit.BackColor = System.Drawing.Color.White;
+            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Location = new System.Drawing.Point(5, 579);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(140, 48);
+            this.Exit.Size = new System.Drawing.Size(158, 85);
             this.Exit.TabIndex = 83;
             this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.Exit.UseVisualStyleBackColor = false;
             this.Exit.Visible = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // RedBar
             // 
@@ -1026,10 +1030,11 @@
             // Notification
             // 
             this.Notification.BackColor = System.Drawing.Color.White;
-            this.Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Notification.Location = new System.Drawing.Point(20, 155);
+            this.Notification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Notification.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notification.Location = new System.Drawing.Point(5, 138);
             this.Notification.Name = "Notification";
-            this.Notification.Size = new System.Drawing.Size(140, 49);
+            this.Notification.Size = new System.Drawing.Size(158, 85);
             this.Notification.TabIndex = 86;
             this.Notification.Text = "Notifications";
             this.Notification.UseVisualStyleBackColor = false;
@@ -1050,7 +1055,7 @@
             this.sidepanel.Controls.Add(this.syncHQ);
             this.sidepanel.Location = new System.Drawing.Point(3, 93);
             this.sidepanel.Name = "sidepanel";
-            this.sidepanel.Size = new System.Drawing.Size(176, 573);
+            this.sidepanel.Size = new System.Drawing.Size(169, 675);
             this.sidepanel.TabIndex = 87;
             this.sidepanel.Visible = false;
             // 
