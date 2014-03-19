@@ -19,14 +19,17 @@ namespace FAFOS
 
             this.dgvSalesOrder.CellEndEdit += new DataGridViewCellEventHandler(my_controller.dgvSalesOrder_CellValueChanged);
             this.dgvSalesOrder.CellValueChanged += new DataGridViewCellEventHandler(my_controller.dgvSalesOrder_CellValueChanged);
-            this.btnPreview.Click += new System.EventHandler(my_controller.preview);
+
+            
             if (type == 1)
             {
+                this.btnPreview.Click += new System.EventHandler(my_controller.preview);
                 this.btnSubmit.Click += new System.EventHandler(my_controller.createQuote);
             }
             if (type == 2)
             {
                 setupEditForm();
+                this.btnPreview.Click += new System.EventHandler(my_controller.previewEdit);
                 this.dgvSalesOrder.UserDeletedRow += new DataGridViewRowEventHandler(my_controller.DataGridView1_UserDeletedRow);
                 this.btnPullQuote.Click += new System.EventHandler(my_controller.pullQuoteData);
                 this.btnSubmit.Click += new System.EventHandler(my_controller.saveQuote);
