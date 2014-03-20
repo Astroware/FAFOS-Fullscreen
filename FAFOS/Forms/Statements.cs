@@ -215,12 +215,12 @@ namespace FAFOS
                 table.yPos = 630;
                 table.xPos = 0;
                 //Set the parameters of this table
-                textAndtable.SetParams(table, cellColor, Align.CenterAlign, 3);
-                textAndtable.AddRow(false, 10, "T3", alignC, false, "Statement Date");
-                textAndtable.AddRow(false, 10, "T4", alignC, false, DateTime.Today.ToShortDateString());
+                //textAndtable.SetParams(table, cellColor, Align.CenterAlign, 3);
+                //textAndtable.AddRow(false, 10, "T3", alignC, false, "Statement Date");
+                //textAndtable.AddRow(false, 10, "T4", alignC, false, DateTime.Today.ToShortDateString());
 
                 //After drawing table and text add them to the page 
-                content.SetStream(textAndtable.EndTable(lineColor, true));
+                //content.SetStream(textAndtable.EndTable(lineColor, true));
 
                 textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
                 Align[] alignC1 = new Align[5];
@@ -238,7 +238,7 @@ namespace FAFOS
                 alignC2[4] = Align.CenterAlign;
 
                 //Fill in the parameters for the table
-                TableParams table2 = new TableParams(5, 120, 100, 100, 100, 40);
+                TableParams table2 = new TableParams(5, 200, 100, 100, 100, 20);
                 table2.yPos = 510;
                 table2.xPos = 37;
                 table2.rowHeight = 15;
@@ -246,7 +246,7 @@ namespace FAFOS
                 //Set the parameters of this table
                 textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
                 // MessageBox.Show("\u221A");
-                textAndtable.AddRow(false, 10, "T3", alignC1, false, "Statement Date", "Invoice No.", "Balance", "Total Due", "");
+                textAndtable.AddRow(false, 10, "T3", alignC1, false, "Statement Date", "Invoice No.", "Balance ($)", "Total Due ($)", "");
                 String[] rows = new Invoice().getOutstandingInvoices(cbClients.SelectedValue.ToString());
                 double total = 0;
                 double interestTotal = 0;
@@ -268,11 +268,13 @@ namespace FAFOS
                         between3160 += Convert.ToDouble(cells[2]);
                     if (Convert.ToDateTime(cells[0]) < DateTime.Today.Date.AddDays(-60))
                         over60 += Convert.ToDouble(cells[2]);
+                    //Fixing cells to make them in dollar values goes here
                     textAndtable.AddRow(false, 10, "T4", alignC2, false, cells[0], cells[1], cells[2], total.ToString(), "");
                 }
                 interest = interestTotal * 0.02;
                 total += interest;
                 below30 += interest;
+                textAndtable.AddRow(false, 10, "T4", alignC2, false, "", "", "", "");
                 textAndtable.AddRow(false, 10, "T4", alignC2, false, "2% interest on balance over 30 days", "", (interest).ToString(), total.ToString(), "");
 
                 //After drawing table and text add them to the page 

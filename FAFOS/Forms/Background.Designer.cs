@@ -32,7 +32,7 @@
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.SEdgeLogo = new System.Windows.Forms.Label();
+            this.Astroware = new System.Windows.Forms.Label();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
             this.pnlUser = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -112,11 +112,11 @@
             // 
             // SEdgeLogo
             // 
-            this.SEdgeLogo.Image = global::FAFOS.Properties.Resources.CompanyLogo;
-            this.SEdgeLogo.Location = new System.Drawing.Point(1468, 710);
-            this.SEdgeLogo.Name = "SEdgeLogo";
-            this.SEdgeLogo.Size = new System.Drawing.Size(180, 71);
-            this.SEdgeLogo.TabIndex = 35;
+            //this.SEdgeLogo.Image = global::FAFOS.Properties.Resources.CompanyLogo;
+            //this.SEdgeLogo.Location = new System.Drawing.Point(1468, 710);
+            //this.SEdgeLogo.Name = "SEdgeLogo";
+            //this.SEdgeLogo.Size = new System.Drawing.Size(180, 71);
+            //this.SEdgeLogo.TabIndex = 35;
             // 
             // FireAlertLogo
             // 
@@ -339,7 +339,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.lblPageTitle);
-            this.Controls.Add(this.SEdgeLogo);
+            this.Controls.Add(this.Astroware);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -364,7 +364,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox FireAlertLogo;
-        private System.Windows.Forms.Label SEdgeLogo;
+        private System.Windows.Forms.Label Astroware;
         private System.Windows.Forms.Label lblUserInfo;
         private System.Windows.Forms.Label lblPageTitle;
         private System.Windows.Forms.PictureBox profilePic;

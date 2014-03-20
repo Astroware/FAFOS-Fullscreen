@@ -38,7 +38,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
-            this.SEdgeLogo = new System.Windows.Forms.Label();
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
@@ -107,6 +106,7 @@
             this.Watermark = new System.Windows.Forms.PictureBox();
             this.Notification = new System.Windows.Forms.Button();
             this.sidepanel = new System.Windows.Forms.Panel();
+            this.Astroware = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -211,14 +211,6 @@
             this.FireAlertLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FireAlertLogo.TabIndex = 26;
             this.FireAlertLogo.TabStop = false;
-            // 
-            // SEdgeLogo
-            // 
-            this.SEdgeLogo.Image = global::FAFOS.Properties.Resources.CompanyLogo;
-            this.SEdgeLogo.Location = new System.Drawing.Point(1688, 985);
-            this.SEdgeLogo.Name = "SEdgeLogo";
-            this.SEdgeLogo.Size = new System.Drawing.Size(180, 72);
-            this.SEdgeLogo.TabIndex = 25;
             // 
             // notificationPanel
             // 
@@ -562,7 +554,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-        "provided.");
+                    "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -597,7 +589,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-        " has been made.");
+                    " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -683,7 +675,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-        " the invoices.");
+                    " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -718,7 +710,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-        "hreshold.");
+                    "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -1059,6 +1051,16 @@
             this.sidepanel.TabIndex = 87;
             this.sidepanel.Visible = false;
             // 
+            // Astroware
+            // 
+            this.Astroware.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Astroware.BackgroundImage")));
+            this.Astroware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Astroware.Location = new System.Drawing.Point(1148, 588);
+            this.Astroware.Name = "Astroware";
+            this.Astroware.Size = new System.Drawing.Size(206, 179);
+            this.Astroware.TabIndex = 88;
+            this.Astroware.Visible = false;
+            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
@@ -1067,6 +1069,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+            this.Controls.Add(this.Astroware);
             this.Controls.Add(this.RoyaltyFee);
             this.Controls.Add(this.EditContract);
             this.Controls.Add(this.RevenueReport);
@@ -1093,7 +1096,6 @@
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.notificationPanel);
             this.Controls.Add(this.FireAlertLogo);
-            this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit_btn);
             this.Controls.Add(this.RedBar);
@@ -1134,7 +1136,7 @@
         private System.Windows.Forms.Button Login_btn;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label SEdgeLogo;
+        //private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.PictureBox FireAlertLogo;
         private System.Windows.Forms.Panel notificationPanel;
         private System.Windows.Forms.Label label1;
@@ -1204,6 +1206,7 @@
         private System.Windows.Forms.PictureBox Watermark;
         private System.Windows.Forms.Button Notification;
         private System.Windows.Forms.Panel sidepanel;
+        private System.Windows.Forms.Panel Astroware;
 
     }
 }

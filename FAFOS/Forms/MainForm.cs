@@ -141,8 +141,9 @@ namespace FAFOS
 
             //FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350, 40);
 
-            SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
+            //Astroware.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
+            //    System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
+            
             //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
             //System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
 
@@ -481,6 +482,7 @@ namespace FAFOS
             Document.Visible = true;
             Client.Visible = true;
             Report.Visible = true;
+            Astroware.Visible = true;
             //label9.Visible = true;
 
 
@@ -686,6 +688,7 @@ namespace FAFOS
             Document.Visible = false;
             Client.Visible = false;
             Report.Visible = false;
+            Astroware.Visible = false;
 
             menuStrip1.Visible = false;
             /*inventory.Visible = false;

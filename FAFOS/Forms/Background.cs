@@ -33,8 +33,8 @@ namespace FAFOS
             pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width -
                 pnlUser.Size.Width - 15, pnlUser.Location.Y);
 
-            SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
+            //.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
+            //    System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
         }
 
         public void setup(String name, String title)
@@ -101,7 +101,6 @@ namespace FAFOS
 
         public void Background_Load(object sender, EventArgs e)
         {
-
         // notify the "Load" method is complete
         this.isLoaded = true;
         }
