@@ -1171,25 +1171,25 @@ namespace FAFOS
                 case (int)Options.NONE:
                     return;
                 case (int)Options.OPERATIONS:
-                    if ((e.Y < Operation.Top) || (e.X < Operation.Left) || (e.X > Operation.Right))
+                    if ((e.Y < Operation.Top) || (e.X < Operation.Left) || (e.X > Operation.Right) || (e.Y > Inspection.Bottom))
                     {
                         setOperationsVisible(false);
                     }
                     break;
                 case (int)Options.DOCUMENTS:
-                    if ((e.Y < Document.Top) || (e.X < Document.Left) || (e.X > Document.Right))
+                    if ((e.Y < Document.Top) || (e.X < Document.Left) || (e.X > Document.Right) || (e.Y > Invoice.Bottom))
                     {
                         setDocumentsVisible(false);
                     }
                     break;
                 case (int)Options.CLIENTS:
-                    if ((e.Y < Client.Top) || (e.X < Client.Left) || (e.X > Client.Right))
+                    if ((e.Y < Client.Top) || (e.X < Client.Left) || (e.X > Client.Right) || (e.Y > EditContract.Bottom))
                     {
                         setClientsVisible(false);
                     }
                     break;
                 case (int)Options.REPORTS:
-                    if ((e.Y < Report.Top) || (e.X < Report.Left) || (e.X > Report.Right))
+                    if ((e.Y < Report.Top) || (e.X < Report.Left) || (e.X > Report.Right) || (e.Y > RoyaltyFee.Bottom))
                     {
                         setReportsVisible(false);
                     }
