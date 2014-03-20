@@ -193,7 +193,6 @@
             this.Name = "AddEditSrvAddrForm";
             this.Text = "Edit Service Address";
             this.TopMost = true;
-            this.MouseLeave += new System.EventHandler(this.AddEditSrvAddrForm_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.TermsView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

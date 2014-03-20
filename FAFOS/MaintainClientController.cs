@@ -254,6 +254,7 @@ namespace FAFOS
                     catch (NullReferenceException) { }
 
                     _srvAddrForm = new AddEditSrvAddrForm(this, addr, addrID, e.RowIndex);
+                    _srvAddrForm.ShowInTaskbar = false;
                     try { _srvAddrForm.setFields(MContractServices.GetAll(addrID)); }
                     catch (Exception) { }
 
@@ -514,7 +515,11 @@ namespace FAFOS
             {
                 String[,] values = _srvAddrForm.GetInputs();
                 bool okToSubmit = true;
-
+                for (int n = 0; n < values.GetLength(1); n++)
+                {
+                    if (values[n,2].ToString().Trim().Equals(""))
+                        okToSubmit = false;
+                }
                 if (okToSubmit)
                 {
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -522,10 +527,9 @@ namespace FAFOS
                         MContractServices cs = new MContractServices();
                         try
                         {
-
                             cs.SetMany(values, userID, _contractForm.GetEndDate());
                         }
-                        catch (Exception) { MessageBox.Show("Error Updating Database"); }
+                        catch (Exception) { MessageBox.Show("Ensure all fields are properly filled out", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                         _srvAddrForm.Close();
 
 
@@ -534,6 +538,10 @@ namespace FAFOS
                     {
                         return;
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Could not automatically schdeule all of the contract services", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

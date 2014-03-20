@@ -398,6 +398,18 @@ namespace FAFOS
 
         }
 
+        private void AddEditContractForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible == false && this.ActiveMdiChild != null)
+                this.ActiveMdiChild.Visible = false;
+        }
+
+        private void AddEditContractForm_Resize(object sender, EventArgs e)
+        {
+            if (this.Visible == false && this.ActiveMdiChild != null)
+                this.ActiveMdiChild.Visible = false;
+        }
+
 
 
     }

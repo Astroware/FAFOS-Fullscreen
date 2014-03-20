@@ -42,7 +42,9 @@ namespace FAFOS
                 }
                 catch (SqlException ef)
                 {
-                    MessageBox.Show("Could not automatically schdeule all of the contract services");
+                    MessageBox.Show("Could not automatically schdeule all of the contract services", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    con.Close();
+                    return;
                 }
                 con.Close();
             }
