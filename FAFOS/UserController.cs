@@ -60,7 +60,7 @@ namespace FAFOS
                     _adminForm.Close();
                 else
                 {
-                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show(_userForm, "Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         _adminForm.Close();
                     else
                         return;
@@ -73,7 +73,7 @@ namespace FAFOS
                     _hqForm.Close();
                 else
                 {
-                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show(_userForm, "Are you sure you want to discard admin changes?", "Confirm Close", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         _hqForm.Close();
                     else
                         return;
@@ -120,7 +120,7 @@ namespace FAFOS
                 }
                 else
                 {
-                    if (MessageBox.Show("Are you sure you want to discard admin changes?", "Confirm Discard", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show(_userForm, "Are you sure you want to discard admin changes?", "Confirm Discard", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         _adminForm.Close();
                         _adminForm = null;
@@ -154,7 +154,7 @@ namespace FAFOS
                 _userForm.Close();
             else
             {
-                if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(_userForm, "Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {// if we are good, submit changes to dataBaseadmi
                     if (_userForm.ValidToSet())
                     {
@@ -205,11 +205,11 @@ namespace FAFOS
             var dgv = sender as DataGridView;
             if ((e.ColumnIndex == 2) && (e.RowIndex > -1))//-----------------------------------password reset
             {
-                if (MessageBox.Show("Are you sure you want to reset this user's Password?", "Confirm Reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(_userForm, "Are you sure you want to reset this user's Password?", "Confirm Reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     String newPass = GeneratePassword();
                     dgv.Rows[e.RowIndex].Cells["passSetCol"].Value = newPass;
-                    MessageBox.Show("Heres the new Password: " + newPass + "\nMake sure to copy it down");
+                    MessageBox.Show(_userForm, "Heres the new Password: " + newPass + "\nMake sure to copy it down");
                 }
             }
             if ((e.ColumnIndex == 10) && (e.RowIndex > -1))//-----------------------------------remove
@@ -217,13 +217,13 @@ namespace FAFOS
                 if (dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value != null)
                     if (dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value.ToString() == "1")
                     {
-                        MessageBox.Show("Cannot remove Primary user!");
+                        MessageBox.Show(_userForm, "Cannot remove Primary user!");
                         return;
                     }
 
                 if (userID == 1)//elivated privileges
                 {
-                    if (MessageBox.Show("Delete User?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show(_userForm, "Delete User?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         //MUser.Delete(dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value.ToString());
                         try { MUser.Delete(dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value.ToString()); }
@@ -236,11 +236,11 @@ namespace FAFOS
                     if (string.Equals(dgv.Rows[e.RowIndex].Cells["adminCol"].ToString(), "true", StringComparison.OrdinalIgnoreCase)
                         || string.Equals(dgv.Rows[e.RowIndex].Cells["hqCol"].ToString(), "true", StringComparison.OrdinalIgnoreCase))
                     {
-                        MessageBox.Show("You cannot delete users with admin priviledges!\nOnly the primary user can");
+                        MessageBox.Show(_userForm, "You cannot delete users with admin priviledges!\nOnly the primary user can");
                         return;
                     }
                     else
-                        if (MessageBox.Show("Delete User?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        if (MessageBox.Show(_userForm, "Delete User?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         {
                             try { MUser.Delete(dgv.Rows[e.RowIndex].Cells["usrIDCol"].Value.ToString()); }
                             catch (Exception) { }
@@ -255,7 +255,7 @@ namespace FAFOS
             var dgv = sender as DataGridView;
             if ((e.ColumnIndex == 6) && (e.RowIndex > -1))//-----------------------------------remove
             {
-                if (MessageBox.Show("Delete Business Address?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(_userForm, "Delete Business Address?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     try { MFranchise.DeleteBAddress(dgv.Rows[e.RowIndex].Cells["locID"].Value.ToString()); }
                     catch (Exception) { }
@@ -279,21 +279,46 @@ namespace FAFOS
         }
         public void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (_adminForm.checkNonGridViewBoxes())
             {
-                if (_adminForm.isOkToClose())
+                if (checkUserGrid())
                 {
-                    MFranchise.SetAll(_adminForm.getFields(), _adminForm.GetUserView(), _adminForm.GetBAddrView());
-                    _adminForm.noChanges = true;
+                    if (MessageBox.Show(_userForm, "Are you sure you want to Save admin changes?", "Confirm Save", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        if (_adminForm.isOkToClose())
+                        {
+                            MFranchise.SetAll(_adminForm.getFields(), _adminForm.GetUserView(), _adminForm.GetBAddrView());
+                            _adminForm.noChanges = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show(_userForm, "unable to save, check for errors");
+                            return;
+                        }
+                    }
+                    else
+                        return;
                 }
                 else
                 {
-                    MessageBox.Show("unable to save, check for errors");
-                    return;
+                    MessageBox.Show(_userForm, "User grid is not filled out properly");
                 }
             }
             else
-                return;
+            {
+                MessageBox.Show(_userForm, "Necessary information is not filled out on this form!");
+            }
+        }
+        public bool checkUserGrid()
+        {
+            if (_adminForm.checkGridView(MUser.GetAllUsers()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         /********************************** HQ User Form **********************************/
         public void FranchiseGridView_ContentClick(object sender, DataGridViewCellEventArgs e)
@@ -301,7 +326,7 @@ namespace FAFOS
             DataGridView dgv = sender as DataGridView;
             if ((e.ColumnIndex == 7) && (e.RowIndex > -1))//----------Remove
             {
-                if (MessageBox.Show("Delete Franchise?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(_userForm, "Delete Franchise?", "Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     try { MFranchise.DeleteFromHQ(dgv.Rows[e.RowIndex].Cells["idCol"].Value.ToString()); }
                     catch (Exception) { }
@@ -327,7 +352,7 @@ namespace FAFOS
             {
                 if (MOpReg.hasFranchise(id))
                 {
-                    MessageBox.Show("Cannot Delete a Region that Has a Franchise\n Delete the franchisee first.");
+                    MessageBox.Show(_userForm, "Cannot Delete a Region that Has a Franchise\n Delete the franchisee first.");
                     return;
                 }
                 else

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.UserGridView = new System.Windows.Forms.DataGridView();
             this.usrName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,14 +71,6 @@
             // 
             this.UserGridView.AllowUserToAddRows = false;
             this.UserGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.UserGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UserGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usrName,
@@ -96,14 +84,6 @@
             this.adminCol,
             this.hqCol,
             this.uDelete});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.UserGridView.Location = new System.Drawing.Point(13, 150);
             this.UserGridView.Margin = new System.Windows.Forms.Padding(4);
             this.UserGridView.Name = "UserGridView";
@@ -185,7 +165,7 @@
             this.label1.Location = new System.Drawing.Point(10, 128);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 39;
             this.label1.Text = "Users:";
             // 
@@ -197,7 +177,7 @@
             this.label2.Location = new System.Drawing.Point(13, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.Size = new System.Drawing.Size(112, 17);
             this.label2.TabIndex = 40;
             this.label2.Text = "Company Name:";
             // 
@@ -205,14 +185,14 @@
             // 
             this.CompanyNameTxtBox.Location = new System.Drawing.Point(17, 30);
             this.CompanyNameTxtBox.Name = "CompanyNameTxtBox";
-            this.CompanyNameTxtBox.Size = new System.Drawing.Size(273, 27);
+            this.CompanyNameTxtBox.Size = new System.Drawing.Size(273, 23);
             this.CompanyNameTxtBox.TabIndex = 41;
             // 
             // TaxNumBox
             // 
             this.TaxNumBox.Location = new System.Drawing.Point(17, 88);
             this.TaxNumBox.Name = "TaxNumBox";
-            this.TaxNumBox.Size = new System.Drawing.Size(197, 27);
+            this.TaxNumBox.Size = new System.Drawing.Size(197, 23);
             this.TaxNumBox.TabIndex = 43;
             // 
             // label3
@@ -223,7 +203,7 @@
             this.label3.Location = new System.Drawing.Point(14, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 20);
+            this.label3.Size = new System.Drawing.Size(169, 17);
             this.label3.TabIndex = 42;
             this.label3.Text = "Tax Registration Number:";
             // 
@@ -231,7 +211,7 @@
             // 
             this.BusinessNumTxtBox.Location = new System.Drawing.Point(246, 88);
             this.BusinessNumTxtBox.Name = "BusinessNumTxtBox";
-            this.BusinessNumTxtBox.Size = new System.Drawing.Size(239, 27);
+            this.BusinessNumTxtBox.Size = new System.Drawing.Size(239, 23);
             this.BusinessNumTxtBox.TabIndex = 45;
             // 
             // label4
@@ -242,7 +222,7 @@
             this.label4.Location = new System.Drawing.Point(243, 68);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 20);
+            this.label4.Size = new System.Drawing.Size(203, 17);
             this.label4.TabIndex = 44;
             this.label4.Text = "Business Registration Number:";
             // 
@@ -254,7 +234,7 @@
             this.label5.Location = new System.Drawing.Point(335, 6);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 20);
+            this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 46;
             this.label5.Text = "Fiscal year end:";
             // 
@@ -266,7 +246,7 @@
             this.label6.Location = new System.Drawing.Point(18, 302);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 20);
+            this.label6.Size = new System.Drawing.Size(140, 17);
             this.label6.TabIndex = 49;
             this.label6.Text = "Business Addresses:";
             // 
@@ -274,14 +254,6 @@
             // 
             this.BAddrGridView.AllowUserToAddRows = false;
             this.BAddrGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BAddrGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.BAddrGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BAddrGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.locID,
@@ -291,14 +263,6 @@
             this.bProvince,
             this.bCity,
             this.removeBtn});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.BAddrGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.BAddrGridView.Location = new System.Drawing.Point(21, 327);
             this.BAddrGridView.Margin = new System.Windows.Forms.Padding(4);
             this.BAddrGridView.Name = "BAddrGridView";
@@ -380,7 +344,7 @@
             // 
             this.FiscalPicker.Location = new System.Drawing.Point(338, 28);
             this.FiscalPicker.Name = "FiscalPicker";
-            this.FiscalPicker.Size = new System.Drawing.Size(177, 27);
+            this.FiscalPicker.Size = new System.Drawing.Size(177, 23);
             this.FiscalPicker.TabIndex = 67;
             this.FiscalPicker.Value = new System.DateTime(2013, 4, 7, 0, 0, 0, 0);
             // 
@@ -400,7 +364,7 @@
             // 
             // AdminUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(679, 502);

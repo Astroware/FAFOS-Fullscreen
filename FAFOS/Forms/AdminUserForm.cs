@@ -186,7 +186,7 @@ namespace FAFOS
         {
             int i = UserGridView.Rows.Add();
             string newpass = my_controller.GeneratePassword();
-            MessageBox.Show("New User temporary password: " + newpass);
+            MessageBox.Show( "New User temporary password: " + newpass);
             UserGridView.Rows[i].Cells["passSetCol"].Value = newpass;
             UserGridView.Rows[i].Cells["PerOwnCol"].Value = "0";
             UserGridView.Rows[i].Cells["adminCol"].Value = "False";
@@ -266,6 +266,41 @@ namespace FAFOS
                 return "NULL";
             else
                 return s;
+        }
+        
+        public bool checkNonGridViewBoxes()
+        {
+            if(CompanyNameTxtBox != null && FiscalPicker != null && TaxNumBox != null && BusinessNumTxtBox != null)
+            {
+                if(CompanyNameTxtBox.Text.Trim() != "" && FiscalPicker.Text.Trim() != "" && TaxNumBox.Text.Trim() != "" && BusinessNumTxtBox.Text.Trim() != "")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool checkGridView(DataTable users)
+        {
+            int n = users.Rows.Count;
+            for (int i = 0; i < n; i++)
+            {
+                if(users.Rows[i]["user_id"] == null || users.Rows[i]["username"] == null || users.Rows[i]["password"] == null || users.Rows[i]["first_nm"] == null || users.Rows[i]["last_nm"] == null || users.Rows[i]["middle_nm"] == null || users.Rows[i]["percentage_ownership"] == null)
+                {
+                    if (users.Rows[i]["user_id"].ToString().Trim() == "" || users.Rows[i]["username"].ToString().Trim() == "" || users.Rows[i]["password"].ToString().Trim() == "" || users.Rows[i]["first_nm"].ToString().Trim() == "" || users.Rows[i]["last_nm"].ToString().Trim() == "" || users.Rows[i]["middle_nm"].ToString().Trim() == "" || users.Rows[i]["percentage_ownership"].ToString().Trim() == "") 
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }
