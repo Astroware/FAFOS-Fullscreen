@@ -482,7 +482,8 @@ namespace FAFOS
             Document.Visible = true;
             Client.Visible = true;
             Report.Visible = true;
-            Astroware.Visible = true;
+            Astroware.Visible = false;
+            Sedge.Visible = false;
             //label9.Visible = true;
 
 
@@ -688,7 +689,8 @@ namespace FAFOS
             Document.Visible = false;
             Client.Visible = false;
             Report.Visible = false;
-            Astroware.Visible = false;
+            Astroware.Visible = true;
+            Sedge.Visible = true;
 
             menuStrip1.Visible = false;
             /*inventory.Visible = false;

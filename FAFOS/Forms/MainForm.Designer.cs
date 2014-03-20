@@ -107,6 +107,7 @@
             this.Notification = new System.Windows.Forms.Button();
             this.sidepanel = new System.Windows.Forms.Panel();
             this.Astroware = new System.Windows.Forms.Panel();
+            this.Sedge = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -1002,9 +1003,9 @@
             // 
             this.RedBar.BackColor = System.Drawing.Color.Red;
             this.RedBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RedBar.Location = new System.Drawing.Point(178, 93);
+            this.RedBar.Location = new System.Drawing.Point(173, 93);
             this.RedBar.Name = "RedBar";
-            this.RedBar.Size = new System.Drawing.Size(1177, 81);
+            this.RedBar.Size = new System.Drawing.Size(1182, 81);
             this.RedBar.TabIndex = 84;
             this.RedBar.Visible = false;
             // 
@@ -1055,11 +1056,19 @@
             // 
             this.Astroware.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Astroware.BackgroundImage")));
             this.Astroware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Astroware.Location = new System.Drawing.Point(1148, 588);
+            this.Astroware.Location = new System.Drawing.Point(1110, 487);
             this.Astroware.Name = "Astroware";
             this.Astroware.Size = new System.Drawing.Size(206, 179);
             this.Astroware.TabIndex = 88;
-            this.Astroware.Visible = false;
+            // 
+            // Sedge
+            // 
+            this.Sedge.BackgroundImage = global::FAFOS.Properties.Resources.CompanyLogo;
+            this.Sedge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sedge.Location = new System.Drawing.Point(1110, 672);
+            this.Sedge.Name = "Sedge";
+            this.Sedge.Size = new System.Drawing.Size(206, 83);
+            this.Sedge.TabIndex = 89;
             // 
             // View
             // 
@@ -1069,6 +1078,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.ControlBox = false;
+            this.Controls.Add(this.Sedge);
             this.Controls.Add(this.Astroware);
             this.Controls.Add(this.RoyaltyFee);
             this.Controls.Add(this.EditContract);
@@ -1136,7 +1146,7 @@
         private System.Windows.Forms.Button Login_btn;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
-        //private System.Windows.Forms.Label SEdgeLogo;
+        private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.PictureBox FireAlertLogo;
         private System.Windows.Forms.Panel notificationPanel;
         private System.Windows.Forms.Label label1;
@@ -1207,6 +1217,7 @@
         private System.Windows.Forms.Button Notification;
         private System.Windows.Forms.Panel sidepanel;
         private System.Windows.Forms.Panel Astroware;
+        private System.Windows.Forms.Panel Sedge;
 
     }
 }
