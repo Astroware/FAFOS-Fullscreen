@@ -11,7 +11,11 @@ namespace FAFOS
     {
         public String getCity(String id)
         {
-             String connString = FAFOS.Properties.Settings.Default.FAFOS;
+            if (id.Equals("0"))
+            {
+                return "None";
+            }
+            String connString = FAFOS.Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             String address;
             con.Open();
@@ -20,7 +24,6 @@ namespace FAFOS
             reader.Read();
 
             address = reader[0].ToString();
-
 
             // d.Tables.Add(dt);
             con.Close();
