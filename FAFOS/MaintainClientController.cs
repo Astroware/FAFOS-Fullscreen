@@ -111,7 +111,7 @@ namespace FAFOS
 
         public void Client_Contract_Button_Click(object sender, EventArgs e)
         {
-            if (_clientForm.getClientTextBox())
+            if (_clientForm.checkFields())
             {
                 String id = _client.GetContract();
 
@@ -189,13 +189,12 @@ namespace FAFOS
 
         public void Client_Ok_Button_Click(object sender, EventArgs e)
         {
-            //if (_clientForm.noChanges)
-            //{
-
-                //_clientForm.Close();
-            //}
-            //else
-            //{
+            if (_clientForm.noChanges)
+            {
+                _clientForm.Close();
+            }
+            else
+            {
 
                 String[] values = _clientForm.GetInputs();
 
@@ -216,7 +215,7 @@ namespace FAFOS
                 }
                 else
                     MessageBox.Show("Some fields have not been filled in!", "Errors");
-            //}
+            }
         }
 
         public void Client_Cancel_Button_Click(object sender, EventArgs e)

@@ -179,6 +179,7 @@ namespace FAFOS
             int picID = Convert.ToInt32(dt.Rows[0]["proPic_id"].ToString());
             return picID;
         }
+
         public static DataTable GetUserList()
         {
             DataTable dt = new DataTable();
