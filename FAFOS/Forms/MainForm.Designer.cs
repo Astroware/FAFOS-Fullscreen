@@ -1109,6 +1109,7 @@
             this.Text = "//";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.View_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.View_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).EndInit();
             this.notificationPanel.ResumeLayout(false);
             this.notificationPanel.PerformLayout();

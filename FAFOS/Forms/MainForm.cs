@@ -10,6 +10,7 @@ using System.Windows;
 using tiles;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Diagnostics;
 
 
 namespace FAFOS
@@ -29,6 +30,8 @@ namespace FAFOS
         private DateTime t1;
         List<Bitmap> piclist = new List<Bitmap>();
 
+        enum Options { NONE, REPORTS, DOCUMENTS, CLIENTS, OPERATIONS };
+        int currentOption = (int)Options.NONE;
 
         delegate void SetSizeCallback(int w, int h, tile T);
         private bool _Authenticated = false;
@@ -420,7 +423,6 @@ namespace FAFOS
 
         private void View_Load(object sender, EventArgs e)
         {
-
             this.txtUsername.Focus();
         }
 
@@ -768,231 +770,33 @@ namespace FAFOS
 
         private void Report_MouseEnter(object sender, EventArgs e)
         {
-            if (Statement.Visible == false)
+            if (currentOption != (int)Options.REPORTS)
             {
-                this.Report.BackColor = Color.LightPink;
-                this.Document.BackColor = Color.White;
-                this.Client.BackColor = Color.White;
-                this.Operation.BackColor = Color.White;
-                Statement.Visible = true;
-                JobReport.Visible = true;
-                RevenueReport.Visible = true;
-                RoyaltyFee.Visible = true;
-
-                Itinerary.Visible = false;
-                Inventory.Visible = false;
-                PurchaseRecord.Visible = false;
-                Payment.Visible = false;
-                Inspection.Visible = false;
-
-                AddClient.Visible = false;
-                EditClient.Visible = false;
-                AddContract.Visible = false;
-                EditContract.Visible = false;
-
-                EditQuote.Visible = false;
-                Quote.Visible = false;
-                SalesOrder.Visible = false;
-                EditSalesOrder.Visible = false;
-                ConvertSalesOrder.Visible = false;
-                Invoice.Visible = false;
+                setReportsVisible(true);
             }
-            /*if (statement.Visible == false)
-            {
-                statement.Visible = true;
-                jobReport.Visible = true;
-                revenueReport.Visible = true;
-                royaltyFee.Visible = true;
-
-                quote.Visible = false;
-                editQuote.Visible = false;
-                salesOrder.Visible = false;
-                editSalesOrder.Visible = false;
-                convertSalesOrder.Visible = false;
-
-                invoice.Visible = false;
-                inventory.Visible = false;
-                purchaseRecord.Visible = false;
-                payment.Visible = false;
-                itinerary.Visible = false;
-                inspection.Visible = false;
-
-                addClient.Visible = false;
-                addContract.Visible = false;
-                editClient.Visible = false;
-                editContract.Visible = false;
-            }
-            //else
-            //{
-            //    statement.Visible = false;
-            //    jobReport.Visible = false;
-            //    revenueReport.Visible = false;
-            //    royaltyFee.Visible = false;
-            //}*/
         }
 
         private void Document_MouseEnter(object sender, EventArgs e)
         {
-            if (Quote.Visible == false)
+            if (currentOption != (int)Options.DOCUMENTS)
             {
-                this.Document.BackColor = Color.LightPink;
-                this.Client.BackColor = Color.White;
-                this.Operation.BackColor = Color.White;
-                this.Report.BackColor = Color.White;
-                Quote.Visible = true;
-                EditQuote.Visible = true;
-                SalesOrder.Visible = true;
-                EditSalesOrder.Visible = true;
-                ConvertSalesOrder.Visible = true;
-                Invoice.Visible = true;
-
-                Itinerary.Visible = false;
-                Inventory.Visible = false;
-                PurchaseRecord.Visible = false;
-                Payment.Visible = false;
-                Inspection.Visible = false;
-
-                AddClient.Visible = false;
-                EditClient.Visible = false;
-                AddContract.Visible = false;
-                EditContract.Visible = false;
-
-                Statement.Visible = false;
-                JobReport.Visible = false;
-                RevenueReport.Visible = false;
-                RoyaltyFee.Visible = false;
+                setDocumentsVisible(true);
             }
-            /*if (quote.Visible == false)
-            {
-                quote.Visible = true;
-                editQuote.Visible = true;
-                salesOrder.Visible = true;
-                editSalesOrder.Visible = true;
-                convertSalesOrder.Visible = true;
-                invoice.Visible = true;
-                inventory.Visible = false;
-                purchaseRecord.Visible = false;
-                payment.Visible = false;
-                itinerary.Visible = false;
-                inspection.Visible = false;
-
-                addClient.Visible = false;
-                addContract.Visible = false;
-                editClient.Visible = false;
-                editContract.Visible = false;
-
-                statement.Visible = false;
-                jobReport.Visible = false;
-                revenueReport.Visible = false;
-                royaltyFee.Visible = false;
-            }
-            //else
-            //{
-            //    quote.Visible = false;
-             //   editQuote.Visible = false;
-            //    salesOrder.Visible = false;
-            //    editSalesOrder.Visible = false;
-            //    convertSalesOrder.Visible = false;
-            //    invoice.Visible = false;
-            //}*/
         }
 
         private void Client_MouseEnter(object sender, EventArgs e)
         {
-            if (AddClient.Visible == false)
+            if (currentOption != (int)Options.CLIENTS)
             {
-                this.Document.BackColor = Color.White;
-                this.Client.BackColor = Color.LightPink;
-                this.Operation.BackColor = Color.White;
-                this.Report.BackColor = Color.White;
-                AddClient.Visible = true;
-                EditClient.Visible = true;
-                AddContract.Visible = true;
-                EditContract.Visible = true;
-
-                Itinerary.Visible = false;
-                Inventory.Visible = false;
-                PurchaseRecord.Visible = false;
-                Payment.Visible = false;
-                Inspection.Visible = false;
-
-                EditQuote.Visible = false;
-                Quote.Visible = false;
-                SalesOrder.Visible = false;
-                EditSalesOrder.Visible = false;
-                ConvertSalesOrder.Visible = false;
-                Invoice.Visible = false;
-
-                Statement.Visible = false;
-                JobReport.Visible = false;
-                RevenueReport.Visible = false;
-                RoyaltyFee.Visible = false;
-
+                setClientsVisible(true);
             }
-            /*if (addClient.Visible == false)
-            {
-                addClient.Visible = true;
-                addContract.Visible = true;
-                editClient.Visible = true;
-                editContract.Visible = true;
-
-                quote.Visible = false;
-                editQuote.Visible = false;
-                salesOrder.Visible = false;
-                editSalesOrder.Visible = false;
-                convertSalesOrder.Visible = false;
-
-                invoice.Visible = false;
-                inventory.Visible = false;
-                purchaseRecord.Visible = false;
-                payment.Visible = false;
-                itinerary.Visible = false;
-                inspection.Visible = false;
-
-                statement.Visible = false;
-                jobReport.Visible = false;
-                revenueReport.Visible = false;
-                royaltyFee.Visible = false;
-            }
-            else
-            {
-                addClient.Visible = false;
-                addContract.Visible = false;
-                editClient.Visible = false;
-                editContract.Visible = false;
-            } */
         }
 
         private void Operation_MouseEnter(object sender, EventArgs e)
         {
-            if (Itinerary.Visible == false)
+            if (currentOption != (int)Options.OPERATIONS)
             {
-                this.Operation.BackColor = Color.LightPink;
-                this.Document.BackColor = Color.White;
-                this.Client.BackColor = Color.White;
-                this.Report.BackColor = Color.White;
-                Itinerary.Visible = true;
-                Inventory.Visible = true;
-                PurchaseRecord.Visible = true;
-                Payment.Visible = true;
-                Inspection.Visible = true;
-
-                EditQuote.Visible = false;
-                Quote.Visible = false;
-                SalesOrder.Visible = false;
-                EditSalesOrder.Visible = false;
-                ConvertSalesOrder.Visible = false;
-                Invoice.Visible = false;
-
-                AddClient.Visible = false;
-                EditClient.Visible = false;
-                AddContract.Visible = false;
-                EditContract.Visible = false;
-
-                Statement.Visible = false;
-                JobReport.Visible = false;
-                RevenueReport.Visible = false;
-                RoyaltyFee.Visible = false;
+                setOperationsVisible(true);
             }
         }
 
@@ -1355,6 +1159,172 @@ namespace FAFOS
         private void Notification_MouseLeave(object sender, EventArgs e)
         {
             notificationPanel.Visible = false;
+        }
+
+        private void View_MouseMove(object sender, MouseEventArgs e)
+        {
+            switch (currentOption)
+            {
+                case (int)Options.NONE:
+                    return;
+                case (int)Options.OPERATIONS:
+                    if ((e.Y < Operation.Top) || (e.X < Operation.Left) || (e.X > Operation.Right))
+                    {
+                        setOperationsVisible(false);
+                    }
+                    break;
+                case (int)Options.DOCUMENTS:
+                    if ((e.Y < Document.Top) || (e.X < Document.Left) || (e.X > Document.Right))
+                    {
+                        setDocumentsVisible(false);
+                    }
+                    break;
+                case (int)Options.CLIENTS:
+                    if ((e.Y < Client.Top) || (e.X < Client.Left) || (e.X > Client.Right))
+                    {
+                        setClientsVisible(false);
+                    }
+                    break;
+                case (int)Options.REPORTS:
+                    if ((e.Y < Report.Top) || (e.X < Report.Left) || (e.X > Report.Right))
+                    {
+                        setReportsVisible(false);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Error in switch statement");
+                    break;
+            }
+        }
+
+        private void setOperationsVisible(Boolean visible)
+        {
+            if (visible == true)
+            {
+                setDocumentsVisible(false);
+                setClientsVisible(false);
+                setReportsVisible(false);
+
+                this.Operation.BackColor = Color.LightPink;
+
+                Itinerary.Visible = true;
+                Inventory.Visible = true;
+                PurchaseRecord.Visible = true;
+                Payment.Visible = true;
+                Inspection.Visible = true;
+
+                currentOption = (int)Options.OPERATIONS;
+            }
+
+            else
+            {
+                this.Operation.BackColor = Color.White;
+
+                Itinerary.Visible = false;
+                Inventory.Visible = false;
+                PurchaseRecord.Visible = false;
+                Payment.Visible = false;
+                Inspection.Visible = false;
+
+                currentOption = (int)Options.NONE;
+            }
+        }
+
+        private void setDocumentsVisible(Boolean visible)
+        {
+            if (visible == true)
+            {
+                setOperationsVisible(false);
+                setClientsVisible(false);
+                setReportsVisible(false);
+
+                this.Document.BackColor = Color.LightPink;
+
+                Quote.Visible = true;
+                EditQuote.Visible = true;
+                SalesOrder.Visible = true;
+                EditSalesOrder.Visible = true;
+                ConvertSalesOrder.Visible = true;
+                Invoice.Visible = true;
+
+                currentOption = (int)Options.DOCUMENTS;
+            }
+
+            else
+            {
+                this.Document.BackColor = Color.White;
+
+                Quote.Visible = false;
+                EditQuote.Visible = false;
+                SalesOrder.Visible = false;
+                EditSalesOrder.Visible = false;
+                ConvertSalesOrder.Visible = false;
+                Invoice.Visible = false;
+
+                currentOption = (int)Options.NONE;
+            }
+        }
+
+        private void setClientsVisible(Boolean visible)
+        {
+            if (visible == true)
+            {
+                setOperationsVisible(false);
+                setDocumentsVisible(false);
+                setReportsVisible(false);
+
+                this.Client.BackColor = Color.LightPink;
+
+                AddClient.Visible = true;
+                EditClient.Visible = true;
+                AddContract.Visible = true;
+                EditContract.Visible = true;
+
+                currentOption = (int)Options.CLIENTS;
+            }
+
+            else
+            {
+                this.Client.BackColor = Color.White;
+
+                AddClient.Visible = false;
+                EditClient.Visible = false;
+                AddContract.Visible = false;
+                EditContract.Visible = false;
+
+                currentOption = (int)Options.NONE;
+            }
+        }
+
+        private void setReportsVisible(Boolean visible)
+        {
+            if (visible == true)
+            {
+                setOperationsVisible(false);
+                setDocumentsVisible(false);
+                setClientsVisible(false);
+
+                this.Report.BackColor = Color.LightPink;
+
+                Statement.Visible = true;
+                JobReport.Visible = true;
+                RevenueReport.Visible = true;
+                RoyaltyFee.Visible = true;
+
+                currentOption = (int)Options.REPORTS;
+            }
+
+            else
+            {
+                this.Report.BackColor = Color.White;
+
+                Statement.Visible = false;
+                JobReport.Visible = false;
+                RevenueReport.Visible = false;
+                RoyaltyFee.Visible = false;
+
+                currentOption = (int)Options.NONE;
+            }
         }
     }
 }
