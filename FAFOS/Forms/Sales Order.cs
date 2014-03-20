@@ -23,17 +23,20 @@ namespace FAFOS
             if (type == 2)
             {
                 setupQuoteForm();
+                
                 this.btnPullData.Click += new System.EventHandler(my_controller.pullQuoteData);
                 this.btnSubmit.Click += new System.EventHandler(my_controller.createSalesOrder);
             }
             else if (type == 3)
             {
                 setupEditSalesOrderForm();
+                //this.btnPreview.Click += new System.EventHandler(my_controller.previewEdit);
                 this.dgvSalesOrder.UserDeletedRow += new DataGridViewRowEventHandler(my_controller.DataGridView1_UserDeletedRow);
                 this.btnPullData.Click += new System.EventHandler(my_controller.pullSalesOrder);
                 this.btnSubmit.Click += new System.EventHandler(my_controller.saveSalesOrder);
             }
             else
+                
                 this.btnSubmit.Click += new System.EventHandler(my_controller.createSalesOrder);
         }
 

@@ -308,7 +308,7 @@ namespace FAFOS
 
                     //Add text to the page
                     DateTime currenttime = DateTime.Now;
-                    textAndtable.AddText(50, 50, "Quote: " + ((type == 2) ? quoteForm.getId() : "To Be Created"), 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(50, 50, "Quote ID: " + ((type == 2) ? quoteForm.getId() : "To Be Created"), 10, "T3", Align.LeftAlign);
                     textAndtable.AddText(50, 60, "Date Issued: " + currenttime.ToString()/* + quoteForm.getDateIssued()*/, 10, "T3", Align.LeftAlign);
 
 
@@ -621,7 +621,7 @@ namespace FAFOS
 
                     //Add text to the page
                     DateTime currenttime = DateTime.Now;
-                    textAndtable.AddText(50, 50, "Quote: " + ((type == 2) ? quoteForm.getId() : "To Be Created"), 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(50, 50, "Quote ID: " + ((type == 2) ? quoteForm.getId() : "To Be Created"), 10, "T3", Align.LeftAlign);
                     textAndtable.AddText(50, 60, "Date Issued: " + currenttime.ToString()/* + quoteForm.getDateIssued()*/, 10, "T3", Align.LeftAlign);
 
 

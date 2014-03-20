@@ -382,7 +382,10 @@ namespace FAFOS
 
                 if (txtAmount.Text == "")
                     txtAmount.Text = "$0.00";
-                textAndtable6.AddRow(false, 10, "T3", align, true, "$" + String.Format("{0:0.00}", Math.Round(Convert.ToDouble(txtAmount.Text.Replace("$", "")))));
+                //double a = Math.Round(Convert.ToDouble(txtAmount.Text.Replace("$", "")));
+                double a = Double.Parse(txtAmount.Text.Replace("$", ""));
+
+                textAndtable6.AddRow(false, 10, "T3", align, true, "$" + String.Format("{0:0.00}", a));
                 textAndtable6.AddRow(false, 10, "T3", align, true, "$" + String.Format("{0:0.00}", Math.Round(Convert.ToDouble(txtTotal.Text.Replace("$", "")) -
                     Convert.ToDouble(txtAmount.Text.Replace("$", "")), 2)));
                 content.SetStream(textAndtable6.EndTable(line2, true));
