@@ -36,7 +36,9 @@ namespace FAFOS
             }
             catch (SqlException ef)
             {
-                MessageBox.Show("Could not save the following payment.");
+                //MessageBox.Show("Could not save the following payment.");
+                MessageBox.Show(ef.Message +"\n" + ef.LineNumber + "\n" + ef.Errors.ToString() + arg);
+
             }
             con.Close();
 

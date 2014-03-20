@@ -166,8 +166,15 @@ namespace FAFOS
                             new ClientContract().getClient(new SalesOrder().getSAddress(new Invoice().getSalesOrderID(txtInvoice.SelectedValue.ToString()).ToString())));
 
                 pay.setIP(txtInvoice.SelectedValue.ToString() + "," + payId);
+                //Rhys was here
 
-                //Check if all of invoice is paid off
+                /*DataRowView drv = (DataRowView)this.txtInvoice.Items[txtInvoice.SelectedIndex];
+                DataTable dt = payment.getAmount(drv["id"].ToString());
+                paymentTable.DataSource = dt;
+
+                dt.Rows[i].
+                    DateTime.Today.Date.ToString()
+                //Check if all of invoice is paid off*/
                 if (txtAmount.Text == txtBalance.Text)
                 {
                     new Invoice().update(txtInvoice.SelectedValue.ToString());
