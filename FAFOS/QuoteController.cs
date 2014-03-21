@@ -151,15 +151,38 @@ namespace FAFOS
                 dgv.Rows[e.RowIndex].Cells[2].Value = new Item().getDescription(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
                 dgv.Rows[e.RowIndex].Cells[5].Value = new Item().getPrice(dgv.Rows[e.RowIndex].Cells[1].Value.ToString());
             }
+            
             if ((dgv.Rows[e.RowIndex].Cells[4].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[3].Value == null || dgv.Rows[e.RowIndex].Cells[3].Value.ToString() == ""))
                 && (dgv.Rows[e.RowIndex].Cells[4].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
             {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                String a = dgv.Rows[e.RowIndex].Cells[4].Value.ToString();
+                double n;
+                bool isNumeric = double.TryParse(a, out n);
+                if (double.TryParse(a, out n))
+                {
+                    dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[4].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Must be a number");
+                    dgv.Rows[e.RowIndex].Cells[4].Value = null;
+                }
             }
             else if ((dgv.Rows[e.RowIndex].Cells[3].Value != null && dgv.Rows[e.RowIndex].Cells[5].Value != null && (dgv.Rows[e.RowIndex].Cells[4].Value == null || dgv.Rows[e.RowIndex].Cells[4].Value.ToString() == ""))
                 && (dgv.Rows[e.RowIndex].Cells[3].Value.ToString() != "" && dgv.Rows[e.RowIndex].Cells[5].Value.ToString() != ""))
             {
-                dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                String a = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();
+                double n;
+                bool isNumeric = double.TryParse(a, out n);
+                if (double.TryParse(a, out n))
+                {
+                    dgv.Rows[e.RowIndex].Cells[6].Value = Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[3].Value.ToString()) * Convert.ToDouble(dgv.Rows[e.RowIndex].Cells[5].Value.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Must be a number");
+                    dgv.Rows[e.RowIndex].Cells[3].Value = null;
+                }
             }
             if (dgv.Rows[e.RowIndex].Cells[6].Value != null)
             {
