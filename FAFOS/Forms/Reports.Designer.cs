@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.ddlPickReport = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@
             this.dtpStartDate.Location = new System.Drawing.Point(392, 196);
             this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(265, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(265, 20);
             this.dtpStartDate.TabIndex = 39;
             this.dtpStartDate.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             // 
@@ -59,7 +59,7 @@
             this.dtpEndDate.Location = new System.Drawing.Point(667, 196);
             this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(265, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(265, 20);
             this.dtpEndDate.TabIndex = 40;
             this.dtpEndDate.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             // 
@@ -76,7 +76,7 @@
             this.ddlPickReport.Location = new System.Drawing.Point(149, 196);
             this.ddlPickReport.Margin = new System.Windows.Forms.Padding(4);
             this.ddlPickReport.Name = "ddlPickReport";
-            this.ddlPickReport.Size = new System.Drawing.Size(233, 24);
+            this.ddlPickReport.Size = new System.Drawing.Size(233, 21);
             this.ddlPickReport.TabIndex = 41;
             // 
             // lblPickReport
@@ -85,7 +85,7 @@
             this.lblPickReport.Location = new System.Drawing.Point(149, 172);
             this.lblPickReport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPickReport.Name = "lblPickReport";
-            this.lblPickReport.Size = new System.Drawing.Size(81, 17);
+            this.lblPickReport.Size = new System.Drawing.Size(63, 13);
             this.lblPickReport.TabIndex = 42;
             this.lblPickReport.Text = "Pick Report";
             // 
@@ -95,7 +95,7 @@
             this.lblStartDate.Location = new System.Drawing.Point(392, 172);
             this.lblStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(72, 17);
+            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
             this.lblStartDate.TabIndex = 43;
             this.lblStartDate.Text = "Start Date";
             // 
@@ -105,7 +105,7 @@
             this.lblEndDate.Location = new System.Drawing.Point(667, 172);
             this.lblEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(67, 17);
+            this.lblEndDate.Size = new System.Drawing.Size(52, 13);
             this.lblEndDate.TabIndex = 44;
             this.lblEndDate.Text = "End Date";
             // 
@@ -123,23 +123,23 @@
             // 
             // chartReport
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartReport.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartReport.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartReport.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartReport.Legends.Add(legend1);
             this.chartReport.Location = new System.Drawing.Point(455, 245);
             this.chartReport.Margin = new System.Windows.Forms.Padding(4);
             this.chartReport.Name = "chartReport";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Revenue";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Threshold";
-            this.chartReport.Series.Add(series3);
-            this.chartReport.Series.Add(series4);
-            this.chartReport.Size = new System.Drawing.Size(800, 555);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Revenue";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Threshold";
+            this.chartReport.Series.Add(series1);
+            this.chartReport.Series.Add(series2);
+            this.chartReport.Size = new System.Drawing.Size(787, 486);
             this.chartReport.TabIndex = 46;
             this.chartReport.Text = "chart1";
             // 
@@ -161,9 +161,9 @@
             // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 815);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.generate_btn);
             this.Controls.Add(this.chartReport);
             this.Controls.Add(this.dgvReport);
@@ -173,7 +173,6 @@
             this.Controls.Add(this.ddlPickReport);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Reports";
             this.Text = "Reports";
