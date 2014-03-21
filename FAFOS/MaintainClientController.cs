@@ -254,6 +254,7 @@ namespace FAFOS
 
                     _srvAddrForm = new AddEditSrvAddrForm(this, addr, addrID, e.RowIndex);
                     _srvAddrForm.ShowInTaskbar = false;
+                    _srvAddrForm.Parent = _contractForm.Parent;
                     try { _srvAddrForm.setFields(MContractServices.GetAll(addrID)); }
                     catch (Exception) { }
 
@@ -514,11 +515,6 @@ namespace FAFOS
             {
                 String[,] values = _srvAddrForm.GetInputs();
                 bool okToSubmit = true;
-                for (int n = 0; n < values.GetLength(1); n++)
-                {
-                    if (values[n,2].ToString().Trim().Equals(""))
-                        okToSubmit = false;
-                }
                 if (okToSubmit)
                 {
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -526,10 +522,19 @@ namespace FAFOS
                         MContractServices cs = new MContractServices();
                         try
                         {
-                            cs.SetMany(values, userID, _contractForm.GetEndDate());
+                            //for (int i=0;i<values.GetLength(0);i++)
+                            //{
+                            //   for (int j = 0; j < values.GetLength(1)-1; j++)
+                            //    {
+                            //        if (values[i, j].ToString().Equals(""))
+                            //            okToSubmit = false;
+                            //    }
+                            //}
+                            //if (okToSubmit)
+                                cs.SetMany(values, userID, _contractForm.GetEndDate());
                         }
                         catch (Exception) { MessageBox.Show("Ensure all fields are properly filled out", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                        _srvAddrForm.Close();
+                      
 
 
                     }

@@ -76,17 +76,15 @@ namespace FAFOS
             int rows = TermsView.Rows.Count;
             String[,] cells = new String[rows, 6];
 
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    try { cells[i, j] = TermsView.Rows[i].Cells[j].Value.ToString(); }
-                    catch (NullReferenceException) { }
-                }
-                cells[i, 5] = addressId;
-            }
-
-            
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        try { cells[i, j] = TermsView.Rows[i].Cells[j].Value.ToString(); }
+            //        catch (NullReferenceException) { }
+            //   }
+            //    cells[i, 5] = addressId;
+            //l
             return cells;
         }
 

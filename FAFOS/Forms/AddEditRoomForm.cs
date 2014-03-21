@@ -39,12 +39,23 @@ namespace FAFOS
         {
             int n = RoomGridView.Rows.Count;
             String[,] rooms = new String[n,4];
-            for (int i = 0; i < n; i++)
+            bool completetable = true;
+            //for (int i = 0; i < n; i++)
+            //{
+            //    if (RoomGridView.Rows[i].Cells["idCol"].Value.ToString().Trim().Equals("") ||
+            //        RoomGridView.Rows[i].Cells["roomNum"].Value.ToString().Trim().Equals("") ||
+            //        RoomGridView.Rows[i].Cells["Floor"].Value.ToString().Trim().Equals(""))
+            //        completetable = false;
+            //}
+            if (completetable)
             {
-                rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
-                rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
-                rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
-                rooms[i, 3] = AddressID;
+                for (int i = 0; i < n; i++)
+                {
+                    rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
+                    rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
+                    rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
+                    rooms[i, 3] = AddressID;
+                }
             }
             return rooms;
         }

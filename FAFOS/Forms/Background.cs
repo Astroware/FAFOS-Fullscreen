@@ -44,14 +44,14 @@ namespace FAFOS
             //userid = id;
             lblUserInfo.Text = "Welcome\n " + new Users().getName(Convert.ToInt32(name));
             lblPageTitle.Text = title;
-
+            lblUserInfo.Visible = false;
 
             List<Bitmap> piclist = MUser.LoadImages();
 
 
             this.profilePic.BackgroundImage = piclist[MUser.GetPicID(name.ToString())];// FAFOS.Properties.Resources.Shades;
             this.profilePic.BackgroundImageLayout = ImageLayout.Stretch;
-              
+            this.profilePic.Visible = false;  
         }
 
         void button1_MouseLeave(object sender, EventArgs e)
