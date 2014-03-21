@@ -325,5 +325,10 @@ namespace FAFOS
             noChanges = false;
         }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

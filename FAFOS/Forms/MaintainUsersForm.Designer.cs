@@ -87,7 +87,7 @@
             this.Back_Button.FlatAppearance.BorderSize = 0;
             this.Back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Back_Button.Location = new System.Drawing.Point(11, 12);
-            this.Back_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(34, 37);
             this.Back_Button.TabIndex = 33;
@@ -278,9 +278,9 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.groupBox2.Location = new System.Drawing.Point(11, 171);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(383, 135);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
@@ -400,9 +400,9 @@
             this.groupBox1.Controls.Add(this.SkypeBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.groupBox1.Location = new System.Drawing.Point(11, 315);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(493, 129);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
@@ -424,9 +424,10 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label9.Location = new System.Drawing.Point(25, 31);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 17);
+            this.label9.Size = new System.Drawing.Size(114, 17);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Home Phone:";
+            this.label9.Text = "Business Phone:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
