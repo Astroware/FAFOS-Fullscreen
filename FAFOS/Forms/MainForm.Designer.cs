@@ -174,7 +174,7 @@
             this.Login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_btn.ForeColor = System.Drawing.Color.White;
-            this.Login_btn.Location = new System.Drawing.Point(134, 151);
+            this.Login_btn.Location = new System.Drawing.Point(17, 150);
             this.Login_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Login_btn.Name = "Login_btn";
             this.Login_btn.Size = new System.Drawing.Size(100, 50);
@@ -340,7 +340,7 @@
             this.ExitMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitMain.ForeColor = System.Drawing.Color.White;
-            this.ExitMain.Location = new System.Drawing.Point(17, 151);
+            this.ExitMain.Location = new System.Drawing.Point(134, 150);
             this.ExitMain.Margin = new System.Windows.Forms.Padding(4);
             this.ExitMain.Name = "ExitMain";
             this.ExitMain.Size = new System.Drawing.Size(100, 50);
