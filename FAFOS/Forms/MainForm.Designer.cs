@@ -572,7 +572,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-        "provided.");
+                    "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -607,7 +607,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-        " has been made.");
+                    " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -693,7 +693,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-        " the invoices.");
+                    " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -711,7 +711,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-        "hreshold.");
+                    "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -1056,19 +1056,21 @@
             // 
             this.Astroware.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Astroware.BackgroundImage")));
             this.Astroware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Astroware.Location = new System.Drawing.Point(1110, 487);
+            this.Astroware.Location = new System.Drawing.Point(1114, 567);
             this.Astroware.Name = "Astroware";
-            this.Astroware.Size = new System.Drawing.Size(206, 179);
+            this.Astroware.Size = new System.Drawing.Size(252, 231);
             this.Astroware.TabIndex = 88;
+            this.Astroware.Visible = false;
             // 
             // Sedge
             // 
             this.Sedge.BackgroundImage = global::FAFOS.Properties.Resources.CompanyLogo;
             this.Sedge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Sedge.Location = new System.Drawing.Point(1110, 672);
+            this.Sedge.Location = new System.Drawing.Point(912, 673);
             this.Sedge.Name = "Sedge";
-            this.Sedge.Size = new System.Drawing.Size(206, 83);
+            this.Sedge.Size = new System.Drawing.Size(206, 72);
             this.Sedge.TabIndex = 89;
+            this.Sedge.Visible = false;
             // 
             // View
             // 
