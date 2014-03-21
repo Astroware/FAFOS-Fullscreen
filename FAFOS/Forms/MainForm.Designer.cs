@@ -69,7 +69,6 @@
             this.EditClient = new System.Windows.Forms.Button();
             this.AddContract = new System.Windows.Forms.Button();
             this.Statement = new System.Windows.Forms.Button();
-            this.JobReport = new System.Windows.Forms.Button();
             this.RevenueReport = new System.Windows.Forms.Button();
             this.RoyaltyFee = new System.Windows.Forms.Button();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -699,23 +698,6 @@
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
             // 
-            // JobReport
-            // 
-            this.JobReport.BackColor = System.Drawing.Color.White;
-            this.JobReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("JobReport.BackgroundImage")));
-            this.JobReport.FlatAppearance.BorderSize = 0;
-            this.JobReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.JobReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JobReport.Location = new System.Drawing.Point(1056, 263);
-            this.JobReport.Name = "JobReport";
-            this.JobReport.Size = new System.Drawing.Size(260, 75);
-            this.JobReport.TabIndex = 77;
-            this.JobReport.Text = "Job Report";
-            this.ToolTip.SetToolTip(this.JobReport, "DOESN\'T WORK");
-            this.JobReport.UseVisualStyleBackColor = false;
-            this.JobReport.Visible = false;
-            this.JobReport.Click += new System.EventHandler(this.JobReport_Click);
-            // 
             // RevenueReport
             // 
             this.RevenueReport.BackColor = System.Drawing.Color.White;
@@ -723,7 +705,7 @@
             this.RevenueReport.FlatAppearance.BorderSize = 0;
             this.RevenueReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RevenueReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RevenueReport.Location = new System.Drawing.Point(1056, 348);
+            this.RevenueReport.Location = new System.Drawing.Point(1056, 266);
             this.RevenueReport.Name = "RevenueReport";
             this.RevenueReport.Size = new System.Drawing.Size(260, 75);
             this.RevenueReport.TabIndex = 78;
@@ -741,7 +723,7 @@
             this.RoyaltyFee.FlatAppearance.BorderSize = 0;
             this.RoyaltyFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoyaltyFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoyaltyFee.Location = new System.Drawing.Point(1056, 429);
+            this.RoyaltyFee.Location = new System.Drawing.Point(1056, 347);
             this.RoyaltyFee.Name = "RoyaltyFee";
             this.RoyaltyFee.Size = new System.Drawing.Size(260, 75);
             this.RoyaltyFee.TabIndex = 79;
@@ -1101,7 +1083,6 @@
             this.Controls.Add(this.RoyaltyFee);
             this.Controls.Add(this.EditContract);
             this.Controls.Add(this.RevenueReport);
-            this.Controls.Add(this.JobReport);
             this.Controls.Add(this.Statement);
             this.Controls.Add(this.AddContract);
             this.Controls.Add(this.EditClient);
@@ -1196,7 +1177,6 @@
         private System.Windows.Forms.Button AddContract;
         private System.Windows.Forms.Button EditContract;
         private System.Windows.Forms.Button Statement;
-        private System.Windows.Forms.Button JobReport;
         private System.Windows.Forms.Button RevenueReport;
         private System.Windows.Forms.Button RoyaltyFee;
         private System.Windows.Forms.ToolTip ToolTip;

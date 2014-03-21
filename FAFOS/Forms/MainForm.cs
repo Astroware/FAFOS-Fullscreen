@@ -681,7 +681,6 @@ namespace FAFOS
             EditContract.Visible = false;
 
             Statement.Visible = false;
-            JobReport.Visible = false;
             RevenueReport.Visible = false;
             RoyaltyFee.Visible = false;
 
@@ -1312,7 +1311,6 @@ namespace FAFOS
                 this.Report.BackColor = Color.LightPink;
 
                 Statement.Visible = true;
-                JobReport.Visible = true;
                 RevenueReport.Visible = true;
                 RoyaltyFee.Visible = true;
 
@@ -1324,7 +1322,6 @@ namespace FAFOS
                 this.Report.BackColor = Color.White;
 
                 Statement.Visible = false;
-                JobReport.Visible = false;
                 RevenueReport.Visible = false;
                 RoyaltyFee.Visible = false;
 
