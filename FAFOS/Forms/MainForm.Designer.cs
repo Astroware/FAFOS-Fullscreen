@@ -48,6 +48,7 @@
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.ExitMain = new System.Windows.Forms.Button();
             this.EditContract = new System.Windows.Forms.Button();
             this.Operation = new System.Windows.Forms.Button();
             this.Document = new System.Windows.Forms.Button();
@@ -321,6 +322,7 @@
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.ExitMain);
             this.pnlLogin.Controls.Add(this.Login_btn);
             this.pnlLogin.Controls.Add(this.lblUsername);
             this.pnlLogin.Controls.Add(this.txtUsername);
@@ -330,6 +332,22 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(274, 219);
             this.pnlLogin.TabIndex = 55;
+            // 
+            // ExitMain
+            // 
+            this.ExitMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.ExitMain.FlatAppearance.BorderSize = 0;
+            this.ExitMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitMain.ForeColor = System.Drawing.Color.White;
+            this.ExitMain.Location = new System.Drawing.Point(17, 151);
+            this.ExitMain.Margin = new System.Windows.Forms.Padding(4);
+            this.ExitMain.Name = "ExitMain";
+            this.ExitMain.Size = new System.Drawing.Size(100, 50);
+            this.ExitMain.TabIndex = 23;
+            this.ExitMain.Text = "Exit";
+            this.ExitMain.UseVisualStyleBackColor = false;
+            this.ExitMain.Click += new System.EventHandler(this.button1_Click);
             // 
             // EditContract
             // 
@@ -555,7 +573,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-                    "provided.");
+        "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -590,7 +608,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-                    " has been made.");
+        " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -676,7 +694,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-                    " the invoices.");
+        " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -711,7 +729,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-                    "hreshold.");
+        "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -1218,6 +1236,7 @@
         private System.Windows.Forms.Panel sidepanel;
         private System.Windows.Forms.Panel Astroware;
         private System.Windows.Forms.Panel Sedge;
+        private System.Windows.Forms.Button ExitMain;
 
     }
 }
