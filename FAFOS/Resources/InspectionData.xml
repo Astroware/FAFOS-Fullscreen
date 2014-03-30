@@ -1,0 +1,56 @@
+<Franchisee id="1001" name="Darwin Fleming">
+  <Client id="1001-01" name="North Bay Inc" address="North Bay, Muskoka, Parry Sound, Orillia">
+    <clientContract id="1001-01-003" No ="1234" startDate ="01/01/2013" endDate ="31/12/2014" terms="">
+      <ServiceAddress id="S1" address="123 Sesame Street" postalCode="N6G 2P4" contact="" city="London" province="Ontario" country="Canada" InspectorID="ID001" testTimeStamp="20131009 09:49PM">
+        <Floor name="First Floor">
+          <Room id="R1" No="">
+            <Extinguisher id="33101" location="East Stair" size="10" type="ABC" model="Amerex" serialNo="s123" manufacturingDate="dd/mm/yyyy">
+              <!-- testResult of the following elements can be Pass or Fail. -->
+              <!-- testNote becomes amondantory field if the testResult is Fail. -->
+              <inspectionElement name="Hydro Test" testResult="Pass" testNote=""/>
+              <inspectionElement name="6 Year Insp" testResult="Pass" testNote=""/>
+              <inspectionElement name="Weight" testResult="Pass" testNote=""/>
+              <inspectionElement name="Bracket" testResult="Pass" testNote=""/>
+              <inspectionElement name="Gauge" testResult="Pass" testNote=""/>
+              <inspectionElement name="Pull Pin" testResult="Pass" testNote=""/>
+              <inspectionElement name="Signage" testResult="Pass" testNote=""/>
+              <inspectionElement name="Collar" testResult="Fail" testNote="Broken Collar"/>
+              <inspectionElement name="Hose" testResult="Pass" testNote=""/>
+            </Extinguisher>
+            <Extinguisher id="33102" location="Elev Lobby" size="10" type="ABC" model="Amerex" serialNo="s123">
+              <inspectionElement name="Hydro Test" testResult="Pass" testNote=""/>
+              <inspectionElement name="6 Year Insp" testResult="Pass" testNote=""/>
+              <inspectionElement name="Weight" testResult="Pass" testNote=""/>
+              <inspectionElement name="Bracket" testResult="Fail" testNote="Broken Bracket"/>
+              <inspectionElement name="Gauge" testResult="Pass" testNote=""/>
+              <inspectionElement name="Pull Pin" testResult="Pass" testNote=""/>
+              <inspectionElement name="Signage" testResult="Pass" testNote=""/>
+              <inspectionElement name="Collar" testResult="Pass" testNote=""/>
+              <inspectionElement name="Hose" testResult="Pass" testNote=""/>
+            </Extinguisher>
+            
+            <FireHoseCabinet id="77207" location="Staircase D" manufacturingDate="dd/mm/yyyy">
+              <!-- testResult of "Cabinet Condition" can be Good, Poor, or N/A -->
+              <inspectionElement name="Cabinet Condition" testResult="Good" testNote=""/>
+              <!-- testResult of "Nozzle Condition" can be Good, Poor , or N/A -->
+              <inspectionElement name="Nozzle Condition" testResult="Poor" testNote="Broken Nozzle Head"/>
+              <!-- testResult of "Hose Re-Rack" can be Yes or No. Do not use numeric value -->
+              <inspectionElement name="Hose Re-Rack" testResult="Yes" testNote=""/>
+              <!-- testResult of "Hydrostatic Test Due" can be Yes or No. -->
+              <inspectionElement name="Hydrostatic Test Due" testResult="No" testNote="Hydro Test Incomplete"/>
+            </FireHoseCabinet>        
+            
+            <EmergencyLight id="88103" location="Some where" model="2341" make="Chubb" numHeads="4" totalPower="10W" voltage="10V">
+              <!-- testResult of the following elements can be Yes or No. -->
+              <inspectionElement name="Requires Service or Repair" testResult="Yes" testNote=""/>
+              <inspectionElement name="Operation Confirmed" testResult="No" testNote="Incomplete Operation"/>
+            </EmergencyLight>
+            
+          </Room>
+        </Floor>
+      </ServiceAddress>
+    </clientContract>
+  </Client>
+</Franchisee>
+
+	
