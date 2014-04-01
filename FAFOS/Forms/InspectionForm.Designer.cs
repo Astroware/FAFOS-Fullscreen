@@ -45,7 +45,7 @@
             "Extinguisher Report"});
             this.inspectionType.Location = new System.Drawing.Point(25, 154);
             this.inspectionType.Name = "inspectionType";
-            this.inspectionType.Size = new System.Drawing.Size(298, 28);
+            this.inspectionType.Size = new System.Drawing.Size(298, 25);
             this.inspectionType.TabIndex = 39;
             // 
             // generate_btn
@@ -71,7 +71,7 @@
             this.label8.Location = new System.Drawing.Point(23, 130);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(160, 20);
+            this.label8.Size = new System.Drawing.Size(132, 16);
             this.label8.TabIndex = 53;
             this.label8.Text = "Inspection Report:";
             // 
@@ -98,7 +98,7 @@
             "Emergency Light Report"});
             this.addressBox.Location = new System.Drawing.Point(27, 59);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(298, 28);
+            this.addressBox.Size = new System.Drawing.Size(298, 25);
             this.addressBox.TabIndex = 54;
             // 
             // label1
@@ -108,17 +108,16 @@
             this.label1.Location = new System.Drawing.Point(25, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 20);
+            this.label1.Size = new System.Drawing.Size(125, 16);
             this.label1.TabIndex = 55;
             this.label1.Text = "Service Address:";
             // 
             // InspectionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 845);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.panel1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "InspectionForm";
             this.Text = "InspectionForm";
             this.Controls.SetChildIndex(this.panel1, 0);

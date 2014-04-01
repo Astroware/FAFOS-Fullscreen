@@ -24,9 +24,9 @@ namespace FAFOS
         string userid;
         public InspectionForm(string id)
         {
-            xml Trevor = new xml();
+            /*xml Trevor = new xml();
             Trevor.parseXML();
-            Console.WriteLine("Fuck You");
+            Console.WriteLine("Fuck You");*/
 
             InitializeComponent();
             userid = id;
@@ -544,13 +544,13 @@ namespace FAFOS
 
            
             //Once reader is positioned desired service address, execute this loop to parse all elements at the service address
-            while(reader.NodeType != XmlNodeType.EndElement && reader.ReadElementContentAsString() != "ServiceAddress")
+            /*while(reader.NodeType != XmlNodeType.EndElement && reader.ReadElementContentAsString() != "ServiceAddress")
             {
 
                 
-            }
+            }*/
 
-                if(reader.NodeType == XmlNodeType.Element && reader.Name == "Extinguisher" && reader.MoveToAttribute("address") && reader.Value == "123 Sesame Street")
+               /* if(reader.NodeType == XmlNodeType.Element && reader.Name == "Extinguisher" && reader.MoveToAttribute("address") && reader.Value == "123 Sesame Street")
                 {
                     if (reader.MoveToAttribute("address"))
                     reader.MoveToFirstAttribute();
@@ -580,8 +580,7 @@ namespace FAFOS
                     {
 
                     }
-                }
+                }*/
             }
         }
     }
-}
