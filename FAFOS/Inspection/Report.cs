@@ -15,6 +15,9 @@ namespace FAFOS.Inspection
         public Report(String SA)
         {
             serviceAddress = SA;
+            extRep = new ExtinguisherReport();
+            hoseRep = new HoseReport();
+            lightsRep = new LightsReport();
         }
 
         public String getSA()
