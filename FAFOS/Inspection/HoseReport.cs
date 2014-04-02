@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -19,7 +20,22 @@ namespace FAFOS.Inspection
         //may need to store the test notes as well
 
         //----------------------------------------------------------------------------------
+        public DataTable getExTable()
+        {
+            DataTable ExtinguisherTable = new DataTable();
+            ExtinguisherTable.Columns.Add("equipID", typeof(int));
+            ExtinguisherTable.Columns.Add("location", typeof(String));
+            ExtinguisherTable.Columns.Add("manfDate", typeof(String));
 
+            ExtinguisherTable.Columns.Add("cabCondRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("nozCondRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("hoseReRackRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("hydroTestRslt", typeof(String));
+
+
+
+            return ExtinguisherTable;
+        }
         //SETS
 
         public HoseReport()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -22,6 +23,24 @@ namespace FAFOS.Inspection
 
         //----------------------------------------------------------------------------------
 
+        public DataTable getExTable()
+        {
+            DataTable ExtinguisherTable = new DataTable();
+            ExtinguisherTable.Columns.Add("equipID", typeof(int));
+            ExtinguisherTable.Columns.Add("model", typeof(int));
+            ExtinguisherTable.Columns.Add("location", typeof(String));
+            ExtinguisherTable.Columns.Add("voltage", typeof(String));
+            ExtinguisherTable.Columns.Add("totalPower", typeof(String));
+            ExtinguisherTable.Columns.Add("numHeads", typeof(int));
+            ExtinguisherTable.Columns.Add("make", typeof(String));
+
+            ExtinguisherTable.Columns.Add("reqServRepRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("oprConfRslt", typeof(String));
+
+
+
+            return ExtinguisherTable;
+        }
         //SETS
 
         public LightsReport()

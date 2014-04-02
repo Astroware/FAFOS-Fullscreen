@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -28,6 +29,32 @@ namespace FAFOS.Inspection
         //may need to store the test notes as well
 
         //----------------------------------------------------------------------------------
+
+        public DataTable getExTable()
+        {
+            DataTable ExtinguisherTable = new DataTable();
+            ExtinguisherTable.Columns.Add("itemNum", typeof(int));
+            ExtinguisherTable.Columns.Add("equipID", typeof(int));
+            ExtinguisherTable.Columns.Add("location", typeof(String));
+            ExtinguisherTable.Columns.Add("size", typeof(int));
+            ExtinguisherTable.Columns.Add("type", typeof(String));
+            ExtinguisherTable.Columns.Add("manfModel", typeof(String));
+            ExtinguisherTable.Columns.Add("serialNo", typeof(int));
+
+            ExtinguisherTable.Columns.Add("hydroTestRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("sixYrInspRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("weightRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("bracketRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("gaugeRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("pullPinRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("signageRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("collarRslt", typeof(String));
+            ExtinguisherTable.Columns.Add("hoseRslt", typeof(String));
+
+
+
+            return ExtinguisherTable;
+        }
 
         //SETS
 

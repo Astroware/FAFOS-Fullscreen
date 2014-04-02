@@ -8,16 +8,16 @@ namespace FAFOS.Inspection
     class Report
     {
         private String serviceAddress;
-        private ExtinguisherReport extRep;
-        private HoseReport hoseRep;
-        private LightsReport lightsRep;
+        private List<ExtinguisherReport> extRep;
+        private List<HoseReport> hoseRep;
+        private List<LightsReport> lightsRep;
 
         public Report(String SA)
         {
             serviceAddress = SA;
-            extRep = new ExtinguisherReport();
-            hoseRep = new HoseReport();
-            lightsRep = new LightsReport();
+            extRep = new List<ExtinguisherReport>();
+            hoseRep = new List<HoseReport>();
+            lightsRep = new List<LightsReport>();
         }
 
         public String getSA()
@@ -25,17 +25,17 @@ namespace FAFOS.Inspection
             return serviceAddress;
         }
 
-        public ExtinguisherReport getExtRep()
+        public List<ExtinguisherReport> getExtRep()
         {
             return extRep;
         }
 
-        public HoseReport getHoseRep()
+        public List<HoseReport> getHoseRep()
         {
             return hoseRep;
         }
 
-        public LightsReport getLightsRep()
+        public List<LightsReport> getLightsRep()
         {
             return lightsRep;
         }

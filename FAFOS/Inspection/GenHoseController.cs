@@ -41,13 +41,10 @@ namespace FAFOS
 
         private void createHeader(PdfPTable table)
         {
-            addCell(table, "Item\n#", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Size", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Type", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Manufacturer\nModel", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Serial #", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Manufacturing Date", 2, 1, 0, BaseColor.RED, WhiteTimes);
+
             addCell(table, "Inspection - Service", 1, 4, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Cabinet Condition", 1, 1, 90, BaseColor.RED, WhiteTimes);
             addCell(table, "Nozzle Conditions", 1, 1, 90, BaseColor.RED, WhiteTimes);

@@ -78,6 +78,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Map">
       <HintPath>..\..\Map\Map\Map\obj\Debug\Map.dll</HintPath>
     </Reference>
@@ -236,7 +239,7 @@
     <Compile Include="Inspection\HoseReport.cs" />
     <Compile Include="Inspection\LightsReport.cs" />
     <Compile Include="Inspection\Report.cs" />
-    <Compile Include="GenExController.cs" />
+    <Compile Include="Inspection\GenExController.cs" />
     <Compile Include="InventoryController.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="MaintainClientController.cs" />

@@ -24,7 +24,7 @@ namespace FAFOS
 
         public void addTable()
         {
-            PdfPTable table = new PdfPTable(9);
+            PdfPTable table = new PdfPTable(10);
             table.HorizontalAlignment = 0;
             table.TotalWidth = 530f;
             table.LockedWidth = true;
@@ -41,13 +41,13 @@ namespace FAFOS
 
         private void createHeader(PdfPTable table)
         {
-            addCell(table, "Item\n#", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Model", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Size", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Type", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Manufacturer\nModel", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Serial #", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Voltage", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Total Power", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Number of Heads", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Make", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Inspection - Service", 1, 2, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Repair Service", 1, 1, 90, BaseColor.RED, WhiteTimes);
             addCell(table, "Operation Confirmed", 1, 1, 90, BaseColor.RED, WhiteTimes);
