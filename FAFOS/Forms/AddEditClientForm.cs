@@ -11,6 +11,7 @@ namespace FAFOS
 {
     public partial class AddEditClientForm : FAFOS.Background
     {
+        //test change
         MaintainClientController my_controller;
         bool isEdit;
         public bool noChanges;
@@ -48,7 +49,6 @@ namespace FAFOS
             this.CountryBox.SelectedValueChanged += new System.EventHandler(my_controller.Country_Changed);
             this.ProvStateBox.SelectedValueChanged += new EventHandler(my_controller.Province_Changed);
             this.CityBox.SelectedValueChanged += new EventHandler(my_controller.City_Changed);
-
             this.nameTxtBox.TextChanged += new EventHandler(my_controller.Client_Text_Changed);
             this.typeTextBox.TextChanged += new EventHandler(my_controller.Client_Text_Changed);
             this.addrTextBox.TextChanged += new EventHandler(my_controller.Client_Text_Changed);

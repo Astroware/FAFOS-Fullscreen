@@ -1151,7 +1151,8 @@ namespace FAFOS
 
         private void syncHQ_Click(object sender, EventArgs e)
         {
-
+            FromMobileView fromMobile = new FromMobileView();
+            fromMobile.Show();
         }
 
         private void Notification_MouseEnter(object sender, EventArgs e)
@@ -1324,13 +1325,18 @@ namespace FAFOS
                 Statement.Visible = false;
                 RevenueReport.Visible = false;
                 RoyaltyFee.Visible = false;
-
                 currentOption = (int)Options.NONE;
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void syncAndroid_Click_1(object sender, EventArgs e)
+        {
+            ToMobileView toMobile = new ToMobileView();
+            toMobile.Show();
         }
     }
 }
