@@ -50,7 +50,7 @@ namespace FAFOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013-1\\SystemDatabase\\FAFOS.mdf;I" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\FAFOS.mdf;I" +
             "ntegrated Security=True;Connect Timeout=30;User Instance=True")]
         public string FAFOS {
             get {
@@ -61,7 +61,7 @@ namespace FAFOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013-1\\SystemDatabase\\FAFOS_HQ.md" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\FAFOS_HQ.md" +
             "f;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string HQ {
             get {

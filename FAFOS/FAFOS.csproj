@@ -235,6 +235,8 @@
     <Compile Include="Forms\Statements.Designer.cs">
       <DependentUpon>Statements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inspection\GenHoseController.cs" />
+    <Compile Include="Inspection\GenLightController.cs" />
     <Compile Include="Inspection\ExtinguisherReport.cs" />
     <Compile Include="Inspection\HoseReport.cs" />
     <Compile Include="Inspection\LightsReport.cs" />
