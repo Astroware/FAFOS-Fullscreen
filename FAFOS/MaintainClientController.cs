@@ -668,14 +668,15 @@ namespace FAFOS
             else
             {
                 String[,] rooms = _roomForm.GetRooms();
-                int nRooms = rooms.Length / 4;
 
-                bool okToSubmit = true;
-                /*
-                 * Validate....okToSubmit = False;
-                */
-                if (okToSubmit)
+                if (rooms.Length == 0)
                 {
+                    MessageBox.Show("Must enter all information in Room columns!");
+                    return;
+                }
+                else
+                {
+                    int nRooms = rooms.Length / 4;
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase
                         String[,] ext, hoses, lights;
@@ -687,22 +688,20 @@ namespace FAFOS
                             /*
                             * Validate....okToSubmit = False;
                             */
-                            if (okToSubmit)
-                            {
+                            //if (okToSubmit)
+                            //{
                                 MRoom.SetExtinguishers(ext);
                                 MRoom.SetHoses(hoses);
                                 MRoom.SetLights(lights);
-                            }
-                            else
-                                return;
+                            //}
+                            //else
+                                //return;
                         }
 
                         MRoom.SetMany(rooms);
                         _contractForm.noChanges = false;
                         _roomForm.Close();
                     }
-                    else
-                        return;
                 }
             }
         }
