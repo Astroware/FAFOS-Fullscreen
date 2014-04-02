@@ -5,19 +5,19 @@ using System.Text;
 
 namespace FAFOS.Inspection
 {
-    class Report
+    public class Report
     {
         private String serviceAddress;
-        private List<ExtinguisherReport> extRep;
-        private List<HoseReport> hoseRep;
-        private List<LightsReport> lightsRep;
+        private List<Extinguisher> extRep;
+        private List<Hose> hoseRep;
+        private List<Lights> lightsRep;
 
         public Report(String SA)
         {
             serviceAddress = SA;
-            extRep = new List<ExtinguisherReport>();
-            hoseRep = new List<HoseReport>();
-            lightsRep = new List<LightsReport>();
+            extRep = new List<Extinguisher>();
+            hoseRep = new List<Hose>();
+            lightsRep = new List<Lights>();
         }
 
         public String getSA()
@@ -25,17 +25,17 @@ namespace FAFOS.Inspection
             return serviceAddress;
         }
 
-        public List<ExtinguisherReport> getExtRep()
+        public List<Extinguisher> getExtRep()
         {
             return extRep;
         }
 
-        public List<HoseReport> getHoseRep()
+        public List<Hose> getHoseRep()
         {
             return hoseRep;
         }
 
-        public List<LightsReport> getLightsRep()
+        public List<Lights> getLightsRep()
         {
             return lightsRep;
         }

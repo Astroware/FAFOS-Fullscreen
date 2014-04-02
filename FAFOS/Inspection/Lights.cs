@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FAFOS.Inspection
 {
-    class LightsReport
+    public class Lights
     {
         private int equipID;
         private int model;
@@ -43,7 +43,7 @@ namespace FAFOS.Inspection
         }
         //SETS
 
-        public LightsReport()
+        public Lights()
         {
         }
 

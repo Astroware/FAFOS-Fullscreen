@@ -237,9 +237,9 @@
     </Compile>
     <Compile Include="Inspection\GenHoseController.cs" />
     <Compile Include="Inspection\GenLightController.cs" />
-    <Compile Include="Inspection\ExtinguisherReport.cs" />
-    <Compile Include="Inspection\HoseReport.cs" />
-    <Compile Include="Inspection\LightsReport.cs" />
+    <Compile Include="Inspection\Extinguisher.cs" />
+    <Compile Include="Inspection\Hose.cs" />
+    <Compile Include="Inspection\Lights.cs" />
     <Compile Include="Inspection\Report.cs" />
     <Compile Include="Inspection\GenExController.cs" />
     <Compile Include="InventoryController.cs" />

@@ -12,6 +12,7 @@ using System.Net;
 using System.Xml;
 using System.IO;
 using InvoicePDF;
+using FAFOS.Inspection;
 
 
 
@@ -25,9 +26,14 @@ namespace FAFOS
         string userid;
         public InspectionForm(string id)
         {
-            /*xml Trevor = new xml();
-            Trevor.parseXML();
-            Console.WriteLine("Fuck You");*/
+            xml Trevor = new xml();
+            Report AReport = Trevor.parseXML("123 Sesame Street");
+            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(0).getHydroTest());
+            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(0).getSixYrInsp());
+            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(0).getSerialNo());
+            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(1).getEquipID());
+            Console.WriteLine(AReport.getLightsRep().ElementAt<Lights>(0).getEquipID());
+            Console.WriteLine(AReport.getHoseRep().ElementAt<Hose>(0).getEquipID());
 
             InitializeComponent();
             userid = id;
@@ -98,28 +104,19 @@ namespace FAFOS
         {
             if (inspectionType.Text == "Extinguisher Report")
             {
-
-
                 generateExtinguisher();
-
-
             }
             Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf");
+              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToLongDateString() + ".pdf");
             testDialog.ShowDialog(this);
 
             //  clientThread.Abort();
             // listenThread.Abort();
-
-
         }
         private void generateExtinguisher()
         {
             try
             {
-
-
-
                 //start creating the PDF
 
                 //Create a Catalog Dictionary
@@ -155,7 +152,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text; //+ "_" + DateTime.Today.ToShortDateString() + ".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToLongDateString() + ".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
@@ -166,8 +163,6 @@ namespace FAFOS
                 file.Close();
 
                 //Finished the first step
-
-
 
                 //Create a Page Dictionary , this represents a visible page
                 PageDict page = new PageDict();
@@ -194,7 +189,6 @@ namespace FAFOS
 
                 //Create a Text And Table Object that presents the text elements in the page
                 TextAndTables textAndtable = new TextAndTables(pSize);
-
 
                 //create the reference to an image and the data that represents it
                 String ImagePath2 = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\logo.jpg";   //file path to image source
@@ -531,7 +525,7 @@ namespace FAFOS
 
     public class xml
     {
-        public void parseXML()
+        public Report parseXML(string address)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("C:\\SEdge2013-1\\InspectionData.xml");
@@ -539,8 +533,10 @@ namespace FAFOS
 
             XmlReader reader = XmlReader.Create(new StringReader(xmlcontents));
 
-            string address = "123 Sesame Street";
+            address = "123 Sesame Street";
+            Report report = new Report(address);
 
+            //Move to provided service address
             while (reader.Read())
             {
                 if (reader.NodeType == XmlNodeType.Element)
@@ -555,23 +551,199 @@ namespace FAFOS
 
             while (reader.Read())
             {
-                if (reader.NodeType == XmlNodeType.Element)
-                {
-                    Console.WriteLine(reader.Name);
-                    int count = reader.AttributeCount;
-                    for (int i = 0; i < count; i++)
-                    {
-                        reader.MoveToNextAttribute();
-                        Console.WriteLine("   " + reader.Name);
-                        Console.WriteLine("        " + reader.ReadContentAsString());
+	            if (reader.NodeType == XmlNodeType.Element)
+		            if(reader.Name == "Extinguisher")
+		            {
+                        Extinguisher extRep = new Extinguisher();
+			            int count = reader.AttributeCount;
+			            for (int i = 0; i < count; i++)
+			            {
+				            reader.MoveToNextAttribute();
+                            switch (reader.Name)
+                            {
+                                case "id":
+                                    extRep.setEquipID(reader.ReadContentAsInt());
+                                    break;
+                                case "location":
+                                    extRep.setLocation(reader.ReadContentAsString());
+                                    break;
+                                case "size":
+                                    extRep.setSize(reader.ReadContentAsInt());
+                                    break;
+                                case "type":
+                                    extRep.setType(reader.ReadContentAsString());
+                                    break;
+                                case "model":
+                                    extRep.setManfModel(reader.ReadContentAsString());
+                                    break;
+                                case "serialNo":
+                                    extRep.setSerialNo(reader.ReadContentAsString());
+                                    break;
+                            }
+			            }
+                        while (reader.Read())
+                        {
+	                        if (reader.NodeType == XmlNodeType.Element)
+                            {
+                                reader.MoveToFirstAttribute();
+                                switch (reader.ReadContentAsString())
+                                {
+                                    case("Hydro Test"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setHydroTest(reader.ReadContentAsString());
+                                        break;
+                                    case("6 Year Insp"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setSixYrInsp(reader.ReadContentAsString());
+                                        break;
+                                    case("Weight"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setWeight(reader.ReadContentAsString());
+                                        break;
+                                    case("Bracket"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setBracket(reader.ReadContentAsString());
+                                        break;
+                                    case("Gauge"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setGuage(reader.ReadContentAsString());
+                                        break;
+                                    case("Pull Pin"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setPullPin(reader.ReadContentAsString());
+                                        break;
+                                    case("Signage"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setSignage(reader.ReadContentAsString());
+                                        break;
+                                    case("Collar"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setCollar(reader.ReadContentAsString());
+                                        break;
+                                    case("Hose"):
+                                        reader.MoveToNextAttribute();
+                                        extRep.setHose(reader.ReadContentAsString());
+                                        break;
+                                }
+                            }
+                            if (reader.NodeType == XmlNodeType.EndElement)
+		                        if (reader.Name == "Extinguisher")
+			                        break;
+                        }
+                        report.getExtRep().Add(extRep);
+		            }
+		            else if(reader.Name == "FireHoseCabinet")
+		            {
+                        Hose hoseRep = new Hose();
+                        int count = reader.AttributeCount;
+                        for (int i = 0; i < count; i++)
+                        {
+                            reader.MoveToNextAttribute();
+                            switch (reader.Name)
+                            {
+                                case "id":
+                                    hoseRep.setEquipID(reader.ReadContentAsInt());
+                                    break;
+                                case "location":
+                                    hoseRep.setLocation(reader.ReadContentAsString());
+                                    break;
+                                case "manufacturingDate":
+                                    hoseRep.setManfDate(reader.ReadContentAsString());
+                                    break;
+                            }
+                        }
+                        while (reader.Read())
+                        {
+                            if (reader.NodeType == XmlNodeType.Element)
+                            {
+                                reader.MoveToFirstAttribute();
+                                switch (reader.ReadContentAsString())
+                                {
+                                    case ("Cabinet Condition"):
+                                        reader.MoveToNextAttribute();
+                                        hoseRep.setCabCond(reader.ReadContentAsString());
+                                        break;
+                                    case ("Nozzle Condition"):
+                                        reader.MoveToNextAttribute();
+                                        hoseRep.setNozCond(reader.ReadContentAsString());
+                                        break;
+                                    case ("Hose Re-Rack"):
+                                        reader.MoveToNextAttribute();
+                                        hoseRep.setHoseReRack(reader.ReadContentAsString());
+                                        break;
+                                    case ("Hydrostatic Test Due"):
+                                        reader.MoveToNextAttribute();
+                                        hoseRep.setHydroTest(reader.ReadContentAsString());
+                                        break;
+                                }
+                            }
+                            if (reader.NodeType == XmlNodeType.EndElement)
+                                if (reader.Name == "FireHoseCabinet")
+                                    break;
+                        }
+                        report.getHoseRep().Add(hoseRep);
+		            }
+		            else if(reader.Name == "EmergencyLight")
+		            {
+                        Lights lightRep = new Lights();
+                        int count = reader.AttributeCount;
+                        for (int i = 0; i < count; i++)
+                        {
+                            reader.MoveToNextAttribute();
+                            switch (reader.Name)
+                            {
+                                case "id":
+                                    lightRep.setEquipID(reader.ReadContentAsInt());
+                                    break;
+                                case "location":
+                                    lightRep.setLocation(reader.ReadContentAsString());
+                                    break;
+                                case "model":
+                                    lightRep.setModel(reader.ReadContentAsInt());
+                                    break;
+                                case "make":
+                                    lightRep.setMake(reader.ReadContentAsString());
+                                    break;
+                                case "numHeads":
+                                    lightRep.setNumHeads(reader.ReadContentAsInt());
+                                    break;
+                                case "totalPower":
+                                    lightRep.setPower(reader.ReadContentAsString());
+                                    break;
+                                case "voltage":
+                                    lightRep.setVoltage(reader.ReadContentAsString());
+                                    break;
+                            }
+                        }
+                        while (reader.Read())
+                        {
+                            if (reader.NodeType == XmlNodeType.Element)
+                            {
+                                reader.MoveToFirstAttribute();
+                                switch (reader.ReadContentAsString())
+                                {
+                                    case ("Requires Service or Repair"):
+                                        reader.MoveToNextAttribute();
+                                        lightRep.setReqServRep(reader.ReadContentAsString());
+                                        break;
+                                    case ("Operation Confirmed"):
+                                        reader.MoveToNextAttribute();
+                                        lightRep.setOprConf(reader.ReadContentAsString());
+                                        break;
+                                }
+                            }
+                            if (reader.NodeType == XmlNodeType.EndElement)
+                                if (reader.Name == "EmergencyLight")
+                                    break;
+                        }
+                        report.getLightsRep().Add(lightRep);
                     }
 
-                }
-
-                if (reader.NodeType == XmlNodeType.EndElement)
-                    if (reader.Name == "ServiceAddress")
-                        break;
+	            if (reader.NodeType == XmlNodeType.EndElement)
+		            if (reader.Name == "ServiceAddress")
+			            break;
             }
+            return report;
         }
     }
 }

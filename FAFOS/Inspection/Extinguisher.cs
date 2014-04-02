@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FAFOS.Inspection
 {
-    class ExtinguisherReport
+    public class Extinguisher
     {
         private int itemNum;
         private int equipID;
@@ -14,7 +14,7 @@ namespace FAFOS.Inspection
         private int size;
         private String type;
         private String manfModel;
-        private int serialNo;
+        private String serialNo;
 
         private String hydroTestRslt;
         private String sixYrInspRslt;
@@ -58,7 +58,7 @@ namespace FAFOS.Inspection
 
         //SETS
 
-        public ExtinguisherReport()
+        public Extinguisher()
         {
         }
 
@@ -92,7 +92,7 @@ namespace FAFOS.Inspection
             manfModel = x;
         }
 
-        public void setSerialNo(int x)
+        public void setSerialNo(String x)
         {
             serialNo = x;
         }
@@ -148,82 +148,82 @@ namespace FAFOS.Inspection
 
         //GETS
 
-        public int getItemNum(int x)
+        public int getItemNum()
         {
             return itemNum;
         }
 
-        public int getEquipID(int x)
+        public int getEquipID()
         {
             return equipID;
         }
 
-        public String getLocation(String x)
+        public String getLocation()
         {
             return location;
         }
 
-        public int getSize(int x)
+        public int getSize()
         {
             return size;
         }
 
-        public String getType(String x)
+        public String getType()
         {
             return type;
         }
 
-        public String getManfModel(String x)
+        public String getManfModel()
         {
             return manfModel;
         }
 
-        public int getSerialNo(int x)
+        public String getSerialNo()
         {
             return serialNo;
         }
 
-        public String getHydroTest(String x)
+        public String getHydroTest()
         {
             return hydroTestRslt;
         }
 
-        public String getSixYrInsp(String x)
+        public String getSixYrInsp()
         {
             return sixYrInspRslt;
         }
 
-        public String getWeight(String x)
+        public String getWeight()
         {
             return weightRslt;
         }
 
-        public String getBracket(String x)
+        public String getBracket()
         {
             return bracketRslt;
         }
 
-        public String getGuage(String x)
+        public String getGuage()
         {
             return gaugeRslt;
         }
 
-        public String getPullPin(String x)
+        public String getPullPin()
         {
             return pullPinRslt;
         }
 
-        public String getSignage(String x)
+        public String getSignage()
         {
             return signageRslt;
         }
 
-        public String getCollar(String x)
+        public String getCollar()
         {
             return collarRslt;
         }
 
-        public String getHose(String x)
+        public String getHose()
         {
             return hoseRslt;
         }

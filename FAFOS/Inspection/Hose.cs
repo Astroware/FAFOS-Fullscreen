@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FAFOS.Inspection
 {
-    class HoseReport
+    public class Hose
     {
         private int equipID;
         private String location;
@@ -38,7 +38,7 @@ namespace FAFOS.Inspection
         }
         //SETS
 
-        public HoseReport()
+        public Hose()
         {
         }
 
