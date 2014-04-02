@@ -318,6 +318,7 @@
             this.syncAndroid.Text = "Sync Contracts to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Visible = false;
+            this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click_1);
             // 
             // pnlLogin
             // 
@@ -1078,7 +1079,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.ClientSize = new System.Drawing.Size(1372, 780);
             this.ControlBox = false;
             this.Controls.Add(this.Sedge);
             this.Controls.Add(this.Astroware);

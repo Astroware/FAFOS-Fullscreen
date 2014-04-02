@@ -33,7 +33,6 @@ namespace FAFOS
             this.RoomGridView.CellContentClick += new DataGridViewCellEventHandler(my_controller.Room_Cell_Click);
 
             PopulateRoomGridView(MRoom.GetRoomsForAddr(id));
-
         }        
 /**************************************** Gets *******************************************/
         public String[,] GetRooms()
@@ -85,7 +84,6 @@ namespace FAFOS
                     try { hoses[i, j] = hoseViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { hoses[i, j] = null; }
                 }
-
             return hoses;
         }
         public String[,] GetLights(int index)
@@ -122,11 +120,8 @@ namespace FAFOS
                 PopulateExtinguisherView(i, MRoom.GetExtinguishers(roomID));
                 PopulateHoseView(i, MRoom.GetHoses(roomID));
                 PopulateLightView(i, MRoom.GetLights(roomID));
-
-
             }
             noChanges = true;
-
         }
         private void PopulateExtinguisherView(int index, DataTable extinguishers)
         {
