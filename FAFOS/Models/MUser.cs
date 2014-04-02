@@ -174,10 +174,11 @@ namespace FAFOS
 
         public static int GetPicID(String userID)
         {
-            DataTable dt = GetDT(userID, "[User]", "user_id");
+            //DataTable dt = GetDT(userID, "[User]", "user_id");
 
-            int picID = Convert.ToInt32(dt.Rows[0]["proPic_id"].ToString());
-            return picID;
+            //int picID = Convert.ToInt32(dt.Rows[0]["proPic_id"].ToString());
+            //return picID;
+            return 0;
         }
 
         public static DataTable GetUserList()

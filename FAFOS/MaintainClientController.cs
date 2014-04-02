@@ -204,7 +204,7 @@ namespace FAFOS
                 //for (int i = 0; i < values.Length; i++)
                     //if (values[i] == null)
 
-                if (_clientForm.checkFields() == true)
+                if (_clientForm.checkFields() == true && _clientForm.contract_added() == true)
                 {
                     if (MessageBox.Show("Are you sure you want to submit this information?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase        
@@ -216,7 +216,12 @@ namespace FAFOS
                     }
                 }
                 else
-                    MessageBox.Show("Some fields have not been filled in!", "Errors");
+                {
+                    if (_clientForm.contract_added() == true)
+                        MessageBox.Show("Some fields have not been filled in!", "Errors");
+                    else
+                        MessageBox.Show("A Contract must be added to a Client before they are editable!", "Errors");
+                }
             }
         }
 

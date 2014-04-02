@@ -12,7 +12,7 @@ namespace FAFOS.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -50,8 +50,8 @@ namespace FAFOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\FAFOS.mdf;I" +
-            "ntegrated Security=True;Connect Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\Startup+Datab" +
+            "ase\\FAFOS.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string FAFOS {
             get {
                 return ((string)(this["FAFOS"]));
@@ -61,8 +61,8 @@ namespace FAFOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\FAFOS_HQ.md" +
-            "f;Integrated Security=True;Connect Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SEDGESQL;AttachDbFilename=C:\\SEdge2013\\SystemDatabase\\Startup+Datab" +
+            "ase\\FAFOS_HQ.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string HQ {
             get {
                 return ((string)(this["HQ"]));

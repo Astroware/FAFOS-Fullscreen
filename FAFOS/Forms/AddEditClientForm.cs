@@ -341,6 +341,16 @@ namespace FAFOS
             }
         }
 
+        public bool contract_added()
+        {
+            if (isEdit)
+            {
+                if (contract_Button.Text.Trim().Contains("Click"))
+                    return false;
+            }
+            return true;
+        }
+
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 

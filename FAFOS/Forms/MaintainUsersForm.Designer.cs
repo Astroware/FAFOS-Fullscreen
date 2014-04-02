@@ -580,6 +580,7 @@
             this.Location = new System.Drawing.Point(10, 200);
             this.Name = "MaintainUsersForm";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MaintainUsers";
             this.TopMost = true;
