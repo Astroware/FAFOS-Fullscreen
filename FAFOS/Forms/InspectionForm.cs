@@ -24,6 +24,10 @@ namespace FAFOS
         string userid;
         public InspectionForm(string id)
         {
+            /*xml Trevor = new xml();
+            Trevor.parseXML();
+            Console.WriteLine("Fuck You");*/
+
             InitializeComponent();
             userid = id;
             setup(userid, "FAFOS Inspection Form");
@@ -521,6 +525,62 @@ namespace FAFOS
             get { return ServerIPAddr; }
             set { ServerIPAddr = value; }
         }
-
     }
-}
+
+    public class xml
+    {
+        public xml()
+        {
+
+        }
+
+        public void parseXML()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("C:\\SEdge2013\\InspectionData.xml");
+            string xmlcontents = doc.InnerXml;
+
+            XmlReader reader = XmlReader.Create(new StringReader(xmlcontents));
+
+           
+            //Once reader is positioned desired service address, execute this loop to parse all elements at the service address
+            /*while(reader.NodeType != XmlNodeType.EndElement && reader.ReadElementContentAsString() != "ServiceAddress")
+            {
+
+                
+            }*/
+
+               /* if(reader.NodeType == XmlNodeType.Element && reader.Name == "Extinguisher" && reader.MoveToAttribute("address") && reader.Value == "123 Sesame Street")
+                {
+                    if (reader.MoveToAttribute("address"))
+                    reader.MoveToFirstAttribute();
+                    String Id = reader.Value;
+                    Console.WriteLine(Id);
+
+                    reader.MoveToNextAttribute();
+                    String location = reader.Value;
+                    Console.WriteLine(location);
+
+                    reader.MoveToNextAttribute();
+                    String size = reader.Value;
+
+                    reader.MoveToNextAttribute();
+                    String type = reader.Value;
+
+                    reader.MoveToNextAttribute();
+                    String model = reader.Value;
+
+                    reader.MoveToNextAttribute();
+                    String serialNo = reader.Value;
+
+                    reader.MoveToNextAttribute();
+                    String manufacturingDate = reader.Value;
+
+                    if(reader.NodeType == XmlNodeType.Element && reader.Name == "inspectionElement")
+                    {
+
+                    }
+                }*/
+            }
+        }
+    }
