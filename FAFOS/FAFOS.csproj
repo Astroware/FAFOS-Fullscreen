@@ -236,6 +236,7 @@
     <Compile Include="Inspection\HoseReport.cs" />
     <Compile Include="Inspection\LightsReport.cs" />
     <Compile Include="Inspection\Report.cs" />
+    <Compile Include="GenExController.cs" />
     <Compile Include="InventoryController.cs" />
     <Compile Include="InvoiceController.cs" />
     <Compile Include="MaintainClientController.cs" />
