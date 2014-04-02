@@ -25,9 +25,9 @@ namespace FAFOS
         string userid;
         public InspectionForm(string id)
         {
-            xml Trevor = new xml();
+            /*xml Trevor = new xml();
             Trevor.parseXML();
-            Console.WriteLine("Fuck You");
+            Console.WriteLine("Fuck You");*/
 
             InitializeComponent();
             userid = id;
@@ -559,12 +559,13 @@ namespace FAFOS
                 {
                     Console.WriteLine(reader.Name);
                     int count = reader.AttributeCount;
-                    for(int i= 0; i< count; i++)
+                    for (int i = 0; i < count; i++)
                     {
                         reader.MoveToNextAttribute();
                         Console.WriteLine("   " + reader.Name);
                         Console.WriteLine("        " + reader.ReadContentAsString());
                     }
+
                 }
 
                 if (reader.NodeType == XmlNodeType.EndElement)
