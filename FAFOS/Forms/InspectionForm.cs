@@ -24,16 +24,11 @@ namespace FAFOS
         TCPModel _TCPModel = null;
         Thread clientThread;
         string userid;
+        String address;
         public InspectionForm(string id)
         {
-            xml Trevor = new xml();
-            Report AReport = Trevor.parseXML("123 Sesame Street");
-            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(0).getHydroTest());
-            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(0).getSixYrInsp());
-            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(0).getSerialNo());
-            Console.WriteLine(AReport.getExtRep().ElementAt<Extinguisher>(1).getEquipID());
-            Console.WriteLine(AReport.getLightsRep().ElementAt<Lights>(0).getEquipID());
-            Console.WriteLine(AReport.getHoseRep().ElementAt<Hose>(0).getEquipID());
+            //xml Trevor = new xml();
+            //Report report = Trevor.parseXML("123 Sesame Street");
 
             InitializeComponent();
             userid = id;
@@ -54,6 +49,8 @@ namespace FAFOS
             this.listenThread.Start();
             // ListenForClients();
         }
+
+        
 
         public void ListenForClients()
         {
@@ -102,17 +99,45 @@ namespace FAFOS
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
+            xml Trevor = new xml();
+            address = addressBox.SelectedValue.ToString();
+            Report report = Trevor.parseXML("123 Sesame Street");
+
             if (inspectionType.Text == "Extinguisher Report")
             {
-                generateExtinguisher();
+                generateExtinguisherReport(report);
             }
+
+
             Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToLongDateString() + ".pdf");
+              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToLongDateString() + "_" + address + ".pdf");
             testDialog.ShowDialog(this);
+
+
+            /*Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
+              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToLongDateString() + ".pdf");
+            testDialog.ShowDialog(this);*/
 
             //  clientThread.Abort();
             // listenThread.Abort();
         }
+
+        public void generateExtinguisherReport(Report r)
+        {
+            GenExController GEC = new GenExController();
+
+            String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Extinguisher Report" + "_" + DateTime.Today.ToLongDateString() + address + ".pdf";
+            GEC.open(FilePath);
+            GEC.addMetaData();
+            GEC.addTable(r);
+            GEC.close();
+
+            
+            //Utility pdfUtility = new Utility();
+            //
+
+        }
+
         private void generateExtinguisher()
         {
             try
@@ -528,12 +553,11 @@ namespace FAFOS
         public Report parseXML(string address)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("C:\\SEdge2013-1\\InspectionData.xml");
+            doc.Load("C:\\SEdge2013\\InspectionData.xml");
             string xmlcontents = doc.InnerXml;
 
             XmlReader reader = XmlReader.Create(new StringReader(xmlcontents));
 
-            address = "123 Sesame Street";
             Report report = new Report(address);
 
             //Move to provided service address

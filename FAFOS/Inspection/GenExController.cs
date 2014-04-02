@@ -8,6 +8,7 @@ using System.Data;
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using FAFOS.Inspection;
 
 namespace FAFOS
 {
@@ -15,17 +16,37 @@ namespace FAFOS
     {
         private iTextSharp.text.Font Times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD);
         private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
+        private iTextSharp.text.Font catFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 18, iTextSharp.text.Font.BOLD);
+        private iTextSharp.text.Font redFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, BaseColor.RED);
+        private iTextSharp.text.Font subFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16, iTextSharp.text.Font.BOLD);
+        private iTextSharp.text.Font smallBold = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD);
 
-        Document document;
 
+        public Document document;
+        PdfPTable table;
         public GenExController()
         {
             document = new Document(PageSize.LETTER);
         }
 
-        public void addTable()
+        public void open(string FILE)
         {
-            PdfPTable table = new PdfPTable(16);
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(FILE, FileMode.Create));
+            document.Open();
+        }
+
+        public void addMetaData()
+        {
+            document.AddTitle("Report of Inspection/Test");
+            document.AddSubject("Using iText");
+            document.AddKeywords("Csharp, PDF, iText");
+            document.AddAuthor("Abdelkader Ouda");
+            document.AddCreator("Abdelkader Ouda");
+        }
+
+        public void addTable(Report r)
+        {
+            table = new PdfPTable(16);
             table.HorizontalAlignment = 0;
             table.TotalWidth = 530f;
             table.LockedWidth = true;
@@ -33,10 +54,29 @@ namespace FAFOS
             table.SetWidths(widths);
 
             createHeader(table);
-            addDataRow(table);
-            addDataRow(table);
-            addDataRow(table);
 
+            List<Extinguisher> ExtL;
+            ExtL = r.getExtRep();
+
+            for(int i=0; i<ExtL.Count; i++)
+            {
+                addDataRow(ExtL.ElementAt<Extinguisher>(i).getItemNum(),
+                            ExtL.ElementAt<Extinguisher>(i).getEquipID(),
+                            ExtL.ElementAt<Extinguisher>(i).getLocation(),
+                            ExtL.ElementAt<Extinguisher>(i).getSize(),
+                            ExtL.ElementAt<Extinguisher>(i).getType(),
+                            ExtL.ElementAt<Extinguisher>(i).getManfModel(),
+                            ExtL.ElementAt<Extinguisher>(i).getSerialNo(),
+                            ExtL.ElementAt<Extinguisher>(i).getHydroTest(),
+                            ExtL.ElementAt<Extinguisher>(i).getSixYrInsp(),
+                            ExtL.ElementAt<Extinguisher>(i).getWeight(),
+                            ExtL.ElementAt<Extinguisher>(i).getBracket(),
+                            ExtL.ElementAt<Extinguisher>(i).getGuage(),
+                            ExtL.ElementAt<Extinguisher>(i).getPullPin(),
+                            ExtL.ElementAt<Extinguisher>(i).getSignage(),
+                            ExtL.ElementAt<Extinguisher>(i).getCollar(),
+                            ExtL.ElementAt<Extinguisher>(i).getHose());
+            }
             document.Add(table);
         }
 
@@ -64,24 +104,43 @@ namespace FAFOS
 
         }
 
-        private void addDataRow(PdfPTable table)
+        public void addDataRow(int itemNum,
+                               int equipID,
+                               String location,
+                               int size,
+                               String type,
+                               String manFModel,
+                               String serialNum,
+                               String HydroTestResult,
+                               String sixYearIns,
+                               String waitResult,
+                               String bracketResult,
+                               String gaugeResult,
+                               String pullPinResult,
+                               String signageResult,
+                               String collarResult,
+                               String hoseResult)
         {
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+
+            String INum = itemNum.ToString();
+            String eID = equipID.ToString();
+            String Size = size.ToString();
+            addCell(table, INum, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, eID, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, location, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, Size, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, type, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, manFModel, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, serialNum, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, HydroTestResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, sixYearIns, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, waitResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, bracketResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, gaugeResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, pullPinResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, signageResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, collarResult, 1, 1, 90, BaseColor.WHITE, Times);
+            addCell(table, hoseResult, 1, 1, 90, BaseColor.WHITE, Times);
 
         }
 
