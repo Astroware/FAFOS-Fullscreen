@@ -41,6 +41,8 @@ namespace FAFOS
             _clientForm = new AddEditClientForm(this, false, userID);
             _clientForm.Activate();
             _clientForm.Show();
+
+      
         }
 
         public void Edit_Client_Button_Click(tile sender, int id)
@@ -597,7 +599,7 @@ namespace FAFOS
         public void ExtinguisherView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if ((e.ColumnIndex == 7) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == _roomForm.extDelCol) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -616,7 +618,7 @@ namespace FAFOS
         public void HoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if ((e.ColumnIndex == 4) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == _roomForm.hoseDelCol) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -635,7 +637,7 @@ namespace FAFOS
         public void LightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if ((e.ColumnIndex == 10) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == _roomForm.lightDelCol) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
