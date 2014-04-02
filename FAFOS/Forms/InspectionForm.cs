@@ -11,8 +11,9 @@ using System.Net.Sockets;
 using System.Net;
 using System.Xml;
 using System.IO;
-
 using InvoicePDF;
+
+
 
 namespace FAFOS
 {
@@ -154,7 +155,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToShortDateString() + ".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text; //+ "_" + DateTime.Today.ToShortDateString() + ".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
@@ -211,7 +212,8 @@ namespace FAFOS
 
 
 
-                String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+                //String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+                String address = "123 Sesame Street";
                 String[] ad = new String[6];
                 ad = address.Split(',');
 
@@ -529,58 +531,45 @@ namespace FAFOS
 
     public class xml
     {
-        public xml()
-        {
-
-        }
-
         public void parseXML()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("C:\\SEdge2013\\InspectionData.xml");
+            doc.Load("C:\\SEdge2013-1\\InspectionData.xml");
             string xmlcontents = doc.InnerXml;
 
             XmlReader reader = XmlReader.Create(new StringReader(xmlcontents));
 
-           
-            //Once reader is positioned desired service address, execute this loop to parse all elements at the service address
-            while(reader.NodeType != XmlNodeType.EndElement && reader.ReadElementContentAsString() != "ServiceAddress")
-            {
+            string address = "123 Sesame Street";
 
-                
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                    if (reader.Name == "ServiceAddress")
+                    {
+                        reader.MoveToFirstAttribute();
+                        reader.MoveToNextAttribute();
+                        if (reader.ReadContentAsString() == address)
+                            break;
+                    }
             }
 
-                if(reader.NodeType == XmlNodeType.Element && reader.Name == "Extinguisher" && reader.MoveToAttribute("address") && reader.Value == "123 Sesame Street")
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
                 {
-                    if (reader.MoveToAttribute("address"))
-                    reader.MoveToFirstAttribute();
-                    String Id = reader.Value;
-                    Console.WriteLine(Id);
-
-                    reader.MoveToNextAttribute();
-                    String location = reader.Value;
-                    Console.WriteLine(location);
-
-                    reader.MoveToNextAttribute();
-                    String size = reader.Value;
-
-                    reader.MoveToNextAttribute();
-                    String type = reader.Value;
-
-                    reader.MoveToNextAttribute();
-                    String model = reader.Value;
-
-                    reader.MoveToNextAttribute();
-                    String serialNo = reader.Value;
-
-                    reader.MoveToNextAttribute();
-                    String manufacturingDate = reader.Value;
-
-                    if(reader.NodeType == XmlNodeType.Element && reader.Name == "inspectionElement")
+                    Console.WriteLine(reader.Name);
+                    int count = reader.AttributeCount;
+                    for(int i= 0; i< count; i++)
                     {
-
+                        reader.MoveToNextAttribute();
+                        Console.WriteLine("   " + reader.Name);
+                        Console.WriteLine("        " + reader.ReadContentAsString());
                     }
                 }
+
+                if (reader.NodeType == XmlNodeType.EndElement)
+                    if (reader.Name == "ServiceAddress")
+                        break;
             }
         }
     }
