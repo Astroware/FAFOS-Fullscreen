@@ -465,11 +465,11 @@ namespace FAFOS
 
             hBarcode.HeaderText = "Barcode";
             hBarcode.Name = "hBarcode";
-            hBarcode.Width = 60;
+            hBarcode.Width = 120;
 
             hManDate.HeaderText = "Manufactring Date";
             hManDate.Name = "hManDate";
-            hManDate.Width = 150;
+            hManDate.Width = 100;
 
             hDel.HeaderText = "Delete";
             hDel.Name = "hDel";
@@ -560,11 +560,11 @@ namespace FAFOS
 
             lBarcode.HeaderText = "Barcode";
             lBarcode.Name = "lBarcode";
-            lBarcode.Width = 60;
+            lBarcode.Width = 120;
 
             lManDate.HeaderText = "Manufactring Date";
             lManDate.Name = "lManDate";
-            lManDate.Width = 150;
+            lManDate.Width = 100;
 
             lDel.HeaderText = "Delete";
             lDel.Name = "lDel";

@@ -43,11 +43,10 @@ namespace FAFOS
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
-            int col = values.GetLength(1);
-            System.Console.WriteLine("Col: " + col);
-            bool test;
 
-            int nExt = (values.Length / values.GetLength(1));
+            //calculate the number of extinguishers
+            int nExt = (values.Length / 10);
+            Console.WriteLine("In Extinguishers: " + nExt);
             con.Open();
             for (int i = 0; i < nExt; i++)
             {
@@ -57,16 +56,6 @@ namespace FAFOS
                     r = new MRoom();
                     values[i, 0] = r.getNewID("extinguisher_id", "Extinguisher");
 
-                    Console.WriteLine("INSERT INTO Extinguisher VALUES (" + values[i, 0] +
-                                                                            ",'" + values[i, 1] +
-                                                                           "','" + values[i, 2] +
-                                                                           "','" + values[i, 3] +
-                                                                           "','" + values[i, 4] +
-                                                                           "','" + values[i, 5] +
-                                                                            "'," + values[i, 6] +
-                                                                             "," + values[i, 7] +
-                                                                            ",'" + values[i, 8] + "')");
-
                     command = new SqlCommand("INSERT INTO Extinguisher VALUES (" + values[i, 0] +
                                                                             ",'" + values[i, 1] +
                                                                            "','" + values[i, 2] +
@@ -75,8 +64,7 @@ namespace FAFOS
                                                                            "','" + values[i, 5] +
                                                                             "'," + values[i, 6] + 
                                                                              "," + values[i, 7] +
-                                                                             ",'" + values[i, 8] +"')", con);
-                    test = true;
+                                                                            ",'" + values[i, 8] +"')", con);
                 }
 
                 else
@@ -90,19 +78,18 @@ namespace FAFOS
                                                            ", bar_code = " + values[i, 7] +
                                                            ", manufacture_date = '" + values[i, 8] +
                                                       "' WHERE extinguisher_id = " + values[i, 0], con);
-                    test = false;
                 }
+                
                 try
                 {
+                    Console.WriteLine("Ext command!");
                     command.ExecuteNonQuery();
                 }
                 catch (SqlException e)
                 {
                     Console.WriteLine(e.Message);
-                    Console.WriteLine(e.InnerException);
-                    Console.WriteLine(e.Source);
-                    Console.WriteLine(e.Number);
-                    Console.WriteLine(e.State);
+                    MessageBox.Show("Error adding the extinguishers to database!", "Error");
+
                 }
 
             }
@@ -114,7 +101,9 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
-            int nHose = (values.Length / 4);
+            //calculate the number of hoses
+            int nHose = (values.Length / 7);
+            Console.WriteLine("In Hoses: " + nHose);
             con.Open();
             for (int i = 0; i < nHose; i++)
             {
@@ -125,9 +114,11 @@ namespace FAFOS
                     values[i, 0] = r.getNewID("hose_id", "Hose");
 
                     command = new SqlCommand("INSERT INTO Hose VALUES (" + values[i, 0] +
-                                                                     ",'" + values[i, 1] +
+                                                                    ",'" + values[i, 1] +
                                                                     "'," + values[i, 2] +
-                                                                     "," + values[i, 3] + ")", con);
+                                                                     "," + values[i, 3] + 
+                                                                     "," + values[i, 4] +
+                                                                     "'" + values[i, 5] + "')", con);
                 }
 
                 else
@@ -135,9 +126,22 @@ namespace FAFOS
                     command = new SqlCommand("UPDATE Hose SET location = '" + values[i, 1] +
                                                           "', serial = " + values[i, 2] +
                                                            ", room_id = " + values[i, 3] +
-                                                      " WHERE hose_id = " + values[i, 0], con);                   
+                                                           ", bar_code = " + values[i, 4] +
+                                                          "', manufacture_date = '" + values[i, 5] +
+                                                      "' WHERE hose_id = " + values[i, 0], con);                   
                 }
-                command.ExecuteNonQuery();
+
+                try
+                {
+                    Console.WriteLine("Hose command!");
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                    MessageBox.Show("Error adding the hoses to database!", "Error");
+
+                }
 
             }
             con.Close();
@@ -148,7 +152,9 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
-            int nLight = (values.Length / 10);
+            //calculate the number of lights
+            int nLight = (values.Length / 13);
+            Console.WriteLine("In Lights: " + nLight);
             MRoom r;
             con.Open();
             for (int i = 0; i < nLight; i++)
@@ -166,7 +172,9 @@ namespace FAFOS
                                                           "','" + values[i, 6] +
                                                           "','" + values[i, 7] +
                                                            "'," + values[i, 8] +
-                                                            "," + values[i, 9] + ")", con);
+                                                            "," + values[i, 9] + 
+                                                            "," + values[i, 10] +
+                                                            "'" + values[i, 11] + "')", con);
                 }
                 else
                 {
@@ -180,11 +188,22 @@ namespace FAFOS
                                                           "', require_service = '" + values[i, 7] +
                                                           "', serial = " + values[i, 8] +
                                                            ", room_id = " + values[i, 9] +
-                                                      " WHERE light_id = " + values[i, 0], con);
+                                                           ", bar_code = " + values[i, 10] +
+                                                          "', manufacture_date = '" + values[i, 11] +
+                                                      "' WHERE light_id = " + values[i, 0], con);
                 }
 
+                try
+                {
+                    Console.WriteLine("Light command!");
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                    MessageBox.Show("Error adding the lights to database!", "Error");
 
-                command.ExecuteNonQuery();
+                }
 
             }
             con.Close();
