@@ -204,7 +204,7 @@ namespace FAFOS
                 //for (int i = 0; i < values.Length; i++)
                     //if (values[i] == null)
 
-                if (_clientForm.checkFields() == true)
+                if (_clientForm.checkFields() == true && _clientForm.contract_added() == true)
                 {
                     if (MessageBox.Show("Are you sure you want to submit this information?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase        
@@ -216,7 +216,12 @@ namespace FAFOS
                     }
                 }
                 else
-                    MessageBox.Show("Some fields have not been filled in!", "Errors");
+                {
+                    if (_clientForm.contract_added() == true)
+                        MessageBox.Show("Some fields have not been filled in!", "Errors");
+                    else
+                        MessageBox.Show("A Contract must be added to a Client before they are editable!", "Errors");
+                }
             }
         }
 
@@ -663,14 +668,15 @@ namespace FAFOS
             else
             {
                 String[,] rooms = _roomForm.GetRooms();
-                int nRooms = rooms.Length / 4;
 
-                bool okToSubmit = true;
-                /*
-                 * Validate....okToSubmit = False;
-                */
-                if (okToSubmit)
+                if (rooms.Length == 0)
                 {
+                    MessageBox.Show("Must enter all information in Room columns!");
+                    return;
+                }
+                else
+                {
+                    int nRooms = rooms.Length / 4;
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase
                         String[,] ext, hoses, lights;
@@ -682,22 +688,20 @@ namespace FAFOS
                             /*
                             * Validate....okToSubmit = False;
                             */
-                            if (okToSubmit)
-                            {
+                            //if (okToSubmit)
+                            //{
                                 MRoom.SetExtinguishers(ext);
                                 MRoom.SetHoses(hoses);
                                 MRoom.SetLights(lights);
-                            }
-                            else
-                                return;
+                            //}
+                            //else
+                                //return;
                         }
 
                         MRoom.SetMany(rooms);
                         _contractForm.noChanges = false;
                         _roomForm.Close();
                     }
-                    else
-                        return;
                 }
             }
         }

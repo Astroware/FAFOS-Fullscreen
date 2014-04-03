@@ -43,8 +43,11 @@ namespace FAFOS
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
+            int col = values.GetLength(1);
+            System.Console.WriteLine("Col: " + col);
+            bool test;
 
-            int nExt = (values.Length / 7);
+            int nExt = (values.Length / values.GetLength(1));
             con.Open();
             for (int i = 0; i < nExt; i++)
             {
@@ -54,13 +57,26 @@ namespace FAFOS
                     r = new MRoom();
                     values[i, 0] = r.getNewID("extinguisher_id", "Extinguisher");
 
+                    Console.WriteLine("INSERT INTO Extinguisher VALUES (" + values[i, 0] +
+                                                                            ",'" + values[i, 1] +
+                                                                           "','" + values[i, 2] +
+                                                                           "','" + values[i, 3] +
+                                                                           "','" + values[i, 4] +
+                                                                           "','" + values[i, 5] +
+                                                                            "'," + values[i, 6] +
+                                                                             "," + values[i, 7] +
+                                                                            ",'" + values[i, 8] + "')");
+
                     command = new SqlCommand("INSERT INTO Extinguisher VALUES (" + values[i, 0] +
                                                                             ",'" + values[i, 1] +
                                                                            "','" + values[i, 2] +
                                                                            "','" + values[i, 3] +
                                                                            "','" + values[i, 4] +
-                                                                            "'," + values[i, 5] +
-                                                                             "," + values[i, 6] + ")", con);
+                                                                           "','" + values[i, 5] +
+                                                                            "'," + values[i, 6] + 
+                                                                             "," + values[i, 7] +
+                                                                             ",'" + values[i, 8] +"')", con);
+                    test = true;
                 }
 
                 else
@@ -71,9 +87,23 @@ namespace FAFOS
                                                           "', model = '" + values[i, 4] +
                                                           "', serial = " + values[i, 5] +
                                                            ", room_id = " + values[i, 6] +
-                                                      " WHERE extinguisher_id = " + values[i, 0], con);
+                                                           ", bar_code = " + values[i, 7] +
+                                                           ", manufacture_date = '" + values[i, 8] +
+                                                      "' WHERE extinguisher_id = " + values[i, 0], con);
+                    test = false;
                 }
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.InnerException);
+                    Console.WriteLine(e.Source);
+                    Console.WriteLine(e.Number);
+                    Console.WriteLine(e.State);
+                }
 
             }
             con.Close();

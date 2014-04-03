@@ -39,24 +39,23 @@ namespace FAFOS
         {
             int n = RoomGridView.Rows.Count;
             String[,] rooms = new String[n,4];
-            bool completetable = true;
-            //for (int i = 0; i < n; i++)
-            //{
-            //    if (RoomGridView.Rows[i].Cells["idCol"].Value.ToString().Trim().Equals("") ||
-            //        RoomGridView.Rows[i].Cells["roomNum"].Value.ToString().Trim().Equals("") ||
-            //        RoomGridView.Rows[i].Cells["Floor"].Value.ToString().Trim().Equals(""))
-            //        completetable = false;
-            //}
-            if (completetable)
+
+            for (int i = 0; i < n; i++)
             {
-                for (int i = 0; i < n; i++)
-                {
-                    rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
-                    rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
-                    rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
-                    rooms[i, 3] = AddressID;
-                }
+                if (RoomGridView.Rows[i].Cells["idCol"].Value == null ||
+                    RoomGridView.Rows[i].Cells["roomNum"].Value == null ||
+                    RoomGridView.Rows[i].Cells["Floor"].Value == null)
+                    return new String[0, 0];
             }
+            
+            for (int i = 0; i < n; i++)
+            {
+                rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
+                rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
+                rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
+                rooms[i, 3] = AddressID;
+            }
+            
             return rooms;
         }
         public String[,] GetExtinguishers(int index)
@@ -397,11 +396,11 @@ namespace FAFOS
 
             eBarcode.HeaderText = "Barcode";
             eBarcode.Name = "eBarcode";
-            eBarcode.Width = 60;
+            eBarcode.Width = 100;
 
             eManDate.HeaderText = "Manufactring Date";
             eManDate.Name = "eManDate";
-            eManDate.Width = 150;
+            eManDate.Width = 120;
 
             eDel.HeaderText = "Delete";
             eDel.Name = "eDel";
