@@ -99,6 +99,12 @@ namespace FAFOS
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
+            if (inspectionType.Text.Length == 0)
+            {
+                MessageBox.Show("Must select report type!");
+                return;
+            }
+
             xml data = new xml();
 
             address = new ServiceAddress().get(addressBox.SelectedValue.ToString());

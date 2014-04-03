@@ -1067,11 +1067,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1372, 780);
-=======
-            this.ClientSize = new System.Drawing.Size(1406, 780);
->>>>>>> Add quotes to invoice
             this.ControlBox = false;
             this.Controls.Add(this.Sedge);
             this.Controls.Add(this.Astroware);
