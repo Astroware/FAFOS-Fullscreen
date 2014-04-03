@@ -118,7 +118,7 @@ namespace FAFOS
                                                                     "'," + values[i, 2] +
                                                                      "," + values[i, 3] + 
                                                                      "," + values[i, 4] +
-                                                                     "'" + values[i, 5] + "')", con);
+                                                                     ",'" + values[i, 5] + "')", con);
                 }
 
                 else
@@ -127,7 +127,7 @@ namespace FAFOS
                                                           "', serial = " + values[i, 2] +
                                                            ", room_id = " + values[i, 3] +
                                                            ", bar_code = " + values[i, 4] +
-                                                          "', manufacture_date = '" + values[i, 5] +
+                                                          ", manufacture_date = '" + values[i, 5] +
                                                       "' WHERE hose_id = " + values[i, 0], con);                   
                 }
 
@@ -174,7 +174,7 @@ namespace FAFOS
                                                            "'," + values[i, 8] +
                                                             "," + values[i, 9] + 
                                                             "," + values[i, 10] +
-                                                            "'" + values[i, 11] + "')", con);
+                                                            ",'" + values[i, 11] + "')", con);
                 }
                 else
                 {
@@ -189,7 +189,7 @@ namespace FAFOS
                                                           "', serial = " + values[i, 8] +
                                                            ", room_id = " + values[i, 9] +
                                                            ", bar_code = " + values[i, 10] +
-                                                          "', manufacture_date = '" + values[i, 11] +
+                                                          ", manufacture_date = '" + values[i, 11] +
                                                       "' WHERE light_id = " + values[i, 0], con);
                 }
 

@@ -75,7 +75,7 @@ namespace FAFOS
         public String[,] GetHoses(int index)
         {
             int n = hoseViews[index].Rows.Count;
-            int m = hoseViews[index].Rows.Count;
+            int m = hoseViews[index].Columns.Count;
             String[,] hoses = new String[n, m];
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
@@ -88,7 +88,7 @@ namespace FAFOS
         public String[,] GetLights(int index)
         {
             int n = lightViews[index].Rows.Count;
-            int m = lightViews[index].Rows.Count;
+            int m = lightViews[index].Columns.Count;
             String[,] lights = new String[n, m];
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
@@ -140,7 +140,7 @@ namespace FAFOS
         {
 
             int n = hoses.Rows.Count;
-            int m = hoses.Rows.Count;
+            int m = hoses.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddHose(index);
@@ -154,7 +154,7 @@ namespace FAFOS
         {
 
             int n = lights.Rows.Count;
-            int m = lights.Rows.Count;
+            int m = lights.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddLight(index);
