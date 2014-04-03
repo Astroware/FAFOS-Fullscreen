@@ -11,6 +11,7 @@ using tiles;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
+using System.Data.SqlClient;
 
 namespace FAFOS
 {
@@ -596,6 +597,21 @@ namespace FAFOS
             // allRevenue.Visible = false;
 
             //Notifications();
+
+            try
+            {
+                SqlConnection con = new SqlConnection(Properties.Settings.Default.FAFOS);
+                con.Open();
+
+                SqlCommand command = new SqlCommand("INSERT INTO Supplier (supplier_id, name) VALUES (@id, @name)", con);
+                command.Parameters.AddWithValue("@id", "1234");
+                command.Parameters.AddWithValue("@name", "Western Engineering");
+
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception f)
+            { }
             }
 
         }
