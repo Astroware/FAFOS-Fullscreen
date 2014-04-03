@@ -149,7 +149,7 @@ namespace FAFOS
 
             String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Extinguisher Report" + "_" + DateTime.Today.ToLongDateString() +"_"+ address + ".pdf";
             GEC.open(FilePath);
-            GEC.addMetaData();
+            GEC.addTitle(address);
             GEC.addTable(r);
             GEC.close();
 
@@ -165,6 +165,7 @@ namespace FAFOS
 
             String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Hose Report" + "_" + DateTime.Today.ToLongDateString()+"_" + address + ".pdf";
             GHC.open(FilePath);
+            GHC.addTitle(address);
             GHC.addTable(r);
             GHC.close();
         }
@@ -175,6 +176,7 @@ namespace FAFOS
 
             String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Lights Report" + "_" + DateTime.Today.ToLongDateString()+ "_" + address + ".pdf";
             GLC.open(FilePath);
+            GLC.addTitle(address);
             GLC.addTable(r);
             GLC.close();
         }
