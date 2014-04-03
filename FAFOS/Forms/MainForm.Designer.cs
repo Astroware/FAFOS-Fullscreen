@@ -1100,10 +1100,10 @@
             this.Controls.Add(this.RedBar);
             this.Controls.Add(this.Watermark);
             this.Controls.Add(this.sidepanel);
-            this.Controls.Add(this.menuStrip1);
+            //this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            //this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "View";
@@ -1171,7 +1171,7 @@
         private System.Windows.Forms.Label lblUserInfo;
         private System.Windows.Forms.Button Logout;
         private System.Windows.Forms.Button UserSettings;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        //private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem manageAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;

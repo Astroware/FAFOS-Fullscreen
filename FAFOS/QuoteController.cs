@@ -489,7 +489,7 @@ namespace FAFOS
                     table6.rowHeight = 15;
                     textAndtable6.SetParams(table6, cell2, Align.RightAlign, 3);
                     textAndtable6.AddRow(false, 10, "T3", align, true, "$" + quoteForm.getTotal());
-
+                    content.SetStream(textAndtable6.EndTable(line2, true));
 
                     content.SetStream(textAndtable.EndText());
 
@@ -802,7 +802,7 @@ namespace FAFOS
                     table6.rowHeight = 15;
                     textAndtable6.SetParams(table6, cell2, Align.RightAlign, 3);
                     textAndtable6.AddRow(false, 10, "T3", align, true, "$" + quoteForm.getTotal());
-
+                    content.SetStream(textAndtable6.EndTable(line2, true));
 
                     content.SetStream(textAndtable.EndText());
 

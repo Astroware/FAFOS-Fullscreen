@@ -706,7 +706,7 @@ namespace FAFOS
             Astroware.Visible = false;
             Sedge.Visible = false;
 
-            menuStrip1.Visible = false;
+            //menuStrip1.Visible = false;
             /*inventory.Visible = false;
             purchaseRecord.Visible = false;
             payment.Visible = false;
