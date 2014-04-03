@@ -686,31 +686,44 @@ namespace FAFOS
                     textAndtable.AddText(50, 60, "Total: " + txtTotal.Text, 10, "T3", Align.LeftAlign);
 
 
-                    textAndtable.AddText(50, 100, "Bill To: ", 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(50, 100, "Bill To: FS Fish", 10, "T3", Align.LeftAlign);
   //uncomment these                  textAndtable.AddText(50, 100, client[0], 10, "T3", Align.LeftAlign);
+
   //stuff for                   textAndtable.AddText(50, 110, client[4], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 110, "PO34332 ", 10, "T1", Align.LeftAlign);
   //addresses                  textAndtable.AddText(50, 120, client[6] + ", " + client[7] + ", " + client[8] + " " + client[2], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 120, "London, Ontario, Canada, N6H3D9", 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(50, 130, "Primary Contact: " + client[5], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 130, "Primary Contact: " + "Dr. Richardson", 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(50, 140, "Ph: " + client[3], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 140, "Ph: " + "5194384754", 10, "T1", Align.LeftAlign);
 
 
                     textAndtable.AddText(300, 100, "Forward Payment To: ", 10, "T3", Align.LeftAlign);
   //                  textAndtable.AddText(300, 110, franchisee[5], 10, "T3", Align.LeftAlign);
+                    textAndtable.AddText(300, 120, "512 Dundas Street", 10, "T3", Align.LeftAlign);
   //                  textAndtable.AddText(300, 120, franchisee[0], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(300, 130, "Calgary, New Brunswick, Canada N6D3H2", 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(300, 130, franchisee[2] + ", " + franchisee[3] + ", " + franchisee[4] + " " + franchisee[1], 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(300, 140, "Contact: " + user[0] + " " + user[1], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(300, 140, "Contact: " + "Bob Worker", 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(300, 150, "Ph: " + user[2], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(300, 150, "Ph: " + 5195555345, 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(300, 160, "Email: " + user[3], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(300, 160, "Email: " + "bobworker@uwo.ca", 10, "T1", Align.LeftAlign);
                     textAndtable.AddText(300, 170, "Web: http://www.fire-alert.ca", 10, "T1", Align.LeftAlign);
 
                     //textAndtable.AddText(50, 150, "WO, ID: " + txtSalesOrder.SelectedValue.ToString(), 10, "T3", Align.LeftAlign);
                     textAndtable.AddText(50, 150, "WO, ID: " + txtQuote.SelectedValue.ToString(), 10, "T3", Align.LeftAlign);
                     textAndtable.AddText(50, 160, "Service Address: ", 10, "T3", Align.LeftAlign);
   //                  textAndtable.AddText(50, 170, sAd[0], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 170, "1201 Wilson Ave.", 10, "T1", Align.LeftAlign);
                     // textAndtable.AddText(50, 180, sAd[1], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 180, "Downsview, Ontario, Canada M3M 1J8", 10, "T1", Align.LeftAlign);
   //                  textAndtable.AddText(50, 180, sAd[3] + ", " + sAd[4] + ", " + sAd[5] + " " + sAd[1], 10, "T1", Align.LeftAlign);
                     textAndtable.AddText(50, 190, "On-site Contact: ", 10, "T3", Align.LeftAlign);
   //                  textAndtable.AddText(50, 200, sAd[2], 10, "T1", Align.LeftAlign);
+                    textAndtable.AddText(50, 200, "Supervisor", 10, "T1", Align.LeftAlign);
                     textAndtable.AddText(50, 210, "Date of Service: ", 10, "T1", Align.LeftAlign);
 
 
