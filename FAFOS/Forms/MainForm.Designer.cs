@@ -75,7 +75,7 @@
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.Logout = new System.Windows.Forms.Button();
             this.UserSettings = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            //this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.manageAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,7 +112,7 @@
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.pnlLogin.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            ///this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Watermark)).BeginInit();
             this.sidepanel.SuspendLayout();
             this.SuspendLayout();
@@ -778,7 +778,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            /*this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageAccountToolStripMenuItem,
             this.operationsToolStripMenuItem,
             this.documentToolStripMenuItem,
@@ -789,7 +789,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1378, 24);
             this.menuStrip1.TabIndex = 82;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.Visible = false;
+            this.menuStrip1.Visible = false;*/
             // 
             // manageAccountToolStripMenuItem
             // 
@@ -1130,8 +1130,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            //this.menuStrip1.ResumeLayout(false);
+            //this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Watermark)).EndInit();
             this.sidepanel.ResumeLayout(false);
             this.ResumeLayout(false);

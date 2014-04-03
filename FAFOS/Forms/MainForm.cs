@@ -12,7 +12,6 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Diagnostics;
 
-
 namespace FAFOS
 {
     public partial class View : Form
@@ -436,8 +435,8 @@ namespace FAFOS
         private void Login_btn_Click(object sender, EventArgs e)
         {
 
-            //if (Login())
-            //{
+            if (Login())
+            {
             userid = 1;
             pnlLogin.Visible = false;
             this.Exit_btn.Focus();
@@ -445,7 +444,7 @@ namespace FAFOS
             Exit.Visible = true;
             Logout.Visible = true;
             UserSettings.Visible = true;
-            menuStrip1.Visible = true;
+            //menuStrip1.Visible = true;
             Notification.Visible = true;
             /*quote.Visible = true;
             editQuote.Visible = true;
@@ -597,7 +596,7 @@ namespace FAFOS
             // allRevenue.Visible = false;
 
             //Notifications();
-            //}
+            }
 
         }
 
