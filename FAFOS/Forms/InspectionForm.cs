@@ -99,13 +99,28 @@ namespace FAFOS
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
-            xml Trevor = new xml();
-            address = addressBox.SelectedValue.ToString();
-            Report report = Trevor.parseXML("123 Sesame Street");
+            xml data = new xml();
+
+            address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
+            String[] splitter = { "," };
+            String[] ad = address.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
+            address = ad[0];
+
+            Report report = data.parseXML(address);
 
             if (inspectionType.Text == "Extinguisher Report")
             {
                 generateExtinguisherReport(report);
+            }
+
+            if (inspectionType.Text == "Hose Report")
+            {
+                generateHoseReport(report);
+            }
+
+            if (inspectionType.Text == "Lights Report")
+            {
+                generateLightReport(report);
             }
 
 
@@ -126,7 +141,7 @@ namespace FAFOS
         {
             GenExController GEC = new GenExController();
 
-            String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Extinguisher Report" + "_" + DateTime.Today.ToLongDateString() + address + ".pdf";
+            String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Extinguisher Report" + "_" + DateTime.Today.ToLongDateString() +"_"+ address + ".pdf";
             GEC.open(FilePath);
             GEC.addMetaData();
             GEC.addTable(r);
@@ -136,6 +151,26 @@ namespace FAFOS
             //Utility pdfUtility = new Utility();
             //
 
+        }
+
+        public void generateHoseReport(Report r)
+        {
+            GenHoseController GHC = new GenHoseController();
+
+            String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Hose Report" + "_" + DateTime.Today.ToLongDateString()+"_" + address + ".pdf";
+            GHC.open(FilePath);
+            GHC.addTable(r);
+            GHC.close();
+        }
+
+        public void generateLightReport(Report r)
+        {
+            GenLightController GLC = new GenLightController();
+
+            String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + "Lights Report" + "_" + DateTime.Today.ToLongDateString()+ "_" + address + ".pdf";
+            GLC.open(FilePath);
+            GLC.addTable(r);
+            GLC.close();
         }
 
         private void generateExtinguisher()

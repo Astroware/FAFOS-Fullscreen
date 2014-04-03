@@ -7,6 +7,7 @@ using System.Data;
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using FAFOS.Inspection;
 
 namespace FAFOS
 {
@@ -16,26 +17,44 @@ namespace FAFOS
         private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
 
         Document document;
-
+        PdfPTable table;
         public GenLightController()
         {
             document = new Document(PageSize.LETTER);
         }
 
-        public void addTable()
+        public void open(string FILE)
         {
-            PdfPTable table = new PdfPTable(10);
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(FILE, FileMode.Create));
+            document.Open();
+        }
+
+        public void addTable(Report r)
+        {
+            table = new PdfPTable(9);
             table.HorizontalAlignment = 0;
             table.TotalWidth = 530f;
             table.LockedWidth = true;
-            float[] widths = new float[] { 15f, 35f, 50f, 15f, 15f, 40f, 25f, 10f, 10f};
+            float[] widths = new float[] { 15f, 35f, 50f, 15f, 15f, 40f, 25f,  10f, 10f};
             table.SetWidths(widths);
 
             createHeader(table);
-            addDataRow(table);
-            addDataRow(table);
-            addDataRow(table);
 
+            List<Lights> LL;
+            LL = r.getLightsRep();
+
+            for (int i = 0; i < LL.Count; i++)
+            {
+                addDataRow(LL.ElementAt<Lights>(i).getEquipID(),
+                           LL.ElementAt<Lights>(i).getModel(),
+                           LL.ElementAt<Lights>(i).getLocation(),
+                           LL.ElementAt<Lights>(i).getVoltage(),
+                           LL.ElementAt<Lights>(i).getPower(),
+                           LL.ElementAt<Lights>(i).getNumHeads(),
+                           LL.ElementAt<Lights>(i).getMake(),
+                           LL.ElementAt<Lights>(i).getReqServRep(),
+                           LL.ElementAt<Lights>(i).getOprConf());
+            }
             document.Add(table);
         }
 
@@ -48,26 +67,36 @@ namespace FAFOS
             addCell(table, "Total Power", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Number of Heads", 2, 1, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Make", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Inspection - Service", 1, 2, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Repair Service", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Operation Confirmed", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            //addCell(table, "Inspection - Service", 1, 2, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Repair Service", 2, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Operation Confirmed", 2, 1, 90, BaseColor.RED, WhiteTimes);
 
 
 
         }
 
-        private void addDataRow(PdfPTable table)
+        private void addDataRow(int equipID,
+                                int model,
+                                String location,
+                                String voltage,
+                                String totalPower,
+                                int numHeads,
+                                String make,
+                                String reqServ,
+                                String oprConf)
         {
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            String EID = equipID.ToString();
+            String mod = model.ToString();
+            String NH = numHeads.ToString();
+            addCell(table, EID, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, mod, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, location, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, voltage, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, totalPower, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, NH, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, make, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, reqServ, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, oprConf, 1, 1, 0, BaseColor.WHITE, Times);
 
         }
 

@@ -42,7 +42,9 @@
             this.inspectionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inspectionType.FormattingEnabled = true;
             this.inspectionType.Items.AddRange(new object[] {
-            "Extinguisher Report"});
+            "Extinguisher Report",
+            "Hose Report",
+            "Lights Report"});
             this.inspectionType.Location = new System.Drawing.Point(25, 154);
             this.inspectionType.Name = "inspectionType";
             this.inspectionType.Size = new System.Drawing.Size(298, 25);
@@ -116,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.panel1);
             this.Name = "InspectionForm";
             this.Text = "InspectionForm";

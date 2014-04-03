@@ -7,6 +7,7 @@ using System.Data;
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using FAFOS.Inspection;
 
 namespace FAFOS
 {
@@ -16,36 +17,53 @@ namespace FAFOS
         private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
 
         Document document;
-
+        PdfPTable table;
         public GenHoseController()
         {
             document = new Document(PageSize.LETTER);
         }
 
-        public void addTable()
+        public void open(string FILE)
         {
-            PdfPTable table = new PdfPTable(11);
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(FILE, FileMode.Create));
+            document.Open();
+        }
+
+        public void addTable(Report r)
+        {
+            table = new PdfPTable(7);
             table.HorizontalAlignment = 0;
             table.TotalWidth = 530f;
             table.LockedWidth = true;
-            float[] widths = new float[] { 15f, 35f, 50f, 15f, 15f, 40f, 25f, 10f, 10f, 10f, 10f };
+            float[] widths = new float[] { 15f, 35f, 50f, 10f, 10f, 10f, 10f};
             table.SetWidths(widths);
 
             createHeader(table);
-            addDataRow(table);
-            addDataRow(table);
-            addDataRow(table);
+
+            List<Hose> HL;
+            HL = r.getHoseRep();
+
+            for (int i = 0; i < HL.Count; i++)
+            {
+                addDataRow(HL.ElementAt<Hose>(i).getEquipID(),
+                           HL.ElementAt<Hose>(i).getLocation(),
+                           HL.ElementAt<Hose>(i).getManfDate(),
+                           HL.ElementAt<Hose>(i).getCabCond(),
+                           HL.ElementAt<Hose>(i).getNozCond(),
+                           HL.ElementAt<Hose>(i).getHoseReRack(),
+                           HL.ElementAt<Hose>(i).getHydroTest());
+            }
 
             document.Add(table);
         }
 
         private void createHeader(PdfPTable table)
         {
-            addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Manufacturing Date", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Equip ID", 1, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Location", 1, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Manufacturing Date", 1, 1, 0, BaseColor.RED, WhiteTimes);
 
-            addCell(table, "Inspection - Service", 1, 4, 0, BaseColor.RED, WhiteTimes);
+            //addCell(table, "Inspection - Service", 1, 4, 0, BaseColor.RED, WhiteTimes);
             addCell(table, "Cabinet Condition", 1, 1, 90, BaseColor.RED, WhiteTimes);
             addCell(table, "Nozzle Conditions", 1, 1, 90, BaseColor.RED, WhiteTimes);
             addCell(table, "Hose Re-Rack", 1, 1, 90, BaseColor.RED, WhiteTimes);
@@ -55,19 +73,22 @@ namespace FAFOS
 
         }
 
-        private void addDataRow(PdfPTable table)
+        private void addDataRow(int equipID,
+                                String location,
+                                String manfDate,
+                                String cabCond,
+                                String nozCond,
+                                String hoseReRack,
+                                String hydroTest)
         {
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            String EID = equipID.ToString();
+            addCell(table, EID, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, location, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, manfDate, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, cabCond, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, nozCond, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, hoseReRack, 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, hydroTest, 1, 1, 0, BaseColor.WHITE, Times);
 
         }
 

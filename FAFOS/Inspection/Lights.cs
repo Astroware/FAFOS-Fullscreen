@@ -132,5 +132,15 @@ namespace FAFOS.Inspection
         {
             return make;
         }
+
+        public String getReqServRep()
+        {
+            return reqServRepRslt;
+        }
+
+        public String getOprConf()
+        {
+            return oprConfRslt;
+        }
     }
 }
