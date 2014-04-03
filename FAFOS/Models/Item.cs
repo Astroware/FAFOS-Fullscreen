@@ -95,5 +95,24 @@ namespace FAFOS
             con.Close();
             return description;
         }
+
+        public string getItem(String id)
+        {
+             String connString = FAFOS.Properties.Settings.Default.FAFOS;
+            SqlConnection con = new SqlConnection(connString);
+
+            con.Open();
+            SqlCommand command = new SqlCommand("SELECT name FROM Franchisee_Item WHERE item_id = " + id, con);
+            SqlDataReader reader = command.ExecuteReader();
+
+            String description = "";
+            if (reader.Read())
+            {
+                description = reader[0].ToString();
+            }
+            reader.Close();
+            con.Close();
+            return description;
+        }
     }
 }

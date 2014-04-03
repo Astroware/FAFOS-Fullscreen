@@ -37,7 +37,6 @@
             this.Login_btn = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.FireAlertLogo = new System.Windows.Forms.PictureBox();
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
@@ -108,7 +107,6 @@
             this.sidepanel = new System.Windows.Forms.Panel();
             this.Astroware = new System.Windows.Forms.Panel();
             this.Sedge = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.pnlLogin.SuspendLayout();
@@ -123,7 +121,7 @@
             this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.Exit_btn.FlatAppearance.BorderSize = 0;
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
             this.Exit_btn.Location = new System.Drawing.Point(1525, 917);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -137,10 +135,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(66, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(547, 32);
+            this.label2.Size = new System.Drawing.Size(514, 31);
             this.label2.TabIndex = 17;
             this.label2.Text = "FAFOS Operational Management System";
             // 
@@ -158,11 +156,11 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(13, 6);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(77, 16);
+            this.lblUsername.Size = new System.Drawing.Size(73, 17);
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "Username";
             // 
@@ -195,23 +193,13 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(13, 74);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 16);
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Password";
-            // 
-            // FireAlertLogo
-            // 
-            this.FireAlertLogo.Image = global::FAFOS.Properties.Resources.Logo;
-            this.FireAlertLogo.Location = new System.Drawing.Point(1570, 23);
-            this.FireAlertLogo.Name = "FireAlertLogo";
-            this.FireAlertLogo.Size = new System.Drawing.Size(298, 144);
-            this.FireAlertLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.FireAlertLogo.TabIndex = 26;
-            this.FireAlertLogo.TabStop = false;
             // 
             // notificationPanel
             // 
@@ -248,30 +236,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 14);
+            this.label4.Size = new System.Drawing.Size(56, 15);
             this.label4.TabIndex = 2;
             this.label4.Text = "Services:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 18);
+            this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(238, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 14);
+            this.label3.Size = new System.Drawing.Size(90, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Payments Due:";
             // 
@@ -573,7 +561,7 @@
             this.Inventory.TabIndex = 68;
             this.Inventory.Text = "Inventory";
             this.ToolTip.SetToolTip(this.Inventory, "Lists all of the products and quantities on hand and lists the services that are " +
-                    "provided.");
+        "provided.");
             this.Inventory.UseVisualStyleBackColor = false;
             this.Inventory.Visible = false;
             this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
@@ -608,7 +596,7 @@
             this.Payment.TabIndex = 70;
             this.Payment.Text = "Payment";
             this.ToolTip.SetToolTip(this.Payment, "Processes invoices and adds payments to the invoices confirming that the purchase" +
-                    " has been made.");
+        " has been made.");
             this.Payment.UseVisualStyleBackColor = false;
             this.Payment.Visible = false;
             this.Payment.Click += new System.EventHandler(this.Payment_Click);
@@ -694,7 +682,7 @@
             this.Statement.TabIndex = 76;
             this.Statement.Text = "Statement";
             this.ToolTip.SetToolTip(this.Statement, "Allows the user to choose an account and generate a financial statement based off" +
-                    " the invoices.");
+        " the invoices.");
             this.Statement.UseVisualStyleBackColor = false;
             this.Statement.Visible = false;
             this.Statement.Click += new System.EventHandler(this.Statement_Click);
@@ -712,7 +700,7 @@
             this.RevenueReport.TabIndex = 78;
             this.RevenueReport.Text = "Revenue Report";
             this.ToolTip.SetToolTip(this.RevenueReport, "Generates revenue reports based on fiskal periods showing a graph of revenue vs t" +
-                    "hreshold.");
+        "hreshold.");
             this.RevenueReport.UseVisualStyleBackColor = false;
             this.RevenueReport.Visible = false;
             this.RevenueReport.Click += new System.EventHandler(this.RevenueReport_Click);
@@ -740,7 +728,7 @@
             // 
             // lblUserInfo
             // 
-            this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserInfo.Location = new System.Drawing.Point(17, 82);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(133, 50);
@@ -1069,7 +1057,7 @@
             this.Sedge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Sedge.Location = new System.Drawing.Point(912, 673);
             this.Sedge.Name = "Sedge";
-            this.Sedge.Size = new System.Drawing.Size(206, 72);
+            this.Sedge.Size = new System.Drawing.Size(196, 72);
             this.Sedge.TabIndex = 89;
             this.Sedge.Visible = false;
             // 
@@ -1079,7 +1067,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1372, 780);
+=======
+            this.ClientSize = new System.Drawing.Size(1406, 780);
+>>>>>>> Add quotes to invoice
             this.ControlBox = false;
             this.Controls.Add(this.Sedge);
             this.Controls.Add(this.Astroware);
@@ -1107,7 +1099,6 @@
             this.Controls.Add(this.Operation);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.notificationPanel);
-            this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Exit_btn);
             this.Controls.Add(this.RedBar);
@@ -1124,7 +1115,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.View_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.View_MouseMove);
-            ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).EndInit();
             this.notificationPanel.ResumeLayout(false);
             this.notificationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
@@ -1149,7 +1139,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label SEdgeLogo;
-        private System.Windows.Forms.PictureBox FireAlertLogo;
         private System.Windows.Forms.Panel notificationPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label paymentNotification;

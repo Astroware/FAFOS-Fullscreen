@@ -57,6 +57,7 @@ namespace FAFOS
             ddlServiceAddress.ValueMember = ts.Columns[1].ToString();
         }
 
+        
         public void fillQuoteIDs(DataTable ts)
         {
             txtGetID.DataSource = ts;
