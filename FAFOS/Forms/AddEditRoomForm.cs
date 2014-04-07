@@ -64,15 +64,20 @@ namespace FAFOS
             int m = extViews[index].Columns.Count;
             String[,] extinguishers = new String[n, m];
             for (int i = 0; i < n; i++)
-                for(int j = 0; j < m; j++)
+            {
+                for (int j = 1; j < m-1; j++)
                 {
                     try { extinguishers[i, j] = extViews[index].Rows[i].Cells[j].Value.ToString(); }
-                    catch (NullReferenceException) 
-                    { 
+                    catch (NullReferenceException)
+                    {
                         //extinguishers[i, j] = null;
                         return null;
                     }
                 }
+                extinguishers[i, 0] = null;
+                extinguishers[i, m-1] = null;
+
+            }
 
             return extinguishers;
         }
@@ -82,7 +87,8 @@ namespace FAFOS
             int m = hoseViews[index].Columns.Count;
             String[,] hoses = new String[n, m];
             for (int i = 0; i < n; i++)
-                for (int j = 0; j < m; j++)
+            {
+                for (int j = 1; j < m-1; j++)
                 {
                     try { hoses[i, j] = hoseViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException)
@@ -91,6 +97,10 @@ namespace FAFOS
                         return null;
                     }
                 }
+                hoses[i, 0] = null;
+                hoses[i, m - 1] = null;
+            }
+
             return hoses;
         }
         public String[,] GetLights(int index)
@@ -99,7 +109,8 @@ namespace FAFOS
             int m = lightViews[index].Columns.Count;
             String[,] lights = new String[n, m];
             for (int i = 0; i < n; i++)
-                for (int j = 0; j < m; j++)
+            {
+                for (int j = 1; j < m-1; j++)
                 {
                     try { lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException)
@@ -108,6 +119,10 @@ namespace FAFOS
                         return null;
                     }
                 }
+                lights[i, 0] = null;
+                //lights[i, 7] = null;
+                lights[i, m - 1] = null;
+            }
 
             return lights;
         }
