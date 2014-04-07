@@ -103,7 +103,10 @@ namespace FAFOS
         }
         public static String GetName(String id)
         {
-            return GetRow(id, "Client_Contract", "client_contract_id")[1];
+            String[] row = GetRow(id, "Client_Contract", "client_contract_id");
+            if (row != null)
+                return row[1];
+            return "0";
         }
 
         public void Delete()

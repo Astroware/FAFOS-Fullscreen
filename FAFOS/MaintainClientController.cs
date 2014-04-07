@@ -342,6 +342,11 @@ namespace FAFOS
 
         public void Contract_Delete_Button_Click(object sender, EventArgs e)
         {
+            if (_contractForm.GetContractText() == "")
+            {
+                MessageBox.Show("Must select a contract to delete!");
+                return;
+            }
             if (MessageBox.Show("Are you sure you want Delete this client?\nThis will delete Service Addresses connected to is as well", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 _contract.RemoveFromClient();
@@ -366,15 +371,30 @@ namespace FAFOS
                 }
 
                 String[] values = _contractForm.GetInputs();
-                String[,] srvAddrs = _contractForm.GetViewInputs();
 
-                bool okToSubmit = true;
+                for (int i = 0; i < values.Length; i++)
+                {
+                    if (values[i] == "")
+                    {
+                        MessageBox.Show("Not all Contract information has been completed!");
+                        return;
+                    }
+                }
+                
+                String[,] srvAddrs = _contractForm.GetViewInputs();
+                if (srvAddrs == null)
+                {
+                    MessageBox.Show("Not all Service Address information has been completed!");
+                    return;
+                }
+
+                /*bool okToSubmit = true;
                 for (int i = 0; i < values.Length; i++)
                     if (values[i] == "")
-                        okToSubmit = false;
+                        okToSubmit = false;*/
 
-                if (okToSubmit)
-                {
+                //if (okToSubmit)
+                //{
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         _contract.Set(values);// if we are good, submit changes to dataBase
@@ -395,9 +415,9 @@ namespace FAFOS
 
 
 
-                    }
-                    else
-                        return;
+                    //}
+                    //else
+                        //return;
                 }
             }
         }

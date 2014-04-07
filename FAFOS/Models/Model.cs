@@ -48,13 +48,17 @@ namespace FAFOS
         public static String[] GetRow(String id, String table, String columnName)
         {
             DataTable dt = GetDT(id, table, columnName);
-            DataRow dr = dt.Rows[0];
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
 
-            String[] StArr = new String[dr.ItemArray.Length];
-            for (int i = 0; i < dr.ItemArray.Length; i++)
-                StArr[i] = dr.ItemArray[i].ToString();
+                String[] StArr = new String[dr.ItemArray.Length];
+                for (int i = 0; i < dr.ItemArray.Length; i++)
+                    StArr[i] = dr.ItemArray[i].ToString();
 
-            return StArr;
+                return StArr;
+            }
+            return null;
         }
 
         public static DataTable GetDT(String id, String table, String idcolumn)

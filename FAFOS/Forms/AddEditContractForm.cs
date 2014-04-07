@@ -225,10 +225,19 @@ namespace FAFOS
         {
             String[] allFeilds = new String[5];
 
-            allFeilds[1] = contractNameBox.Text.ToString();
-            allFeilds[2] = this.StartDatePicker.Value.ToString();
-            allFeilds[3] = this.EndDatePicker.Value.ToString();
-            allFeilds[4] = this.TermsBox.Text.ToString();
+            try
+            {
+
+                allFeilds[1] = contractNameBox.Text.ToString();
+                allFeilds[2] = this.StartDatePicker.Value.ToString();
+                allFeilds[3] = this.EndDatePicker.Value.ToString();
+                allFeilds[4] = this.TermsBox.Text.ToString();
+            }
+
+            catch (NullReferenceException)
+            {
+                return null;
+            }
 
             return allFeilds;
         }
@@ -243,7 +252,7 @@ namespace FAFOS
                 for (int j = 0; j < 9; j++)
                 {
                     try { cells[i, j] = ServiceAddrGridView.Rows[i].Cells[j].Value.ToString(); }
-                    catch (NullReferenceException) { }
+                    catch (NullReferenceException) { return null; }
                 }
                 cells[i, 9] = contractID;
             }
