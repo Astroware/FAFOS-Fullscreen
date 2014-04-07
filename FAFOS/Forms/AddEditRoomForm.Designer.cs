@@ -51,7 +51,7 @@
             this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Cancel_Button.ForeColor = System.Drawing.Color.White;
-            this.Cancel_Button.Location = new System.Drawing.Point(676, 379);
+            this.Cancel_Button.Location = new System.Drawing.Point(856, 379);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(98, 46);
             this.Cancel_Button.TabIndex = 59;
@@ -76,7 +76,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Ok_Button.ForeColor = System.Drawing.Color.White;
-            this.Ok_Button.Location = new System.Drawing.Point(572, 379);
+            this.Ok_Button.Location = new System.Drawing.Point(729, 379);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(98, 46);
             this.Ok_Button.TabIndex = 31;
@@ -98,7 +98,7 @@
             this.deleteButton});
             this.RoomGridView.Location = new System.Drawing.Point(5, 29);
             this.RoomGridView.Name = "RoomGridView";
-            this.RoomGridView.Size = new System.Drawing.Size(438, 145);
+            this.RoomGridView.Size = new System.Drawing.Size(554, 144);
             this.RoomGridView.TabIndex = 60;
             this.RoomGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.RoomGridView_RowsRemoved);
             // 
@@ -153,7 +153,7 @@
             this.addRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.addRoomButton.ForeColor = System.Drawing.Color.White;
-            this.addRoomButton.Location = new System.Drawing.Point(449, 29);
+            this.addRoomButton.Location = new System.Drawing.Point(590, 29);
             this.addRoomButton.Name = "addRoomButton";
             this.addRoomButton.Size = new System.Drawing.Size(101, 36);
             this.addRoomButton.TabIndex = 64;
@@ -183,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(786, 437);
+            this.ClientSize = new System.Drawing.Size(1019, 452);
             this.ControlBox = false;
             this.Controls.Add(this.AddItemButton);
             this.Controls.Add(this.addRoomButton);

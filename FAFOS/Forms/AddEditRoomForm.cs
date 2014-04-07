@@ -67,7 +67,11 @@ namespace FAFOS
                 for(int j = 0; j < m; j++)
                 {
                     try { extinguishers[i, j] = extViews[index].Rows[i].Cells[j].Value.ToString(); }
-                    catch (NullReferenceException) { extinguishers[i, j] = null; }
+                    catch (NullReferenceException) 
+                    { 
+                        //extinguishers[i, j] = null;
+                        return null;
+                    }
                 }
 
             return extinguishers;
@@ -81,7 +85,11 @@ namespace FAFOS
                 for (int j = 0; j < m; j++)
                 {
                     try { hoses[i, j] = hoseViews[index].Rows[i].Cells[j].Value.ToString(); }
-                    catch (NullReferenceException) { hoses[i, j] = null; }
+                    catch (NullReferenceException)
+                    {
+                        //hoses[i, j] = null;
+                        return null;
+                    }
                 }
             return hoses;
         }
@@ -94,7 +102,11 @@ namespace FAFOS
                 for (int j = 0; j < m; j++)
                 {
                     try { lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString(); }
-                    catch (NullReferenceException) { lights[i, j] = null; }
+                    catch (NullReferenceException)
+                    {
+                        //lights[i, j] = null;
+                        return null;
+                    }
                 }
 
             return lights;
@@ -394,11 +406,11 @@ namespace FAFOS
             eSerial.Name = "eSerial";
             eSerial.Width = 150;
 
-            eBarcode.HeaderText = "Barcode";
+            eBarcode.HeaderText = "Barcode (13 digit #)";
             eBarcode.Name = "eBarcode";
-            eBarcode.Width = 100;
+            eBarcode.Width = 130;
 
-            eManDate.HeaderText = "Manufactring Date";
+            eManDate.HeaderText = "Manufactring Date (mm/dd/yyyy)";
             eManDate.Name = "eManDate";
             eManDate.Width = 120;
 
@@ -426,7 +438,7 @@ namespace FAFOS
 
             ExtinguisherView.Location = new System.Drawing.Point(5, 220);
             ExtinguisherView.Name = "ExtinguisherView";
-            ExtinguisherView.Size = new System.Drawing.Size(525, 150);
+            ExtinguisherView.Size = new System.Drawing.Size(775, 150);
             ExtinguisherView.TabIndex = 61;
             ExtinguisherView.Visible = false;
             extDelCol = ExtinguisherView.Columns.Count - 1;
@@ -463,13 +475,13 @@ namespace FAFOS
             hSerial.Name = "hSerial";
             hSerial.Width = 150;
 
-            hBarcode.HeaderText = "Barcode";
+            hBarcode.HeaderText = "Barcode (13 digit #)";
             hBarcode.Name = "hBarcode";
-            hBarcode.Width = 120;
+            hBarcode.Width = 130;
 
-            hManDate.HeaderText = "Manufactring Date";
+            hManDate.HeaderText = "Manufactring Date (mm/dd/yyyy)";
             hManDate.Name = "hManDate";
-            hManDate.Width = 100;
+            hManDate.Width = 120;
 
             hDel.HeaderText = "Delete";
             hDel.Name = "hDel";
@@ -490,7 +502,7 @@ namespace FAFOS
 
             HoseView.Location = new System.Drawing.Point(5, 220);
             HoseView.Name = "HoseView";
-            HoseView.Size = new System.Drawing.Size(320, 150);
+            HoseView.Size = new System.Drawing.Size(590, 150);
             HoseView.TabIndex = 65;
             HoseView.Visible = false;
             hoseDelCol = HoseView.Columns.Count - 1;
@@ -502,7 +514,7 @@ namespace FAFOS
             DataGridView LightView = new System.Windows.Forms.DataGridView();
             LightView.CellClick +=new DataGridViewCellEventHandler(lightView_CellClick);
 
-            #region Colums
+            #region Columns
             DataGridViewTextBoxColumn lid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn lRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn lLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -558,13 +570,13 @@ namespace FAFOS
             lRoom.Visible = false;
             lRoom.Width = 60;
 
-            lBarcode.HeaderText = "Barcode";
+            lBarcode.HeaderText = "Barcode (13 digit #)";
             lBarcode.Name = "lBarcode";
-            lBarcode.Width = 120;
+            lBarcode.Width = 130;
 
-            lManDate.HeaderText = "Manufactring Date";
+            lManDate.HeaderText = "Manufactring Date (mm/dd/yyyy)";
             lManDate.Name = "lManDate";
-            lManDate.Width = 100;
+            lManDate.Width = 120;
 
             lDel.HeaderText = "Delete";
             lDel.Name = "lDel";
@@ -591,7 +603,7 @@ namespace FAFOS
 
             LightView.Location = new System.Drawing.Point(5, 220);
             LightView.Name = "LightView";
-            LightView.Size = new System.Drawing.Size(710, 150);
+            LightView.Size = new System.Drawing.Size(950, 150);
             LightView.TabIndex = 66;
             LightView.Visible = false;
             lightDelCol = LightView.Columns.Count - 1;

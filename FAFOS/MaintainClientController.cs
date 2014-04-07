@@ -677,26 +677,39 @@ namespace FAFOS
                 else
                 {
                     int nRooms = rooms.Length / 4;
-                    if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                    {// if we are good, submit changes to dataBase
+                    //{// if we are good, submit changes to dataBase
                         String[,] ext, hoses, lights;
                         for (int i = 0; i < nRooms; i++)
                         {
                             ext = _roomForm.GetExtinguishers(i);
+                            if (ext == null)
+                            {
+                                MessageBox.Show("Columns for extinguishers are either incomplete or filled incorrectly.");
+                                return;
+                            }
                             hoses = _roomForm.GetHoses(i);
+                            if (hoses == null)
+                            {
+                                MessageBox.Show("Columns for hoses are either incomplete or filled incorrectly.");
+                                return;
+                            }
                             lights = _roomForm.GetLights(i);
+                            if (lights == null)
+                            {
+                                MessageBox.Show("Columns for lights are either incomplete or filled incorrectly.");
+                                return;
+                            }
                             /*
                             * Validate....okToSubmit = False;
                             */
-                            //if (okToSubmit)
-                            //{
+                            if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                            {
                                 MRoom.SetExtinguishers(ext);
                                 MRoom.SetHoses(hoses);
                                 MRoom.SetLights(lights);
-                            //}
-                            //else
-                                //return;
-                        }
+                            }
+                            else
+                                return;
 
                         MRoom.SetMany(rooms);
                         _contractForm.noChanges = false;

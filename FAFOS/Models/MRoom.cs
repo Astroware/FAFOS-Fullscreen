@@ -63,8 +63,9 @@ namespace FAFOS
                                                                            "','" + values[i, 4] +
                                                                            "','" + values[i, 5] +
                                                                             "'," + values[i, 6] + 
-                                                                             "," + values[i, 7] +
-                                                                            ",'" + values[i, 8] +"')", con);
+                                                                            ",'" + values[i, 7] +
+                                                                           "','" + values[i, 8] +"')", con);
+                    Console.WriteLine("Insert Ext");
                 }
 
                 else
@@ -75,9 +76,10 @@ namespace FAFOS
                                                           "', model = '" + values[i, 4] +
                                                           "', serial = " + values[i, 5] +
                                                            ", room_id = " + values[i, 6] +
-                                                           ", bar_code = " + values[i, 7] +
-                                                           ", manufacture_date = '" + values[i, 8] +
-                                                      "' WHERE extinguisher_id = " + values[i, 0], con);
+                                                           ", bar_code = '" + values[i, 7] +
+                                                          "', manufacture_date = '" + values[i, 8] +
+                                                     "' WHERE extinguisher_id = " + values[i, 0], con);
+                    Console.WriteLine("Update Ext");
                 }
                 
                 try
@@ -117,18 +119,20 @@ namespace FAFOS
                                                                     ",'" + values[i, 1] +
                                                                     "'," + values[i, 2] +
                                                                      "," + values[i, 3] + 
-                                                                     "," + values[i, 4] +
-                                                                     ",'" + values[i, 5] + "')", con);
+                                                                    ",'" + values[i, 4] +
+                                                                   "','" + values[i, 5] + "')", con);
+                    Console.WriteLine("Insert Hose");
                 }
 
                 else
                 {
                     command = new SqlCommand("UPDATE Hose SET location = '" + values[i, 1] +
-                                                          "', serial = " + values[i, 2] +
-                                                           ", room_id = " + values[i, 3] +
-                                                           ", bar_code = " + values[i, 4] +
-                                                          ", manufacture_date = '" + values[i, 5] +
-                                                      "' WHERE hose_id = " + values[i, 0], con);                   
+                                                          "', serial = '" + values[i, 2] +
+                                                          "', room_id = " + values[i, 3] +
+                                                           ", bar_code = '" + values[i, 4] +
+                                                          "', manufacture_date = '" + values[i, 5] +
+                                                     "' WHERE hose_id = " + values[i, 0], con);
+                    Console.WriteLine("Update Hose");
                 }
 
                 try
@@ -171,10 +175,11 @@ namespace FAFOS
                                                           "','" + values[i, 5] +
                                                           "','" + values[i, 6] +
                                                           "','" + values[i, 7] +
-                                                           "'," + values[i, 8] +
-                                                            "," + values[i, 9] + 
-                                                            "," + values[i, 10] +
-                                                            ",'" + values[i, 11] + "')", con);
+                                                          "','" + values[i, 8] +
+                                                           "'," + values[i, 9] + 
+                                                           ",'" + values[i, 10] +
+                                                          "','" + values[i, 11] + "')", con);
+                    Console.WriteLine("Insert Light");
                 }
                 else
                 {
@@ -190,7 +195,8 @@ namespace FAFOS
                                                            ", room_id = " + values[i, 9] +
                                                            ", bar_code = " + values[i, 10] +
                                                           ", manufacture_date = '" + values[i, 11] +
-                                                      "' WHERE light_id = " + values[i, 0], con);
+                                                    "' WHERE light_id = " + values[i, 0], con);
+                    Console.WriteLine("Update Light");
                 }
 
                 try
